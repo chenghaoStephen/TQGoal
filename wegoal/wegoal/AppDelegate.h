@@ -11,7 +11,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-//属性
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TQTabBarController *tabBarController;
 
