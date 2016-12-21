@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAF91E09166600CC221E /* TQCommandView.m */; };
+		0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAFC1E091E4B00CC221E /* TQHomeMatchCell.m */; };
+		0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */; };
+		0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A62C81E0A296100CD8F02 /* UIView+LSCore.m */; };
+		0F2A62D01E0A297F00CD8F02 /* JOMatchMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A62CB1E0A297F00CD8F02 /* JOMatchMenuView.m */; };
+		0F2A62D11E0A297F00CD8F02 /* JOSelectMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A62CD1E0A297F00CD8F02 /* JOSelectMenuView.m */; };
+		0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A62CF1E0A297F00CD8F02 /* JOShowMenuView.m */; };
+		0F32E7331E08C75800152EDD /* TQCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F32E7321E08C75800152EDD /* TQCommon.m */; };
+		0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F32E7361E08C81000152EDD /* TQBaseViewController.m */; };
+		A29C78A1C698B1B46374C503 /* libPods-wegoal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F827A1ABEF8FCCA6C9B45EE /* libPods-wegoal.a */; };
+		F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C761DEB324D00D86D5B /* TQHomeViewController.m */; };
+		F3438C791DEB324D00D86D5B /* TQHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3438C771DEB324D00D86D5B /* TQHomeViewController.xib */; };
+		F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C7B1DEB326C00D86D5B /* TQScheduleViewController.m */; };
+		F3438C7E1DEB326C00D86D5B /* TQScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3438C7C1DEB326C00D86D5B /* TQScheduleViewController.xib */; };
+		F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C831DEB328400D86D5B /* TQMeViewController.m */; };
+		F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3438C841DEB328400D86D5B /* TQMeViewController.xib */; };
+		F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C881DEB329700D86D5B /* TQLadderViewController.m */; };
+		F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3438C891DEB329700D86D5B /* TQLadderViewController.xib */; };
+		F3438C901DEB37A700D86D5B /* TQTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C8F1DEB37A700D86D5B /* TQTabBar.m */; };
+		F3438C991DF2A51700D86D5B /* UIView+LBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C981DF2A51700D86D5B /* UIView+LBExtension.m */; };
+		F3438C9F1DF2A58C00D86D5B /* ZYPathButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C9C1DF2A58C00D86D5B /* ZYPathButton.m */; };
+		F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C9E1DF2A58C00D86D5B /* ZYPathItemButton.m */; };
+		F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438CA21DF2A5DA00D86D5B /* TQTabBarController.m */; };
+		F37883D81DE5CC6100A40C3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F37883D71DE5CC6100A40C3F /* main.m */; };
+		F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F37883DA1DE5CC6100A40C3F /* AppDelegate.m */; };
+		F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37883E21DE5CC6100A40C3F /* Assets.xcassets */; };
+		F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37883E41DE5CC6100A40C3F /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F19FAF81E09166600CC221E /* TQCommandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQCommandView.h; sourceTree = "<group>"; };
+		0F19FAF91E09166600CC221E /* TQCommandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQCommandView.m; sourceTree = "<group>"; };
+		0F19FAFB1E091E4B00CC221E /* TQHomeMatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQHomeMatchCell.h; sourceTree = "<group>"; };
+		0F19FAFC1E091E4B00CC221E /* TQHomeMatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQHomeMatchCell.m; sourceTree = "<group>"; };
+		0F19FAFE1E09273F00CC221E /* TQMatchFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchFlowLayout.h; sourceTree = "<group>"; };
+		0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchFlowLayout.m; sourceTree = "<group>"; };
+		0F2A62C71E0A296100CD8F02 /* UIView+LSCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LSCore.h"; sourceTree = "<group>"; };
+		0F2A62C81E0A296100CD8F02 /* UIView+LSCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LSCore.m"; sourceTree = "<group>"; };
+		0F2A62CA1E0A297F00CD8F02 /* JOMatchMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOMatchMenuView.h; sourceTree = "<group>"; };
+		0F2A62CB1E0A297F00CD8F02 /* JOMatchMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOMatchMenuView.m; sourceTree = "<group>"; };
+		0F2A62CC1E0A297F00CD8F02 /* JOSelectMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOSelectMenuView.h; sourceTree = "<group>"; };
+		0F2A62CD1E0A297F00CD8F02 /* JOSelectMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOSelectMenuView.m; sourceTree = "<group>"; };
+		0F2A62CE1E0A297F00CD8F02 /* JOShowMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOShowMenuView.h; sourceTree = "<group>"; };
+		0F2A62CF1E0A297F00CD8F02 /* JOShowMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOShowMenuView.m; sourceTree = "<group>"; };
+		0F32E7311E08C75800152EDD /* TQCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQCommon.h; sourceTree = "<group>"; };
+		0F32E7321E08C75800152EDD /* TQCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQCommon.m; sourceTree = "<group>"; };
+		0F32E7341E08C78500152EDD /* TQConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TQConst.h; sourceTree = "<group>"; };
+		0F32E7351E08C81000152EDD /* TQBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQBaseViewController.h; sourceTree = "<group>"; };
+		0F32E7361E08C81000152EDD /* TQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQBaseViewController.m; sourceTree = "<group>"; };
+		0F32E7381E08C90200152EDD /* ConfigHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHeader.h; sourceTree = "<group>"; };
+		0F32E7391E08CA0E00152EDD /* URLHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHeader.h; sourceTree = "<group>"; };
+		6F827A1ABEF8FCCA6C9B45EE /* libPods-wegoal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wegoal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D32ECEDD6EE7FFB9EC1929E /* Pods-wegoal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.release.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.release.xcconfig"; sourceTree = "<group>"; };
+		E47184B8EF0C86F2A82BC629 /* Pods-wegoal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.debug.xcconfig"; sourceTree = "<group>"; };
+		F3438C751DEB324D00D86D5B /* TQHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQHomeViewController.h; sourceTree = "<group>"; };
+		F3438C761DEB324D00D86D5B /* TQHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQHomeViewController.m; sourceTree = "<group>"; };
+		F3438C771DEB324D00D86D5B /* TQHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQHomeViewController.xib; sourceTree = "<group>"; };
+		F3438C7A1DEB326C00D86D5B /* TQScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQScheduleViewController.h; sourceTree = "<group>"; };
+		F3438C7B1DEB326C00D86D5B /* TQScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQScheduleViewController.m; sourceTree = "<group>"; };
+		F3438C7C1DEB326C00D86D5B /* TQScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQScheduleViewController.xib; sourceTree = "<group>"; };
+		F3438C821DEB328400D86D5B /* TQMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMeViewController.h; sourceTree = "<group>"; };
+		F3438C831DEB328400D86D5B /* TQMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMeViewController.m; sourceTree = "<group>"; };
+		F3438C841DEB328400D86D5B /* TQMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMeViewController.xib; sourceTree = "<group>"; };
+		F3438C871DEB329700D86D5B /* TQLadderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLadderViewController.h; sourceTree = "<group>"; };
+		F3438C881DEB329700D86D5B /* TQLadderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLadderViewController.m; sourceTree = "<group>"; };
+		F3438C891DEB329700D86D5B /* TQLadderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQLadderViewController.xib; sourceTree = "<group>"; };
+		F3438C8E1DEB37A700D86D5B /* TQTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTabBar.h; sourceTree = "<group>"; };
+		F3438C8F1DEB37A700D86D5B /* TQTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTabBar.m; sourceTree = "<group>"; };
+		F3438C941DF2A32400D86D5B /* wegoal-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "wegoal-Prefix.pch"; sourceTree = "<group>"; };
+		F3438C971DF2A51700D86D5B /* UIView+LBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LBExtension.h"; sourceTree = "<group>"; };
+		F3438C981DF2A51700D86D5B /* UIView+LBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LBExtension.m"; sourceTree = "<group>"; };
+		F3438C9B1DF2A58C00D86D5B /* ZYPathButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYPathButton.h; sourceTree = "<group>"; };
+		F3438C9C1DF2A58C00D86D5B /* ZYPathButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPathButton.m; sourceTree = "<group>"; };
+		F3438C9D1DF2A58C00D86D5B /* ZYPathItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYPathItemButton.h; sourceTree = "<group>"; };
+		F3438C9E1DF2A58C00D86D5B /* ZYPathItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPathItemButton.m; sourceTree = "<group>"; };
+		F3438CA11DF2A5DA00D86D5B /* TQTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTabBarController.h; sourceTree = "<group>"; };
+		F3438CA21DF2A5DA00D86D5B /* TQTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTabBarController.m; sourceTree = "<group>"; };
+		F37883D31DE5CC6100A40C3F /* wegoal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wegoal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F37883D71DE5CC6100A40C3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F37883D91DE5CC6100A40C3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F37883DA1DE5CC6100A40C3F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F37883E21DE5CC6100A40C3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F37883E51DE5CC6100A40C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F37883E71DE5CC6100A40C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F37883D01DE5CC6100A40C3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A29C78A1C698B1B46374C503 /* libPods-wegoal.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F19FAF41E09151500CC221E /* TQHomeView */ = {
+			isa = PBXGroup;
+			children = (
+				0F19FAF81E09166600CC221E /* TQCommandView.h */,
+				0F19FAF91E09166600CC221E /* TQCommandView.m */,
+				0F19FAFB1E091E4B00CC221E /* TQHomeMatchCell.h */,
+				0F19FAFC1E091E4B00CC221E /* TQHomeMatchCell.m */,
+				0F19FAFE1E09273F00CC221E /* TQMatchFlowLayout.h */,
+				0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */,
+			);
+			name = TQHomeView;
+			sourceTree = "<group>";
+		};
+		0F2A62C61E0A294D00CD8F02 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A62CA1E0A297F00CD8F02 /* JOMatchMenuView.h */,
+				0F2A62CB1E0A297F00CD8F02 /* JOMatchMenuView.m */,
+				0F2A62CC1E0A297F00CD8F02 /* JOSelectMenuView.h */,
+				0F2A62CD1E0A297F00CD8F02 /* JOSelectMenuView.m */,
+				0F2A62CE1E0A297F00CD8F02 /* JOShowMenuView.h */,
+				0F2A62CF1E0A297F00CD8F02 /* JOShowMenuView.m */,
+			);
+			name = MenuView;
+			sourceTree = "<group>";
+		};
+		AC1F3224A6E593FEB5447242 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F827A1ABEF8FCCA6C9B45EE /* libPods-wegoal.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3D2235A853CABB67376DC4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E47184B8EF0C86F2A82BC629 /* Pods-wegoal.debug.xcconfig */,
+				9D32ECEDD6EE7FFB9EC1929E /* Pods-wegoal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3438C711DEB31A700D86D5B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0F19FAF41E09151500CC221E /* TQHomeView */,
+				F3438C751DEB324D00D86D5B /* TQHomeViewController.h */,
+				F3438C761DEB324D00D86D5B /* TQHomeViewController.m */,
+				F3438C771DEB324D00D86D5B /* TQHomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F3438C721DEB31F400D86D5B /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A62C61E0A294D00CD8F02 /* MenuView */,
+				F3438C7A1DEB326C00D86D5B /* TQScheduleViewController.h */,
+				F3438C7B1DEB326C00D86D5B /* TQScheduleViewController.m */,
+				F3438C7C1DEB326C00D86D5B /* TQScheduleViewController.xib */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		F3438C731DEB320100D86D5B /* Ladder */ = {
+			isa = PBXGroup;
+			children = (
+				F3438C871DEB329700D86D5B /* TQLadderViewController.h */,
+				F3438C881DEB329700D86D5B /* TQLadderViewController.m */,
+				F3438C891DEB329700D86D5B /* TQLadderViewController.xib */,
+			);
+			path = Ladder;
+			sourceTree = "<group>";
+		};
+		F3438C741DEB320800D86D5B /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				F3438C821DEB328400D86D5B /* TQMeViewController.h */,
+				F3438C831DEB328400D86D5B /* TQMeViewController.m */,
+				F3438C841DEB328400D86D5B /* TQMeViewController.xib */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		F3438C8C1DEB32AD00D86D5B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0F32E7341E08C78500152EDD /* TQConst.h */,
+				0F32E7311E08C75800152EDD /* TQCommon.h */,
+				0F32E7321E08C75800152EDD /* TQCommon.m */,
+				0F32E7381E08C90200152EDD /* ConfigHeader.h */,
+				0F32E7391E08CA0E00152EDD /* URLHeader.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F3438C8D1DEB379000D86D5B /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				F3438C8E1DEB37A700D86D5B /* TQTabBar.h */,
+				F3438C8F1DEB37A700D86D5B /* TQTabBar.m */,
+				F3438CA11DF2A5DA00D86D5B /* TQTabBarController.h */,
+				F3438CA21DF2A5DA00D86D5B /* TQTabBarController.m */,
+				0F32E7351E08C81000152EDD /* TQBaseViewController.h */,
+				0F32E7361E08C81000152EDD /* TQBaseViewController.m */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		F3438C951DF2A4A700D86D5B /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				F3438C9A1DF2A58C00D86D5B /* ZYPathButton */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		F3438C961DF2A4FA00D86D5B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A62C71E0A296100CD8F02 /* UIView+LSCore.h */,
+				0F2A62C81E0A296100CD8F02 /* UIView+LSCore.m */,
+				F3438C971DF2A51700D86D5B /* UIView+LBExtension.h */,
+				F3438C981DF2A51700D86D5B /* UIView+LBExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F3438C9A1DF2A58C00D86D5B /* ZYPathButton */ = {
+			isa = PBXGroup;
+			children = (
+				F3438C9B1DF2A58C00D86D5B /* ZYPathButton.h */,
+				F3438C9C1DF2A58C00D86D5B /* ZYPathButton.m */,
+				F3438C9D1DF2A58C00D86D5B /* ZYPathItemButton.h */,
+				F3438C9E1DF2A58C00D86D5B /* ZYPathItemButton.m */,
+			);
+			path = ZYPathButton;
+			sourceTree = "<group>";
+		};
+		F37883CA1DE5CC6100A40C3F = {
+			isa = PBXGroup;
+			children = (
+				F37883D51DE5CC6100A40C3F /* wegoal */,
+				F37883D41DE5CC6100A40C3F /* Products */,
+				B3D2235A853CABB67376DC4B /* Pods */,
+				AC1F3224A6E593FEB5447242 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F37883D41DE5CC6100A40C3F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F37883D31DE5CC6100A40C3F /* wegoal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F37883D51DE5CC6100A40C3F /* wegoal */ = {
+			isa = PBXGroup;
+			children = (
+				F3438C8D1DEB379000D86D5B /* BaseView */,
+				F3438C8C1DEB32AD00D86D5B /* Common */,
+				F3438C961DF2A4FA00D86D5B /* Category */,
+				F3438C951DF2A4A700D86D5B /* Third */,
+				F3438C711DEB31A700D86D5B /* Home */,
+				F3438C721DEB31F400D86D5B /* Schedule */,
+				F3438C731DEB320100D86D5B /* Ladder */,
+				F3438C741DEB320800D86D5B /* Me */,
+				F37883D91DE5CC6100A40C3F /* AppDelegate.h */,
+				F37883DA1DE5CC6100A40C3F /* AppDelegate.m */,
+				F37883E41DE5CC6100A40C3F /* LaunchScreen.storyboard */,
+				F37883D61DE5CC6100A40C3F /* Supporting Files */,
+			);
+			path = wegoal;
+			sourceTree = "<group>";
+		};
+		F37883D61DE5CC6100A40C3F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F37883E21DE5CC6100A40C3F /* Assets.xcassets */,
+				F37883E71DE5CC6100A40C3F /* Info.plist */,
+				F37883D71DE5CC6100A40C3F /* main.m */,
+				F3438C941DF2A32400D86D5B /* wegoal-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F37883D21DE5CC6100A40C3F /* wegoal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F37883EA1DE5CC6100A40C3F /* Build configuration list for PBXNativeTarget "wegoal" */;
+			buildPhases = (
+				04AF526EB2EBA789DFE2F94D /* [CP] Check Pods Manifest.lock */,
+				F37883CF1DE5CC6100A40C3F /* Sources */,
+				F37883D01DE5CC6100A40C3F /* Frameworks */,
+				F37883D11DE5CC6100A40C3F /* Resources */,
+				E5E33138F02C9CD64B8E1D0A /* [CP] Embed Pods Frameworks */,
+				4A382DC1B9E51A87F1E3A3F3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wegoal;
+			productName = wegoal;
+			productReference = F37883D31DE5CC6100A40C3F /* wegoal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F37883CB1DE5CC6100A40C3F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TQ;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = xdkj;
+				TargetAttributes = {
+					F37883D21DE5CC6100A40C3F = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = BVV8V9LJM3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F37883CE1DE5CC6100A40C3F /* Build configuration list for PBXProject "wegoal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F37883CA1DE5CC6100A40C3F;
+			productRefGroup = F37883D41DE5CC6100A40C3F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F37883D21DE5CC6100A40C3F /* wegoal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F37883D11DE5CC6100A40C3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */,
+				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
+				F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */,
+				F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */,
+				F3438C7E1DEB326C00D86D5B /* TQScheduleViewController.xib in Resources */,
+				F3438C791DEB324D00D86D5B /* TQHomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04AF526EB2EBA789DFE2F94D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A382DC1B9E51A87F1E3A3F3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wegoal/Pods-wegoal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5E33138F02C9CD64B8E1D0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wegoal/Pods-wegoal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F37883CF1DE5CC6100A40C3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F2A62D01E0A297F00CD8F02 /* JOMatchMenuView.m in Sources */,
+				0F2A62D11E0A297F00CD8F02 /* JOSelectMenuView.m in Sources */,
+				F3438C901DEB37A700D86D5B /* TQTabBar.m in Sources */,
+				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
+				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
+				0F32E7331E08C75800152EDD /* TQCommon.m in Sources */,
+				F37883D81DE5CC6100A40C3F /* main.m in Sources */,
+				F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */,
+				0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */,
+				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
+				F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */,
+				F3438C991DF2A51700D86D5B /* UIView+LBExtension.m in Sources */,
+				F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */,
+				F3438C9F1DF2A58C00D86D5B /* ZYPathButton.m in Sources */,
+				F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */,
+				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
+				F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */,
+				0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */,
+				0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */,
+				0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F37883E41DE5CC6100A40C3F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F37883E51DE5CC6100A40C3F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F37883E81DE5CC6100A40C3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F37883E91DE5CC6100A40C3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F37883EB1DE5CC6100A40C3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E47184B8EF0C86F2A82BC629 /* Pods-wegoal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BVV8V9LJM3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wegoal/wegoal-Prefix.pch";
+				INFOPLIST_FILE = wegoal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xdkj.wegoal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Debug;
+		};
+		F37883EC1DE5CC6100A40C3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D32ECEDD6EE7FFB9EC1929E /* Pods-wegoal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BVV8V9LJM3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wegoal/wegoal-Prefix.pch";
+				INFOPLIST_FILE = wegoal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xdkj.wegoal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F37883CE1DE5CC6100A40C3F /* Build configuration list for PBXProject "wegoal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37883E81DE5CC6100A40C3F /* Debug */,
+				F37883E91DE5CC6100A40C3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F37883EA1DE5CC6100A40C3F /* Build configuration list for PBXNativeTarget "wegoal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37883EB1DE5CC6100A40C3F /* Debug */,
+				F37883EC1DE5CC6100A40C3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F37883CB1DE5CC6100A40C3F /* Project object */;
+}
