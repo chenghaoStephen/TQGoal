@@ -4,8 +4,8 @@ source 'https://github.com/Artsy/Specs.git'
 platform :ios, ‘7.0’
 
 target 'wegoal' do
-  pod ‘AFNetworking’
-  pod 'Toast'
+  pod 'AFNetworking', '~> 2.6.1'
+  pod 'Toast', '~> 2.4'
   pod 'MJExtension'
   pod 'SDWebImage'
   pod 'SVPullToRefresh'

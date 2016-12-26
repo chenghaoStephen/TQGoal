@@ -218,7 +218,7 @@
     if (cell) {
         [_matchView bringSubviewToFront:cell];
     }
-    
+    cell.status = MatchStatusNewJoiner;
 }
 
 

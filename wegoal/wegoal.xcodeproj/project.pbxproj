@@ -16,10 +16,9 @@
 		0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A62CF1E0A297F00CD8F02 /* JOShowMenuView.m */; };
 		0F32E7331E08C75800152EDD /* TQCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F32E7321E08C75800152EDD /* TQCommon.m */; };
 		0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F32E7361E08C81000152EDD /* TQBaseViewController.m */; };
-		0F3C6B6F1E10ACEA00F713A7 /* TQCreateTeamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B6E1E10ACEA00F713A7 /* TQCreateTeamView.m */; };
 		0F3C6B721E10AE1A00F713A7 /* TQMatchStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B711E10AE1A00F713A7 /* TQMatchStatusView.m */; };
-		0F3C6B741E10B6AA00F713A7 /* TQCreateTeamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C6B731E10B6AA00F713A7 /* TQCreateTeamView.xib */; };
-		A29C78A1C698B1B46374C503 /* libPods-wegoal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F827A1ABEF8FCCA6C9B45EE /* libPods-wegoal.a */; };
+		0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */; };
+		433B373743E8C578FBDED1BB /* libPods-wegoal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8BE78A1AF21484D9A7B271 /* libPods-wegoal.a */; };
 		F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C761DEB324D00D86D5B /* TQHomeViewController.m */; };
 		F3438C791DEB324D00D86D5B /* TQHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3438C771DEB324D00D86D5B /* TQHomeViewController.xib */; };
 		F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C7B1DEB326C00D86D5B /* TQScheduleViewController.m */; };
@@ -61,12 +60,11 @@
 		0F32E7361E08C81000152EDD /* TQBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQBaseViewController.m; sourceTree = "<group>"; };
 		0F32E7381E08C90200152EDD /* ConfigHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHeader.h; sourceTree = "<group>"; };
 		0F32E7391E08CA0E00152EDD /* URLHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHeader.h; sourceTree = "<group>"; };
-		0F3C6B6D1E10ACEA00F713A7 /* TQCreateTeamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQCreateTeamView.h; sourceTree = "<group>"; };
-		0F3C6B6E1E10ACEA00F713A7 /* TQCreateTeamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQCreateTeamView.m; sourceTree = "<group>"; };
 		0F3C6B701E10AE1A00F713A7 /* TQMatchStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchStatusView.h; sourceTree = "<group>"; };
 		0F3C6B711E10AE1A00F713A7 /* TQMatchStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchStatusView.m; sourceTree = "<group>"; };
-		0F3C6B731E10B6AA00F713A7 /* TQCreateTeamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQCreateTeamView.xib; sourceTree = "<group>"; };
-		6F827A1ABEF8FCCA6C9B45EE /* libPods-wegoal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wegoal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F3C6B751E10E9BC00F713A7 /* TQCreateTeamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQCreateTeamView.h; sourceTree = "<group>"; };
+		0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQCreateTeamView.m; sourceTree = "<group>"; };
+		6D8BE78A1AF21484D9A7B271 /* libPods-wegoal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wegoal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D32ECEDD6EE7FFB9EC1929E /* Pods-wegoal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.release.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.release.xcconfig"; sourceTree = "<group>"; };
 		E47184B8EF0C86F2A82BC629 /* Pods-wegoal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.debug.xcconfig"; sourceTree = "<group>"; };
 		F3438C751DEB324D00D86D5B /* TQHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQHomeViewController.h; sourceTree = "<group>"; };
@@ -106,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A29C78A1C698B1B46374C503 /* libPods-wegoal.a in Frameworks */,
+				433B373743E8C578FBDED1BB /* libPods-wegoal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,11 +120,10 @@
 				0F19FAFC1E091E4B00CC221E /* TQHomeMatchCell.m */,
 				0F19FAFE1E09273F00CC221E /* TQMatchFlowLayout.h */,
 				0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */,
-				0F3C6B6D1E10ACEA00F713A7 /* TQCreateTeamView.h */,
-				0F3C6B6E1E10ACEA00F713A7 /* TQCreateTeamView.m */,
-				0F3C6B731E10B6AA00F713A7 /* TQCreateTeamView.xib */,
 				0F3C6B701E10AE1A00F713A7 /* TQMatchStatusView.h */,
 				0F3C6B711E10AE1A00F713A7 /* TQMatchStatusView.m */,
+				0F3C6B751E10E9BC00F713A7 /* TQCreateTeamView.h */,
+				0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */,
 			);
 			name = TQHomeView;
 			sourceTree = "<group>";
@@ -147,7 +144,7 @@
 		AC1F3224A6E593FEB5447242 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6F827A1ABEF8FCCA6C9B45EE /* libPods-wegoal.a */,
+				6D8BE78A1AF21484D9A7B271 /* libPods-wegoal.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -370,7 +367,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */,
-				0F3C6B741E10B6AA00F713A7 /* TQCreateTeamView.xib in Resources */,
 				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
 				F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */,
 				F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */,
@@ -442,6 +438,7 @@
 				0F3C6B721E10AE1A00F713A7 /* TQMatchStatusView.m in Sources */,
 				0F32E7331E08C75800152EDD /* TQCommon.m in Sources */,
 				F37883D81DE5CC6100A40C3F /* main.m in Sources */,
+				0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */,
 				F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */,
 				0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */,
 				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
@@ -450,7 +447,6 @@
 				F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */,
 				F3438C9F1DF2A58C00D86D5B /* ZYPathButton.m in Sources */,
 				F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */,
-				0F3C6B6F1E10ACEA00F713A7 /* TQCreateTeamView.m in Sources */,
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
 				F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */,
 				0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */,

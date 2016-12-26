@@ -45,8 +45,7 @@
 - (TQCreateTeamView *)createView
 {
     if (!_createView) {
-        _createView = [[NSBundle mainBundle] loadNibNamed:@"TQCreateTeamView" owner:self options:nil].firstObject;
-        [_createView setFrame:CGRectMake(0, 0, SCREEN_WIDTH - 50, 190)];
+        _createView = [[TQCreateTeamView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 50, 190)];
         _createView.backgroundColor = [UIColor clearColor];
     }
     return _createView;
