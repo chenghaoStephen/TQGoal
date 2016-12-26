@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TQCreateTeamView">
+            <rect key="frame" x="0.0" y="0.0" width="325" height="190"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有加入任何球队，您可以" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAI-Ni-6yT">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="309" id="OWZ-7V-IWX"/>
+                        <constraint firstAttribute="height" constant="20" id="WrZ-7S-fgM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.58823529411764708" green="0.6705882352941176" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-re-gyg">
+                    <color key="backgroundColor" red="0.58823529411764708" green="0.6705882352941176" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="Dp1-9r-lhi"/>
+                        <constraint firstAttribute="width" constant="18" id="iyL-ql-JRN"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJc-UC-UT9">
+                    <color key="backgroundColor" red="0.3411764705882353" green="0.83921568627450982" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="P1s-ZT-eBS"/>
+                        <constraint firstAttribute="width" constant="185" id="SSc-2u-0CT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="加入球队">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="joinTeam:" destination="iN0-l3-epB" eventType="touchUpInside" id="2cP-3J-bYw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjG-G1-lHk">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="185" id="2Gn-Tw-obn"/>
+                        <constraint firstAttribute="height" constant="33" id="uzr-nm-ksM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="创建球队">
+                        <color key="titleColor" red="0.58823529411764708" green="0.6705882352941176" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="createTeam:" destination="iN0-l3-epB" eventType="touchUpInside" id="GGl-NB-Fu6"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="或者" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8t-fS-dpf">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="oCw-8c-mNN"/>
+                        <constraint firstAttribute="width" constant="309" id="txJ-pV-HOs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.87450980392156863" green="0.90980392156862744" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="U8t-fS-dpf" firstAttribute="top" secondItem="PJc-UC-UT9" secondAttribute="bottom" constant="8" id="0SG-dm-1hF"/>
+                <constraint firstItem="HAI-Ni-6yT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="HhI-g1-3FD"/>
+                <constraint firstItem="PjG-G1-lHk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IzS-2S-IOv"/>
+                <constraint firstItem="HAI-Ni-6yT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PsO-uC-rPC"/>
+                <constraint firstItem="U8t-fS-dpf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tsf-Oc-H59"/>
+                <constraint firstItem="PJc-UC-UT9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Y1e-Is-ClM"/>
+                <constraint firstItem="PjG-G1-lHk" firstAttribute="top" secondItem="U8t-fS-dpf" secondAttribute="bottom" constant="8" id="cUe-LY-uFs"/>
+                <constraint firstItem="PJc-UC-UT9" firstAttribute="top" secondItem="3mB-re-gyg" secondAttribute="bottom" constant="16" id="ch3-3x-Hg9"/>
+                <constraint firstItem="3mB-re-gyg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dfC-CH-zPa"/>
+                <constraint firstItem="3mB-re-gyg" firstAttribute="top" secondItem="HAI-Ni-6yT" secondAttribute="bottom" constant="8" id="gtL-5z-k9o"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="createButton" destination="PjG-G1-lHk" id="wND-5N-shn"/>
+                <outlet property="joinButton" destination="PJc-UC-UT9" id="Fy5-65-eaG"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="-175"/>
+        </view>
+    </objects>
+</document>

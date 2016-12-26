@@ -7,10 +7,13 @@
 //
 
 #import "TQHomeMatchCell.h"
+#import "TQCreateTeamView.h"
+#import "TQMatchStatusView.h"
 
 @interface TQHomeMatchCell()
 
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) TQCreateTeamView *createView;
+@property (nonatomic, strong) TQMatchStatusView *matchView;
 
 @end
 
@@ -20,34 +23,42 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self addSubview:self.label];
+        [self addSubview:self.createView];
+        [self addSubview:self.matchView];
     }
     return self;
 }
 
-
-- (UILabel *)label
+- (void)setStatus:(MatchStatus)status
 {
-    if (!_label) {
-        _label = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, SCREEN_WIDTH - 70, 90)];
-        _label.font = [UIFont systemFontOfSize:20];
-        _label.textAlignment = NSTextAlignmentCenter;
-        _label.text = @"";
-        _label.layer.masksToBounds = YES;
-        _label.layer.cornerRadius = 45;
-        CAShapeLayer *borderLayer = [CAShapeLayer layer];
-        borderLayer.bounds = _label.bounds;
-        borderLayer.position = CGPointMake(CGRectGetMidX(_label.bounds), CGRectGetMidY(_label.bounds));
-        borderLayer.path = [UIBezierPath bezierPathWithRoundedRect:borderLayer.bounds cornerRadius:CGRectGetWidth(borderLayer.bounds)/2].CGPath;
-        borderLayer.lineWidth = 1.f;
-        borderLayer.lineDashPattern = @[@4, @2];
-        borderLayer.strokeColor = [UIColor blackColor].CGColor;
-        borderLayer.fillColor = [UIColor clearColor].CGColor;
-        
-        [_label.layer addSublayer:borderLayer];
-        
+    _status = status;
+    if (status == MatchStatusNewJoiner) {
+        _createView.hidden = NO;
+        _matchView.hidden = YES;
+    } else {
+        _createView.hidden = YES;
+        _matchView.hidden = NO;
+        _matchView.status = status;
     }
-    return _label;
+}
+
+- (TQCreateTeamView *)createView
+{
+    if (!_createView) {
+        _createView = [[NSBundle mainBundle] loadNibNamed:@"TQCreateTeamView" owner:self options:nil].firstObject;
+        [_createView setFrame:CGRectMake(0, 0, SCREEN_WIDTH - 50, 190)];
+        _createView.backgroundColor = [UIColor clearColor];
+    }
+    return _createView;
+}
+
+- (TQMatchStatusView *)matchView
+{
+    if (!_matchView) {
+        _matchView = [[TQMatchStatusView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 50, 190)];
+        _matchView.backgroundColor = [UIColor clearColor];
+    }
+    return _matchView;
 }
 
 @end

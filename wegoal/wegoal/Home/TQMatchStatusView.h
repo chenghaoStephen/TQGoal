@@ -1,14 +1,14 @@
 //
-//  TQHomeMatchCell.h
+//  TQMatchStatusView.h
 //  wegoal
 //
-//  Created by joker on 2016/12/20.
+//  Created by joker on 2016/12/26.
 //  Copyright © 2016年 xdkj. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface TQHomeMatchCell : UICollectionViewCell
+@interface TQMatchStatusView : UIView
 
 //约战状态
 @property (nonatomic, assign) MatchStatus status;

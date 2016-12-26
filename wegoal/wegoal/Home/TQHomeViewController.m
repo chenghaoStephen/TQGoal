@@ -239,7 +239,6 @@
     cell.backgroundColor = [UIColor whiteColor];
     cell.layer.cornerRadius = 5.0f;
     cell.layer.masksToBounds = NO;
-    
     cell.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     cell.layer.shadowOpacity = 0.5;
     cell.layer.shadowRadius = 5.0f;
