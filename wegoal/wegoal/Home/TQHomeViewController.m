@@ -87,7 +87,7 @@
         flow.delegate = self;
         flow.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
         
-        _matchView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_cycleScrollView.frame) + 15, SCREEN_WIDTH - 20, 200) collectionViewLayout:flow];
+        _matchView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_cycleScrollView.frame) + 15, SCREEN_WIDTH - 20, 210) collectionViewLayout:flow];
         _matchView.backgroundColor = [UIColor clearColor];
         _matchView.delegate = self;
         _matchView.dataSource = self;
