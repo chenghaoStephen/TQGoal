@@ -15,6 +15,9 @@
 #import "TQCommon.h"
 #import "TQBaseViewController.h"
 
+//model
+#import "TQMatchModel.h"
+
 //pods
 #import "AFNetworking.h"
 #import "MJExtension.h"

@@ -23,8 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressLbl;       //地点
 @property (weak, nonatomic) IBOutlet UILabel *time1Lbl;         //时间-星期
 @property (weak, nonatomic) IBOutlet UILabel *time2Lbl;         //时间-年月日
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *time1CenterConstraint;
+
+@property (strong, nonatomic) TQMatchModel *matchData;
 
 @end
 

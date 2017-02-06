@@ -58,6 +58,7 @@
         
         [_scrollView addSubview:self.cycleScrollView];
         [_scrollView addSubview:self.matchView];
+        [_scrollView addSubview:self.commandView];
     }
     return _scrollView;
 }
@@ -96,6 +97,15 @@
         [_matchView registerClass:[TQHomeMatchCell class] forCellWithReuseIdentifier:kHomeMatchCellIdentifier];
     }
     return _matchView;
+}
+
+- (TQCommandView *)commandView
+{
+    if (!_commandView) {
+        _commandView = [[TQCommandView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_matchView.frame) + 30, SCREEN_WIDTH, MAX(150.f, VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 30))];
+        _commandView.backgroundColor = [UIColor whiteColor];
+    }
+    return _commandView;
 }
 
 #pragma mark - navigation bar 设置
