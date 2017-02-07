@@ -12,12 +12,16 @@
 @protocol JOMatchMenuViewDelegate <NSObject>
 //刷新数据
 - (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithWeeks:(NSArray *)weeks systems:(NSArray *)systems types:(NSArray *)types;
+- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithStatus:(NSArray *)status;
+//调整高度
+- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView updateViewHeight:(CGFloat)height;
 
 @end
 
 @interface JOMatchMenuView : UIView
 
 @property (nonatomic, assign) BOOL isDrop;
+@property (nonatomic, copy) NSString *matchType;
 @property (nonatomic, weak) id<JOMatchMenuViewDelegate> delegate;
 
 @end

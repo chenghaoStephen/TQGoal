@@ -11,6 +11,9 @@
 #import "TQScheduleHeaderView.h"
 
 @interface TQScheduleViewController ()<UINavigationControllerDelegate, JOMatchMenuViewDelegate>
+{
+    NSString *matchType;
+}
 
 @property (nonatomic, strong) JOMatchMenuView *menuView;
 @property (nonatomic, strong) TQScheduleHeaderView *headerView;
@@ -22,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    matchType = @"first";
     [self.view addSubview:self.menuView];
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.tableview];
@@ -32,10 +36,11 @@
 - (JOMatchMenuView *)menuView
 {
     if (!_menuView) {
-        _menuView = [[JOMatchMenuView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
+        _menuView = [[JOMatchMenuView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 195)];
         _menuView.backgroundColor = kScheduleBackColor;
         _menuView.delegate = self;
         _menuView.isDrop = NO;
+        _menuView.matchType = matchType;
     }
     return _menuView;
 }
@@ -55,7 +60,28 @@
 
 - (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithWeeks:(NSArray *)weeks systems:(NSArray *)systems types:(NSArray *)types
 {
+    //刷新约战数据
     
 }
 
+- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithStatus:(NSArray *)status
+{
+    //刷新赛事数据
+    
+}
+
+- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView updateViewHeight:(CGFloat)height
+{
+    [UIView animateWithDuration:.3f animations:^{
+        [_menuView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, height)];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+
 @end
+
+
+
+
