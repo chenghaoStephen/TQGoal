@@ -10,6 +10,6 @@
 
 @interface TQMatchCell : UITableViewCell
 
-
+@property (strong, nonatomic) TQMatchModel *matchData;
 
 @end

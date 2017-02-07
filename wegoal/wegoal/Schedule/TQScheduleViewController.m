@@ -7,8 +7,14 @@
 //
 
 #import "TQScheduleViewController.h"
+#import "JOMatchMenuView.h"
+#import "TQScheduleHeaderView.h"
 
-@interface TQScheduleViewController ()
+@interface TQScheduleViewController ()<UINavigationControllerDelegate, JOMatchMenuViewDelegate>
+
+@property (nonatomic, strong) JOMatchMenuView *menuView;
+@property (nonatomic, strong) TQScheduleHeaderView *headerView;
+@property (nonatomic, strong) UITableView *tableview;
 
 @end
 
@@ -16,22 +22,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.view addSubview:self.menuView];
+    [self.view addSubview:self.headerView];
+    [self.view addSubview:self.tableview];
+    
+    self.navigationController.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (JOMatchMenuView *)menuView
+{
+    if (!_menuView) {
+        _menuView = [[JOMatchMenuView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
+        _menuView.backgroundColor = kScheduleBackColor;
+        _menuView.delegate = self;
+        _menuView.isDrop = NO;
+    }
+    return _menuView;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if ([viewController isKindOfClass:[TQScheduleViewController class]]) {
+        [navigationController setNavigationBarHidden:YES];
+    }
 }
-*/
+
+
+#pragma mark - JOMatchMenuViewDelegate
+
+- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithWeeks:(NSArray *)weeks systems:(NSArray *)systems types:(NSArray *)types
+{
+    
+}
 
 @end

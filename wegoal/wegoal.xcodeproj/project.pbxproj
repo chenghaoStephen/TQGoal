@@ -20,6 +20,7 @@
 		0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */; };
 		0F3C6B7C1E10F50700F713A7 /* TQMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B7A1E10F50700F713A7 /* TQMatchCell.m */; };
 		0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C6B7B1E10F50700F713A7 /* TQMatchCell.xib */; };
+		0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */; };
 		433B373743E8C578FBDED1BB /* libPods-wegoal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8BE78A1AF21484D9A7B271 /* libPods-wegoal.a */; };
 		F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32ABE351E47E9C1000D7CF1 /* TQMatchModel.m */; };
 		F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C761DEB324D00D86D5B /* TQHomeViewController.m */; };
@@ -70,6 +71,8 @@
 		0F3C6B791E10F50700F713A7 /* TQMatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchCell.h; sourceTree = "<group>"; };
 		0F3C6B7A1E10F50700F713A7 /* TQMatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchCell.m; sourceTree = "<group>"; };
 		0F3C6B7B1E10F50700F713A7 /* TQMatchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchCell.xib; sourceTree = "<group>"; };
+		0FE187B71E49C4420021369A /* TQScheduleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQScheduleHeaderView.h; sourceTree = "<group>"; };
+		0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQScheduleHeaderView.m; sourceTree = "<group>"; };
 		6D8BE78A1AF21484D9A7B271 /* libPods-wegoal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wegoal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D32ECEDD6EE7FFB9EC1929E /* Pods-wegoal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.release.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.release.xcconfig"; sourceTree = "<group>"; };
 		E47184B8EF0C86F2A82BC629 /* Pods-wegoal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +162,15 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
+		0FE187BA1E49C4480021369A /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				0FE187B71E49C4420021369A /* TQScheduleHeaderView.h */,
+				0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
 		AC1F3224A6E593FEB5447242 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +211,7 @@
 		F3438C721DEB31F400D86D5B /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				0FE187BA1E49C4480021369A /* CustomView */,
 				F32ABE331E47E986000D7CF1 /* Model */,
 				0F3C6B781E10F4EB00F713A7 /* cell */,
 				0F2A62C61E0A294D00CD8F02 /* MenuView */,
@@ -481,6 +494,7 @@
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
 				F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */,
 				F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */,
+				0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */,
 				0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */,
 				0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */,
 				0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */,

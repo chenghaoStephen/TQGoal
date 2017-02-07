@@ -92,7 +92,7 @@
 - (JOShowMenuView *)topView
 {
     if (!_topView) {
-        _topView = [[JOShowMenuView alloc] initWithFrame:CGRectMake(10, 10, SCREEN_WIDTH - 20, 30)];
+        _topView = [[JOShowMenuView alloc] initWithFrame:CGRectMake(10, 25, SCREEN_WIDTH - 20, 30)];
         _topView.backgroundColor = [UIColor lightGrayColor];
         _topView.layer.masksToBounds = YES;
         _topView.layer.cornerRadius = 15;
@@ -110,7 +110,7 @@
 {
     if (!_packupButton) {
         _packupButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_packupButton setFrame:CGRectMake(10, 10, 30, 30)];
+        [_packupButton setFrame:CGRectMake(10, 25, 30, 30)];
         [_packupButton setTintColor:[UIColor whiteColor]];
         [_packupButton setTitle:@"收起" forState:UIControlStateNormal];
         _packupButton.titleLabel.font = [UIFont systemFontOfSize:10.f];
@@ -123,7 +123,7 @@
 {
     if (!_clearButton) {
         _clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_clearButton setFrame:CGRectMake(SCREEN_WIDTH - 70, 10, 60, 30)];
+        [_clearButton setFrame:CGRectMake(SCREEN_WIDTH - 70, 25, 60, 30)];
         [_clearButton setTintColor:[UIColor whiteColor]];
         [_clearButton setTitle:@"全部清空" forState:UIControlStateNormal];
         _clearButton.titleLabel.font = [UIFont systemFontOfSize:10.f];

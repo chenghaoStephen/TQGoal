@@ -10,6 +10,7 @@
 #import "TQCommandView.h"
 #import "TQHomeMatchCell.h"
 #import "TQMatchFlowLayout.h"
+#import "TAPageControl.h"
 
 #define kBadgeLabelTag               1001
 #define kHomeMatchCellIdentifier     @"TQHomeMatchCell"
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 //约战
 @property (nonatomic, strong) UICollectionView *matchView;
+@property (nonatomic, strong) TAPageControl *matchPageControl;
 //推荐
 @property (nonatomic, strong) TQCommandView *commandView;
 
@@ -35,14 +37,15 @@
     [super viewDidLoad];
     
     scrollIndex = 0;
-    [self setNavigationBar];
     [self.view addSubview:self.scrollView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
     self.navigationItem.title = @"WeGoal";
     [self setBadgeNumber:0];
 }
@@ -58,7 +61,9 @@
         
         [_scrollView addSubview:self.cycleScrollView];
         [_scrollView addSubview:self.matchView];
+        [_scrollView addSubview:self.matchPageControl];
         [_scrollView addSubview:self.commandView];
+        [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH, CGRectGetMaxY(self.commandView.frame))];
     }
     return _scrollView;
 }
@@ -88,7 +93,7 @@
         flow.delegate = self;
         flow.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
         
-        _matchView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_cycleScrollView.frame) + 15, SCREEN_WIDTH - 20, 210) collectionViewLayout:flow];
+        _matchView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_cycleScrollView.frame) + 10, SCREEN_WIDTH - 20, 222) collectionViewLayout:flow];
         _matchView.backgroundColor = [UIColor clearColor];
         _matchView.delegate = self;
         _matchView.dataSource = self;
@@ -99,29 +104,29 @@
     return _matchView;
 }
 
+- (TAPageControl *)matchPageControl
+{
+    if (!_matchPageControl) {
+        _matchPageControl = [[TAPageControl alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_matchView.frame) + 5, SCREEN_WIDTH - 20, 8)];
+        _matchPageControl.numberOfPages = 3;
+        _matchPageControl.currentPage = 0;
+        _matchPageControl.spacingBetweenDots = 8;
+        _matchPageControl.currentDotImage = [UIImage imageNamed:@"page_control_currentdot"];
+        _matchPageControl.dotImage = [UIImage imageNamed:@"page_control_dot"];
+    }
+    return _matchPageControl;
+}
+
 - (TQCommandView *)commandView
 {
     if (!_commandView) {
-        _commandView = [[TQCommandView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_matchView.frame) + 30, SCREEN_WIDTH, MAX(150.f, VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 30))];
+        _commandView = [[TQCommandView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_matchView.frame) + 25, SCREEN_WIDTH, MAX(150.f, VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 25))];
         _commandView.backgroundColor = [UIColor whiteColor];
     }
     return _commandView;
 }
 
 #pragma mark - navigation bar 设置
-
-- (void)setNavigationBar
-{
-    //背景和标题
-    [self.navigationController.navigationBar setBackgroundImage:[TQCommon imageWithColor:RGB16(0x57d67e)]
-                                                 forBarPosition:UIBarPositionAny
-                                                     barMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjects:@[[UIColor whiteColor],[UIFont boldSystemFontOfSize:18],] forKeys:@[NSForegroundColorAttributeName,NSFontAttributeName]]];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-
-
-}
 
 - (UIBarButtonItem*)buildLeftNavigationItem{
     //定位
@@ -224,11 +229,12 @@
 - (void)collectioViewScrollToIndex:(NSInteger)index
 {
     scrollIndex = index;
+    _matchPageControl.currentPage = index;
     TQHomeMatchCell *cell = (TQHomeMatchCell *)[_matchView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
     if (cell) {
         [_matchView bringSubviewToFront:cell];
     }
-    cell.status = MatchStatusNewJoiner;
+//    cell.status = MatchStatusNewJoiner;
 }
 
 
@@ -253,6 +259,12 @@
     cell.layer.shadowOpacity = 0.5;
     cell.layer.shadowRadius = 5.0f;
     cell.layer.shadowOffset = CGSizeMake(3, 3);
+    if (indexPath.item == 0) {
+        cell.status = MatchStatusNewJoiner;
+    } else {
+        cell.status = MatchStatusStartUp;
+    }
+    
     return cell;
 }
 

@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setNavigationBar];
     self.navigationItem.leftBarButtonItem = [self buildLeftNavigationItem];
     self.navigationItem.rightBarButtonItem = [self buildRightNavigationItem];
     self.view.backgroundColor = RGB16(0xf0f6f2);
@@ -37,6 +38,19 @@
 
 - (void)goBack{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)setNavigationBar
+{
+    //背景和标题
+    [self.navigationController.navigationBar setBackgroundImage:[TQCommon imageWithColor:RGB16(0x57d67e)]
+                                                 forBarPosition:UIBarPositionAny
+                                                     barMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjects:@[[UIColor whiteColor],[UIFont boldSystemFontOfSize:18],] forKeys:@[NSForegroundColorAttributeName,NSFontAttributeName]]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    
 }
 
 @end
