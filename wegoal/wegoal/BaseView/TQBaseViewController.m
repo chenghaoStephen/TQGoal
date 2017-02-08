@@ -21,7 +21,7 @@
     [self setNavigationBar];
     self.navigationItem.leftBarButtonItem = [self buildLeftNavigationItem];
     self.navigationItem.rightBarButtonItem = [self buildRightNavigationItem];
-    self.view.backgroundColor = RGB16(0xf0f6f2);
+    self.view.backgroundColor = kMainBackColor;
 }
 
 - (UIBarButtonItem*)buildLeftNavigationItem{

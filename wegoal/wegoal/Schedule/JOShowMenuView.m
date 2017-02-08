@@ -41,7 +41,7 @@
     if (!_stringlabel) {
         _stringlabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, SCREEN_WIDTH - 70, 30)];
         _stringlabel.textColor = [UIColor whiteColor];
-        _stringlabel.font = [UIFont systemFontOfSize:11.f];
+        _stringlabel.font = [UIFont systemFontOfSize:12.f];
     }
     return _stringlabel;
 }

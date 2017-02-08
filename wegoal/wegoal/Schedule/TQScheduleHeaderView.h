@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class TQScheduleHeaderView;
+@protocol TQScheduleHeaderViewDelegate <NSObject>
+
+- (void)TQScheduleHeaderView:(TQScheduleHeaderView *)headerView selectSegment:(NSInteger)index;
+
+@end
+
 @interface TQScheduleHeaderView : UIView
+
+@property (nonatomic, copy) NSArray *segments;
+@property (nonatomic, weak) id<TQScheduleHeaderViewDelegate> delegate;
 
 @end

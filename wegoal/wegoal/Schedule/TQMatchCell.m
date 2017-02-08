@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressLbl;       //地点
 @property (weak, nonatomic) IBOutlet UILabel *time1Lbl;         //时间-星期
 @property (weak, nonatomic) IBOutlet UILabel *time2Lbl;         //时间-年月日
+@property (weak, nonatomic) IBOutlet UIView *lineView;          //分割线
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *time1CenterConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *team1LeftConstraint;
@@ -37,8 +38,9 @@
 {
     [super awakeFromNib];
     
-    self.certifiySign.hidden = YES;
-    self.time2Lbl.hidden = YES;
+    _certifiySign.hidden = YES;
+    _time2Lbl.hidden = YES;
+    _lineView.hidden = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
@@ -48,6 +50,16 @@
     
     _team1LeftConstraint.constant = 54 * SCREEN_WIDTH / 375;
     _team2RightConstraint.constant = 54 * SCREEN_WIDTH / 375;
+}
+
+- (void)setIsShowLine:(BOOL)isShowLine
+{
+    if (isShowLine) {
+        _lineView.hidden = NO;
+        _lineView.backgroundColor = kMainBackColor;
+    } else {
+        _lineView.hidden = YES;
+    }
 }
 
 

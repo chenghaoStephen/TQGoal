@@ -31,7 +31,7 @@
 - (UIView *)topView
 {
     if (!_topView) {
-        _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
+        _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 21)];
         _topView.backgroundColor = [UIColor whiteColor];
         
         UIImageView *scheduleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 13, 13)];
@@ -58,7 +58,7 @@
 {
     if (!_matchCell) {
         _matchCell = [[[NSBundle mainBundle] loadNibNamed:@"TQMatchCell" owner:nil options:nil] firstObject];
-        [_matchCell setFrame:CGRectMake(0, CGRectGetMaxY(_topView.frame), SCREEN_WIDTH, 121)];
+        [_matchCell setFrame:CGRectMake(0, CGRectGetMaxY(_topView.frame), SCREEN_WIDTH, 135)];
     }
     return _matchCell;
 }

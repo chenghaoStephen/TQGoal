@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 
 
 //颜色
+#define kMainBackColor       RGB16(0xf0f6f2)
 #define kTitleTextColor      RGB16(0x96abb5)
 #define kSubTextColor        RGB16(0xdfe8ec)
 #define kSubjectBackColor    RGB16(0x57d67e)

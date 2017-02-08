@@ -137,7 +137,7 @@
         [_clearButton setFrame:CGRectMake(SCREEN_WIDTH - 70, 25, 60, 30)];
         [_clearButton setTintColor:[UIColor whiteColor]];
         [_clearButton setTitle:@"全部清空" forState:UIControlStateNormal];
-        _clearButton.titleLabel.font = [UIFont systemFontOfSize:11.f];
+        _clearButton.titleLabel.font = [UIFont systemFontOfSize:12.f];
         [_clearButton addTarget:self action:@selector(clearMenu) forControlEvents:UIControlEventTouchUpInside];
     }
     return _clearButton;
@@ -226,7 +226,7 @@
             _systemView.hidden = NO;
             _typeView.hidden = NO;
             _statusView.hidden = YES;
-            heightTmp = 195.f;
+            heightTmp = 185.f;
         } else {
             _topView.hidden = YES;
             _packupButton.hidden = NO;
@@ -235,7 +235,7 @@
             _systemView.hidden = YES;
             _typeView.hidden = YES;
             _statusView.hidden = NO;
-            heightTmp = 110.f;
+            heightTmp = 105.f;
         }
 
     } else {
@@ -247,7 +247,7 @@
         _systemView.hidden = YES;
         _typeView.hidden = YES;
         _statusView.hidden = YES;
-        heightTmp = 75.f;
+        heightTmp = 65.f;
     }
     if (_delegate && [_delegate respondsToSelector:@selector(JOMatchMenuView:updateViewHeight:)]) {
         [_delegate JOMatchMenuView:self updateViewHeight:heightTmp];

@@ -11,5 +11,6 @@
 @interface TQMatchCell : UITableViewCell
 
 @property (strong, nonatomic) TQMatchModel *matchData;
+@property (nonatomic, assign) BOOL isShowLine;      //是否显示分割线
 
 @end
