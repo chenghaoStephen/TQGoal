@@ -120,7 +120,6 @@
 - (TQCommandView *)commandView
 {
     if (!_commandView) {
-        NSLog(@"%f", VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 25);
         _commandView = [[TQCommandView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_matchView.frame) + 25, SCREEN_WIDTH, MAX(156.f, VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 25))];
         _commandView.backgroundColor = [UIColor whiteColor];
     }

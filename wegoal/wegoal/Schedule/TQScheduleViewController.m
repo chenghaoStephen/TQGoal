@@ -136,7 +136,6 @@
         NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMatchCell" owner:nil options:nil].firstObject;
         cell = xibs.firstObject;
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.isShowLine = YES;
     return cell;
 }
@@ -151,7 +150,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selected = NO;
 }
 
 @end
