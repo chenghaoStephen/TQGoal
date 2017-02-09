@@ -18,7 +18,7 @@
 @interface TQTabBar : UITabBar
 
 /** 点中button代理属性 */
-@property (nonatomic , weak) id<TQTabBarDelegate> delegate;
+@property (nonatomic , weak) id<TQTabBarDelegate> tabDelegate;
 
 /** 所有的弹出按钮 */
 @property (nonatomic , strong)NSArray<ZYPathItemButton *> *pathButtonArray;

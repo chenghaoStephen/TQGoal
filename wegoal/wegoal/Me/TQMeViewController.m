@@ -8,23 +8,16 @@
 
 #import "TQMeViewController.h"
 #import "TQMeViewCell.h"
+#import "TQMeTopView.h"
 
 #define kTQMeViewCell     @"TQMeViewCell"
 @interface TQMeViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
+
+@property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
-@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
-@property (weak, nonatomic) IBOutlet UILabel *gradeSignLbl;
-@property (weak, nonatomic) IBOutlet UILabel *gradeLbl;
-@property (weak, nonatomic) IBOutlet UILabel *nameLbl;
-@property (weak, nonatomic) IBOutlet UILabel *goalNumLbl;
-@property (weak, nonatomic) IBOutlet UILabel *matchNumLbl;
-@property (weak, nonatomic) IBOutlet UILabel *winRateLbl;
-@property (weak, nonatomic) IBOutlet UIImageView *yellowCardImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *redCardImageView;
-@property (weak, nonatomic) IBOutlet UILabel *yellowCardNumLbl;
-@property (weak, nonatomic) IBOutlet UILabel *redCardNumLbl;
+@property (strong, nonatomic) TQMeTopView *meTopView;
 
 @end
 
@@ -40,16 +33,13 @@
 
 - (void)setSubViews
 {
+    _meTopView = [[NSBundle mainBundle] loadNibNamed:@"TQMeTopView" owner:nil options:nil].firstObject;
+    [_meTopView setFrame:_topView.bounds];
+    [_topView addSubview:_meTopView];
+    
     [_tableview registerNib:[UINib nibWithNibName:@"TQMeViewCell" bundle:nil] forCellReuseIdentifier:kTQMeViewCell];
     _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableview.scrollEnabled = NO;
-    
-    _gradeSignLbl.layer.masksToBounds = YES;
-    _gradeSignLbl.layer.cornerRadius = _gradeSignLbl.height/2;
-    _yellowCardImageView.layer.masksToBounds = YES;
-    _yellowCardImageView.layer.cornerRadius = 1.5;
-    _redCardImageView.layer.masksToBounds = YES;
-    _redCardImageView.layer.cornerRadius = 1.5;
 }
 
 #pragma mark - UINavigationControllerDelegate

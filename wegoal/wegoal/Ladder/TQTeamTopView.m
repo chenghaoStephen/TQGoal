@@ -38,8 +38,8 @@
 {
     [super updateConstraints];
     
-    _logoImageLeftConstraint.constant = 35 * SCREEN_WIDTH/375;
-    _informationLeftConstraint.constant = 26 * SCREEN_WIDTH/375;
+    _logoImageLeftConstraint.constant = 35 * SCALE375;
+    _informationLeftConstraint.constant = 26 * SCALE375;
     _backImageWidthConstraint.constant = SCREEN_WIDTH;
 }
 

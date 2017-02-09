@@ -28,7 +28,7 @@
 
 - (void)configureZYPathButton {
     TQTabBar *tabBar = [TQTabBar new];
-    tabBar.delegate = self;
+    tabBar.tabDelegate = self;
     //约对手
     ZYPathItemButton *matchBtn = [[ZYPathItemButton alloc]initWithImage:[UIImage imageNamed:@"match"] highlightedImage:[UIImage imageNamed:@"match"] backgroundImage:nil backgroundHighlightedImage:nil];
     //约裁判

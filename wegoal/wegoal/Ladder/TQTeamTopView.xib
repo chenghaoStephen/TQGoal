@@ -105,11 +105,11 @@
                 <constraint firstItem="WQg-C9-NBO" firstAttribute="leading" secondItem="fRa-k5-Mhr" secondAttribute="trailing" constant="8" id="GwE-d9-6te"/>
                 <constraint firstItem="geg-EE-det" firstAttribute="top" secondItem="or8-ap-7kU" secondAttribute="bottom" constant="5" id="Hb3-x5-RXK"/>
                 <constraint firstItem="Hhd-3n-ihB" firstAttribute="centerY" secondItem="piU-4h-abT" secondAttribute="centerY" constant="7.5" id="IDi-UK-GhX"/>
+                <constraint firstItem="Hct-dB-8bX" firstAttribute="trailing" secondItem="piU-4h-abT" secondAttribute="trailing" constant="-8" id="JwB-gz-aY2"/>
                 <constraint firstItem="LQo-sQ-kKm" firstAttribute="centerX" secondItem="Hhd-3n-ihB" secondAttribute="centerX" id="JwJ-8t-Q2P"/>
                 <constraint firstItem="or8-ap-7kU" firstAttribute="leading" secondItem="Hhd-3n-ihB" secondAttribute="trailing" constant="26" id="LVV-Di-6MX"/>
                 <constraint firstItem="piU-4h-abT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N2Y-aE-JGm"/>
                 <constraint firstItem="Hct-dB-8bX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="Oea-TM-hKf"/>
-                <constraint firstAttribute="trailing" secondItem="Hct-dB-8bX" secondAttribute="trailing" constant="8" id="QC5-jO-Tia"/>
                 <constraint firstItem="fRa-k5-Mhr" firstAttribute="bottom" secondItem="9DH-2O-jan" secondAttribute="bottom" id="RWR-f9-3iQ"/>
                 <constraint firstItem="nDO-qo-17c" firstAttribute="top" secondItem="9DH-2O-jan" secondAttribute="top" id="RoS-Pf-VA0"/>
                 <constraint firstItem="WQg-C9-NBO" firstAttribute="top" secondItem="9DH-2O-jan" secondAttribute="top" id="URr-ye-jOn"/>

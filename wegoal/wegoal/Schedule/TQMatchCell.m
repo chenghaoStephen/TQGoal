@@ -48,8 +48,8 @@
 {
     [super updateConstraints];
     
-    _team1LeftConstraint.constant = 54 * SCREEN_WIDTH / 375;
-    _team2RightConstraint.constant = 54 * SCREEN_WIDTH / 375;
+    _team1LeftConstraint.constant = 54 * SCALE375;
+    _team2RightConstraint.constant = 54 * SCALE375;
 }
 
 - (void)setIsShowLine:(BOOL)isShowLine

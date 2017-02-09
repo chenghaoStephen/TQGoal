@@ -24,7 +24,7 @@
 #define SCREEN_WIDTH (([[UIScreen mainScreen] applicationFrame].size.height<[[UIScreen mainScreen] applicationFrame].size.width)?[[UIScreen mainScreen] applicationFrame].size.height:[[UIScreen mainScreen] applicationFrame].size.width)
 #define VIEW_HEIGHT (SCREEN_HEIGHT-44)
 #define VIEW_WITHOUT_TABBAR_HEIGHT (SCREEN_HEIGHT-50-44)
-#define SCALE320 (SCREEN_WIDTH/320)
+#define SCALE375 (SCREEN_WIDTH/375)
 
 // 颜色
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]

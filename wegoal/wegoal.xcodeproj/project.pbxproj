@@ -10,6 +10,9 @@
 		0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAF91E09166600CC221E /* TQCommandView.m */; };
 		0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAFC1E091E4B00CC221E /* TQHomeMatchCell.m */; };
 		0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */; };
+		0F1C8D3D1E4C62BC0015F015 /* TQMeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */; };
+		0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */; };
+		0F1C8D431E4C64F30015F015 /* TQUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C8D421E4C64F30015F015 /* TQUserModel.m */; };
 		0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A62C81E0A296100CD8F02 /* UIView+LSCore.m */; };
 		0F2A62D01E0A297F00CD8F02 /* JOMatchMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A62CB1E0A297F00CD8F02 /* JOMatchMenuView.m */; };
 		0F2A62D11E0A297F00CD8F02 /* JOSelectMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A62CD1E0A297F00CD8F02 /* JOSelectMenuView.m */; };
@@ -58,6 +61,11 @@
 		0F19FAFC1E091E4B00CC221E /* TQHomeMatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQHomeMatchCell.m; sourceTree = "<group>"; };
 		0F19FAFE1E09273F00CC221E /* TQMatchFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchFlowLayout.h; sourceTree = "<group>"; };
 		0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchFlowLayout.m; sourceTree = "<group>"; };
+		0F1C8D3B1E4C62BC0015F015 /* TQMeTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMeTopView.h; sourceTree = "<group>"; };
+		0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMeTopView.m; sourceTree = "<group>"; };
+		0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMeTopView.xib; sourceTree = "<group>"; };
+		0F1C8D411E4C64F30015F015 /* TQUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQUserModel.h; sourceTree = "<group>"; };
+		0F1C8D421E4C64F30015F015 /* TQUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQUserModel.m; sourceTree = "<group>"; };
 		0F2A62C71E0A296100CD8F02 /* UIView+LSCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LSCore.h"; sourceTree = "<group>"; };
 		0F2A62C81E0A296100CD8F02 /* UIView+LSCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LSCore.m"; sourceTree = "<group>"; };
 		0F2A62CA1E0A297F00CD8F02 /* JOMatchMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOMatchMenuView.h; sourceTree = "<group>"; };
@@ -160,6 +168,25 @@
 				0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */,
 			);
 			name = TQHomeView;
+			sourceTree = "<group>";
+		};
+		0F1C8D3A1E4C629B0015F015 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				0F1C8D3B1E4C62BC0015F015 /* TQMeTopView.h */,
+				0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */,
+				0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		0F1C8D401E4C64D00015F015 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F1C8D411E4C64F30015F015 /* TQUserModel.h */,
+				0F1C8D421E4C64F30015F015 /* TQUserModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		0F2A62C61E0A294D00CD8F02 /* MenuView */ = {
@@ -303,6 +330,8 @@
 		F3438C741DEB320800D86D5B /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				0F1C8D3A1E4C629B0015F015 /* CustomView */,
+				0F1C8D401E4C64D00015F015 /* Model */,
 				0F64357D1E4B055D0049BC45 /* cell */,
 				F3438C821DEB328400D86D5B /* TQMeViewController.h */,
 				F3438C831DEB328400D86D5B /* TQMeViewController.m */,
@@ -478,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */,
+				0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */,
 				F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */,
 				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
 				F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */,
@@ -554,6 +584,7 @@
 				0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */,
 				0F3C6B721E10AE1A00F713A7 /* TQMatchStatusView.m in Sources */,
 				0F3C6B7C1E10F50700F713A7 /* TQMatchCell.m in Sources */,
+				0F1C8D3D1E4C62BC0015F015 /* TQMeTopView.m in Sources */,
 				0F32E7331E08C75800152EDD /* TQCommon.m in Sources */,
 				0F6435811E4B058B0049BC45 /* TQMeViewCell.m in Sources */,
 				F37883D81DE5CC6100A40C3F /* main.m in Sources */,
@@ -574,6 +605,7 @@
 				0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */,
 				0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */,
 				0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */,
+				0F1C8D431E4C64F30015F015 /* TQUserModel.m in Sources */,
 				0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */,
 				0F64357A1E4AF9DC0049BC45 /* TQLadderHeaderView.m in Sources */,
 			);

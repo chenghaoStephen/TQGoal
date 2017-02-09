@@ -71,7 +71,7 @@
 - (SDCycleScrollView *)cycleScrollView
 {
     if (!_cycleScrollView) {
-        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 140/375)
+        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 140 * SCALE375)
                                                               delegate:self
                                                       placeholderImage:[UIImage imageNamed:@"placeholder"]];
         _cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"page_control_currentdot"];
@@ -93,7 +93,7 @@
         flow.delegate = self;
         flow.sectionInset = UIEdgeInsetsMake(0, 15, 0, 15);
         
-        _matchView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_cycleScrollView.frame) + 10, SCREEN_WIDTH - 20, 222) collectionViewLayout:flow];
+        _matchView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_cycleScrollView.frame) + 10 * SCALE375, SCREEN_WIDTH - 20, 222) collectionViewLayout:flow];
         _matchView.backgroundColor = [UIColor clearColor];
         _matchView.delegate = self;
         _matchView.dataSource = self;
@@ -107,7 +107,7 @@
 - (TAPageControl *)matchPageControl
 {
     if (!_matchPageControl) {
-        _matchPageControl = [[TAPageControl alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_matchView.frame) + 5, SCREEN_WIDTH - 20, 8)];
+        _matchPageControl = [[TAPageControl alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_matchView.frame) + 5 * SCALE375, SCREEN_WIDTH - 20, 8)];
         _matchPageControl.numberOfPages = 3;
         _matchPageControl.currentPage = 0;
         _matchPageControl.spacingBetweenDots = 8;
@@ -120,7 +120,9 @@
 - (TQCommandView *)commandView
 {
     if (!_commandView) {
-        _commandView = [[TQCommandView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_matchView.frame) + 25, SCREEN_WIDTH, MAX(156.f, VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 25))];
+        CGFloat viewHeight = MIN(165.f, MAX(156.f, VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 25));
+        NSLog(@"%f", VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 25);
+        _commandView = [[TQCommandView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_matchView.frame) + 25 * SCALE375, SCREEN_WIDTH, viewHeight)];
         _commandView.backgroundColor = [UIColor whiteColor];
     }
     return _commandView;

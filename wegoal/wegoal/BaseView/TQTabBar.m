@@ -72,8 +72,8 @@
     
 }
 - (void)pathButton:(ZYPathButton *)ZYPathButton clickItemButtonAtIndex:(NSUInteger)itemButtonIndex {
-    if ([self.delegate respondsToSelector:@selector(pathButton:clickItemButtonAtIndex:)]) {
-        [self.delegate pathButton:self clickItemButtonAtIndex:itemButtonIndex];
+    if ([self.tabDelegate respondsToSelector:@selector(pathButton:clickItemButtonAtIndex:)]) {
+        [self.tabDelegate pathButton:self clickItemButtonAtIndex:itemButtonIndex];
     }
 }
 

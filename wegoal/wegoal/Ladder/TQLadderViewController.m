@@ -32,14 +32,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    _topView.frame = CGRectMake(0, 0, 375, 206*SCREEN_WIDTH/375);
+    _topView.frame = CGRectMake(0, 0, 375, 206 * SCALE375);
 }
 
 - (TQTeamTopView *)topView
 {
     if (!_topView) {
         _topView = [[NSBundle mainBundle] loadNibNamed:@"TQTeamTopView" owner:nil options:nil].firstObject;
-        _topView.frame = CGRectMake(0, 0, 375, 206*SCREEN_WIDTH/375);
+        _topView.frame = CGRectMake(0, 0, 375, 206 * SCALE375);
         _topView.backgroundColor = [UIColor whiteColor];
     }
     return _topView;
