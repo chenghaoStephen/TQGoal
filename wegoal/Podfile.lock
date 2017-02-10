@@ -34,6 +34,17 @@ PODS:
   - SDWebImage/Core (3.8.2)
   - SVPullToRefresh (0.4.1)
   - Toast (2.4)
+  - UMengUShare/Core (6.2.2):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.2.2)
+  - UMengUShare/Social/QQ (6.2.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.2.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/TencentWeibo (6.2.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.2.2):
+    - UMengUShare/Core
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
@@ -43,6 +54,10 @@ DEPENDENCIES:
   - SDWebImage
   - SVPullToRefresh
   - Toast (~> 2.4)
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/Sina
+  - UMengUShare/Social/TencentWeibo
+  - UMengUShare/Social/WeChat
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
@@ -54,7 +69,8 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
+  UMengUShare: fc0a98b8d5297632e82874318fd72a10d17da228
 
-PODFILE CHECKSUM: 40dca36ae19cc83d3e64a678f85b6dbb166c5a4c
+PODFILE CHECKSUM: 260668a307482fece0bedf067c65078450ca4ecd
 
 COCOAPODS: 1.1.1

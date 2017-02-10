@@ -10,6 +10,10 @@ target 'wegoal' do
   pod 'SDWebImage'
   pod 'SVPullToRefresh'
   pod "MWPhotoBrowser"
-  pod 'SDCycleScrollView'  
+  pod 'SDCycleScrollView'
+  pod 'UMengUShare/Social/Sina'
+  pod 'UMengUShare/Social/WeChat'
+  pod 'UMengUShare/Social/QQ'
+  pod 'UMengUShare/Social/TencentWeibo'  
 
 end
