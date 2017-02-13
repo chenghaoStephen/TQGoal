@@ -10,6 +10,7 @@
 #import "JOMatchMenuView.h"
 #import "TQScheduleHeaderView.h"
 #import "TQMatchCell.h"
+#import "TQTeamDetailViewController.h"
 
 #define kTQMatchCellIdentifier @"TQMatchCell"
 @interface TQScheduleViewController ()<UINavigationControllerDelegate, JOMatchMenuViewDelegate, TQScheduleHeaderViewDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -49,6 +50,8 @@
         _headerView = [[TQScheduleHeaderView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_menuView.frame), SCREEN_WIDTH, 35)];
         _headerView.backgroundColor = kScheduleBackColor;
         _headerView.delegate = self;
+        _headerView.unselectedColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+        _headerView.selectedColor = [UIColor whiteColor];
         _headerView.segments = @[@"约战",@"赛事"];
     }
     return _headerView;
@@ -77,7 +80,8 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if ([viewController isKindOfClass:[TQScheduleViewController class]]) {
+    if ([viewController isKindOfClass:[TQScheduleViewController class]] ||
+        [viewController isKindOfClass:[TQTeamDetailViewController class]]) {
         [navigationController setNavigationBarHidden:YES];
     }
 }
@@ -150,8 +154,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.selected = NO;
+    TQTeamDetailViewController *teamDetailVC = [[TQTeamDetailViewController alloc] init];
+    teamDetailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:teamDetailVC animated:YES];
 }
 
 @end

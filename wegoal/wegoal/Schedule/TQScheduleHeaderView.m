@@ -24,7 +24,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = kScheduleBackColor;
+        
     }
     return self;
 }
@@ -41,8 +41,8 @@
     for (NSInteger index = 0; index < segments.count; index++) {
         UIButton *segmentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [segmentBtn setFrame:CGRectMake(btnWidth*index, 0, btnWidth, self.height)];
-        [segmentBtn setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5] forState:UIControlStateNormal];
-        [segmentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        [segmentBtn setTitleColor:_unselectedColor forState:UIControlStateNormal];
+        [segmentBtn setTitleColor:_selectedColor forState:UIControlStateSelected];
         segmentBtn.titleLabel.font = [UIFont systemFontOfSize:12.f];
         [segmentBtn setTitle:segments[index] forState:UIControlStateNormal];
         segmentBtn.tag = kSegmentTag + index;

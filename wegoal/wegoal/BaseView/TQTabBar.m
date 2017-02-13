@@ -34,21 +34,23 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    self.plusBtn = [[ZYPathButton alloc]initWithCenterImage:[UIImage imageNamed:@"features"]highlightedImage:[UIImage imageNamed:@"features"]];
+    self.plusBtn = [[ZYPathButton alloc] initWithCenterImage:[UIImage imageNamed:@"features"] highlightedImage:[UIImage imageNamed:@"features"]];
     self.plusBtn.delegate = self;
     [self setUpPathButton:self.plusBtn];
-    self.plusBtn.ZYButtonCenter = CGPointMake(self.centerX, self.superview.height - self.height * 0.5 - 2 *ZYMagin );
+//    self.plusBtn.ZYButtonCenter = CGPointMake(self.centerX, self.superview.height - self.height * 0.5 - 2 *ZYMagin );
+    self.plusBtn.ZYButtonCenter = CGPointMake(SCREEN_WIDTH * 0.5, self.height * 0.5 - ZYMagin );
     [self.plusBtn addPathItems:self.pathButtonArray];
+    [self addSubview:self.plusBtn];
     //必须加到父视图上
-    [self.superview addSubview:self.plusBtn];
-    UILabel *label = [[UILabel alloc]init];
-    label.text = @"";
-    label.font = [UIFont systemFontOfSize:13];
-    [label sizeToFit];
-    label.textColor = [UIColor grayColor];
-    label.centerX = _plusBtn.centerX;
-    label.centerY = CGRectGetMaxY(_plusBtn.frame) + ZYMagin;
-    [self.superview addSubview:label];
+//    [self.superview addSubview:self.plusBtn];
+//    UILabel *label = [[UILabel alloc]init];
+//    label.text = @"";
+//    label.font = [UIFont systemFontOfSize:13];
+//    [label sizeToFit];
+//    label.textColor = [UIColor grayColor];
+//    label.centerX = _plusBtn.centerX;
+//    label.centerY = CGRectGetMaxY(_plusBtn.frame) + ZYMagin;
+//    [self.superview addSubview:label];
 }
 //重新绘制按钮
 - (void)layoutSubviews {

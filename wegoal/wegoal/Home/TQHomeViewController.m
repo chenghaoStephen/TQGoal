@@ -50,6 +50,19 @@
     [self setBadgeNumber:0];
 }
 
+- (void)setNavigationBar
+{
+    //背景和标题
+    [self.navigationController.navigationBar setBackgroundImage:[TQCommon imageWithColor:RGB16(0x57d67e)]
+                                                 forBarPosition:UIBarPositionAny
+                                                     barMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjects:@[[UIColor whiteColor],[UIFont boldSystemFontOfSize:18],] forKeys:@[NSForegroundColorAttributeName,NSFontAttributeName]]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    
+}
+
 - (UIScrollView *)scrollView
 {
     if (!_scrollView) {

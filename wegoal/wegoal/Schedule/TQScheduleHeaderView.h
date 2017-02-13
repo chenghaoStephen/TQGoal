@@ -19,5 +19,7 @@
 
 @property (nonatomic, copy) NSArray *segments;
 @property (nonatomic, weak) id<TQScheduleHeaderViewDelegate> delegate;
+@property (nonatomic, strong) UIColor *unselectedColor;
+@property (nonatomic, strong) UIColor *selectedColor;
 
 @end

@@ -23,6 +23,10 @@
 		0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */; };
 		0F3C6B7C1E10F50700F713A7 /* TQMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B7A1E10F50700F713A7 /* TQMatchCell.m */; };
 		0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C6B7B1E10F50700F713A7 /* TQMatchCell.xib */; };
+		0F50ABE51E518BD800643973 /* TQTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABE41E518BD800643973 /* TQTeamDetailViewController.m */; };
+		0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABE71E518E1200643973 /* TQTeamMemberCell.m */; };
+		0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F50ABE81E518E1200643973 /* TQTeamMemberCell.xib */; };
+		0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABEC1E51A43B00643973 /* TQMemberDetailViewController.m */; };
 		0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64356C1E4ABEAA0049BC45 /* TQTeamModel.m */; };
 		0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64356F1E4AC0300049BC45 /* TQLadderTeamCell.m */; };
 		0F6435721E4AC0300049BC45 /* TQLadderTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6435701E4AC0300049BC45 /* TQLadderTeamCell.xib */; };
@@ -33,7 +37,6 @@
 		0F6435811E4B058B0049BC45 /* TQMeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64357F1E4B058B0049BC45 /* TQMeViewCell.m */; };
 		0F6435821E4B058B0049BC45 /* TQMeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6435801E4B058B0049BC45 /* TQMeViewCell.xib */; };
 		0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */; };
-		433B373743E8C578FBDED1BB /* libPods-wegoal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8BE78A1AF21484D9A7B271 /* libPods-wegoal.a */; };
 		F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32ABE351E47E9C1000D7CF1 /* TQMatchModel.m */; };
 		F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3438C761DEB324D00D86D5B /* TQHomeViewController.m */; };
 		F3438C791DEB324D00D86D5B /* TQHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3438C771DEB324D00D86D5B /* TQHomeViewController.xib */; };
@@ -52,6 +55,7 @@
 		F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F37883DA1DE5CC6100A40C3F /* AppDelegate.m */; };
 		F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37883E21DE5CC6100A40C3F /* Assets.xcassets */; };
 		F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37883E41DE5CC6100A40C3F /* LaunchScreen.storyboard */; };
+		FD0354661F57BA931F0CF052 /* libPods-wegoal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B86D68870A12E1BA7FD553 /* libPods-wegoal.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,13 @@
 		0F3C6B791E10F50700F713A7 /* TQMatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchCell.h; sourceTree = "<group>"; };
 		0F3C6B7A1E10F50700F713A7 /* TQMatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchCell.m; sourceTree = "<group>"; };
 		0F3C6B7B1E10F50700F713A7 /* TQMatchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchCell.xib; sourceTree = "<group>"; };
+		0F50ABE31E518BD800643973 /* TQTeamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamDetailViewController.h; sourceTree = "<group>"; };
+		0F50ABE41E518BD800643973 /* TQTeamDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTeamDetailViewController.m; sourceTree = "<group>"; };
+		0F50ABE61E518E1200643973 /* TQTeamMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamMemberCell.h; sourceTree = "<group>"; };
+		0F50ABE71E518E1200643973 /* TQTeamMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTeamMemberCell.m; sourceTree = "<group>"; };
+		0F50ABE81E518E1200643973 /* TQTeamMemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQTeamMemberCell.xib; sourceTree = "<group>"; };
+		0F50ABEB1E51A43B00643973 /* TQMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMemberDetailViewController.h; sourceTree = "<group>"; };
+		0F50ABEC1E51A43B00643973 /* TQMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMemberDetailViewController.m; sourceTree = "<group>"; };
 		0F64356B1E4ABEAA0049BC45 /* TQTeamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamModel.h; sourceTree = "<group>"; };
 		0F64356C1E4ABEAA0049BC45 /* TQTeamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTeamModel.m; sourceTree = "<group>"; };
 		0F64356E1E4AC0300049BC45 /* TQLadderTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLadderTeamCell.h; sourceTree = "<group>"; };
@@ -104,7 +115,7 @@
 		0F6435801E4B058B0049BC45 /* TQMeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMeViewCell.xib; sourceTree = "<group>"; };
 		0FE187B71E49C4420021369A /* TQScheduleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQScheduleHeaderView.h; sourceTree = "<group>"; };
 		0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQScheduleHeaderView.m; sourceTree = "<group>"; };
-		6D8BE78A1AF21484D9A7B271 /* libPods-wegoal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wegoal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B86D68870A12E1BA7FD553 /* libPods-wegoal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wegoal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D32ECEDD6EE7FFB9EC1929E /* Pods-wegoal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.release.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.release.xcconfig"; sourceTree = "<group>"; };
 		E47184B8EF0C86F2A82BC629 /* Pods-wegoal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.debug.xcconfig"; sourceTree = "<group>"; };
 		F32ABE341E47E9C1000D7CF1 /* TQMatchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchModel.h; sourceTree = "<group>"; };
@@ -146,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				433B373743E8C578FBDED1BB /* libPods-wegoal.a in Frameworks */,
+				FD0354661F57BA931F0CF052 /* libPods-wegoal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +219,9 @@
 				0F3C6B791E10F50700F713A7 /* TQMatchCell.h */,
 				0F3C6B7A1E10F50700F713A7 /* TQMatchCell.m */,
 				0F3C6B7B1E10F50700F713A7 /* TQMatchCell.xib */,
+				0F50ABE61E518E1200643973 /* TQTeamMemberCell.h */,
+				0F50ABE71E518E1200643973 /* TQTeamMemberCell.m */,
+				0F50ABE81E518E1200643973 /* TQTeamMemberCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -266,7 +280,7 @@
 		AC1F3224A6E593FEB5447242 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6D8BE78A1AF21484D9A7B271 /* libPods-wegoal.a */,
+				30B86D68870A12E1BA7FD553 /* libPods-wegoal.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -310,6 +324,10 @@
 				F3438C7A1DEB326C00D86D5B /* TQScheduleViewController.h */,
 				F3438C7B1DEB326C00D86D5B /* TQScheduleViewController.m */,
 				F3438C7C1DEB326C00D86D5B /* TQScheduleViewController.xib */,
+				0F50ABE31E518BD800643973 /* TQTeamDetailViewController.h */,
+				0F50ABE41E518BD800643973 /* TQTeamDetailViewController.m */,
+				0F50ABEB1E51A43B00643973 /* TQMemberDetailViewController.h */,
+				0F50ABEC1E51A43B00643973 /* TQMemberDetailViewController.m */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -509,6 +527,7 @@
 				0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */,
 				0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */,
 				F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */,
+				0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */,
 				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
 				F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */,
 				F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */,
@@ -579,6 +598,7 @@
 				0F2A62D01E0A297F00CD8F02 /* JOMatchMenuView.m in Sources */,
 				0F2A62D11E0A297F00CD8F02 /* JOSelectMenuView.m in Sources */,
 				F3438C901DEB37A700D86D5B /* TQTabBar.m in Sources */,
+				0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */,
 				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
 				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
 				0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */,
@@ -597,9 +617,11 @@
 				0F6435751E4ADF220049BC45 /* TQTeamTopView.m in Sources */,
 				F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */,
 				F3438C9F1DF2A58C00D86D5B /* ZYPathButton.m in Sources */,
+				0F50ABE51E518BD800643973 /* TQTeamDetailViewController.m in Sources */,
 				F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */,
 				0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */,
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
+				0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */,
 				F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */,
 				F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */,
 				0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */,

@@ -15,6 +15,7 @@
 @interface TQLadderViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) TQTeamTopView *topView;
+@property (nonatomic, strong) UIButton *searchButton;
 @property (nonatomic, strong) UITableView *tableview;
 
 @end
@@ -24,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.topView];
+    [self.view addSubview:self.searchButton];
     [self.view addSubview:self.tableview];
     
     self.navigationController.delegate = self;
@@ -41,8 +43,20 @@
         _topView = [[NSBundle mainBundle] loadNibNamed:@"TQTeamTopView" owner:nil options:nil].firstObject;
         _topView.frame = CGRectMake(0, 0, 375, 206 * SCALE375);
         _topView.backgroundColor = [UIColor whiteColor];
+        _topView.viewMode = TeamTopViewModeLadder;
     }
     return _topView;
+}
+
+- (UIButton *)searchButton
+{
+    if (!_searchButton) {
+        _searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _searchButton.frame = CGRectMake(SCREEN_WIDTH - 38, 25, 30, 30);
+        [_searchButton setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
+        [_searchButton addTarget:self action:@selector(searchAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _searchButton;
 }
 
 - (UITableView *)tableview
@@ -68,6 +82,15 @@
         [navigationController setNavigationBarHidden:YES];
     }
 }
+
+
+#pragma mark - events
+
+- (void)searchAction:(UIButton *)btn
+{
+    
+}
+
 
 #pragma mark - UITableViewDatasource
 
