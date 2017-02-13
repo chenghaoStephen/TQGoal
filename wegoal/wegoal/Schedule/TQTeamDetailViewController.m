@@ -76,7 +76,7 @@
 {
     if (!_backButton) {
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_backButton setFrame:CGRectMake(8, 35, 30, 30)];
+        [_backButton setFrame:CGRectMake(8, 20, 44, 44)];
         [_backButton setImage:[UIImage imageNamed:@"schedule_back"] forState:UIControlStateNormal];
         [_backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -87,7 +87,7 @@
 {
     if (!_joinButton) {
         _joinButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_joinButton setFrame:CGRectMake(SCREEN_WIDTH - 58, 35, 50, 35)];
+        [_joinButton setFrame:CGRectMake(SCREEN_WIDTH - 58, 20, 50, 44)];
         [_joinButton setTitle:@"申请加入" forState:UIControlStateNormal];
         [_joinButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _joinButton.titleLabel.font = [UIFont systemFontOfSize:12.f];

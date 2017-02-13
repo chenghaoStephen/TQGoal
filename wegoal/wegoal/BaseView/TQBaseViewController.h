@@ -10,4 +10,7 @@
 
 @interface TQBaseViewController : UIViewController
 
+- (void)setTabBarBtnShow;
+- (void)setTabbarBtnHide;
+
 @end

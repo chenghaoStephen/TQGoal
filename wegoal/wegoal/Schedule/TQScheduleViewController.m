@@ -32,6 +32,12 @@
     self.navigationController.delegate = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setTabBarBtnShow];
+}
+
 - (JOMatchMenuView *)menuView
 {
     if (!_menuView) {
@@ -156,6 +162,7 @@
 {
     TQTeamDetailViewController *teamDetailVC = [[TQTeamDetailViewController alloc] init];
     teamDetailVC.hidesBottomBarWhenPushed = YES;
+    [self setTabbarBtnHide];
     [self.navigationController pushViewController:teamDetailVC animated:YES];
 }
 

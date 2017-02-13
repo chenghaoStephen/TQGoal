@@ -40,6 +40,20 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)setTabBarBtnShow
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kTabbarNeedShow"
+                                                        object:nil
+                                                      userInfo:nil];
+}
+
+- (void)setTabbarBtnHide
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kTabbarNeedHide"
+                                                        object:nil
+                                                      userInfo:nil];
+}
+
 - (void)setNavigationBar
 {
     //背景和标题

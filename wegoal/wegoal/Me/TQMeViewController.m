@@ -31,6 +31,12 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setTabBarBtnShow];
+}
+
 - (void)setSubViews
 {
     _meTopView = [[NSBundle mainBundle] loadNibNamed:@"TQMeTopView" owner:nil options:nil].firstObject;

@@ -34,6 +34,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self setTabBarBtnShow];
     _topView.frame = CGRectMake(0, 0, 375, 206 * SCALE375);
 }
 

@@ -38,4 +38,10 @@
 /**  设置中间的按钮是否旋转 */
 @property (assign, nonatomic) BOOL allowCenterButtonRotation;
 
+/**  显示中间的按钮 */
+- (void)showPlusButton;
+
+/**  隐藏中间的按钮 */
+- (void)hidePlusButton;
+
 @end

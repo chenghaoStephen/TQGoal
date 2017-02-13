@@ -15,35 +15,65 @@
 
 @interface TQTabBarController ()<TQTabBarDelegate>
 
+@property (nonatomic, strong) TQTabBar *myTabBar;
+
 @end
 
 @implementation TQTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNotifications];
     //设置子视图
     [self setUpAllChildVc];
     [self configureZYPathButton];
 }
 
+- (void)setNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showPlusButton)
+                                                 name:@"kTabbarNeedShow"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hidePlusButton)
+                                                 name:@"kTabbarNeedHide"
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)showPlusButton
+{
+    [_myTabBar showPlusButton];
+}
+
+- (void)hidePlusButton
+{
+    [_myTabBar hidePlusButton];
+}
+
 - (void)configureZYPathButton {
-    TQTabBar *tabBar = [TQTabBar new];
-    tabBar.tabDelegate = self;
+    _myTabBar = [TQTabBar new];
+    _myTabBar.tabDelegate = self;
     //约对手
     ZYPathItemButton *matchBtn = [[ZYPathItemButton alloc]initWithImage:[UIImage imageNamed:@"match"] highlightedImage:[UIImage imageNamed:@"match"] backgroundImage:nil backgroundHighlightedImage:nil];
     //约裁判
     ZYPathItemButton *refereeBtn = [[ZYPathItemButton alloc]initWithImage:[UIImage imageNamed:@"referee"] highlightedImage:[UIImage imageNamed:@"referee"] backgroundImage:nil backgroundHighlightedImage:nil];
     //约服务
     ZYPathItemButton *shoppingBtn = [[ZYPathItemButton alloc]initWithImage:[UIImage imageNamed:@"shopping"] highlightedImage:[UIImage imageNamed:@"shopping"] backgroundImage:nil backgroundHighlightedImage:nil];
-    tabBar.pathButtonArray = @[matchBtn , refereeBtn , shoppingBtn];
-    tabBar.basicDuration = 0.5;
-    tabBar.allowSubItemRotation = YES;
-    tabBar.bloomRadius = 100;
-    tabBar.allowCenterButtonRotation = NO;
-    tabBar.allowSubItemRotation = NO;
-    tabBar.bloomAngel = 100;
+    _myTabBar.pathButtonArray = @[matchBtn , refereeBtn , shoppingBtn];
+    _myTabBar.basicDuration = 0.5;
+    _myTabBar.allowSubItemRotation = YES;
+    _myTabBar.bloomRadius = 100;
+    _myTabBar.allowCenterButtonRotation = NO;
+    _myTabBar.allowSubItemRotation = NO;
+    _myTabBar.bloomAngel = 100;
     //kvc实质是修改了系统的_tabBar
-    [self setValue:tabBar forKeyPath:@"tabBar"];
+    [self setValue:_myTabBar forKeyPath:@"tabBar"];
     
 }
 

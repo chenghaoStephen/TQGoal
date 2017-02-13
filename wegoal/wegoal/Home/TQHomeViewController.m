@@ -46,6 +46,7 @@
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         [self setEdgesForExtendedLayout:UIRectEdgeNone];
     }
+    [self setTabBarBtnShow];
     self.navigationItem.title = @"WeGoal";
     [self setBadgeNumber:0];
 }

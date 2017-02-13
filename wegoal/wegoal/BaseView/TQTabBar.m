@@ -13,7 +13,7 @@
 
 @interface TQTabBar()<ZYPathButtonDelegate>
 
-@property (nonatomic , strong)ZYPathButton *plusBtn;
+@property (nonatomic, strong)ZYPathButton *plusBtn;
 
 @end
 
@@ -33,15 +33,24 @@
     pathButton.bottomViewColor = [UIColor blackColor];
 }
 
+- (void)showPlusButton
+{
+    self.plusBtn.hidden = NO;
+}
+
+- (void)hidePlusButton
+{
+    self.plusBtn.hidden = YES;
+}
+
 - (void)drawRect:(CGRect)rect {
     self.plusBtn = [[ZYPathButton alloc] initWithCenterImage:[UIImage imageNamed:@"features"] highlightedImage:[UIImage imageNamed:@"features"]];
     self.plusBtn.delegate = self;
     [self setUpPathButton:self.plusBtn];
-//    self.plusBtn.ZYButtonCenter = CGPointMake(self.centerX, self.superview.height - self.height * 0.5 - 2 *ZYMagin );
-    self.plusBtn.ZYButtonCenter = CGPointMake(SCREEN_WIDTH * 0.5, self.height * 0.5 - ZYMagin );
+    self.plusBtn.ZYButtonCenter = CGPointMake(self.centerX, self.superview.height - self.height * 0.5 - ZYMagin );
     [self.plusBtn addPathItems:self.pathButtonArray];
-    [self addSubview:self.plusBtn];
     //必须加到父视图上
+    [[UIApplication sharedApplication].keyWindow addSubview:self.plusBtn];
 //    [self.superview addSubview:self.plusBtn];
 //    UILabel *label = [[UILabel alloc]init];
 //    label.text = @"";
