@@ -10,6 +10,7 @@
 #import "TQTeamTopView.h"
 #import "TQLadderTeamCell.h"
 #import "TQLadderHeaderView.h"
+#import "TQTeamDetailViewController.h"
 
 #define kTQLadderTeamCellIdentifier   @"TQLadderTeamCell"
 @interface TQLadderViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -79,8 +80,11 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if ([viewController isKindOfClass:[TQLadderViewController class]]) {
+    if ([viewController isKindOfClass:[TQLadderViewController class]] ||
+        [viewController isKindOfClass:[TQTeamDetailViewController class]]) {
         [navigationController setNavigationBarHidden:YES];
+    } else {
+        [navigationController setNavigationBarHidden:NO];
     }
 }
 
@@ -140,6 +144,10 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
+    TQTeamDetailViewController *teamDetailVC = [[TQTeamDetailViewController alloc] init];
+    teamDetailVC.hidesBottomBarWhenPushed = YES;
+    [self setTabbarBtnHide];
+    [self.navigationController pushViewController:teamDetailVC animated:YES];
 }
 
 

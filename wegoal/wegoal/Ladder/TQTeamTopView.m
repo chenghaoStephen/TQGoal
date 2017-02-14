@@ -48,6 +48,10 @@
     _logoImageLeftConstraint.constant = 35 * SCALE375;
     _informationLeftConstraint.constant = 26 * SCALE375;
     _backImageWidthConstraint.constant = SCREEN_WIDTH;
+    _yellowImageView.layer.masksToBounds = YES;
+    _yellowImageView.layer.cornerRadius = 1.5;
+    _redImageView.layer.masksToBounds = YES;
+    _redImageView.layer.cornerRadius = 1.5;
 }
 
 - (void)setViewMode:(TeamTopViewMode)viewMode

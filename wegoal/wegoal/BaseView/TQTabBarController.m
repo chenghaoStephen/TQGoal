@@ -33,11 +33,11 @@
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(showPlusButton)
-                                                 name:@"kTabbarNeedShow"
+                                                 name:kTabbarNeedShowNoti
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(hidePlusButton)
-                                                 name:@"kTabbarNeedHide"
+                                                 name:kTabbarNeedHideNoti
                                                object:nil];
 }
 

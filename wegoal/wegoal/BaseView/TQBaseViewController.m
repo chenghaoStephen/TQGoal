@@ -24,6 +24,14 @@
     self.view.backgroundColor = kMainBackColor;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
+}
+
 - (UIBarButtonItem*)buildLeftNavigationItem{
     UIBarButtonItem *leftBar = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"]
                                                                style:UIBarButtonItemStyleDone
@@ -42,14 +50,14 @@
 
 - (void)setTabBarBtnShow
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"kTabbarNeedShow"
+    [[NSNotificationCenter defaultCenter] postNotificationName:kTabbarNeedShowNoti
                                                         object:nil
                                                       userInfo:nil];
 }
 
 - (void)setTabbarBtnHide
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"kTabbarNeedHide"
+    [[NSNotificationCenter defaultCenter] postNotificationName:kTabbarNeedHideNoti
                                                         object:nil
                                                       userInfo:nil];
 }
@@ -60,8 +68,8 @@
     [self.navigationController.navigationBar setBackgroundImage:[TQCommon imageWithColor:[UIColor whiteColor]]
                                                  forBarPosition:UIBarPositionAny
                                                      barMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjects:@[[UIColor blackColor],[UIFont boldSystemFontOfSize:18],] forKeys:@[NSForegroundColorAttributeName,NSFontAttributeName]]];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjects:@[kNavTitleColor,[UIFont boldSystemFontOfSize:15],] forKeys:@[NSForegroundColorAttributeName,NSFontAttributeName]]];
     self.navigationController.navigationBar.tintColor = kTitleTextColor;
     
     

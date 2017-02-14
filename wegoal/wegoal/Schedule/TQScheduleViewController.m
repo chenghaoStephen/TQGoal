@@ -12,7 +12,7 @@
 #import "TQMatchCell.h"
 #import "TQTeamDetailViewController.h"
 
-#define kTQMatchCellIdentifier @"TQMatchCell"
+#define kMatchCellIdentifier @"TQMatchCell"
 @interface TQScheduleViewController ()<UINavigationControllerDelegate, JOMatchMenuViewDelegate, TQScheduleHeaderViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) JOMatchMenuView *menuView;
@@ -72,7 +72,7 @@
         _tableview.dataSource = self;
         _tableview.delegate = self;
         _tableview.backgroundColor = kMainBackColor;
-        [_tableview registerNib:[UINib nibWithNibName:@"TQMatchCell" bundle:nil] forCellReuseIdentifier:kTQMatchCellIdentifier];
+        [_tableview registerNib:[UINib nibWithNibName:@"TQMatchCell" bundle:nil] forCellReuseIdentifier:kMatchCellIdentifier];
         
         UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 3)];
         tableHeaderView.backgroundColor = kMainBackColor;
@@ -89,6 +89,8 @@
     if ([viewController isKindOfClass:[TQScheduleViewController class]] ||
         [viewController isKindOfClass:[TQTeamDetailViewController class]]) {
         [navigationController setNavigationBarHidden:YES];
+    } else {
+        [navigationController setNavigationBarHidden:NO];
     }
 }
 
@@ -141,7 +143,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TQMatchCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQMatchCellIdentifier];
+    TQMatchCell *cell = [tableView dequeueReusableCellWithIdentifier:kMatchCellIdentifier];
     if (!cell) {
         NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMatchCell" owner:nil options:nil].firstObject;
         cell = xibs.firstObject;

@@ -31,3 +31,10 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 #define kSubTextColor        RGB16(0xdfe8ec)
 #define kSubjectBackColor    RGB16(0x57d67e)
 #define kScheduleBackColor   RGB16(0x0b1523)
+#define kNavTitleColor       RGB16(0x34454C)
+#define kBackLineColor       RGB16(0xDFDFDF)
+
+
+//Notification Identifier
+#define kTabbarNeedShowNoti  @"TabbarNeedShow"
+#define kTabbarNeedHideNoti  @"TabbarNeedHide"

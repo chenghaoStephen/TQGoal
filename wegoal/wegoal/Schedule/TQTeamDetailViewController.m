@@ -11,6 +11,7 @@
 #import "TQScheduleHeaderView.h"
 #import "TQMatchCell.h"
 #import "TQTeamMemberCell.h"
+#import "TQMemberDetailViewController.h"
 
 #define kMatchCellIdentifier          @"TQMatchCell"
 #define kTeamMemberCellIdentifier     @"TQTeamMemberCell"
@@ -67,7 +68,7 @@
         _headerView.delegate = self;
         _headerView.unselectedColor = kTitleTextColor;
         _headerView.selectedColor = kSubjectBackColor;
-        _headerView.segments = @[@"阵容",@"比赛历时"];
+        _headerView.segments = @[@"阵容",@"比赛历史"];
     }
     return _headerView;
 }
@@ -107,7 +108,7 @@
         _membersTableView.tag = kMembersTableViewTag;
         [_membersTableView registerNib:[UINib nibWithNibName:@"TQTeamMemberCell" bundle:nil] forCellReuseIdentifier:kTeamMemberCellIdentifier];
         
-        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, .5)];
+        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 1)];
         tableHeaderView.backgroundColor = kMainBackColor;
         _membersTableView.tableHeaderView = tableHeaderView;
     }
@@ -125,7 +126,7 @@
         _historyTableView.tag = kHistoryTableViewTag;
         [_historyTableView registerNib:[UINib nibWithNibName:@"TQMatchCell" bundle:nil] forCellReuseIdentifier:kMatchCellIdentifier];
         
-        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, .5)];
+        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 1)];
         tableHeaderView.backgroundColor = kMainBackColor;
         _historyTableView.tableHeaderView = tableHeaderView;
     }
@@ -210,6 +211,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView.tag == kMembersTableViewTag) {
+        UITableViewCell *cell = [_membersTableView cellForRowAtIndexPath:indexPath];
+        cell.selected = NO;
+        TQMemberDetailViewController *memberDetailVC = [[TQMemberDetailViewController alloc] init];
+        [self.navigationController pushViewController:memberDetailVC animated:YES];
         
     }
 }

@@ -54,6 +54,8 @@
 {
     if ([viewController isKindOfClass:[TQMeViewController class]]) {
         [navigationController setNavigationBarHidden:YES];
+    } else {
+        [navigationController setNavigationBarHidden:NO];
     }
 }
 
