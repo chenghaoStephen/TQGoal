@@ -9,6 +9,7 @@
 #import "TQMeViewController.h"
 #import "TQMeViewCell.h"
 #import "TQMeTopView.h"
+#import "TQTeamDetailViewController.h"
 
 #define kTQMeViewCell     @"TQMeViewCell"
 @interface TQMeViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -52,7 +53,8 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if ([viewController isKindOfClass:[TQMeViewController class]]) {
+    if ([viewController isKindOfClass:[TQMeViewController class]] ||
+        [viewController isKindOfClass:[TQTeamDetailViewController class]]) {
         [navigationController setNavigationBarHidden:YES];
     } else {
         [navigationController setNavigationBarHidden:NO];
@@ -137,6 +139,32 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        //我的球队
+        TQTeamDetailViewController *teamDetailVC = [[TQTeamDetailViewController alloc] init];
+        teamDetailVC.hidesBottomBarWhenPushed = YES;
+        [self setTabbarBtnHide];
+        teamDetailVC.isMyTeam = YES;
+        [self.navigationController pushViewController:teamDetailVC animated:YES];
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        //编辑个人资料
+        
+    } else if (indexPath.section == 1 && indexPath.row == 0) {
+        //我的约战
+        
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
+        //我的订单
+        
+    } else if (indexPath.section == 1 && indexPath.row == 2) {
+        //我的保证金
+        
+    } else if (indexPath.section == 2 && indexPath.row == 0) {
+        //任务总览
+        
+    } else if (indexPath.section == 2 && indexPath.row == 1) {
+        //设置
+        
+    }
 }
 
 

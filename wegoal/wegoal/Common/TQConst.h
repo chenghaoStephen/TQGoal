@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 #define kScheduleBackColor   RGB16(0x0b1523)
 #define kNavTitleColor       RGB16(0x34454C)
 #define kBackLineColor       RGB16(0xDFDFDF)
+#define kRedBackColor        RGB16(0xF9585E)
+#define kUnenableColor       RGB16(0xDFE8EC)
 
 
 //Notification Identifier

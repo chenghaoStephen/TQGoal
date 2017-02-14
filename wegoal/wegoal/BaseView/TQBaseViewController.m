@@ -70,9 +70,7 @@
                                                      barMetrics:UIBarMetricsDefault];
 //    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjects:@[kNavTitleColor,[UIFont boldSystemFontOfSize:15],] forKeys:@[NSForegroundColorAttributeName,NSFontAttributeName]]];
-    self.navigationController.navigationBar.tintColor = kTitleTextColor;
-    
-    
+    self.navigationController.navigationBar.tintColor = kNavTitleColor;
 }
 
 @end

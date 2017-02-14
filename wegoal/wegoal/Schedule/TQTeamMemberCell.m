@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
-
 @end
 
 @implementation TQTeamMemberCell
@@ -23,6 +22,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    _selectImageView.hidden = YES;
     _numberLabel.layer.masksToBounds = YES;
     _numberLabel.layer.cornerRadius = _numberLabel.height/2;
     _positionLabel.layer.masksToBounds = YES;

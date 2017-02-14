@@ -12,6 +12,7 @@
 #import "TQMatchCell.h"
 #import "TQTeamMemberCell.h"
 #import "TQMemberDetailViewController.h"
+#import "TQMemberManageViewController.h"
 
 #define kMatchCellIdentifier          @"TQMatchCell"
 #define kTeamMemberCellIdentifier     @"TQTeamMemberCell"
@@ -89,9 +90,13 @@
     if (!_joinButton) {
         _joinButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_joinButton setFrame:CGRectMake(SCREEN_WIDTH - 58, 20, 50, 44)];
-        [_joinButton setTitle:@"申请加入" forState:UIControlStateNormal];
         [_joinButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _joinButton.titleLabel.font = [UIFont systemFontOfSize:12.f];
+        if (_isMyTeam) {
+            [_joinButton setTitle:@"球员管理" forState:UIControlStateNormal];
+        } else {
+            [_joinButton setTitle:@"申请加入" forState:UIControlStateNormal];
+        }
         [_joinButton addTarget:self action:@selector(joinAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _joinButton;
@@ -133,6 +138,16 @@
     return _historyTableView;
 }
 
+- (void)setIsMyTeam:(BOOL)isMyTeam
+{
+    _isMyTeam = isMyTeam;
+    if (isMyTeam) {
+        [_joinButton setTitle:@"球员管理" forState:UIControlStateNormal];
+    } else {
+        [_joinButton setTitle:@"申请加入" forState:UIControlStateNormal];
+    }
+}
+
 #pragma mark - events
 
 - (void)backAction
@@ -142,7 +157,11 @@
 
 - (void)joinAction
 {
-    
+    if (_isMyTeam) {
+        //跳转到球员管理界面
+        TQMemberManageViewController *memberManagerVC = [[TQMemberManageViewController alloc] init];
+        [self.navigationController pushViewController:memberManagerVC animated:YES];
+    }
 }
 
 
@@ -211,7 +230,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView.tag == kMembersTableViewTag) {
-        UITableViewCell *cell = [_membersTableView cellForRowAtIndexPath:indexPath];
+        TQTeamMemberCell *cell = [_membersTableView cellForRowAtIndexPath:indexPath];
         cell.selected = NO;
         TQMemberDetailViewController *memberDetailVC = [[TQMemberDetailViewController alloc] init];
         [self.navigationController pushViewController:memberDetailVC animated:YES];

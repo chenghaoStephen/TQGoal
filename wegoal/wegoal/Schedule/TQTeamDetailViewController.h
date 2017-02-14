@@ -10,4 +10,6 @@
 
 @interface TQTeamDetailViewController : TQBaseViewController
 
+@property (nonatomic, assign) BOOL isMyTeam;
+
 @end

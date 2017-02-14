@@ -10,4 +10,8 @@
 
 @interface TQTeamMemberCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UIImageView *selectImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewLeftConstraint;
+
 @end
