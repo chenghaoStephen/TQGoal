@@ -23,21 +23,7 @@
     self.title = @"";
     
     self.view.backgroundColor = kMainBackColor;
-    [self setRightBarButtomItem];
     [self.view addSubview:self.textField];
-}
-
-- (void)setRightBarButtomItem
-{
-    UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addBtn.frame = CGRectMake(0, 0, 44, 44);
-    [addBtn addTarget:self action:@selector(addMember) forControlEvents:UIControlEventTouchUpInside];
-    [addBtn setTitle:@"添加" forState:UIControlStateNormal];
-    [addBtn setTitleColor:kUnenableColor forState:UIControlStateNormal];
-    addBtn.titleLabel.font = [UIFont systemFontOfSize:15.f];
-    UIBarButtonItem *editBarBtn = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
-    editBarBtn.enabled = NO;
-    self.navigationItem.rightBarButtonItem = editBarBtn;
 }
 
 - (UITextField *)textField

@@ -10,6 +10,7 @@
 #import "TQMeViewCell.h"
 #import "TQMeTopView.h"
 #import "TQTeamDetailViewController.h"
+#import "TQEditMeViewController.h"
 
 #define kTQMeViewCell     @"TQMeViewCell"
 @interface TQMeViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -148,7 +149,10 @@
         [self.navigationController pushViewController:teamDetailVC animated:YES];
     } else if (indexPath.section == 0 && indexPath.row == 1) {
         //编辑个人资料
-        
+        TQEditMeViewController *editMeVC = [[TQEditMeViewController alloc] init];
+        editMeVC.hidesBottomBarWhenPushed = YES;
+        [self setTabbarBtnHide];
+        [self.navigationController pushViewController:editMeVC animated:YES];
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         //我的约战
         

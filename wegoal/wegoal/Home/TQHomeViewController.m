@@ -148,7 +148,7 @@
     [locationBtn setFrame:CGRectMake(0, 0, 30, 30)];
     [locationBtn setImage:[UIImage imageNamed:@"location"] forState:UIControlStateNormal];
     [locationBtn setTintColor:[UIColor whiteColor]];
-    [locationBtn addTarget:self action:@selector(changeLocation) forControlEvents:UIControlEventTouchUpInside];
+//    [locationBtn addTarget:self action:@selector(changeLocation) forControlEvents:UIControlEventTouchUpInside];
     //label
     UILabel *cityLbl = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 50, 30)];
     cityLbl.backgroundColor = [UIColor clearColor];
