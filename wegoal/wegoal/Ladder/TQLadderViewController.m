@@ -7,7 +7,8 @@
 //
 
 #import "TQLadderViewController.h"
-#import "TQTeamTopView.h"
+//#import "TQTeamTopView.h"
+#import "TQTeamInformationView.h"
 #import "TQLadderTeamCell.h"
 #import "TQLadderHeaderView.h"
 #import "TQTeamDetailViewController.h"
@@ -15,7 +16,7 @@
 #define kTQLadderTeamCellIdentifier   @"TQLadderTeamCell"
 @interface TQLadderViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) TQTeamTopView *topView;
+@property (nonatomic, strong) TQTeamInformationView *topView;
 @property (nonatomic, strong) UIButton *searchButton;
 @property (nonatomic, strong) UITableView *tableview;
 
@@ -39,13 +40,13 @@
     _topView.frame = CGRectMake(0, 0, 375, 206 * SCALE375);
 }
 
-- (TQTeamTopView *)topView
+- (TQTeamInformationView *)topView
 {
     if (!_topView) {
-        _topView = [[NSBundle mainBundle] loadNibNamed:@"TQTeamTopView" owner:nil options:nil].firstObject;
-        _topView.frame = CGRectMake(0, 0, 375, 206 * SCALE375);
+//        _topView = [[NSBundle mainBundle] loadNibNamed:@"TQTeamTopView" owner:nil options:nil].firstObject;
+        _topView = [[TQTeamInformationView alloc] initWithFrame:CGRectMake(0, 0, 375, 206 * SCALE375)];
         _topView.backgroundColor = [UIColor whiteColor];
-        _topView.viewMode = TeamTopViewModeLadder;
+//        _topView.viewMode = TeamTopViewModeLadder;
     }
     return _topView;
 }

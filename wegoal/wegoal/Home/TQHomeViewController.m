@@ -11,6 +11,7 @@
 #import "TQHomeMatchCell.h"
 #import "TQMatchFlowLayout.h"
 #import "TAPageControl.h"
+#import "TQMessageViewController.h"
 
 #define kBadgeLabelTag               1001
 #define kHomeMatchCellIdentifier     @"TQHomeMatchCell"
@@ -47,6 +48,7 @@
     [self setTabBarBtnShow];
     self.navigationItem.title = @"WeGoal";
     [self setBadgeNumber:0];
+    [self setNavigationBar];
 }
 
 - (void)setNavigationBar
@@ -214,9 +216,14 @@
     
 }
 
+//跳转到消息列表界面
 - (void)showMessages
 {
     NSLog(@"show message");
+    TQMessageViewController *messageVC = [[TQMessageViewController alloc] init];
+    messageVC.hidesBottomBarWhenPushed = YES;
+    [self setTabbarBtnHide];
+    [self.navigationController pushViewController:messageVC animated:YES];
 }
 
 - (void)changeLocation

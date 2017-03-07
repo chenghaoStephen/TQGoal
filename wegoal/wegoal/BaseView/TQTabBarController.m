@@ -110,8 +110,6 @@
 {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:Vc];
     
-    Vc.view.backgroundColor = RGB16(0xf0f6f2);
-    
     UIImage *myImage = [UIImage imageNamed:image];
     myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //tabBarItem，是系统提供模型，专门负责tabbar上按钮的文字以及图片展示

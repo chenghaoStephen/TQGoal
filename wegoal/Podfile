@@ -7,6 +7,7 @@ target 'wegoal' do
   pod 'AFNetworking', '~> 2.6.1'
   pod 'Toast', '~> 2.4'
   pod 'MJExtension'
+  pod 'Masonry'
   pod 'SDWebImage'
   pod 'SVPullToRefresh'
   pod "MWPhotoBrowser"

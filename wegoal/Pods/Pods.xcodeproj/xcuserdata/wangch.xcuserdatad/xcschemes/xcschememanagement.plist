@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-wegoal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,22 +82,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>274F71586331527B1DD35D590CBDAB50</key>
+		<key>3487C41344F68DED42DE547B50777785</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>31789F23A27116161E215A2B1F57ADE5</key>
+		<key>3F7778B3B240E77F8CE49B9866EABBF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CB75E2B01C105E71702CC44C03716D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>663A66A1F7C2C5B2C07D22DEE4A24E9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DC8D9E02903E93BD0B2FEC9D846EA20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A9FA456E05BAB89F805974DD9D0B79FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -103,11 +118,6 @@
 			<true/>
 		</dict>
 		<key>C791F0A928C1A8FE97074DFC9ACF4E75</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C826244DC9F8AB57F9D6971C876F13D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

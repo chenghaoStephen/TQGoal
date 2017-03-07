@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="206"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="information_back" translatesAutoresizingMaskIntoConstraints="NO" id="piU-4h-abT">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="piU-4h-abT">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="206"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="piU-4h-abT" secondAttribute="height" multiplier="375:206" id="EUu-09-frf"/>
@@ -217,6 +217,5 @@
     </objects>
     <resources>
         <image name="decoration" width="67" height="42"/>
-        <image name="information_back" width="375" height="206"/>
     </resources>
 </document>

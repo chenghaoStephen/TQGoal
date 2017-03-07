@@ -48,6 +48,7 @@
     [_tableview registerNib:[UINib nibWithNibName:@"TQMeViewCell" bundle:nil] forCellReuseIdentifier:kTQMeViewCell];
     _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableview.scrollEnabled = NO;
+    _tableview.backgroundColor = kMainBackColor;
 }
 
 #pragma mark - UINavigationControllerDelegate

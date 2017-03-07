@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, EditMode){
 - (UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT - 45) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 1, SCREEN_WIDTH, VIEW_HEIGHT - 46) style:UITableViewStylePlain];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;
         _tableView.delegate = self;

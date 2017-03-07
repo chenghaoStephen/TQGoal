@@ -29,7 +29,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KlO-UP-uew">
-                    <rect key="frame" x="0.0" y="249" width="375" height="368"/>
+                    <rect key="frame" x="0.0" y="249" width="375" height="418"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="fd9-Tw-tD8"/>
@@ -40,7 +40,7 @@
             <color key="backgroundColor" red="0.94117647058823528" green="0.96470588235294119" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="WYI-5U-i1R" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EsQ-E6-gYM"/>
-                <constraint firstAttribute="bottom" secondItem="KlO-UP-uew" secondAttribute="bottom" constant="50" id="Neo-de-6MC"/>
+                <constraint firstAttribute="bottom" secondItem="KlO-UP-uew" secondAttribute="bottom" id="Neo-de-6MC"/>
                 <constraint firstItem="WYI-5U-i1R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QKZ-Qs-UzU"/>
                 <constraint firstItem="KlO-UP-uew" firstAttribute="top" secondItem="WYI-5U-i1R" secondAttribute="bottom" id="Rfg-bc-N4y"/>
                 <constraint firstAttribute="trailing" secondItem="KlO-UP-uew" secondAttribute="trailing" id="b8J-a5-qKP"/>
