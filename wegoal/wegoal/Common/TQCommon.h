@@ -13,4 +13,6 @@
 
 +(UIImage*) imageWithColor:(UIColor*)color;
 
++(BOOL)isBlankString:(NSString *)string;
+
 @end

@@ -14,6 +14,9 @@
 #import "URLHeader.h"
 #import "TQCommon.h"
 #import "TQBaseViewController.h"
+#import "UserData.h"
+#import "DeviceData.h"
+#import "AFServer.h"
 
 //model
 #import "TQMatchModel.h"
@@ -30,3 +33,4 @@
 //category
 #import "UIView+LBExtension.h"
 #import "UIView+LSCore.h"
+#import "NSString+URL.h"

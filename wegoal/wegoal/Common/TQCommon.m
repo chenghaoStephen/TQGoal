@@ -26,4 +26,15 @@
     return image;
 }
 
+//判断空串
++(BOOL)isBlankString:(NSString *)string{
+    if (string == nil || string == NULL || [string isKindOfClass:[NSNull class]] ) {
+        return YES;
+    }
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

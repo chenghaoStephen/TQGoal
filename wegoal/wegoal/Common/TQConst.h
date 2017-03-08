@@ -40,3 +40,6 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 //Notification Identifier
 #define kTabbarNeedShowNoti  @"TabbarNeedShow"
 #define kTabbarNeedHideNoti  @"TabbarNeedHide"
+
+
+#define HTTP_TIME_OUT 10

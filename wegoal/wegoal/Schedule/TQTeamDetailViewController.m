@@ -7,7 +7,8 @@
 //
 
 #import "TQTeamDetailViewController.h"
-#import "TQTeamTopView.h"
+//#import "TQTeamTopView.h"
+#import "TQTeamInformationView.h"
 #import "TQScheduleHeaderView.h"
 #import "TQMatchCell.h"
 #import "TQTeamMemberCell.h"
@@ -20,7 +21,7 @@
 #define kHistoryTableViewTag          31002
 @interface TQTeamDetailViewController ()<UITableViewDataSource, UITableViewDelegate, TQScheduleHeaderViewDelegate>
 
-@property (nonatomic, strong) TQTeamTopView *topView;
+@property (nonatomic, strong) TQTeamInformationView *topView;
 @property (nonatomic, strong) TQScheduleHeaderView *headerView;
 @property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UIButton *joinButton;
@@ -50,12 +51,12 @@
     _topView.frame = CGRectMake(0, 0, 375, 206 * SCALE375);
 }
 
-- (TQTeamTopView *)topView
+- (TQTeamInformationView *)topView
 {
     if (!_topView) {
-        _topView = [[NSBundle mainBundle] loadNibNamed:@"TQTeamTopView" owner:nil options:nil].firstObject;
-        _topView.frame = CGRectMake(0, 0, 375, 206 * SCALE375);
-        _topView.backgroundColor = [UIColor whiteColor];
+//        _topView = [[NSBundle mainBundle] loadNibNamed:@"TQTeamTopView" owner:nil options:nil].firstObject;
+        _topView = [[TQTeamInformationView alloc] initWithFrame:CGRectMake(0, 0, 375, 206 * SCALE375)];
+        _topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"information_back"]];
         _topView.viewMode = TeamTopViewModeTeam;
     }
     return _topView;
