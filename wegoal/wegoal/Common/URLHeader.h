@@ -10,8 +10,8 @@
 #define URL(domian,url) [domian stringByAppendingString:url]
 
 
-#define kTQDomainURL     @"http://165n01a586.iask.in/api"
+#define kTQDomainURL     @"http://165n01a586.iask.in"
 
 
 //获取主页数据
-#define kHomeData        @"/AppGetView/GetEnrollList"
+#define kHomeData        @"/api/AppGetView/GetEnrollList"

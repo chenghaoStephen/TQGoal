@@ -202,7 +202,7 @@
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //更新主页信息
-                
+                [weakSelf updateHomeSubViews];
             });
             
         } else {
@@ -217,6 +217,14 @@
             [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
+}
+
+
+#pragma mark - 界面刷新
+
+- (void)updateHomeSubViews
+{
+    
 }
 
 
