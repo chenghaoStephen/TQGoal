@@ -39,6 +39,7 @@
     
     scrollIndex = 0;
     [self.view addSubview:self.scrollView];
+    [self requestData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -135,7 +136,6 @@
 {
     if (!_commandView) {
         CGFloat viewHeight = MIN(165.f, MAX(156.f, VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 25));
-        NSLog(@"%f", VIEW_WITHOUT_TABBAR_HEIGHT - CGRectGetMaxY(_matchView.frame) - 25);
         _commandView = [[TQCommandView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_matchView.frame) + 25 * SCALE375, SCREEN_WIDTH, viewHeight)];
         _commandView.backgroundColor = [UIColor whiteColor];
     }
@@ -184,6 +184,39 @@
     
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:whistleButton];
     return rightBar;
+}
+
+
+#pragma mark - 数据请求
+
+//获取主页信息
+- (void)requestData
+{
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"userName"] = USER_NAME;
+    params[@"Token"] = USER_TOKEN;
+    [ZDMIndicatorView showInView:self.scrollView];
+    [[AFServer sharedInstance]GET:URL(kTQDomainURL, kHomeData) parameters:params finishBlock:^(id result) {
+        [ZDMIndicatorView hiddenInView:weakSelf.scrollView];
+        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //更新主页信息
+                
+            });
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [ZDMToast showWithText:result[@"msg"]];
+            });
+        }
+        
+    } failedBlock:^(NSError *error) {
+        [ZDMIndicatorView hiddenInView:weakSelf.scrollView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+        });
+    }];
 }
 
 

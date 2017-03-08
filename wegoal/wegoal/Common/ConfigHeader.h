@@ -44,4 +44,7 @@ green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0x0000FF))/255.0 \
 alpha:a]
 
-#define USER_TOKEN UserDataManager.userToken
+//用户数据
+//#define USER_TOKEN UserDataManager.userToken
+#define USER_TOKEN @"123456"
+#define USER_NAME  @"13000000007"

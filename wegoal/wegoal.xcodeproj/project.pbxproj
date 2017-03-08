@@ -47,10 +47,8 @@
 		0F6435811E4B058B0049BC45 /* TQMeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64357F1E4B058B0049BC45 /* TQMeViewCell.m */; };
 		0F6435821E4B058B0049BC45 /* TQMeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6435801E4B058B0049BC45 /* TQMeViewCell.xib */; };
 		0F7F7F451E6FF37000952DDD /* AFServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F421E6FF37000952DDD /* AFServer.m */; };
-		0F7F7F491E6FF45E00952DDD /* DeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F481E6FF45E00952DDD /* DeviceData.m */; };
 		0F7F7F4C1E6FF52600952DDD /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F4B1E6FF52600952DDD /* UserData.m */; };
 		0F7F7F4F1E6FF61400952DDD /* DownLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F4E1E6FF61400952DDD /* DownLoadModel.m */; };
-		0F7F7F531E6FF64100952DDD /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F521E6FF64100952DDD /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0F7F7F641E6FF64800952DDD /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F7F551E6FF64800952DDD /* LICENSE.txt */; };
 		0F7F7F651E6FF64800952DDD /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F561E6FF64800952DDD /* README.markdown */; };
 		0F7F7F661E6FF64800952DDD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F5A1E6FF64800952DDD /* FMDatabase.m */; };
@@ -60,6 +58,11 @@
 		0F7F7F6A1E6FF64800952DDD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F631E6FF64800952DDD /* FMResultSet.m */; };
 		0F7F7F6D1E6FF86400952DDD /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F6C1E6FF86400952DDD /* NSString+URL.m */; };
 		0F7F7F701E6FF8E900952DDD /* UploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F6F1E6FF8E900952DDD /* UploadModel.m */; };
+		0F7F7F761E6FFED200952DDD /* ZDMNavToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F731E6FFED200952DDD /* ZDMNavToast.m */; };
+		0F7F7F771E6FFED200952DDD /* ZDMToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F751E6FFED200952DDD /* ZDMToast.m */; };
+		0F7F7F7C1E6FFFB800952DDD /* gx_hud_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F7F791E6FFFB800952DDD /* gx_hud_logo@2x.png */; };
+		0F7F7F7D1E6FFFB800952DDD /* GXHUDIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F7B1E6FFFB800952DDD /* GXHUDIndicatorView.m */; };
+		0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F7F1E7000C200952DDD /* ZDMIndicatorView.m */; };
 		0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */; };
 		F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32ABE351E47E9C1000D7CF1 /* TQMatchModel.m */; };
 		F32ABE391E5B285C000D7CF1 /* TQEditMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32ABE381E5B285C000D7CF1 /* TQEditMeViewController.m */; };
@@ -160,14 +163,10 @@
 		0F6435801E4B058B0049BC45 /* TQMeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMeViewCell.xib; sourceTree = "<group>"; };
 		0F7F7F411E6FF37000952DDD /* AFServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFServer.h; sourceTree = "<group>"; };
 		0F7F7F421E6FF37000952DDD /* AFServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFServer.m; sourceTree = "<group>"; };
-		0F7F7F471E6FF45E00952DDD /* DeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceData.h; sourceTree = "<group>"; };
-		0F7F7F481E6FF45E00952DDD /* DeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceData.m; sourceTree = "<group>"; };
 		0F7F7F4A1E6FF52600952DDD /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		0F7F7F4B1E6FF52600952DDD /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		0F7F7F4D1E6FF61400952DDD /* DownLoadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadModel.h; sourceTree = "<group>"; };
 		0F7F7F4E1E6FF61400952DDD /* DownLoadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadModel.m; sourceTree = "<group>"; };
-		0F7F7F511E6FF64100952DDD /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		0F7F7F521E6FF64100952DDD /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		0F7F7F551E6FF64800952DDD /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		0F7F7F561E6FF64800952DDD /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		0F7F7F591E6FF64800952DDD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -185,6 +184,15 @@
 		0F7F7F6C1E6FF86400952DDD /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		0F7F7F6E1E6FF8E900952DDD /* UploadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadModel.h; sourceTree = "<group>"; };
 		0F7F7F6F1E6FF8E900952DDD /* UploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadModel.m; sourceTree = "<group>"; };
+		0F7F7F721E6FFED200952DDD /* ZDMNavToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDMNavToast.h; sourceTree = "<group>"; };
+		0F7F7F731E6FFED200952DDD /* ZDMNavToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMNavToast.m; sourceTree = "<group>"; };
+		0F7F7F741E6FFED200952DDD /* ZDMToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDMToast.h; sourceTree = "<group>"; };
+		0F7F7F751E6FFED200952DDD /* ZDMToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMToast.m; sourceTree = "<group>"; };
+		0F7F7F791E6FFFB800952DDD /* gx_hud_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gx_hud_logo@2x.png"; sourceTree = "<group>"; };
+		0F7F7F7A1E6FFFB800952DDD /* GXHUDIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXHUDIndicatorView.h; sourceTree = "<group>"; };
+		0F7F7F7B1E6FFFB800952DDD /* GXHUDIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXHUDIndicatorView.m; sourceTree = "<group>"; };
+		0F7F7F7E1E7000C200952DDD /* ZDMIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDMIndicatorView.h; sourceTree = "<group>"; };
+		0F7F7F7F1E7000C200952DDD /* ZDMIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMIndicatorView.m; sourceTree = "<group>"; };
 		0FE187B71E49C4420021369A /* TQScheduleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQScheduleHeaderView.h; sourceTree = "<group>"; };
 		0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQScheduleHeaderView.m; sourceTree = "<group>"; };
 		30B86D68870A12E1BA7FD553 /* libPods-wegoal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wegoal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -361,8 +369,6 @@
 			children = (
 				0F7F7F4A1E6FF52600952DDD /* UserData.h */,
 				0F7F7F4B1E6FF52600952DDD /* UserData.m */,
-				0F7F7F471E6FF45E00952DDD /* DeviceData.h */,
-				0F7F7F481E6FF45E00952DDD /* DeviceData.m */,
 				0F7F7F411E6FF37000952DDD /* AFServer.h */,
 				0F7F7F421E6FF37000952DDD /* AFServer.m */,
 				0F7F7F4D1E6FF61400952DDD /* DownLoadModel.h */,
@@ -371,15 +377,6 @@
 				0F7F7F6F1E6FF8E900952DDD /* UploadModel.m */,
 			);
 			name = Utility;
-			sourceTree = "<group>";
-		};
-		0F7F7F501E6FF64100952DDD /* keychain */ = {
-			isa = PBXGroup;
-			children = (
-				0F7F7F511E6FF64100952DDD /* KeychainItemWrapper.h */,
-				0F7F7F521E6FF64100952DDD /* KeychainItemWrapper.m */,
-			);
-			path = keychain;
 			sourceTree = "<group>";
 		};
 		0F7F7F541E6FF64800952DDD /* FMDB */ = {
@@ -416,6 +413,29 @@
 				0F7F7F631E6FF64800952DDD /* FMResultSet.m */,
 			);
 			path = fmdb;
+			sourceTree = "<group>";
+		};
+		0F7F7F711E6FFED200952DDD /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				0F7F7F721E6FFED200952DDD /* ZDMNavToast.h */,
+				0F7F7F731E6FFED200952DDD /* ZDMNavToast.m */,
+				0F7F7F741E6FFED200952DDD /* ZDMToast.h */,
+				0F7F7F751E6FFED200952DDD /* ZDMToast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		0F7F7F781E6FFFB800952DDD /* GXHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0F7F7F791E6FFFB800952DDD /* gx_hud_logo@2x.png */,
+				0F7F7F7A1E6FFFB800952DDD /* GXHUDIndicatorView.h */,
+				0F7F7F7B1E6FFFB800952DDD /* GXHUDIndicatorView.m */,
+				0F7F7F7E1E7000C200952DDD /* ZDMIndicatorView.h */,
+				0F7F7F7F1E7000C200952DDD /* ZDMIndicatorView.m */,
+			);
+			path = GXHUD;
 			sourceTree = "<group>";
 		};
 		0FE187BA1E49C4480021369A /* CustomView */ = {
@@ -549,8 +569,9 @@
 		F3438C951DF2A4A700D86D5B /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				0F7F7F781E6FFFB800952DDD /* GXHUD */,
+				0F7F7F711E6FFED200952DDD /* Toast */,
 				0F7F7F541E6FF64800952DDD /* FMDB */,
-				0F7F7F501E6FF64100952DDD /* keychain */,
 				F3438C9A1DF2A58C00D86D5B /* ZYPathButton */,
 			);
 			path = Third;
@@ -707,6 +728,7 @@
 				0F2BACE31E6E931A00C0EF10 /* TQMessageCell.xib in Resources */,
 				0F64357C1E4AF9EA0049BC45 /* TQLadderHeaderView.xib in Resources */,
 				0F6435821E4B058B0049BC45 /* TQMeViewCell.xib in Resources */,
+				0F7F7F7C1E6FFFB800952DDD /* gx_hud_logo@2x.png in Resources */,
 				F3438C791DEB324D00D86D5B /* TQHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -793,6 +815,8 @@
 				0F2BACE21E6E931A00C0EF10 /* TQMessageCell.m in Sources */,
 				F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */,
 				0F7F7F701E6FF8E900952DDD /* UploadModel.m in Sources */,
+				0F7F7F771E6FFED200952DDD /* ZDMToast.m in Sources */,
+				0F7F7F7D1E6FFFB800952DDD /* GXHUDIndicatorView.m in Sources */,
 				0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */,
 				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
 				F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */,
@@ -800,7 +824,7 @@
 				0F6435751E4ADF220049BC45 /* TQTeamTopView.m in Sources */,
 				0F7F7F6A1E6FF64800952DDD /* FMResultSet.m in Sources */,
 				0F7F7F691E6FF64800952DDD /* FMDatabaseQueue.m in Sources */,
-				0F7F7F531E6FF64100952DDD /* KeychainItemWrapper.m in Sources */,
+				0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */,
 				F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */,
 				F3438C9F1DF2A58C00D86D5B /* ZYPathButton.m in Sources */,
 				0F24B89A1E52AA360081A2DA /* TQWeightBackView.m in Sources */,
@@ -809,6 +833,7 @@
 				0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */,
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
 				0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */,
+				0F7F7F761E6FFED200952DDD /* ZDMNavToast.m in Sources */,
 				F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */,
 				F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */,
 				0F7F7F4F1E6FF61400952DDD /* DownLoadModel.m in Sources */,
@@ -820,7 +845,6 @@
 				0F1C8D431E4C64F30015F015 /* TQUserModel.m in Sources */,
 				0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */,
 				0F7F7F671E6FF64800952DDD /* FMDatabaseAdditions.m in Sources */,
-				0F7F7F491E6FF45E00952DDD /* DeviceData.m in Sources */,
 				0F7F7F4C1E6FF52600952DDD /* UserData.m in Sources */,
 				0F64357A1E4AF9DC0049BC45 /* TQLadderHeaderView.m in Sources */,
 				0F7F7F651E6FF64800952DDD /* README.markdown in Sources */,

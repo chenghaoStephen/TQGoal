@@ -8,7 +8,6 @@
 
 #import "AFServer.h"
 #import "AFHTTPRequestOperationManager.h"
-#import "DeviceData.h"
 #import "AFURLSessionManager.h"
 static AFServer* server = nil;
 
@@ -31,18 +30,10 @@ failedBlock:(FailedLoadHandle)failedBlock {
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.requestSerializer.timeoutInterval = HTTP_TIME_OUT;
-    [manager.requestSerializer setValue:[[DeviceData shareManager]deviceName] forHTTPHeaderField:@"Device-Info"];
-    [manager.requestSerializer setValue:[[DeviceData shareManager]deviceVersion] forHTTPHeaderField:@"Device-System"];
-    [manager.requestSerializer setValue:[[[DeviceData shareManager]appName] URLEncodedString] forHTTPHeaderField:@"App-Name"];
-    [manager.requestSerializer setValue:[[DeviceData shareManager]appVersion] forHTTPHeaderField:@"App-Version"];
     [manager.requestSerializer setValue:USER_TOKEN forHTTPHeaderField:@"User-Token"];
 
-    
-//    manager.requestSerializer.HTTPRequestHeaders;
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSData *data = responseObject;
-//        NSString *result =  [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-//        NSData *data2 = [result dataUsingEncoding:NSUTF8StringEncoding];
         NSError *error = nil;
         
         id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
@@ -79,10 +70,6 @@ failedBlock:(FailedLoadHandle)failedBlock {
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.requestSerializer.timeoutInterval = HTTP_TIME_OUT;
-    [manager.requestSerializer setValue:[[DeviceData shareManager]deviceName] forHTTPHeaderField:@"Device-Info"];
-    [manager.requestSerializer setValue:[[DeviceData shareManager]deviceVersion] forHTTPHeaderField:@"Device-System"];
-    [manager.requestSerializer setValue:[[[DeviceData shareManager]appName] URLEncodedString] forHTTPHeaderField:@"App-Name"];
-    [manager.requestSerializer setValue:[[DeviceData shareManager]appVersion] forHTTPHeaderField:@"App-Version"];
     [manager.requestSerializer setValue:USER_TOKEN forHTTPHeaderField:@"User-Token"];
     [manager.requestSerializer setValue:@"text/html,application/xhtml+xml,application/xml" forHTTPHeaderField:@"Accept"];
 
@@ -110,10 +97,6 @@ failedBlock:(FailedLoadHandle)failedBlock {
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.requestSerializer.timeoutInterval = HTTP_TIME_OUT;
-    [manager.requestSerializer setValue:[[DeviceData shareManager]deviceName] forHTTPHeaderField:@"Device-Info"];
-    [manager.requestSerializer setValue:[[DeviceData shareManager]deviceVersion] forHTTPHeaderField:@"Device-System"];
-    [manager.requestSerializer setValue:[[[DeviceData shareManager]appName] URLEncodedString] forHTTPHeaderField:@"App-Name"];
-    [manager.requestSerializer setValue:[[DeviceData shareManager]appVersion] forHTTPHeaderField:@"App-Version"];
     [manager.requestSerializer setValue:USER_TOKEN forHTTPHeaderField:@"User-Token"];
 
     if (filePath) {
@@ -150,10 +133,6 @@ failedBlock:(FailedLoadHandle)failedBlock {
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.requestSerializer.timeoutInterval = HTTP_TIME_OUT;
-    [manager.requestSerializer setValue:[[DeviceData shareManager]deviceName] forHTTPHeaderField:@"Device-Info"];
-    [manager.requestSerializer setValue:[[DeviceData shareManager]deviceVersion] forHTTPHeaderField:@"Device-System"];
-    [manager.requestSerializer setValue:[[[DeviceData shareManager]appName] URLEncodedString] forHTTPHeaderField:@"App-Name"];
-    [manager.requestSerializer setValue:[[DeviceData shareManager]appVersion] forHTTPHeaderField:@"App-Version"];
     [manager.requestSerializer setValue:USER_TOKEN forHTTPHeaderField:@"User-Token"];
 
 

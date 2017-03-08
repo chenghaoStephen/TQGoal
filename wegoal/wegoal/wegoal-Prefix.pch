@@ -15,8 +15,9 @@
 #import "TQCommon.h"
 #import "TQBaseViewController.h"
 #import "UserData.h"
-#import "DeviceData.h"
 #import "AFServer.h"
+#import "ZDMToast.h"
+#import "ZDMIndicatorView.h"
 
 //model
 #import "TQMatchModel.h"
