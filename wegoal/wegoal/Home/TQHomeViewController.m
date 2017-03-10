@@ -12,6 +12,7 @@
 #import "TQMatchFlowLayout.h"
 #import "TAPageControl.h"
 #import "TQMessageViewController.h"
+#import "TQProtocolViewController.h"
 
 #define kBadgeLabelTag               1001
 #define kHomeMatchCellIdentifier     @"TQHomeMatchCell"

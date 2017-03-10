@@ -7,6 +7,7 @@
 //
 
 #import "TQBaseViewController.h"
+#import "TQProtocolViewController.h"
 
 @interface TQBaseViewController ()
 
@@ -71,6 +72,14 @@
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjects:@[kNavTitleColor,[UIFont boldSystemFontOfSize:15],] forKeys:@[NSForegroundColorAttributeName,NSFontAttributeName]]];
     self.navigationController.navigationBar.tintColor = kNavTitleColor;
+}
+
+- (void)pushLaunchVC
+{
+    TQProtocolViewController *protocolVC = [[TQProtocolViewController alloc] init];
+    protocolVC.hidesBottomBarWhenPushed = YES;
+    [self setTabbarBtnHide];
+    [self.navigationController pushViewController:protocolVC animated:YES];
 }
 
 @end

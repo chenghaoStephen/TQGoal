@@ -13,4 +13,6 @@
 - (void)setTabBarBtnShow;
 - (void)setTabbarBtnHide;
 
+- (void)pushLaunchVC;
+
 @end

@@ -11,8 +11,12 @@
 
 @interface TQCommon : NSObject
 
-+(UIImage*) imageWithColor:(UIColor*)color;
++ (UIImage*) imageWithColor:(UIColor*)color;
 
-+(BOOL)isBlankString:(NSString *)string;
++ (BOOL)isBlankString:(NSString *)string;
+
++ (CGFloat)heightForString:(NSString *)value fontSize:(UIFont*)font andWidth:(CGFloat)width;
+
++ (CGFloat)widthForString:(NSString *)value fontSize:(UIFont*)font andHeight:(CGFloat)Height;
 
 @end

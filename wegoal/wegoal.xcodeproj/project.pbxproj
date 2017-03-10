@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F16F3B41E70F6C40014037B /* TQProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */; };
+		0F16F3B81E7120F90014037B /* TQLaunchMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3B71E7120F90014037B /* TQLaunchMatchViewController.m */; };
+		0F16F3BD1E71241B0014037B /* TQMatchInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3BB1E71241B0014037B /* TQMatchInformationCell.m */; };
+		0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F16F3BC1E71241B0014037B /* TQMatchInformationCell.xib */; };
+		0F16F3C51E7124670014037B /* TQMatchRefereeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3C31E7124670014037B /* TQMatchRefereeCell.m */; };
+		0F16F3C61E7124670014037B /* TQMatchRefereeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F16F3C41E7124670014037B /* TQMatchRefereeCell.xib */; };
 		0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAF91E09166600CC221E /* TQCommandView.m */; };
 		0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAFC1E091E4B00CC221E /* TQHomeMatchCell.m */; };
 		0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */; };
@@ -87,6 +93,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F16F3B11E70F6C40014037B /* TQProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQProtocolViewController.h; sourceTree = "<group>"; };
+		0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQProtocolViewController.m; sourceTree = "<group>"; };
+		0F16F3B61E7120F90014037B /* TQLaunchMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLaunchMatchViewController.h; sourceTree = "<group>"; };
+		0F16F3B71E7120F90014037B /* TQLaunchMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLaunchMatchViewController.m; sourceTree = "<group>"; };
+		0F16F3BA1E71241B0014037B /* TQMatchInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchInformationCell.h; sourceTree = "<group>"; };
+		0F16F3BB1E71241B0014037B /* TQMatchInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchInformationCell.m; sourceTree = "<group>"; };
+		0F16F3BC1E71241B0014037B /* TQMatchInformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchInformationCell.xib; sourceTree = "<group>"; };
+		0F16F3C21E7124670014037B /* TQMatchRefereeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchRefereeCell.h; sourceTree = "<group>"; };
+		0F16F3C31E7124670014037B /* TQMatchRefereeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchRefereeCell.m; sourceTree = "<group>"; };
+		0F16F3C41E7124670014037B /* TQMatchRefereeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchRefereeCell.xib; sourceTree = "<group>"; };
 		0F19FAF81E09166600CC221E /* TQCommandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQCommandView.h; sourceTree = "<group>"; };
 		0F19FAF91E09166600CC221E /* TQCommandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQCommandView.m; sourceTree = "<group>"; };
 		0F19FAFB1E091E4B00CC221E /* TQHomeMatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQHomeMatchCell.h; sourceTree = "<group>"; };
@@ -244,6 +260,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F16F3A81E70DCDC0014037B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0F16F3A91E70E3180014037B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0F16F3B91E7123850014037B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				0F16F3BA1E71241B0014037B /* TQMatchInformationCell.h */,
+				0F16F3BB1E71241B0014037B /* TQMatchInformationCell.m */,
+				0F16F3BC1E71241B0014037B /* TQMatchInformationCell.xib */,
+				0F16F3C21E7124670014037B /* TQMatchRefereeCell.h */,
+				0F16F3C31E7124670014037B /* TQMatchRefereeCell.m */,
+				0F16F3C41E7124670014037B /* TQMatchRefereeCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		0F19FAF41E09151500CC221E /* TQHomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,12 +515,18 @@
 		F3438C711DEB31A700D86D5B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0F16F3B91E7123850014037B /* cell */,
+				0F16F3A81E70DCDC0014037B /* Model */,
 				0F19FAF41E09151500CC221E /* TQHomeView */,
 				F3438C751DEB324D00D86D5B /* TQHomeViewController.h */,
 				F3438C761DEB324D00D86D5B /* TQHomeViewController.m */,
 				F3438C771DEB324D00D86D5B /* TQHomeViewController.xib */,
 				0F2BACDC1E6E90F900C0EF10 /* TQMessageViewController.h */,
 				0F2BACDD1E6E90F900C0EF10 /* TQMessageViewController.m */,
+				0F16F3B11E70F6C40014037B /* TQProtocolViewController.h */,
+				0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */,
+				0F16F3B61E7120F90014037B /* TQLaunchMatchViewController.h */,
+				0F16F3B71E7120F90014037B /* TQLaunchMatchViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -622,6 +671,7 @@
 				F3438C721DEB31F400D86D5B /* Schedule */,
 				F3438C731DEB320100D86D5B /* Ladder */,
 				F3438C741DEB320800D86D5B /* Me */,
+				0F16F3A91E70E3180014037B /* Login */,
 				F37883D91DE5CC6100A40C3F /* AppDelegate.h */,
 				F37883DA1DE5CC6100A40C3F /* AppDelegate.m */,
 				F37883E41DE5CC6100A40C3F /* LaunchScreen.storyboard */,
@@ -711,6 +761,8 @@
 				0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */,
 				F32ABE3E1E5B2AA6000D7CF1 /* TQEditMeCell.xib in Resources */,
 				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
+				0F16F3C61E7124670014037B /* TQMatchRefereeCell.xib in Resources */,
+				0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */,
 				F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */,
 				F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */,
 				0F6435771E4AE2A50049BC45 /* TQTeamTopView.xib in Resources */,
@@ -790,6 +842,7 @@
 				0F2BACDE1E6E90F900C0EF10 /* TQMessageViewController.m in Sources */,
 				0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */,
 				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
+				0F16F3B81E7120F90014037B /* TQLaunchMatchViewController.m in Sources */,
 				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
 				0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */,
 				0F3C6B721E10AE1A00F713A7 /* TQMatchStatusView.m in Sources */,
@@ -803,6 +856,7 @@
 				F37883D81DE5CC6100A40C3F /* main.m in Sources */,
 				F32ABE391E5B285C000D7CF1 /* TQEditMeViewController.m in Sources */,
 				0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */,
+				0F16F3C51E7124670014037B /* TQMatchRefereeCell.m in Sources */,
 				0F2BACE21E6E931A00C0EF10 /* TQMessageCell.m in Sources */,
 				F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */,
 				0F7F7F701E6FF8E900952DDD /* UploadModel.m in Sources */,
@@ -810,6 +864,7 @@
 				0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */,
 				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
 				F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */,
+				0F16F3B41E70F6C40014037B /* TQProtocolViewController.m in Sources */,
 				F3438C991DF2A51700D86D5B /* UIView+LBExtension.m in Sources */,
 				0F6435751E4ADF220049BC45 /* TQTeamTopView.m in Sources */,
 				0F7F7F6A1E6FF64800952DDD /* FMResultSet.m in Sources */,
@@ -832,6 +887,7 @@
 				0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */,
 				0F7F7F451E6FF37000952DDD /* AFServer.m in Sources */,
 				0F24B89D1E52CD480081A2DA /* TQMemberManageViewController.m in Sources */,
+				0F16F3BD1E71241B0014037B /* TQMatchInformationCell.m in Sources */,
 				0F1C8D431E4C64F30015F015 /* TQUserModel.m in Sources */,
 				0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */,
 				0F7F7F671E6FF64800952DDD /* FMDatabaseAdditions.m in Sources */,

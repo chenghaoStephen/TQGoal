@@ -55,7 +55,7 @@
 {
     if (!_topView) {
 //        _topView = [[NSBundle mainBundle] loadNibNamed:@"TQTeamTopView" owner:nil options:nil].firstObject;
-        _topView = [[TQTeamInformationView alloc] initWithFrame:CGRectMake(0, 0, 375, 206 * SCALE375)];
+        _topView = [[TQTeamInformationView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 206 * SCALE375)];
         _topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"information_back"]];
         _topView.viewMode = TeamTopViewModeTeam;
     }

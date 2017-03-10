@@ -12,6 +12,7 @@
 #import "TQLadderViewController.h"
 #import "TQMeViewController.h"
 #import "TQTabBar.h"
+#import "TQProtocolViewController.h"
 
 @interface TQTabBarController ()<TQTabBarDelegate>
 
@@ -128,6 +129,11 @@
 
 - (void)pathButton:(ZYPathButton *)ZYPathButton clickItemButtonAtIndex:(NSUInteger)itemButtonIndex {
     NSLog(@" 点中了第%ld个按钮" , itemButtonIndex);
+    if (itemButtonIndex == 0) {
+        //发起约战
+        TQBaseViewController *selectedVC = ((UINavigationController *)self.selectedViewController).viewControllers.firstObject;
+        [selectedVC pushLaunchVC];
+    }
 }
 
 @end

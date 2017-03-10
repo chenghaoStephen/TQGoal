@@ -40,6 +40,11 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 //Notification Identifier
 #define kTabbarNeedShowNoti  @"TabbarNeedShow"
 #define kTabbarNeedHideNoti  @"TabbarNeedHide"
+#define kTabbarClickButton   @"TabbarClickButton"
+
+
+//Native
+#define kGuideViewShow       @"GuideViewShow"
 
 
 #define HTTP_TIME_OUT 10
