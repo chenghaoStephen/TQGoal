@@ -68,6 +68,18 @@
     
 }
 
+- (void)setCanSelected:(BOOL)canSelected
+{
+    _canSelected = canSelected;
+    if (canSelected) {
+        _selectedButton.hidden = NO;
+        _avatarImageLeftConstraint.constant = 32.f;
+    } else {
+        _selectedButton.hidden = YES;
+        _avatarImageLeftConstraint.constant = 8.f;
+    }
+}
+
 - (void)packupDetailView
 {
     _block(!_isPackup);

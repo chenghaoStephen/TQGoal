@@ -15,6 +15,7 @@ typedef void(^amountBlock)(NSUInteger);
 
 @property (nonatomic, copy) selectBlock selectBlk;
 @property (nonatomic, copy) amountBlock amountBlk;
+@property (nonatomic, assign) BOOL canSelected;
 
 - (void)setSelected:(BOOL)selected andAmount:(NSUInteger)amount;
 

@@ -10,6 +10,7 @@
 
 #import "TQLaunchServiceViewController.h"
 #import "TQMatchServiceCell.h"
+#import "TQLaunchConfirmViewController.h"
 
 #define kTQMatchServiceCellIdentifier     @"TQMatchServiceCell"
 @interface TQLaunchServiceViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -71,7 +72,8 @@
 
 - (void)nextStepAction
 {
-    NSLog(@"next step!");
+    TQLaunchConfirmViewController *launchConfirmVC = [[TQLaunchConfirmViewController alloc] init];
+    [self.navigationController pushViewController:launchConfirmVC animated:YES];
 }
 
 
@@ -102,7 +104,7 @@
     } else {
         [cell setSelected:NO andAmount:0];
     }
-    
+    cell.canSelected = YES;
     __weak typeof(self) weakSelf = self;
     cell.selectBlk = ^(BOOL isSelected){
         NSMutableDictionary *dic = weakSelf.amountsArray[indexPath.row];

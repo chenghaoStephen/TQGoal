@@ -98,7 +98,6 @@
                     <constraint firstItem="aLn-kx-oT1" firstAttribute="bottom" secondItem="CJr-Fu-GvX" secondAttribute="bottom" id="KIu-Px-ovD"/>
                     <constraint firstItem="Ycp-mU-CZ6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TCI-Hk-szN"/>
                     <constraint firstItem="zt6-pe-xAe" firstAttribute="leading" secondItem="Ycp-mU-CZ6" secondAttribute="trailing" constant="8" id="VPJ-3a-wXs"/>
-                    <constraint firstItem="Ycp-mU-CZ6" firstAttribute="leading" secondItem="iqi-Mc-8ka" secondAttribute="trailing" constant="8" id="cd8-1Y-iFY"/>
                     <constraint firstAttribute="trailing" secondItem="nav-Dg-7DB" secondAttribute="trailing" constant="8" id="d3T-se-8yj"/>
                     <constraint firstItem="cz0-DS-K4X" firstAttribute="top" secondItem="zt6-pe-xAe" secondAttribute="top" id="dQl-gF-yqO"/>
                     <constraint firstItem="zt6-pe-xAe" firstAttribute="top" secondItem="Ycp-mU-CZ6" secondAttribute="top" id="mRf-Hl-Kh0"/>
@@ -106,10 +105,12 @@
                     <constraint firstItem="nav-Dg-7DB" firstAttribute="bottom" secondItem="CJr-Fu-GvX" secondAttribute="bottom" id="qtH-CZ-ohR"/>
                     <constraint firstItem="L7O-6E-GVa" firstAttribute="bottom" secondItem="Ycp-mU-CZ6" secondAttribute="bottom" id="seF-yJ-Zxq"/>
                     <constraint firstItem="iqi-Mc-8ka" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="taJ-Lg-Pua"/>
+                    <constraint firstItem="Ycp-mU-CZ6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="tdK-bj-v37"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="amountLabel" destination="aLn-kx-oT1" id="4IB-Gj-Kae"/>
+                <outlet property="avatarLeftConstraint" destination="tdK-bj-v37" id="UBs-zO-GuC"/>
                 <outlet property="contentLabel" destination="L7O-6E-GVa" id="LAe-SJ-f1y"/>
                 <outlet property="costLabel" destination="cz0-DS-K4X" id="aXE-Tc-yaT"/>
                 <outlet property="minusBtn" destination="CJr-Fu-GvX" id="W5l-kw-o9Q"/>

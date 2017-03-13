@@ -13,5 +13,6 @@ typedef void (^packupBlock)(BOOL isPackup);
 
 @property (nonatomic, copy) packupBlock block;
 @property (nonatomic, assign) BOOL isPackup;
+@property (nonatomic, assign) BOOL canSelected;
 
 @end

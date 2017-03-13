@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *minusBtn;
 @property (weak, nonatomic) IBOutlet UIButton *plusBtn;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarLeftConstraint;
 
 
 @end
@@ -57,6 +58,24 @@
     _selectedButton.selected = !_selectedButton.selected;
     if (_selectBlk) {
         _selectBlk(_selectedButton.selected);
+    }
+}
+
+- (void)setCanSelected:(BOOL)canSelected
+{
+    _canSelected = canSelected;
+    if (canSelected) {
+        _selectedButton.hidden = NO;
+        _avatarLeftConstraint.constant = 32.f;
+        _minusBtn.hidden = NO;
+        _plusBtn.hidden = NO;
+        _amountLabel.hidden = NO;
+    } else {
+        _selectedButton.hidden = YES;
+        _avatarLeftConstraint.constant = 8.f;
+        _minusBtn.hidden = YES;
+        _plusBtn.hidden = YES;
+        _amountLabel.hidden = YES;
     }
 }
 

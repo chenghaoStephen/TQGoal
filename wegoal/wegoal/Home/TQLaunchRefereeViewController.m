@@ -148,6 +148,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         __weak typeof(self) weakSelf = self;
         cell.isPackup = _isRefereePackup;
+        cell.canSelected = YES;
         cell.block = ^(BOOL isPackup){
             weakSelf.isRefereePackup = isPackup;
             [weakSelf.detailTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];

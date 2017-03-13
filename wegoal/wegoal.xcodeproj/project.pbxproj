@@ -59,6 +59,7 @@
 		0F5C0C401E76831B00AF95BF /* TQLaunchServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C3F1E76831B00AF95BF /* TQLaunchServiceViewController.m */; };
 		0F5C0C441E76843100AF95BF /* TQMatchServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C421E76843100AF95BF /* TQMatchServiceCell.m */; };
 		0F5C0C451E76843100AF95BF /* TQMatchServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C0C431E76843100AF95BF /* TQMatchServiceCell.xib */; };
+		0F5C0C481E7695B300AF95BF /* TQLaunchConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C471E7695B300AF95BF /* TQLaunchConfirmViewController.m */; };
 		0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64356C1E4ABEAA0049BC45 /* TQTeamModel.m */; };
 		0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64356F1E4AC0300049BC45 /* TQLadderTeamCell.m */; };
 		0F6435721E4AC0300049BC45 /* TQLadderTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6435701E4AC0300049BC45 /* TQLadderTeamCell.xib */; };
@@ -202,6 +203,8 @@
 		0F5C0C411E76843100AF95BF /* TQMatchServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchServiceCell.h; sourceTree = "<group>"; };
 		0F5C0C421E76843100AF95BF /* TQMatchServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchServiceCell.m; sourceTree = "<group>"; };
 		0F5C0C431E76843100AF95BF /* TQMatchServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchServiceCell.xib; sourceTree = "<group>"; };
+		0F5C0C461E7695B300AF95BF /* TQLaunchConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLaunchConfirmViewController.h; sourceTree = "<group>"; };
+		0F5C0C471E7695B300AF95BF /* TQLaunchConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLaunchConfirmViewController.m; sourceTree = "<group>"; };
 		0F64356B1E4ABEAA0049BC45 /* TQTeamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamModel.h; sourceTree = "<group>"; };
 		0F64356C1E4ABEAA0049BC45 /* TQTeamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTeamModel.m; sourceTree = "<group>"; };
 		0F64356E1E4AC0300049BC45 /* TQLadderTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLadderTeamCell.h; sourceTree = "<group>"; };
@@ -425,6 +428,8 @@
 				0F5C0C3B1E76828800AF95BF /* TQLaunchRefereeViewController.m */,
 				0F5C0C3E1E76831B00AF95BF /* TQLaunchServiceViewController.h */,
 				0F5C0C3F1E76831B00AF95BF /* TQLaunchServiceViewController.m */,
+				0F5C0C461E7695B300AF95BF /* TQLaunchConfirmViewController.h */,
+				0F5C0C471E7695B300AF95BF /* TQLaunchConfirmViewController.m */,
 			);
 			name = LaunchMatch;
 			sourceTree = "<group>";
@@ -928,6 +933,7 @@
 				0F5C0C361E76765600AF95BF /* TQMessageListViewController.m in Sources */,
 				F3438C901DEB37A700D86D5B /* TQTabBar.m in Sources */,
 				F32ABE3D1E5B2AA6000D7CF1 /* TQEditMeCell.m in Sources */,
+				0F5C0C481E7695B300AF95BF /* TQLaunchConfirmViewController.m in Sources */,
 				0F24B8931E5290F30081A2DA /* TQMemberDetailCell.m in Sources */,
 				0F7F7F6D1E6FF86400952DDD /* NSString+URL.m in Sources */,
 				0F2BACDE1E6E90F900C0EF10 /* TQMessageViewController.m in Sources */,
