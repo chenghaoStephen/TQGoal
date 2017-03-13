@@ -21,11 +21,18 @@
 
 //model
 #import "TQMatchModel.h"
+#import "TQMemberModel.h"
+#import "TQTeamModel.h"
+#import "TQPlaceModel.h"
+#import "TQBannerModel.h"
+#import "TQServiceModel.h"
+#import "TQMessageModel.h"
 
 //pods
 #import "AFNetworking.h"
 #import "MJExtension.h"
 #import "SDWebImageManager.h"
+#import "UIImageView+WebCache.h"
 #import "SVPullToRefresh.h"
 #import "UIView+Toast.h"
 #import "SDCycleScrollView.h"
@@ -35,3 +42,4 @@
 #import "UIView+LBExtension.h"
 #import "UIView+LSCore.h"
 #import "NSString+URL.h"
+#import "NSDate+TimeCategory.h"

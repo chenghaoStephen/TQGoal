@@ -10,4 +10,6 @@
 
 @interface TQMessageCell : UITableViewCell
 
+@property (nonatomic, strong) TQMessageModel *messageData;
+
 @end

@@ -30,4 +30,30 @@
     CGContextStrokeRect(context, CGRectMake(0, rect.size.height - .5, rect.size.width, .5));
 }
 
+- (void)setMessageData:(TQMessageModel *)messageData
+{
+    _messageData = messageData;
+    switch ([messageData.type integerValue]) {
+        case MessageTypeDeal:
+            _messageImageView.image = [UIImage imageNamed:@"deal_message"];
+            _messageTitleLabel.text = @"交易消息";
+            break;
+            
+        case MessageTypeMatch:
+            _messageImageView.image = [UIImage imageNamed:@"match_message"];
+            _messageTitleLabel.text = @"约战消息";
+            break;
+            
+        case MessageTypeSystem:
+            _messageImageView.image = [UIImage imageNamed:@"system_message"];
+            _messageTitleLabel.text = @"系统消息";
+            break;
+            
+        default:
+            break;
+    }
+    _latestMessageLabel.text = messageData.latestMessage;
+    _timeLabel.text = messageData.time;
+}
+
 @end

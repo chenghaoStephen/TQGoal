@@ -7,7 +7,7 @@
 //
 
 #import "TQProtocolViewController.h"
-#import "TQLaunchMatchViewController.h"
+#import "TQLaunchRefereeViewController.h"
 
 @interface TQProtocolViewController ()
 
@@ -75,8 +75,8 @@
 
 - (void)agreeAction
 {
-    TQLaunchMatchViewController *launchMatchVC = [[TQLaunchMatchViewController alloc] init];
-    [self.navigationController pushViewController:launchMatchVC animated:YES];
+    TQLaunchRefereeViewController *launchRefereeVC = [[TQLaunchRefereeViewController alloc] init];
+    [self.navigationController pushViewController:launchRefereeVC animated:YES];
 }
 
 - (void)setProtocolDetail:(NSString *)detailStr

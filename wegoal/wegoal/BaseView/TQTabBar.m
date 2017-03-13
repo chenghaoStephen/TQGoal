@@ -49,6 +49,9 @@
     [self setUpPathButton:self.plusBtn];
     self.plusBtn.ZYButtonCenter = CGPointMake(self.centerX, self.superview.height - self.height * 0.5 - ZYMagin );
     [self.plusBtn addPathItems:self.pathButtonArray];
+    NSLog(@"%f", self.plusBtn.height);
+    self.plusBtn.layer.masksToBounds = YES;
+    self.plusBtn.layer.cornerRadius = self.plusBtn.height/2;
     //必须加到父视图上
     [[UIApplication sharedApplication].keyWindow addSubview:self.plusBtn];
 //    [self.superview addSubview:self.plusBtn];

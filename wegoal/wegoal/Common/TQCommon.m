@@ -55,4 +55,15 @@
     return sizeToFit.width;
 }
 
++ (NSString *)weekStringFromDate:(NSDate *)date
+{
+    NSArray *weeks = @[[NSNull null], @"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Beijing"];
+    [calendar setTimeZone:timeZone];
+    NSCalendarUnit calendarUnit = NSWeekdayCalendarUnit;
+    NSDateComponents *components = [calendar components:calendarUnit fromDate:date];
+    return [weeks objectAtIndex:components.weekday];
+}
+
 @end

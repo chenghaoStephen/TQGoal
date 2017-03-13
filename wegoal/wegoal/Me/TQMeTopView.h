@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TQUserModel.h"
+#import "TQMemberModel.h"
 
 @interface TQMeTopView : UIView
 
-@property (nonatomic, strong) TQUserModel *userInfo;
+@property (nonatomic, strong) TQMemberModel *userInfo;
 
 @end

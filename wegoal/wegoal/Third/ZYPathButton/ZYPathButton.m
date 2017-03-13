@@ -128,6 +128,9 @@
     [_pathCenterButton setImage:self.centerHighlightedImage forState:UIControlStateHighlighted];
     [_pathCenterButton addTarget:self action:@selector(centerButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     _pathCenterButton.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+    _pathCenterButton.layer.masksToBounds = YES;
+    NSLog(@"%f", self.centerImage.size.height/2);
+    _pathCenterButton.layer.cornerRadius = self.centerImage.size.height/2;
     [self addSubview:_pathCenterButton];
     
     // Configure bottom view

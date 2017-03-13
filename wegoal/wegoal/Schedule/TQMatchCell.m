@@ -42,6 +42,11 @@
     _time2Lbl.hidden = YES;
     _lineView.hidden = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    _team1Image.layer.masksToBounds = YES;
+    _team1Image.layer.cornerRadius = _team1Image.height/2;
+    _team2Image.layer.masksToBounds = YES;
+    _team2Image.layer.cornerRadius = _team2Image.height/2;
 }
 
 - (void)updateConstraints
@@ -60,6 +65,72 @@
     } else {
         _lineView.hidden = YES;
     }
+}
+
+- (void)setMatchData:(TQMatchModel *)matchData
+{
+    _matchData = matchData;
+    
+    //比赛信息
+    _team1Name.text = matchData.team1Name;
+    [_team1Image sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, matchData.team1Logo)]
+                   placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
+    
+    if ([TQCommon isBlankString:matchData.team2Name]) {
+        _team2Name.text = @"待定中";
+        [_team2Image setImage:[UIImage imageNamed:@"defaultHeadImage"]];
+        [_team2Status setImage:[UIImage imageNamed:@"teaming"]];
+    } else {
+        _team2Name.text = matchData.team2Name;
+        [_team2Image sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, matchData.team2Logo)]
+                       placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
+        [_team2Status setImage:[UIImage imageNamed:@"team_success"]];
+    }
+//    _scoreLbl.text = matchData.gameDate;
+    _systemLbl.text = matchData.gameRules;
+    _addressLbl.text = matchData.gamePlace;
+    //显示日期和星期
+    if (matchData.gameDate.length == 19) {
+        NSDate *date = [NSDate dateFromString:matchData.gameDate format:kDateFormatter1];
+        _scoreLbl.text = [NSDate datestrFromDate:date withDateFormat:kDateFormatter2];
+        _time1Lbl.text = [TQCommon weekStringFromDate:date];
+        _time2Lbl.text = @"";
+    } else {
+        _scoreLbl.text = @"";
+        _time1Lbl.text = @"";
+        _time2Lbl.text = @"";
+    }
+    
+}
+
+- (void)setIsMine:(BOOL)isMine
+{
+    _isMine = isMine;
+    if (isMine && [TQCommon isBlankString:_matchData.team2Name]) {
+        _team2Name.text = @"待定中";
+        [_team2Image setImage:[UIImage imageNamed:@"defaultHeadImage"]];
+        [_team2Status setImage:[UIImage imageNamed:@"teaming"]];
+    } else if (!isMine && [TQCommon isBlankString:_matchData.team2Name]) {
+        _team2Name.text = @"点击应战";
+        [_team2Image setImage:[UIImage imageNamed:@"competitor"]];
+        [_team2Status setImage:[UIImage imageNamed:@"teaming"]];
+        
+    }
+}
+
+- (void)clearInformation
+{
+    _team1Name.text = @"";
+    [_team1Image setImage:[UIImage imageNamed:@"defaultHeadImage"]];
+    [_team1Status setImage:[UIImage imageNamed:@"teaming"]];
+    _team2Name.text = @"";
+    [_team2Image setImage:[UIImage imageNamed:@"defaultHeadImage"]];
+    [_team2Status setImage:[UIImage imageNamed:@"teaming"]];
+    _scoreLbl.text = @"--";
+    _systemLbl.text = @"--";
+    _addressLbl.text = @"--";
+    _time1Lbl.text = @"--";
+    _time2Lbl.text = @"";
 }
 
 

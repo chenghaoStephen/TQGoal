@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F16F3B41E70F6C40014037B /* TQProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */; };
-		0F16F3B81E7120F90014037B /* TQLaunchMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3B71E7120F90014037B /* TQLaunchMatchViewController.m */; };
 		0F16F3BD1E71241B0014037B /* TQMatchInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3BB1E71241B0014037B /* TQMatchInformationCell.m */; };
 		0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F16F3BC1E71241B0014037B /* TQMatchInformationCell.xib */; };
 		0F16F3C51E7124670014037B /* TQMatchRefereeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3C31E7124670014037B /* TQMatchRefereeCell.m */; };
@@ -45,6 +44,21 @@
 		0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABE71E518E1200643973 /* TQTeamMemberCell.m */; };
 		0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F50ABE81E518E1200643973 /* TQTeamMemberCell.xib */; };
 		0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABEC1E51A43B00643973 /* TQMemberDetailViewController.m */; };
+		0F5378F71E76242A005E2B74 /* TQBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5378F61E76242A005E2B74 /* TQBannerModel.m */; };
+		0F5C0C231E76322000AF95BF /* umsocial_wechat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C0C221E76322000AF95BF /* umsocial_wechat.png */; };
+		0F5C0C251E76323E00AF95BF /* umsocial_wechat_timeline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C0C241E76323E00AF95BF /* umsocial_wechat_timeline.png */; };
+		0F5C0C281E76324700AF95BF /* umsocial_qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C0C261E76324700AF95BF /* umsocial_qq.png */; };
+		0F5C0C291E76324700AF95BF /* umsocial_qzone.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C0C271E76324700AF95BF /* umsocial_qzone.png */; };
+		0F5C0C2B1E76325500AF95BF /* umsocial_sina.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C0C2A1E76325500AF95BF /* umsocial_sina.png */; };
+		0F5C0C2D1E76325E00AF95BF /* umsocial_tencentWB.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C0C2C1E76325E00AF95BF /* umsocial_tencentWB.png */; };
+		0F5C0C301E7667FC00AF95BF /* NSDate+TimeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C2F1E7667FC00AF95BF /* NSDate+TimeCategory.m */; };
+		0F5C0C331E76728C00AF95BF /* TQMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C321E76728C00AF95BF /* TQMessageModel.m */; };
+		0F5C0C361E76765600AF95BF /* TQMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C351E76765600AF95BF /* TQMessageListViewController.m */; };
+		0F5C0C391E76796000AF95BF /* TQWebPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C381E76796000AF95BF /* TQWebPageViewController.m */; };
+		0F5C0C3C1E76828800AF95BF /* TQLaunchRefereeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C3B1E76828800AF95BF /* TQLaunchRefereeViewController.m */; };
+		0F5C0C401E76831B00AF95BF /* TQLaunchServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C3F1E76831B00AF95BF /* TQLaunchServiceViewController.m */; };
+		0F5C0C441E76843100AF95BF /* TQMatchServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C0C421E76843100AF95BF /* TQMatchServiceCell.m */; };
+		0F5C0C451E76843100AF95BF /* TQMatchServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F5C0C431E76843100AF95BF /* TQMatchServiceCell.xib */; };
 		0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64356C1E4ABEAA0049BC45 /* TQTeamModel.m */; };
 		0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F64356F1E4AC0300049BC45 /* TQLadderTeamCell.m */; };
 		0F6435721E4AC0300049BC45 /* TQLadderTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6435701E4AC0300049BC45 /* TQLadderTeamCell.xib */; };
@@ -97,8 +111,6 @@
 /* Begin PBXFileReference section */
 		0F16F3B11E70F6C40014037B /* TQProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQProtocolViewController.h; sourceTree = "<group>"; };
 		0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQProtocolViewController.m; sourceTree = "<group>"; };
-		0F16F3B61E7120F90014037B /* TQLaunchMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLaunchMatchViewController.h; sourceTree = "<group>"; };
-		0F16F3B71E7120F90014037B /* TQLaunchMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLaunchMatchViewController.m; sourceTree = "<group>"; };
 		0F16F3BA1E71241B0014037B /* TQMatchInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchInformationCell.h; sourceTree = "<group>"; };
 		0F16F3BB1E71241B0014037B /* TQMatchInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchInformationCell.m; sourceTree = "<group>"; };
 		0F16F3BC1E71241B0014037B /* TQMatchInformationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchInformationCell.xib; sourceTree = "<group>"; };
@@ -167,6 +179,29 @@
 		0F50ABE81E518E1200643973 /* TQTeamMemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQTeamMemberCell.xib; sourceTree = "<group>"; };
 		0F50ABEB1E51A43B00643973 /* TQMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMemberDetailViewController.h; sourceTree = "<group>"; };
 		0F50ABEC1E51A43B00643973 /* TQMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMemberDetailViewController.m; sourceTree = "<group>"; };
+		0F5378F51E76242A005E2B74 /* TQBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQBannerModel.h; sourceTree = "<group>"; };
+		0F5378F61E76242A005E2B74 /* TQBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQBannerModel.m; sourceTree = "<group>"; };
+		0F5C0C221E76322000AF95BF /* umsocial_wechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = umsocial_wechat.png; sourceTree = "<group>"; };
+		0F5C0C241E76323E00AF95BF /* umsocial_wechat_timeline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = umsocial_wechat_timeline.png; sourceTree = "<group>"; };
+		0F5C0C261E76324700AF95BF /* umsocial_qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = umsocial_qq.png; sourceTree = "<group>"; };
+		0F5C0C271E76324700AF95BF /* umsocial_qzone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = umsocial_qzone.png; sourceTree = "<group>"; };
+		0F5C0C2A1E76325500AF95BF /* umsocial_sina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = umsocial_sina.png; sourceTree = "<group>"; };
+		0F5C0C2C1E76325E00AF95BF /* umsocial_tencentWB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = umsocial_tencentWB.png; sourceTree = "<group>"; };
+		0F5C0C2E1E7667FC00AF95BF /* NSDate+TimeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeCategory.h"; sourceTree = "<group>"; };
+		0F5C0C2F1E7667FC00AF95BF /* NSDate+TimeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeCategory.m"; sourceTree = "<group>"; };
+		0F5C0C311E76728C00AF95BF /* TQMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMessageModel.h; sourceTree = "<group>"; };
+		0F5C0C321E76728C00AF95BF /* TQMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMessageModel.m; sourceTree = "<group>"; };
+		0F5C0C341E76765600AF95BF /* TQMessageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMessageListViewController.h; sourceTree = "<group>"; };
+		0F5C0C351E76765600AF95BF /* TQMessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMessageListViewController.m; sourceTree = "<group>"; };
+		0F5C0C371E76796000AF95BF /* TQWebPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQWebPageViewController.h; sourceTree = "<group>"; };
+		0F5C0C381E76796000AF95BF /* TQWebPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQWebPageViewController.m; sourceTree = "<group>"; };
+		0F5C0C3A1E76828800AF95BF /* TQLaunchRefereeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLaunchRefereeViewController.h; sourceTree = "<group>"; };
+		0F5C0C3B1E76828800AF95BF /* TQLaunchRefereeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLaunchRefereeViewController.m; sourceTree = "<group>"; };
+		0F5C0C3E1E76831B00AF95BF /* TQLaunchServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLaunchServiceViewController.h; sourceTree = "<group>"; };
+		0F5C0C3F1E76831B00AF95BF /* TQLaunchServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLaunchServiceViewController.m; sourceTree = "<group>"; };
+		0F5C0C411E76843100AF95BF /* TQMatchServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchServiceCell.h; sourceTree = "<group>"; };
+		0F5C0C421E76843100AF95BF /* TQMatchServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchServiceCell.m; sourceTree = "<group>"; };
+		0F5C0C431E76843100AF95BF /* TQMatchServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchServiceCell.xib; sourceTree = "<group>"; };
 		0F64356B1E4ABEAA0049BC45 /* TQTeamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamModel.h; sourceTree = "<group>"; };
 		0F64356C1E4ABEAA0049BC45 /* TQTeamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTeamModel.m; sourceTree = "<group>"; };
 		0F64356E1E4AC0300049BC45 /* TQLadderTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLadderTeamCell.h; sourceTree = "<group>"; };
@@ -269,6 +304,10 @@
 		0F16F3A81E70DCDC0014037B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F5378F51E76242A005E2B74 /* TQBannerModel.h */,
+				0F5378F61E76242A005E2B74 /* TQBannerModel.m */,
+				0F5C0C311E76728C00AF95BF /* TQMessageModel.h */,
+				0F5C0C321E76728C00AF95BF /* TQMessageModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -289,6 +328,12 @@
 				0F16F3C21E7124670014037B /* TQMatchRefereeCell.h */,
 				0F16F3C31E7124670014037B /* TQMatchRefereeCell.m */,
 				0F16F3C41E7124670014037B /* TQMatchRefereeCell.xib */,
+				0F5C0C411E76843100AF95BF /* TQMatchServiceCell.h */,
+				0F5C0C421E76843100AF95BF /* TQMatchServiceCell.m */,
+				0F5C0C431E76843100AF95BF /* TQMatchServiceCell.xib */,
+				0F2BACDF1E6E931A00C0EF10 /* TQMessageCell.h */,
+				0F2BACE01E6E931A00C0EF10 /* TQMessageCell.m */,
+				0F2BACE11E6E931A00C0EF10 /* TQMessageCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -306,9 +351,6 @@
 				0F3C6B711E10AE1A00F713A7 /* TQMatchStatusView.m */,
 				0F3C6B751E10E9BC00F713A7 /* TQCreateTeamView.h */,
 				0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */,
-				0F2BACDF1E6E931A00C0EF10 /* TQMessageCell.h */,
-				0F2BACE01E6E931A00C0EF10 /* TQMessageCell.m */,
-				0F2BACE11E6E931A00C0EF10 /* TQMessageCell.xib */,
 			);
 			name = TQHomeView;
 			sourceTree = "<group>";
@@ -359,6 +401,32 @@
 				0F24B8921E5290F30081A2DA /* TQMemberDetailCell.xib */,
 			);
 			name = cell;
+			sourceTree = "<group>";
+		};
+		0F5C0C211E76320700AF95BF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F5C0C2C1E76325E00AF95BF /* umsocial_tencentWB.png */,
+				0F5C0C2A1E76325500AF95BF /* umsocial_sina.png */,
+				0F5C0C261E76324700AF95BF /* umsocial_qq.png */,
+				0F5C0C271E76324700AF95BF /* umsocial_qzone.png */,
+				0F5C0C241E76323E00AF95BF /* umsocial_wechat_timeline.png */,
+				0F5C0C221E76322000AF95BF /* umsocial_wechat.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0F5C0C3D1E7682F200AF95BF /* LaunchMatch */ = {
+			isa = PBXGroup;
+			children = (
+				0F16F3B11E70F6C40014037B /* TQProtocolViewController.h */,
+				0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */,
+				0F5C0C3A1E76828800AF95BF /* TQLaunchRefereeViewController.h */,
+				0F5C0C3B1E76828800AF95BF /* TQLaunchRefereeViewController.m */,
+				0F5C0C3E1E76831B00AF95BF /* TQLaunchServiceViewController.h */,
+				0F5C0C3F1E76831B00AF95BF /* TQLaunchServiceViewController.m */,
+			);
+			name = LaunchMatch;
 			sourceTree = "<group>";
 		};
 		0F6435681E4ABE490049BC45 /* Model */ = {
@@ -525,18 +593,19 @@
 		F3438C711DEB31A700D86D5B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0F5C0C3D1E7682F200AF95BF /* LaunchMatch */,
 				0F16F3B91E7123850014037B /* cell */,
 				0F16F3A81E70DCDC0014037B /* Model */,
 				0F19FAF41E09151500CC221E /* TQHomeView */,
 				F3438C751DEB324D00D86D5B /* TQHomeViewController.h */,
 				F3438C761DEB324D00D86D5B /* TQHomeViewController.m */,
 				F3438C771DEB324D00D86D5B /* TQHomeViewController.xib */,
+				0F5C0C371E76796000AF95BF /* TQWebPageViewController.h */,
+				0F5C0C381E76796000AF95BF /* TQWebPageViewController.m */,
 				0F2BACDC1E6E90F900C0EF10 /* TQMessageViewController.h */,
 				0F2BACDD1E6E90F900C0EF10 /* TQMessageViewController.m */,
-				0F16F3B11E70F6C40014037B /* TQProtocolViewController.h */,
-				0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */,
-				0F16F3B61E7120F90014037B /* TQLaunchMatchViewController.h */,
-				0F16F3B71E7120F90014037B /* TQLaunchMatchViewController.m */,
+				0F5C0C341E76765600AF95BF /* TQMessageListViewController.h */,
+				0F5C0C351E76765600AF95BF /* TQMessageListViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -631,6 +700,8 @@
 		F3438C961DF2A4FA00D86D5B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0F5C0C2E1E7667FC00AF95BF /* NSDate+TimeCategory.h */,
+				0F5C0C2F1E7667FC00AF95BF /* NSDate+TimeCategory.m */,
 				0F7F7F6B1E6FF86400952DDD /* NSString+URL.h */,
 				0F7F7F6C1E6FF86400952DDD /* NSString+URL.m */,
 				0F2A62C71E0A296100CD8F02 /* UIView+LSCore.h */,
@@ -693,6 +764,7 @@
 		F37883D61DE5CC6100A40C3F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0F5C0C211E76320700AF95BF /* Resources */,
 				F37883E21DE5CC6100A40C3F /* Assets.xcassets */,
 				F37883E71DE5CC6100A40C3F /* Info.plist */,
 				F37883D71DE5CC6100A40C3F /* main.m */,
@@ -765,20 +837,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F7F7F641E6FF64800952DDD /* LICENSE.txt in Resources */,
+				0F5C0C2D1E76325E00AF95BF /* umsocial_tencentWB.png in Resources */,
+				0F5C0C251E76323E00AF95BF /* umsocial_wechat_timeline.png in Resources */,
 				0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */,
 				0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */,
 				F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */,
 				0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */,
 				F32ABE3E1E5B2AA6000D7CF1 /* TQEditMeCell.xib in Resources */,
+				0F5C0C231E76322000AF95BF /* umsocial_wechat.png in Resources */,
 				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
+				0F5C0C291E76324700AF95BF /* umsocial_qzone.png in Resources */,
 				0F16F3C61E7124670014037B /* TQMatchRefereeCell.xib in Resources */,
 				0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */,
 				F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */,
+				0F5C0C451E76843100AF95BF /* TQMatchServiceCell.xib in Resources */,
 				F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */,
 				0F6435771E4AE2A50049BC45 /* TQTeamTopView.xib in Resources */,
+				0F5C0C281E76324700AF95BF /* umsocial_qq.png in Resources */,
 				0F6435721E4AC0300049BC45 /* TQLadderTeamCell.xib in Resources */,
 				0F24B8941E5290F30081A2DA /* TQMemberDetailCell.xib in Resources */,
 				F3438C7E1DEB326C00D86D5B /* TQScheduleViewController.xib in Resources */,
+				0F5C0C2B1E76325500AF95BF /* umsocial_sina.png in Resources */,
 				0F2BACE31E6E931A00C0EF10 /* TQMessageCell.xib in Resources */,
 				0F64357C1E4AF9EA0049BC45 /* TQLadderHeaderView.xib in Resources */,
 				0F6435821E4B058B0049BC45 /* TQMeViewCell.xib in Resources */,
@@ -844,7 +923,9 @@
 				0F2A62D01E0A297F00CD8F02 /* JOMatchMenuView.m in Sources */,
 				0F2BACE61E6EA34F00C0EF10 /* TQTeamInformationView.m in Sources */,
 				0F2A62D11E0A297F00CD8F02 /* JOSelectMenuView.m in Sources */,
+				0F5C0C391E76796000AF95BF /* TQWebPageViewController.m in Sources */,
 				0F24B8971E52A76F0081A2DA /* TQHeightBackView.m in Sources */,
+				0F5C0C361E76765600AF95BF /* TQMessageListViewController.m in Sources */,
 				F3438C901DEB37A700D86D5B /* TQTabBar.m in Sources */,
 				F32ABE3D1E5B2AA6000D7CF1 /* TQEditMeCell.m in Sources */,
 				0F24B8931E5290F30081A2DA /* TQMemberDetailCell.m in Sources */,
@@ -853,12 +934,13 @@
 				0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */,
 				0F2BFFF31E7279E100AD8B51 /* TQPlaceModel.m in Sources */,
 				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
-				0F16F3B81E7120F90014037B /* TQLaunchMatchViewController.m in Sources */,
 				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
 				0F2BFFF61E727A0200AD8B51 /* TQMemberModel.m in Sources */,
 				0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */,
 				0F3C6B721E10AE1A00F713A7 /* TQMatchStatusView.m in Sources */,
+				0F5C0C441E76843100AF95BF /* TQMatchServiceCell.m in Sources */,
 				0F7F7F681E6FF64800952DDD /* FMDatabasePool.m in Sources */,
+				0F5C0C301E7667FC00AF95BF /* NSDate+TimeCategory.m in Sources */,
 				0F3C6B7C1E10F50700F713A7 /* TQMatchCell.m in Sources */,
 				0F24B8A01E52E8D00081A2DA /* TQAddMemberViewController.m in Sources */,
 				0F2BFFF01E72770300AD8B51 /* TQServiceModel.m in Sources */,
@@ -874,12 +956,15 @@
 				F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */,
 				0F7F7F701E6FF8E900952DDD /* UploadModel.m in Sources */,
 				0F7F7F771E6FFED200952DDD /* ZDMToast.m in Sources */,
+				0F5C0C331E76728C00AF95BF /* TQMessageModel.m in Sources */,
 				0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */,
+				0F5378F71E76242A005E2B74 /* TQBannerModel.m in Sources */,
 				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
 				F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */,
 				0F16F3B41E70F6C40014037B /* TQProtocolViewController.m in Sources */,
 				F3438C991DF2A51700D86D5B /* UIView+LBExtension.m in Sources */,
 				0F6435751E4ADF220049BC45 /* TQTeamTopView.m in Sources */,
+				0F5C0C401E76831B00AF95BF /* TQLaunchServiceViewController.m in Sources */,
 				0F7F7F6A1E6FF64800952DDD /* FMResultSet.m in Sources */,
 				0F7F7F691E6FF64800952DDD /* FMDatabaseQueue.m in Sources */,
 				0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */,
@@ -889,6 +974,7 @@
 				0F50ABE51E518BD800643973 /* TQTeamDetailViewController.m in Sources */,
 				F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */,
 				0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */,
+				0F5C0C3C1E76828800AF95BF /* TQLaunchRefereeViewController.m in Sources */,
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
 				0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */,
 				0F7F7F761E6FFED200952DDD /* ZDMNavToast.m in Sources */,

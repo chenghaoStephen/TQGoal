@@ -11,6 +11,6 @@
 @interface TQMatchStatusView : UIView
 
 //约战状态
-@property (nonatomic, assign) MatchStatus status;
+@property (nonatomic, assign) TQMatchModel *matchData;
 
 @end

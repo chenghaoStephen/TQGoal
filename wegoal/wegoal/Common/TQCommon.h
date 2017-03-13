@@ -19,4 +19,6 @@
 
 + (CGFloat)widthForString:(NSString *)value fontSize:(UIFont*)font andHeight:(CGFloat)Height;
 
++ (NSString *)weekStringFromDate:(NSDate *)date;
+
 @end

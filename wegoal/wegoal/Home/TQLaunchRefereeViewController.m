@@ -1,19 +1,20 @@
 //
-//  TQLaunchMatchViewController.m
+//  TQLaunchRefereeViewController.m
 //  wegoal
 //
-//  Created by joker on 2017/3/9.
+//  Created by joker on 2017/3/13.
 //  Copyright © 2017年 xdkj. All rights reserved.
 //
 
-#import "TQLaunchMatchViewController.h"
+#import "TQLaunchRefereeViewController.h"
 #import "TQTeamInformationView.h"
 #import "TQMatchInformationCell.h"
 #import "TQMatchRefereeCell.h"
+#import "TQLaunchServiceViewController.h"
 
 #define kTQMatchInformationCellIdentifier   @"TQMatchInformationCell"
 #define kTQMatchRefereeCellIdentifier       @"TQMatchRefereeCell"
-@interface TQLaunchMatchViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface TQLaunchRefereeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) TQTeamInformationView *topView;
 @property (strong, nonatomic) UITableView *detailTableView;
@@ -23,7 +24,8 @@
 
 @end
 
-@implementation TQLaunchMatchViewController
+@implementation TQLaunchRefereeViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -79,7 +81,8 @@
 
 - (void)nextStepAction
 {
-    NSLog(@"next step!");
+    TQLaunchServiceViewController *launchServiceVC = [[TQLaunchServiceViewController alloc] init];
+    [self.navigationController pushViewController:launchServiceVC animated:YES];
 }
 
 

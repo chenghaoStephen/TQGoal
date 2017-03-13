@@ -25,21 +25,17 @@
     if (self) {
         [self addSubview:self.createView];
         [self addSubview:self.matchView];
+        self.createView.hidden = YES;
     }
     return self;
 }
 
-- (void)setStatus:(MatchStatus)status
+- (void)setMatchData:(TQMatchModel *)matchData
 {
-    _status = status;
-    if (status == MatchStatusNewJoiner) {
-        _createView.hidden = NO;
-        _matchView.hidden = YES;
-    } else {
-        _createView.hidden = YES;
-        _matchView.hidden = NO;
-        _matchView.status = status;
-    }
+    _matchData = matchData;
+    _createView.hidden = YES;
+    _matchView.hidden = NO;
+    _matchView.matchData = matchData;
 }
 
 - (TQCreateTeamView *)createView

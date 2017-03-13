@@ -12,5 +12,8 @@
 
 @property (strong, nonatomic) TQMatchModel *matchData;
 @property (nonatomic, assign) BOOL isShowLine;      //是否显示分割线
+@property (nonatomic, assign) BOOL isMine;          //是否是我发起的约战
+
+- (void)clearInformation;
 
 @end

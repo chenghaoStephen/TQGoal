@@ -12,6 +12,9 @@
 #define kTQMessageCellIdentifier @"TQMessageCell"
 
 @interface TQMessageViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    NSMutableArray *messageArray;
+}
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -24,7 +27,29 @@
     
     self.title = @"消息列表";
     self.view.backgroundColor = kMainBackColor;
+    messageArray = [NSMutableArray array];
+    [self makeTestData];
     [self.view addSubview:self.tableView];
+}
+
+- (void)makeTestData
+{
+    TQMessageModel *message1 = [TQMessageModel new];
+    message1.type = @"0";
+    message1.latestMessage = @"您有一笔保证金消费记录。";
+    message1.time = @"06:29";
+    
+    TQMessageModel *message2 = [TQMessageModel new];
+    message2.type = @"1";
+    message2.latestMessage = @"您有一个比赛在本周日下午14:00进行，请注意时间并做好保暖措施。";
+    message2.time = @"昨天";
+    
+    TQMessageModel *message3 = [TQMessageModel new];
+    message3.type = @"2";
+    message3.latestMessage = @"约战已经成功，请点击详细查看。";
+    message3.time = @"昨天";
+    
+    [messageArray addObjectsFromArray:@[message1, message2, message3]];
 }
 
 - (UITableView *)tableView
@@ -54,7 +79,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return messageArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,6 +88,9 @@
     if (!cell) {
         NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMessageCell" owner:nil options:nil].firstObject;
         cell = xibs.firstObject;
+    }
+    if (indexPath.row < messageArray.count) {
+        cell.messageData = messageArray[indexPath.row];
     }
     return cell;
 }
@@ -77,7 +105,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
