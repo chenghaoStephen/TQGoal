@@ -106,6 +106,7 @@
     }
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.canSelected = YES;
     if (indexPath.row < _servicesArray.count) {
         TQServiceModel *serviceData = _servicesArray[indexPath.row];
         [cell setSelected:serviceData.isSelected andAmount:serviceData.amount];
@@ -114,7 +115,6 @@
         [cell setSelected:NO andAmount:0];
         [cell clearInformation];
     }
-    cell.canSelected = YES;
     __weak typeof(self) weakSelf = self;
     cell.selectBlk = ^(BOOL isSelected){
         TQServiceModel *serviceData = weakSelf.servicesArray[indexPath.row];

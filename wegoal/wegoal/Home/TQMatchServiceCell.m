@@ -62,6 +62,7 @@
     _nameLabel.text = serviceData.serviceTypeName;
     _costLabel.text = [NSString stringWithFormat:@"￥%@", serviceData.price];
 //    _contentLabel.text = serviceData.bodyContent;
+    _amountLabel.text = [NSString stringWithFormat:@"%ld", serviceData.amount];
 }
 
 - (void)clearInformation
@@ -87,13 +88,15 @@
         _avatarLeftConstraint.constant = 32.f;
         _minusBtn.hidden = NO;
         _plusBtn.hidden = NO;
-        _amountLabel.hidden = NO;
+//        _amountLabel.hidden = NO;
+        _amountLabel.backgroundColor = kUnenableColor;
     } else {
         _selectedButton.hidden = YES;
         _avatarLeftConstraint.constant = 8.f;
         _minusBtn.hidden = YES;
         _plusBtn.hidden = YES;
-        _amountLabel.hidden = YES;
+//        _amountLabel.hidden = YES;
+        _amountLabel.backgroundColor = [UIColor clearColor];
     }
 }
 
