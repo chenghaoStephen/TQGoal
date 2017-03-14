@@ -329,9 +329,7 @@
 {
     NSLog(@"show message");
     TQMessageViewController *messageVC = [[TQMessageViewController alloc] init];
-    messageVC.hidesBottomBarWhenPushed = YES;
-    [self setTabbarBtnHide];
-    [self.navigationController pushViewController:messageVC animated:YES];
+    [self pushViewController:messageVC];
 }
 
 - (void)showMoreMatch
@@ -357,10 +355,11 @@
     NSLog(@"点击了第%ld个轮播图", (index + 1));
     //跳转到web视图
     TQWebPageViewController *webPageVC = [[TQWebPageViewController alloc] init];
-    webPageVC.bannerModel = headerData[index];
-    webPageVC.hidesBottomBarWhenPushed = YES;
-    [self setTabbarBtnHide];
-    [self.navigationController pushViewController:webPageVC animated:YES];
+    if (index < headerData.count) {
+        webPageVC.bannerModel = headerData[index];
+        [self pushViewController:webPageVC];
+    }
+    
 }
 
 

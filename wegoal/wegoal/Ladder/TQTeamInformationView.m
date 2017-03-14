@@ -223,6 +223,8 @@
         make.size.mas_equalTo(CGSizeMake(47, 47));
         make.centerY.equalTo(self.mas_centerY);
     }];
+    _logoImageView.layer.masksToBounds = YES;
+    _logoImageView.layer.cornerRadius = 47/2;
     
     //战徽
     [_decorationImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -233,7 +235,7 @@
     
     //队名
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_logoImageView.mas_top).with.offset(-3);
+        make.top.equalTo(_logoImageView.mas_top).with.offset(-13);
         make.left.equalTo(_logoImageView.mas_right).with.offset(26 * SCALE375);
         make.height.mas_equalTo(16);
     }];
@@ -355,9 +357,23 @@
     }
 }
 
-- (void)setTeamInfo:(TQMatchModel *)teamInfo
+- (void)setTeamInfo:(TQTeamModel *)teamInfo
 {
     _teamInfo = teamInfo;
+    
+    [_logoImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, teamInfo.teamLogo)]
+                      placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
+    _nameLabel.text = teamInfo.teamName;
+    _yellowCountLabel.text = teamInfo.yellow;
+    _redCountLabel.text = teamInfo.red;
+    _rankLabel.text = [NSString stringWithFormat:@"RANK %@", teamInfo.rank];
+    _matchNumlabel.text = [NSString stringWithFormat:@"场次：%@", teamInfo.gameCount];
+    _winLabel.text = [NSString stringWithFormat:@"胜：%@", teamInfo.win];
+    _loseLabel.text = [NSString stringWithFormat:@"负：%@", teamInfo.lose];
+    _tieLabel.text = [NSString stringWithFormat:@"平：%@", teamInfo.draw];
+    _heightLabel.text = [NSString stringWithFormat:@"平均身高：%@", teamInfo.averageHeight];
+    _weightLabel.text = [NSString stringWithFormat:@"平均体重：%@", teamInfo.averageWeight];
+    _ageLabel.text = [NSString stringWithFormat:@"平均年龄：%@", teamInfo.averageAge];
 }
 
 

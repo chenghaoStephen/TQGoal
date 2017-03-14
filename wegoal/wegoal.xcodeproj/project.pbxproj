@@ -17,6 +17,15 @@
 		0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */; };
 		0F1C8D3D1E4C62BC0015F015 /* TQMeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */; };
 		0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */; };
+		0F2384F81E778447008008EB /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2384F51E778447008008EB /* NSDate+Extension.m */; };
+		0F2385031E77888F008008EB /* XHDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2385011E77888F008008EB /* XHDatePickerView.m */; };
+		0F2385041E77888F008008EB /* XHDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2385021E77888F008008EB /* XHDatePickerView.xib */; };
+		0F2385081E778E47008008EB /* ZSYPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2385071E778E47008008EB /* ZSYPopoverListView.m */; };
+		0F23850D1E779481008008EB /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F23850A1E779481008008EB /* MJPopupBackgroundView.m */; };
+		0F23850E1E779481008008EB /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F23850C1E779481008008EB /* UIViewController+MJPopupViewController.m */; };
+		0F2385111E7795C4008008EB /* TQPlaceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2385101E7795C4008008EB /* TQPlaceListViewController.m */; };
+		0F2385151E779608008008EB /* TQPlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2385131E779608008008EB /* TQPlaceCell.m */; };
+		0F2385161E779608008008EB /* TQPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2385141E779608008008EB /* TQPlaceCell.xib */; };
 		0F24B8931E5290F30081A2DA /* TQMemberDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F24B8911E5290F30081A2DA /* TQMemberDetailCell.m */; };
 		0F24B8941E5290F30081A2DA /* TQMemberDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F24B8921E5290F30081A2DA /* TQMemberDetailCell.xib */; };
 		0F24B8971E52A76F0081A2DA /* TQHeightBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F24B8961E52A76F0081A2DA /* TQHeightBackView.m */; };
@@ -127,6 +136,22 @@
 		0F1C8D3B1E4C62BC0015F015 /* TQMeTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMeTopView.h; sourceTree = "<group>"; };
 		0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMeTopView.m; sourceTree = "<group>"; };
 		0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMeTopView.xib; sourceTree = "<group>"; };
+		0F2384F41E778447008008EB /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		0F2384F51E778447008008EB /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		0F2385001E77888F008008EB /* XHDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDatePickerView.h; sourceTree = "<group>"; };
+		0F2385011E77888F008008EB /* XHDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDatePickerView.m; sourceTree = "<group>"; };
+		0F2385021E77888F008008EB /* XHDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHDatePickerView.xib; sourceTree = "<group>"; };
+		0F2385061E778E47008008EB /* ZSYPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSYPopoverListView.h; sourceTree = "<group>"; };
+		0F2385071E778E47008008EB /* ZSYPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSYPopoverListView.m; sourceTree = "<group>"; };
+		0F2385091E779481008008EB /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		0F23850A1E779481008008EB /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		0F23850B1E779481008008EB /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		0F23850C1E779481008008EB /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		0F23850F1E7795C4008008EB /* TQPlaceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPlaceListViewController.h; sourceTree = "<group>"; };
+		0F2385101E7795C4008008EB /* TQPlaceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPlaceListViewController.m; sourceTree = "<group>"; };
+		0F2385121E779608008008EB /* TQPlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPlaceCell.h; sourceTree = "<group>"; };
+		0F2385131E779608008008EB /* TQPlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPlaceCell.m; sourceTree = "<group>"; };
+		0F2385141E779608008008EB /* TQPlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQPlaceCell.xib; sourceTree = "<group>"; };
 		0F24B8901E5290F30081A2DA /* TQMemberDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMemberDetailCell.h; sourceTree = "<group>"; };
 		0F24B8911E5290F30081A2DA /* TQMemberDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMemberDetailCell.m; sourceTree = "<group>"; };
 		0F24B8921E5290F30081A2DA /* TQMemberDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMemberDetailCell.xib; sourceTree = "<group>"; };
@@ -337,6 +362,9 @@
 				0F2BACDF1E6E931A00C0EF10 /* TQMessageCell.h */,
 				0F2BACE01E6E931A00C0EF10 /* TQMessageCell.m */,
 				0F2BACE11E6E931A00C0EF10 /* TQMessageCell.xib */,
+				0F2385121E779608008008EB /* TQPlaceCell.h */,
+				0F2385131E779608008008EB /* TQPlaceCell.m */,
+				0F2385141E779608008008EB /* TQPlaceCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -375,6 +403,25 @@
 				0F2BFFF51E727A0200AD8B51 /* TQMemberModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		0F2384FA1E7786D0008008EB /* XHDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				0F2385001E77888F008008EB /* XHDatePickerView.h */,
+				0F2385011E77888F008008EB /* XHDatePickerView.m */,
+				0F2385021E77888F008008EB /* XHDatePickerView.xib */,
+			);
+			path = XHDatePicker;
+			sourceTree = "<group>";
+		};
+		0F2385051E778E47008008EB /* ZSYPopoverList */ = {
+			isa = PBXGroup;
+			children = (
+				0F2385061E778E47008008EB /* ZSYPopoverListView.h */,
+				0F2385071E778E47008008EB /* ZSYPopoverListView.m */,
+			);
+			path = ZSYPopoverList;
 			sourceTree = "<group>";
 		};
 		0F2A62C61E0A294D00CD8F02 /* MenuView */ = {
@@ -430,6 +477,8 @@
 				0F5C0C3F1E76831B00AF95BF /* TQLaunchServiceViewController.m */,
 				0F5C0C461E7695B300AF95BF /* TQLaunchConfirmViewController.h */,
 				0F5C0C471E7695B300AF95BF /* TQLaunchConfirmViewController.m */,
+				0F23850F1E7795C4008008EB /* TQPlaceListViewController.h */,
+				0F2385101E7795C4008008EB /* TQPlaceListViewController.m */,
 			);
 			name = LaunchMatch;
 			sourceTree = "<group>";
@@ -694,6 +743,8 @@
 		F3438C951DF2A4A700D86D5B /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				0F2385051E778E47008008EB /* ZSYPopoverList */,
+				0F2384FA1E7786D0008008EB /* XHDatePicker */,
 				0F7F7F781E6FFFB800952DDD /* GXHUD */,
 				0F7F7F711E6FFED200952DDD /* Toast */,
 				0F7F7F541E6FF64800952DDD /* FMDB */,
@@ -705,6 +756,12 @@
 		F3438C961DF2A4FA00D86D5B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0F2385091E779481008008EB /* MJPopupBackgroundView.h */,
+				0F23850A1E779481008008EB /* MJPopupBackgroundView.m */,
+				0F23850B1E779481008008EB /* UIViewController+MJPopupViewController.h */,
+				0F23850C1E779481008008EB /* UIViewController+MJPopupViewController.m */,
+				0F2384F41E778447008008EB /* NSDate+Extension.h */,
+				0F2384F51E778447008008EB /* NSDate+Extension.m */,
 				0F5C0C2E1E7667FC00AF95BF /* NSDate+TimeCategory.h */,
 				0F5C0C2F1E7667FC00AF95BF /* NSDate+TimeCategory.m */,
 				0F7F7F6B1E6FF86400952DDD /* NSString+URL.h */,
@@ -851,6 +908,7 @@
 				F32ABE3E1E5B2AA6000D7CF1 /* TQEditMeCell.xib in Resources */,
 				0F5C0C231E76322000AF95BF /* umsocial_wechat.png in Resources */,
 				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
+				0F2385041E77888F008008EB /* XHDatePickerView.xib in Resources */,
 				0F5C0C291E76324700AF95BF /* umsocial_qzone.png in Resources */,
 				0F16F3C61E7124670014037B /* TQMatchRefereeCell.xib in Resources */,
 				0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */,
@@ -866,6 +924,7 @@
 				0F2BACE31E6E931A00C0EF10 /* TQMessageCell.xib in Resources */,
 				0F64357C1E4AF9EA0049BC45 /* TQLadderHeaderView.xib in Resources */,
 				0F6435821E4B058B0049BC45 /* TQMeViewCell.xib in Resources */,
+				0F2385161E779608008008EB /* TQPlaceCell.xib in Resources */,
 				F3438C791DEB324D00D86D5B /* TQHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -941,6 +1000,7 @@
 				0F2BFFF31E7279E100AD8B51 /* TQPlaceModel.m in Sources */,
 				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
 				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
+				0F2385111E7795C4008008EB /* TQPlaceListViewController.m in Sources */,
 				0F2BFFF61E727A0200AD8B51 /* TQMemberModel.m in Sources */,
 				0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */,
 				0F3C6B721E10AE1A00F713A7 /* TQMatchStatusView.m in Sources */,
@@ -952,6 +1012,7 @@
 				0F2BFFF01E72770300AD8B51 /* TQServiceModel.m in Sources */,
 				0F7F7F661E6FF64800952DDD /* FMDatabase.m in Sources */,
 				0F1C8D3D1E4C62BC0015F015 /* TQMeTopView.m in Sources */,
+				0F23850D1E779481008008EB /* MJPopupBackgroundView.m in Sources */,
 				0F32E7331E08C75800152EDD /* TQCommon.m in Sources */,
 				0F6435811E4B058B0049BC45 /* TQMeViewCell.m in Sources */,
 				F37883D81DE5CC6100A40C3F /* main.m in Sources */,
@@ -965,6 +1026,7 @@
 				0F5C0C331E76728C00AF95BF /* TQMessageModel.m in Sources */,
 				0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */,
 				0F5378F71E76242A005E2B74 /* TQBannerModel.m in Sources */,
+				0F2384F81E778447008008EB /* NSDate+Extension.m in Sources */,
 				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
 				F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */,
 				0F16F3B41E70F6C40014037B /* TQProtocolViewController.m in Sources */,
@@ -987,11 +1049,15 @@
 				F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */,
 				F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */,
 				0F7F7F4F1E6FF61400952DDD /* DownLoadModel.m in Sources */,
+				0F2385081E778E47008008EB /* ZSYPopoverListView.m in Sources */,
+				0F2385151E779608008008EB /* TQPlaceCell.m in Sources */,
+				0F23850E1E779481008008EB /* UIViewController+MJPopupViewController.m in Sources */,
 				0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */,
 				0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */,
 				0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */,
 				0F7F7F451E6FF37000952DDD /* AFServer.m in Sources */,
 				0F24B89D1E52CD480081A2DA /* TQMemberManageViewController.m in Sources */,
+				0F2385031E77888F008008EB /* XHDatePickerView.m in Sources */,
 				0F16F3BD1E71241B0014037B /* TQMatchInformationCell.m in Sources */,
 				0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */,
 				0F7F7F671E6FF64800952DDD /* FMDatabaseAdditions.m in Sources */,

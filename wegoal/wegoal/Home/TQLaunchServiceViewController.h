@@ -10,4 +10,10 @@
 
 @interface TQLaunchServiceViewController : TQBaseViewController
 
+@property (nonatomic, strong) TQTeamModel *teamData;
+@property (nonatomic, copy) NSDictionary *matchData;
+@property (nonatomic, strong) TQServiceModel *refereeData;
+@property (nonatomic, assign) BOOL isSelectedReferee;
+@property (nonatomic, strong) NSArray *servicesArray;
+
 @end

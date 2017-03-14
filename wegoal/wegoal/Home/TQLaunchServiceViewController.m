@@ -15,8 +15,6 @@
 #define kTQMatchServiceCellIdentifier     @"TQMatchServiceCell"
 @interface TQLaunchServiceViewController ()<UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) NSMutableArray *amountsArray;
-
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UIButton *nextStep;
 
@@ -29,13 +27,6 @@
     
     self.title = @"约战服务";
     self.view.backgroundColor = kMainBackColor;
-    _amountsArray = [NSMutableArray array];
-    //初始化选中，数量
-    for (NSInteger i = 0; i < 10; i++) {
-        [_amountsArray addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"selected":@(NO),
-                                                                                 @"amount":@(0)}]
-         ];
-    }
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.nextStep];
 }
@@ -73,7 +64,24 @@
 - (void)nextStepAction
 {
     TQLaunchConfirmViewController *launchConfirmVC = [[TQLaunchConfirmViewController alloc] init];
+    launchConfirmVC.teamData = _teamData;
+    launchConfirmVC.refereeData = _refereeData;
+    NSArray *servicesFinal = [self getFinalServicesFrom:_servicesArray];
+    launchConfirmVC.servicesArray = servicesFinal;
+    launchConfirmVC.matchData = _matchData;
+    [launchConfirmVC reloadData];
     [self.navigationController pushViewController:launchConfirmVC animated:YES];
+}
+
+- (NSArray *)getFinalServicesFrom:(NSArray *)array
+{
+    NSMutableArray *finalArray = [NSMutableArray array];
+    for (TQServiceModel *serviceData in array) {
+        if (serviceData.isSelected && serviceData.amount > 0) {
+            [finalArray addObject:serviceData];
+        }
+    }
+    return finalArray;
 }
 
 
@@ -86,7 +94,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return _servicesArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,21 +106,23 @@
     }
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    if (indexPath.row < _amountsArray.count) {
-        NSMutableDictionary *dic = _amountsArray[indexPath.row];
-        [cell setSelected:[dic[@"selected"] boolValue] andAmount:[dic[@"amount"] unsignedIntegerValue]];
+    if (indexPath.row < _servicesArray.count) {
+        TQServiceModel *serviceData = _servicesArray[indexPath.row];
+        [cell setSelected:serviceData.isSelected andAmount:serviceData.amount];
+        cell.serviceData = _servicesArray[indexPath.row];
     } else {
         [cell setSelected:NO andAmount:0];
+        [cell clearInformation];
     }
     cell.canSelected = YES;
     __weak typeof(self) weakSelf = self;
     cell.selectBlk = ^(BOOL isSelected){
-        NSMutableDictionary *dic = weakSelf.amountsArray[indexPath.row];
-        dic[@"selected"] = @(isSelected);
+        TQServiceModel *serviceData = weakSelf.servicesArray[indexPath.row];
+        serviceData.isSelected = isSelected;
     };
     cell.amountBlk = ^(NSUInteger newAmount){
-        NSMutableDictionary *dic = weakSelf.amountsArray[indexPath.row];
-        dic[@"amount"] = @(newAmount);
+        TQServiceModel *serviceData = weakSelf.servicesArray[indexPath.row];
+        serviceData.amount = newAmount;
     };
     return cell;
 }

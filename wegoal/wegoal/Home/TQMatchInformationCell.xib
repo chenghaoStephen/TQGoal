@@ -37,11 +37,40 @@
                         <color key="textColor" red="0.20392156859999999" green="0.27058823529999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJb-Vh-xej">
+                        <rect key="frame" x="188" y="8" width="150" height="21"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamation_mark" translatesAutoresizingMaskIntoConstraints="NO" id="kIk-1A-rel">
+                                <rect key="frame" x="6" y="7" width="8" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="SAr-hh-WfO"/>
+                                    <constraint firstAttribute="width" constant="8" id="tv2-9i-vAm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="场地费用由球队线下自行处理" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sc-dZ-m24">
+                                <rect key="frame" x="17" y="4.5" width="133" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.58823529411764708" green="0.6705882352941176" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="9qA-vf-Xf4"/>
+                            <constraint firstItem="kIk-1A-rel" firstAttribute="centerY" secondItem="mJb-Vh-xej" secondAttribute="centerY" id="AQK-Re-jWY"/>
+                            <constraint firstItem="1Sc-dZ-m24" firstAttribute="leading" secondItem="kIk-1A-rel" secondAttribute="trailing" constant="3" id="RuQ-XH-znr"/>
+                            <constraint firstAttribute="trailing" secondItem="1Sc-dZ-m24" secondAttribute="trailing" id="SKg-bW-7QZ"/>
+                            <constraint firstAttribute="height" constant="21" id="cc7-oh-wIK"/>
+                            <constraint firstItem="1Sc-dZ-m24" firstAttribute="centerY" secondItem="mJb-Vh-xej" secondAttribute="centerY" id="lia-VL-M3o"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="raJ-Jq-Yy4" firstAttribute="leading" secondItem="mJb-Vh-xej" secondAttribute="trailing" constant="8" id="4iQ-kg-v8j"/>
                     <constraint firstItem="W98-Sr-IE6" firstAttribute="leading" secondItem="ECI-UN-Beh" secondAttribute="trailing" constant="12" id="Ig4-xU-Jv2"/>
                     <constraint firstItem="W98-Sr-IE6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="P9q-dJ-E1Z"/>
                     <constraint firstItem="ECI-UN-Beh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="V1T-LO-MPx"/>
+                    <constraint firstItem="mJb-Vh-xej" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WdZ-Jk-b45"/>
                     <constraint firstItem="ECI-UN-Beh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gHL-uC-Lkd"/>
                     <constraint firstItem="raJ-Jq-Yy4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="y4s-Oa-0dc"/>
                     <constraint firstAttribute="trailing" secondItem="raJ-Jq-Yy4" secondAttribute="trailing" constant="12" id="zRN-J7-jkS"/>
@@ -51,11 +80,13 @@
                 <outlet property="infoContentLabel" destination="raJ-Jq-Yy4" id="Gpq-8B-o4c"/>
                 <outlet property="infoImageView" destination="ECI-UN-Beh" id="kEK-lu-9IE"/>
                 <outlet property="infoTitleLabel" destination="W98-Sr-IE6" id="1F7-rn-scp"/>
+                <outlet property="noticeView" destination="mJb-Vh-xej" id="dMq-am-qr4"/>
             </connections>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="exclamation_mark" width="8" height="8"/>
         <image name="match_time" width="11" height="11"/>
     </resources>
 </document>

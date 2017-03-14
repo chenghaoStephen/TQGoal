@@ -23,6 +23,9 @@
 "rank": "",
 "yellow": "",
 "red": ""
+"averageHeight": "178",
+"averageWeight": "77",
+"averageAge": "33"
  */
 
 @property (nonatomic, copy) NSString *teamId;          //球队id
@@ -37,5 +40,8 @@
 @property (nonatomic, copy) NSString *rank;            //等级
 @property (nonatomic, copy) NSString *yellow;          //黄牌
 @property (nonatomic, copy) NSString *red;             //红牌
+@property (nonatomic, copy) NSString *averageHeight;   //平均身高
+@property (nonatomic, copy) NSString *averageWeight;   //平均体重
+@property (nonatomic, copy) NSString *averageAge;      //平均年龄
 
 @end

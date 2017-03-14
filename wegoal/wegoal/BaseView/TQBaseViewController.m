@@ -77,9 +77,14 @@
 - (void)pushLaunchVC
 {
     TQProtocolViewController *protocolVC = [[TQProtocolViewController alloc] init];
-    protocolVC.hidesBottomBarWhenPushed = YES;
+    [self pushViewController:protocolVC];
+}
+
+- (void)pushViewController:(UIViewController *)viewController
+{
+    viewController.hidesBottomBarWhenPushed = YES;
     [self setTabbarBtnHide];
-    [self.navigationController pushViewController:protocolVC animated:YES];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

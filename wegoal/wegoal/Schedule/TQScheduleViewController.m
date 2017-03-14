@@ -163,10 +163,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TQTeamDetailViewController *teamDetailVC = [[TQTeamDetailViewController alloc] init];
-    teamDetailVC.hidesBottomBarWhenPushed = YES;
-    [self setTabbarBtnHide];
     teamDetailVC.isMyTeam = NO;
-    [self.navigationController pushViewController:teamDetailVC animated:YES];
+    [self pushViewController:teamDetailVC];
 }
 
 @end

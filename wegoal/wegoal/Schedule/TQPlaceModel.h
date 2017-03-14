@@ -24,10 +24,11 @@
 @property (nonatomic, copy) NSString *gamePlaceId;     //id
 @property (nonatomic, copy) NSString *placePic;        //场地图片
 @property (nonatomic, copy) NSString *name;            //场地名称
+@property (nonatomic, copy) NSString *phone;           //电话
 @property (nonatomic, copy) NSString *gps;             //位置
-@property (nonatomic, copy) NSString *place;           //地区
+@property (nonatomic, copy) NSString *place;           //地点
 @property (nonatomic, copy) NSString *brief;           //特点
 @property (nonatomic, copy) NSString *price;           //价格
-@property (nonatomic, copy) NSString *gamePlaceVS;     //VS
+@property (nonatomic, copy) NSArray *gamePlaceVS;      //VS
 
 @end

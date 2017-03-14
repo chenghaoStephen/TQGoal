@@ -44,16 +44,16 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    self.plusBtn = [[ZYPathButton alloc] initWithCenterImage:[UIImage imageNamed:@"features"] highlightedImage:[UIImage imageNamed:@"features"]];
-    self.plusBtn.delegate = self;
-    [self setUpPathButton:self.plusBtn];
-    self.plusBtn.ZYButtonCenter = CGPointMake(self.centerX, self.superview.height - self.height * 0.5 - ZYMagin );
-    [self.plusBtn addPathItems:self.pathButtonArray];
-    NSLog(@"%f", self.plusBtn.height);
-    self.plusBtn.layer.masksToBounds = YES;
-    self.plusBtn.layer.cornerRadius = self.plusBtn.height/2;
-    //必须加到父视图上
-    [[UIApplication sharedApplication].keyWindow addSubview:self.plusBtn];
+    if (!self.plusBtn) {
+        self.plusBtn = [[ZYPathButton alloc] initWithCenterImage:[UIImage imageNamed:@"features"] highlightedImage:[UIImage imageNamed:@"features"]];
+        self.plusBtn.delegate = self;
+        [self setUpPathButton:self.plusBtn];
+        self.plusBtn.ZYButtonCenter = CGPointMake(self.centerX, self.superview.height - self.height * 0.5 - ZYMagin );
+        [self.plusBtn addPathItems:self.pathButtonArray];
+        //必须加到父视图上
+        [[UIApplication sharedApplication].keyWindow addSubview:self.plusBtn];
+    }
+    
 //    [self.superview addSubview:self.plusBtn];
 //    UILabel *label = [[UILabel alloc]init];
 //    label.text = @"";

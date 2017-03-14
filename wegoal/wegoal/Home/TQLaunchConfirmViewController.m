@@ -37,12 +37,27 @@
     [super viewDidLoad];
     
     self.title = @"确认约战";
-    _isRefereePackup = NO;
-    _isServicePackup = NO;
     self.view.backgroundColor = kMainBackColor;
-    [self.view addSubview:self.topView];
-    [self.view addSubview:self.detailTableView];
-    [self.view addSubview:self.nextStep];
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _isRefereePackup = NO;
+        _isServicePackup = NO;
+        
+        [self.view addSubview:self.topView];
+        [self.view addSubview:self.detailTableView];
+        [self.view addSubview:self.nextStep];
+    }
+    return self;
+}
+
+- (void)reloadData
+{
+    [_detailTableView reloadData];
+    _topView.teamInfo = _teamData;
 }
 
 - (TQTeamInformationView *)topView
@@ -58,7 +73,7 @@
 - (UITableView *)detailTableView
 {
     if (!_detailTableView) {
-        _detailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_topView.frame), SCREEN_WIDTH, VIEW_HEIGHT - 194) style:UITableViewStylePlain];
+        _detailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT - 44) style:UITableViewStylePlain];
         _detailTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _detailTableView.dataSource = self;
         _detailTableView.delegate = self;
@@ -66,6 +81,7 @@
         [_detailTableView registerNib:[UINib nibWithNibName:@"TQMatchInformationCell" bundle:nil] forCellReuseIdentifier:kTQMatchInformationCellIdentifier];
         [_detailTableView registerNib:[UINib nibWithNibName:@"TQMatchRefereeCell" bundle:nil] forCellReuseIdentifier:kTQMatchRefereeCellIdentifier];
         [_detailTableView registerNib:[UINib nibWithNibName:@"TQMatchServiceCell" bundle:nil] forCellReuseIdentifier:kTQMatchServiceCellIdentifier];
+        _detailTableView.tableHeaderView = self.topView;
     }
     return _detailTableView;
 }
@@ -97,18 +113,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    if (_servicesArray && _servicesArray.count > 0) {
+        return 2;
+    }
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 5;
+        if (_refereeData.isSelected) {
+            return 5;
+        } else {
+            return 4;
+        }
     } else {
         if (_isServicePackup) {
             return 0;
         } else {
-            return 10;
+            return _servicesArray.count;
         }
     }
 }
@@ -122,26 +145,28 @@
                 NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMatchInformationCell" owner:nil options:nil].firstObject;
                 cell = xibs.firstObject;
             }
+            cell.noticeView.hidden = YES;
             switch (indexPath.row) {
                 case 0:
                     cell.infoImageView.image = [UIImage imageNamed:@"match_time"];
                     cell.infoTitleLabel.text = @"约战时间";
-                    cell.infoContentLabel.text = @"---";
+                    cell.infoContentLabel.text = _matchData[@"time"];
                     break;
                 case 1:
                     cell.infoImageView.image = [UIImage imageNamed:@"match_ground"];
                     cell.infoTitleLabel.text = @"约战场地";
-                    cell.infoContentLabel.text = @"---";
+                    cell.infoContentLabel.text = ((TQPlaceModel *)_matchData[@"place"]).name;
                     break;
                 case 2:
                     cell.infoImageView.image = [UIImage imageNamed:@"ground_pay"];
                     cell.infoTitleLabel.text = @"场地费用";
-                    cell.infoContentLabel.text = @"---";
+                    cell.infoContentLabel.text = [NSString stringWithFormat:@"￥%@", ((TQPlaceModel *)_matchData[@"place"]).price];
+                    cell.noticeView.hidden = NO;
                     break;
                 case 3:
                     cell.infoImageView.image = [UIImage imageNamed:@"race_system"];
                     cell.infoTitleLabel.text = @"赛制";
-                    cell.infoContentLabel.text = @"---";
+                    cell.infoContentLabel.text = _matchData[@"system"];
                     break;
                     
                 default:
@@ -165,6 +190,11 @@
             __weak typeof(self) weakSelf = self;
             cell.isPackup = _isRefereePackup;
             cell.canSelected = NO;
+            if (_refereeData) {
+                cell.refereeData = _refereeData;
+            } else {
+                [cell clearInformation];
+            }
             cell.block = ^(BOOL isPackup){
                 weakSelf.isRefereePackup = isPackup;
                 [weakSelf.detailTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
@@ -180,6 +210,11 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.canSelected = NO;
+        if (indexPath.row < _servicesArray.count) {
+            cell.serviceData = _servicesArray[indexPath.row];
+        } else {
+            [cell clearInformation];
+        }
         return cell;
     }
 

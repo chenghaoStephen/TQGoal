@@ -144,16 +144,12 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         //我的球队
         TQTeamDetailViewController *teamDetailVC = [[TQTeamDetailViewController alloc] init];
-        teamDetailVC.hidesBottomBarWhenPushed = YES;
-        [self setTabbarBtnHide];
         teamDetailVC.isMyTeam = YES;
-        [self.navigationController pushViewController:teamDetailVC animated:YES];
+        [self pushViewController:teamDetailVC];
     } else if (indexPath.section == 0 && indexPath.row == 1) {
         //编辑个人资料
         TQEditMeViewController *editMeVC = [[TQEditMeViewController alloc] init];
-        editMeVC.hidesBottomBarWhenPushed = YES;
-        [self setTabbarBtnHide];
-        [self.navigationController pushViewController:editMeVC animated:YES];
+        [self pushViewController:editMeVC];
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         //我的约战
         

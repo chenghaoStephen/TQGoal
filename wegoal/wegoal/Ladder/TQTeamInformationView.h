@@ -17,6 +17,6 @@ typedef NS_ENUM(NSInteger, TeamTopViewMode){
 @interface TQTeamInformationView : UIView
 
 @property (nonatomic, assign) TeamTopViewMode viewMode;
-@property (nonatomic, strong) TQMatchModel *teamInfo;
+@property (nonatomic, strong) TQTeamModel *teamInfo;
 
 @end

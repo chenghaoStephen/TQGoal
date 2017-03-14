@@ -28,5 +28,7 @@
 @property (nonatomic, copy) NSString *bodyContent;       //服务内容
 @property (nonatomic, copy) NSString *orderCount;        //件数
 @property (nonatomic, copy) NSString *price;             //价格
+@property (nonatomic, assign) BOOL isSelected;           //是否选择
+@property (nonatomic, assign) NSUInteger amount;         //数量
 
 @end

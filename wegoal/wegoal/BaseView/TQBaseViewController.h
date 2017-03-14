@@ -15,4 +15,6 @@
 
 - (void)pushLaunchVC;
 
+- (void)pushViewController:(UIViewController *)viewController;
+
 @end

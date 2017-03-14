@@ -147,9 +147,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
     TQTeamDetailViewController *teamDetailVC = [[TQTeamDetailViewController alloc] init];
-    teamDetailVC.hidesBottomBarWhenPushed = YES;
-    [self setTabbarBtnHide];
-    [self.navigationController pushViewController:teamDetailVC animated:YES];
+    [self pushViewController:teamDetailVC];
 }
 
 

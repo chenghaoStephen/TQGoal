@@ -92,19 +92,27 @@
                                 <color key="textColor" red="0.97647058823529409" green="0.34509803921568627" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SK4-HX-DMC">
+                                <rect key="frame" x="104" y="40" width="263" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SK4-HX-DMC" firstAttribute="bottom" secondItem="hyG-u1-STl" secondAttribute="bottom" id="0ss-Ul-MA4"/>
                             <constraint firstItem="Tcr-23-ryi" firstAttribute="centerY" secondItem="xa2-fe-pAd" secondAttribute="centerY" id="2p7-6e-PsI"/>
                             <constraint firstItem="xa2-fe-pAd" firstAttribute="leading" secondItem="hyG-u1-STl" secondAttribute="trailing" constant="8" id="5g5-Qr-jBZ"/>
+                            <constraint firstItem="SK4-HX-DMC" firstAttribute="leading" secondItem="xa2-fe-pAd" secondAttribute="leading" id="6fe-Dg-sjO"/>
                             <constraint firstItem="cqB-x3-ys9" firstAttribute="top" secondItem="xa2-fe-pAd" secondAttribute="top" id="8Fj-YZ-Nt5"/>
                             <constraint firstItem="xa2-fe-pAd" firstAttribute="top" secondItem="hyG-u1-STl" secondAttribute="top" id="8gA-6E-gI4"/>
                             <constraint firstItem="qwH-DG-6aT" firstAttribute="leading" secondItem="gaw-Wg-rgg" secondAttribute="leading" constant="8" id="9nz-yC-xMA"/>
                             <constraint firstAttribute="height" constant="80" id="MVM-41-0Q9"/>
                             <constraint firstAttribute="trailing" secondItem="cqB-x3-ys9" secondAttribute="trailing" constant="12" id="Mm6-lQ-5yt"/>
                             <constraint firstItem="Tcr-23-ryi" firstAttribute="leading" secondItem="xa2-fe-pAd" secondAttribute="trailing" constant="8" id="N1E-EA-zlR"/>
+                            <constraint firstAttribute="trailing" secondItem="SK4-HX-DMC" secondAttribute="trailing" constant="8" id="RuI-q9-2th"/>
                             <constraint firstItem="hyG-u1-STl" firstAttribute="centerY" secondItem="gaw-Wg-rgg" secondAttribute="centerY" id="TLe-Tm-LNo"/>
                             <constraint firstItem="hyG-u1-STl" firstAttribute="leading" secondItem="gaw-Wg-rgg" secondAttribute="leading" constant="32" id="WOD-Uf-o95"/>
+                            <constraint firstItem="SK4-HX-DMC" firstAttribute="top" secondItem="xa2-fe-pAd" secondAttribute="bottom" constant="17" id="g63-QE-PIv"/>
                             <constraint firstItem="qwH-DG-6aT" firstAttribute="centerY" secondItem="gaw-Wg-rgg" secondAttribute="centerY" id="v2q-FS-evR"/>
                         </constraints>
                     </view>
@@ -121,6 +129,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImageLeftConstraint" destination="WOD-Uf-o95" id="k3s-6g-iPQ"/>
+                <outlet property="bodyView" destination="SK4-HX-DMC" id="7Zb-1l-Wbj"/>
                 <outlet property="costLabel" destination="cqB-x3-ys9" id="NXR-8z-uF1"/>
                 <outlet property="nameLabel" destination="xa2-fe-pAd" id="JFc-kp-Q7E"/>
                 <outlet property="packupImageView" destination="Hh8-9y-POc" id="fpt-fh-6oI"/>

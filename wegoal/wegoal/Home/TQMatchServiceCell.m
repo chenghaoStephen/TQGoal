@@ -28,6 +28,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    _contentLabel.numberOfLines = 0;
 }
 
 -(void)drawRect:(CGRect)rect
@@ -53,6 +54,23 @@
 }
 
 #pragma mark - events
+
+- (void)setServiceData:(TQServiceModel *)serviceData
+{
+    [_serviceAvatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, serviceData.imgUrl)]
+                               placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
+    _nameLabel.text = serviceData.serviceTypeName;
+    _costLabel.text = [NSString stringWithFormat:@"￥%@", serviceData.price];
+//    _contentLabel.text = serviceData.bodyContent;
+}
+
+- (void)clearInformation
+{
+    _serviceAvatarImageView.image = [UIImage imageNamed:@"defaultHeadImage"];
+    _nameLabel.text = @"---";
+    _costLabel.text = @"￥---";
+    _contentLabel.text = @"---";
+}
 
 - (IBAction)selectAction:(id)sender {
     _selectedButton.selected = !_selectedButton.selected;
