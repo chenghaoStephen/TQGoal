@@ -84,8 +84,7 @@
 {
     TQMeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQMeViewCell];
     if (!cell) {
-        NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMeViewCell" owner:nil options:nil].firstObject;
-        cell = xibs.firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:@"TQMeViewCell" owner:nil options:nil].firstObject;
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     if (indexPath.section == 0 && indexPath.row == 0) {

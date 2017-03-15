@@ -86,8 +86,7 @@
 {
     TQMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQMessageCellIdentifier];
     if (!cell) {
-        NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMessageCell" owner:nil options:nil].firstObject;
-        cell = xibs.firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:@"TQMessageCell" owner:nil options:nil].firstObject;
     }
     if (indexPath.row < messageArray.count) {
         cell.messageData = messageArray[indexPath.row];

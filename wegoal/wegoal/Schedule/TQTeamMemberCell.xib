@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-FC-0wH">
@@ -66,12 +66,29 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwn-cu-81W">
+                                <rect key="frame" x="339" y="10" width="45" height="16"/>
+                                <color key="backgroundColor" red="0.3411764705882353" green="0.83921568627450982" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="0D9-GH-PYT"/>
+                                    <constraint firstAttribute="width" constant="45" id="w8l-HE-935"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="邀请">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="invitateAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Oh5-s0-IJF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bBH-5W-Z6v" firstAttribute="centerY" secondItem="Dnv-FC-0wH" secondAttribute="centerY" id="4gR-Nn-qPU"/>
                             <constraint firstItem="y45-WS-zhH" firstAttribute="leading" secondItem="bBH-5W-Z6v" secondAttribute="trailing" constant="15" id="Lif-fR-Whu"/>
+                            <constraint firstAttribute="trailing" secondItem="Lwn-cu-81W" secondAttribute="trailing" constant="10" id="Lo7-3V-9yS"/>
                             <constraint firstItem="Sfs-eb-8y0" firstAttribute="leading" secondItem="aJa-Ax-EvL" secondAttribute="trailing" constant="8" id="OTC-gQ-FFa"/>
+                            <constraint firstItem="Lwn-cu-81W" firstAttribute="centerY" secondItem="Dnv-FC-0wH" secondAttribute="centerY" id="QhY-z8-utP"/>
                             <constraint firstItem="aJa-Ax-EvL" firstAttribute="centerY" secondItem="Dnv-FC-0wH" secondAttribute="centerY" id="VyN-Lg-mtU"/>
                             <constraint firstItem="JwN-Na-0Rj" firstAttribute="leading" secondItem="y45-WS-zhH" secondAttribute="trailing" constant="12" id="XY7-X6-nEy"/>
                             <constraint firstItem="aJa-Ax-EvL" firstAttribute="leading" secondItem="JwN-Na-0Rj" secondAttribute="trailing" constant="10" id="cDB-EN-r2Y"/>
@@ -91,6 +108,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImageView" destination="aJa-Ax-EvL" id="AxJ-4Z-NKU"/>
+                <outlet property="invitateButton" destination="Lwn-cu-81W" id="wRO-w1-3dp"/>
                 <outlet property="mainView" destination="Dnv-FC-0wH" id="HeV-BS-6k9"/>
                 <outlet property="nameLabel" destination="Sfs-eb-8y0" id="ROu-Hl-0bk"/>
                 <outlet property="numberLabel" destination="y45-WS-zhH" id="B42-nX-d7T"/>

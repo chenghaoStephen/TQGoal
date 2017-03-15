@@ -42,6 +42,7 @@
 #import "UIView+LBExtension.h"
 #import "NSDate+Extension.h"
 #import "UIView+LSCore.h"
+#import "UIView+ViewController.h"
 #import "NSString+URL.h"
 #import "NSDate+TimeCategory.h"
 #import "UIViewController+MJPopupViewController.h"

@@ -177,8 +177,7 @@
     if (indexPath.row >= 0 && indexPath.row < 4) {
         TQMatchInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQMatchInformationCellIdentifier];
         if (!cell) {
-            NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMatchInformationCell" owner:nil options:nil].firstObject;
-            cell = xibs.firstObject;
+            cell = [[NSBundle mainBundle] loadNibNamed:@"TQMatchInformationCell" owner:nil options:nil].firstObject;
         }
         cell.noticeView.hidden = YES;
         switch (indexPath.row) {
@@ -216,8 +215,7 @@
     } else {
         TQMatchRefereeCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQMatchRefereeCellIdentifier];
         if (!cell) {
-            NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMatchRefereeCell" owner:nil options:nil].firstObject;
-            cell = xibs.firstObject;
+            cell = [[NSBundle mainBundle] loadNibNamed:@"TQMatchRefereeCell" owner:nil options:nil].firstObject;
         }
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -93,6 +93,13 @@
 		0F7F7F761E6FFED200952DDD /* ZDMNavToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F731E6FFED200952DDD /* ZDMNavToast.m */; };
 		0F7F7F771E6FFED200952DDD /* ZDMToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F751E6FFED200952DDD /* ZDMToast.m */; };
 		0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F7F1E7000C200952DDD /* ZDMIndicatorView.m */; };
+		0FDA935B1E79189C00ABA65A /* TQLaunchInvitateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA935A1E79189C00ABA65A /* TQLaunchInvitateViewController.m */; };
+		0FDA935E1E79250100ABA65A /* TQMatchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA935D1E79250100ABA65A /* TQMatchDetailViewController.m */; };
+		0FDA93611E79265000ABA65A /* TQMatchDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA93601E79265000ABA65A /* TQMatchDetailTopView.m */; };
+		0FDA93631E79265C00ABA65A /* TQMatchDetailTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDA93621E79265C00ABA65A /* TQMatchDetailTopView.xib */; };
+		0FDA93661E7936BA00ABA65A /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA93651E7936BA00ABA65A /* UIView+ViewController.m */; };
+		0FDA93691E793D8E00ABA65A /* TQMatchDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA93681E793D8E00ABA65A /* TQMatchDetailBottomView.m */; };
+		0FDA936B1E793D9800ABA65A /* TQMatchDetailBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FDA936A1E793D9800ABA65A /* TQMatchDetailBottomView.xib */; };
 		0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */; };
 		F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32ABE351E47E9C1000D7CF1 /* TQMatchModel.m */; };
 		F32ABE391E5B285C000D7CF1 /* TQEditMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32ABE381E5B285C000D7CF1 /* TQEditMeViewController.m */; };
@@ -273,6 +280,18 @@
 		0F7F7F751E6FFED200952DDD /* ZDMToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMToast.m; sourceTree = "<group>"; };
 		0F7F7F7E1E7000C200952DDD /* ZDMIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDMIndicatorView.h; sourceTree = "<group>"; };
 		0F7F7F7F1E7000C200952DDD /* ZDMIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMIndicatorView.m; sourceTree = "<group>"; };
+		0FDA93591E79189C00ABA65A /* TQLaunchInvitateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLaunchInvitateViewController.h; sourceTree = "<group>"; };
+		0FDA935A1E79189C00ABA65A /* TQLaunchInvitateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLaunchInvitateViewController.m; sourceTree = "<group>"; };
+		0FDA935C1E79250100ABA65A /* TQMatchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchDetailViewController.h; sourceTree = "<group>"; };
+		0FDA935D1E79250100ABA65A /* TQMatchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchDetailViewController.m; sourceTree = "<group>"; };
+		0FDA935F1E79265000ABA65A /* TQMatchDetailTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchDetailTopView.h; sourceTree = "<group>"; };
+		0FDA93601E79265000ABA65A /* TQMatchDetailTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchDetailTopView.m; sourceTree = "<group>"; };
+		0FDA93621E79265C00ABA65A /* TQMatchDetailTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchDetailTopView.xib; sourceTree = "<group>"; };
+		0FDA93641E7936BA00ABA65A /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
+		0FDA93651E7936BA00ABA65A /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		0FDA93671E793D8E00ABA65A /* TQMatchDetailBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchDetailBottomView.h; sourceTree = "<group>"; };
+		0FDA93681E793D8E00ABA65A /* TQMatchDetailBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchDetailBottomView.m; sourceTree = "<group>"; };
+		0FDA936A1E793D9800ABA65A /* TQMatchDetailBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchDetailBottomView.xib; sourceTree = "<group>"; };
 		0FE187B71E49C4420021369A /* TQScheduleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQScheduleHeaderView.h; sourceTree = "<group>"; };
 		0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQScheduleHeaderView.m; sourceTree = "<group>"; };
 		30B86D68870A12E1BA7FD553 /* libPods-wegoal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wegoal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -382,6 +401,12 @@
 				0F3C6B711E10AE1A00F713A7 /* TQMatchStatusView.m */,
 				0F3C6B751E10E9BC00F713A7 /* TQCreateTeamView.h */,
 				0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */,
+				0FDA935F1E79265000ABA65A /* TQMatchDetailTopView.h */,
+				0FDA93601E79265000ABA65A /* TQMatchDetailTopView.m */,
+				0FDA93621E79265C00ABA65A /* TQMatchDetailTopView.xib */,
+				0FDA93671E793D8E00ABA65A /* TQMatchDetailBottomView.h */,
+				0FDA93681E793D8E00ABA65A /* TQMatchDetailBottomView.m */,
+				0FDA936A1E793D9800ABA65A /* TQMatchDetailBottomView.xib */,
 			);
 			name = TQHomeView;
 			sourceTree = "<group>";
@@ -477,6 +502,8 @@
 				0F5C0C3F1E76831B00AF95BF /* TQLaunchServiceViewController.m */,
 				0F5C0C461E7695B300AF95BF /* TQLaunchConfirmViewController.h */,
 				0F5C0C471E7695B300AF95BF /* TQLaunchConfirmViewController.m */,
+				0FDA93591E79189C00ABA65A /* TQLaunchInvitateViewController.h */,
+				0FDA935A1E79189C00ABA65A /* TQLaunchInvitateViewController.m */,
 				0F23850F1E7795C4008008EB /* TQPlaceListViewController.h */,
 				0F2385101E7795C4008008EB /* TQPlaceListViewController.m */,
 			);
@@ -660,6 +687,8 @@
 				0F2BACDD1E6E90F900C0EF10 /* TQMessageViewController.m */,
 				0F5C0C341E76765600AF95BF /* TQMessageListViewController.h */,
 				0F5C0C351E76765600AF95BF /* TQMessageListViewController.m */,
+				0FDA935C1E79250100ABA65A /* TQMatchDetailViewController.h */,
+				0FDA935D1E79250100ABA65A /* TQMatchDetailViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -768,6 +797,8 @@
 				0F7F7F6C1E6FF86400952DDD /* NSString+URL.m */,
 				0F2A62C71E0A296100CD8F02 /* UIView+LSCore.h */,
 				0F2A62C81E0A296100CD8F02 /* UIView+LSCore.m */,
+				0FDA93641E7936BA00ABA65A /* UIView+ViewController.h */,
+				0FDA93651E7936BA00ABA65A /* UIView+ViewController.m */,
 				F3438C971DF2A51700D86D5B /* UIView+LBExtension.h */,
 				F3438C981DF2A51700D86D5B /* UIView+LBExtension.m */,
 			);
@@ -909,6 +940,7 @@
 				0F5C0C231E76322000AF95BF /* umsocial_wechat.png in Resources */,
 				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
 				0F2385041E77888F008008EB /* XHDatePickerView.xib in Resources */,
+				0FDA936B1E793D9800ABA65A /* TQMatchDetailBottomView.xib in Resources */,
 				0F5C0C291E76324700AF95BF /* umsocial_qzone.png in Resources */,
 				0F16F3C61E7124670014037B /* TQMatchRefereeCell.xib in Resources */,
 				0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */,
@@ -916,6 +948,7 @@
 				0F5C0C451E76843100AF95BF /* TQMatchServiceCell.xib in Resources */,
 				F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */,
 				0F6435771E4AE2A50049BC45 /* TQTeamTopView.xib in Resources */,
+				0FDA93631E79265C00ABA65A /* TQMatchDetailTopView.xib in Resources */,
 				0F5C0C281E76324700AF95BF /* umsocial_qq.png in Resources */,
 				0F6435721E4AC0300049BC45 /* TQLadderTeamCell.xib in Resources */,
 				0F24B8941E5290F30081A2DA /* TQMemberDetailCell.xib in Resources */,
@@ -985,6 +1018,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F2A62D01E0A297F00CD8F02 /* JOMatchMenuView.m in Sources */,
+				0FDA93611E79265000ABA65A /* TQMatchDetailTopView.m in Sources */,
 				0F2BACE61E6EA34F00C0EF10 /* TQTeamInformationView.m in Sources */,
 				0F2A62D11E0A297F00CD8F02 /* JOSelectMenuView.m in Sources */,
 				0F5C0C391E76796000AF95BF /* TQWebPageViewController.m in Sources */,
@@ -1000,6 +1034,7 @@
 				0F2BFFF31E7279E100AD8B51 /* TQPlaceModel.m in Sources */,
 				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
 				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
+				0FDA93691E793D8E00ABA65A /* TQMatchDetailBottomView.m in Sources */,
 				0F2385111E7795C4008008EB /* TQPlaceListViewController.m in Sources */,
 				0F2BFFF61E727A0200AD8B51 /* TQMemberModel.m in Sources */,
 				0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */,
@@ -1036,9 +1071,11 @@
 				0F7F7F6A1E6FF64800952DDD /* FMResultSet.m in Sources */,
 				0F7F7F691E6FF64800952DDD /* FMDatabaseQueue.m in Sources */,
 				0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */,
+				0FDA935B1E79189C00ABA65A /* TQLaunchInvitateViewController.m in Sources */,
 				F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */,
 				F3438C9F1DF2A58C00D86D5B /* ZYPathButton.m in Sources */,
 				0F24B89A1E52AA360081A2DA /* TQWeightBackView.m in Sources */,
+				0FDA93661E7936BA00ABA65A /* UIView+ViewController.m in Sources */,
 				0F50ABE51E518BD800643973 /* TQTeamDetailViewController.m in Sources */,
 				F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */,
 				0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */,
@@ -1059,6 +1096,7 @@
 				0F24B89D1E52CD480081A2DA /* TQMemberManageViewController.m in Sources */,
 				0F2385031E77888F008008EB /* XHDatePickerView.m in Sources */,
 				0F16F3BD1E71241B0014037B /* TQMatchInformationCell.m in Sources */,
+				0FDA935E1E79250100ABA65A /* TQMatchDetailViewController.m in Sources */,
 				0F2A62C91E0A296100CD8F02 /* UIView+LSCore.m in Sources */,
 				0F7F7F671E6FF64800952DDD /* FMDatabaseAdditions.m in Sources */,
 				0F7F7F4C1E6FF52600952DDD /* UserData.m in Sources */,

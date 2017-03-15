@@ -14,4 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *selectImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewLeftConstraint;
 
+@property (nonatomic, assign) BOOL isInvitate;          //是否是邀请队友
+@property (nonatomic, strong) TQMemberModel *memberData;
+
+- (void)clearInformation;
+
 @end

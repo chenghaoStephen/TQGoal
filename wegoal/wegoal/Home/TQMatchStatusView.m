@@ -8,6 +8,7 @@
 
 #import "TQMatchStatusView.h"
 #import "TQMatchCell.h"
+#import "TQMatchDetailViewController.h"
 #define kShareButtonTag     32001
 #define kShareButtonWidth   27.f
 
@@ -238,6 +239,9 @@
 - (void)doAction
 {
     NSLog(@"do action.");
+    TQMatchDetailViewController *matchDetailVC = [[TQMatchDetailViewController alloc] init];
+    matchDetailVC.matchModel = _matchData;
+    [((TQBaseViewController *)self.viewController) pushViewController:matchDetailVC];
 }
 
 - (void)cancelAction

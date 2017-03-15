@@ -145,8 +145,7 @@
 {
     TQMatchCell *cell = [tableView dequeueReusableCellWithIdentifier:kMatchCellIdentifier];
     if (!cell) {
-        NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMatchCell" owner:nil options:nil].firstObject;
-        cell = xibs.firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:@"TQMatchCell" owner:nil options:nil].firstObject;
     }
     cell.isShowLine = YES;
     return cell;

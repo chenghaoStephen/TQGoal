@@ -65,16 +65,14 @@
     if (indexPath.section == 0) {
         TQMemberDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kMemberDetailCellIdentifier];
         if (!cell) {
-            NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMemberDetailCell" owner:nil options:nil].firstObject;
-            cell = xibs.firstObject;
+            cell = [[NSBundle mainBundle] loadNibNamed:@"TQMemberDetailCell" owner:nil options:nil].firstObject;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
         TQMatchCell *cell = [tableView dequeueReusableCellWithIdentifier:kMatchCellIdentifier];
         if (!cell) {
-            NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQMatchCell" owner:nil options:nil].firstObject;
-            cell = xibs.firstObject;
+            cell = [[NSBundle mainBundle] loadNibNamed:@"TQMatchCell" owner:nil options:nil].firstObject;
         }
         cell.isShowLine = YES;
         return cell;

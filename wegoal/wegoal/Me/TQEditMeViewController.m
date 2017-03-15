@@ -59,8 +59,7 @@
 {
     TQEditMeCell *cell = [tableView dequeueReusableCellWithIdentifier:kEditMeCellIdentifier];
     if (!cell) {
-        NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQEditMeCell" owner:nil options:nil].firstObject;
-        cell = xibs.firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:@"TQEditMeCell" owner:nil options:nil].firstObject;
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     if (indexPath.row == 0) {

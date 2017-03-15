@@ -116,8 +116,7 @@
 {
     TQPlaceCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQPlaceCellIdentifier];
     if (!cell) {
-        NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQPlaceCell" owner:nil options:nil].firstObject;
-        cell = xibs.firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:@"TQPlaceCell" owner:nil options:nil].firstObject;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row < placesArray.count) {

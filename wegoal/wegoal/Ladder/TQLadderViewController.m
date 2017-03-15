@@ -115,8 +115,7 @@
 {
     TQLadderTeamCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQLadderTeamCellIdentifier];
     if (!cell) {
-        NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQLadderTeamCell" owner:nil options:nil].firstObject;
-        cell = xibs.firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:@"TQLadderTeamCell" owner:nil options:nil].firstObject;
     }
     cell.ladderNo = indexPath.row + 1;
     return cell;

@@ -162,8 +162,7 @@ typedef NS_ENUM(NSInteger, EditMode){
 {
     TQTeamMemberCell *cell = [tableView dequeueReusableCellWithIdentifier:kTeamMemberCellIdentifier];
     if (!cell) {
-        NSArray *xibs = [[NSBundle mainBundle] loadNibNamed:@"TQTeamMemberCell" owner:nil options:nil].firstObject;
-        cell = xibs.firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:@"TQTeamMemberCell" owner:nil options:nil].firstObject;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (editMode == EditModeNormal) {
@@ -175,6 +174,7 @@ typedef NS_ENUM(NSInteger, EditMode){
         cell.selectImageView.hidden = NO;
         cell.viewLeftConstraint.constant = 0;
     }
+    cell.isInvitate = NO;
     return cell;
 }
 
