@@ -79,8 +79,7 @@
 - (TQMatchDetailBottomView *)bottomView
 {
     if (!_bottomView) {
-        _bottomView = [[NSBundle mainBundle] loadNibNamed:@"TQMatchDetailBottomView" owner:nil options:nil].firstObject;
-        _bottomView.frame = CGRectMake(0, VIEW_HEIGHT - 44, SCREEN_WIDTH, 44);
+        _bottomView = [[TQMatchDetailBottomView alloc] initWithFrame:CGRectMake(0, VIEW_HEIGHT - 44, SCREEN_WIDTH, 44)];
         _bottomView.backgroundColor = [UIColor whiteColor];
     }
     return _bottomView;
@@ -188,7 +187,7 @@
                 case 2:
                     cell.infoImageView.image = [UIImage imageNamed:@"ground_pay"];
                     cell.infoTitleLabel.text = @"场地费用";
-                    cell.infoContentLabel.text = [NSString stringWithFormat:@"￥%@", matchData.placeFee];
+                    cell.infoContentLabel.text = [NSString stringWithFormat:@"￥%@", matchData.placeFee?:@""];
                     cell.noticeView.hidden = NO;
                     break;
                 case 3:

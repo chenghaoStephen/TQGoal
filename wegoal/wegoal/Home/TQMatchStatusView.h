@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^clickMoreBlock)(BOOL isMore);
 @interface TQMatchStatusView : UIView
 
 //约战状态
 @property (nonatomic, assign) TQMatchModel *matchData;
+@property (nonatomic, copy) clickMoreBlock clickMoreBlk;
 
 @end

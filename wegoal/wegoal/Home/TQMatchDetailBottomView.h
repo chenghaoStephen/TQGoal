@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface TQMatchDetailBottomView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
-@property (weak, nonatomic) IBOutlet UIButton *drawBackButton;
+
+@property (strong, nonatomic) UILabel *totalSignLabel;
+@property (strong, nonatomic) UILabel *totalPriceLabel;
+@property (strong, nonatomic) UIButton *drawBackButton;
+@property (strong, nonatomic) UIButton *payButton;
 
 @end
