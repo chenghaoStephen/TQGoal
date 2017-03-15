@@ -47,6 +47,10 @@
     return _tableView;
 }
 
+- (void)goBack{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 #pragma mark - 数据请求
 
 //获取主页信息

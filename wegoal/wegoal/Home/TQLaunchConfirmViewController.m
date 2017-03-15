@@ -105,8 +105,51 @@
 
 - (void)confirmAction
 {
-    TQLaunchInvitateViewController *launchInviteVC = [[TQLaunchInvitateViewController alloc] init];
-    [self.navigationController pushViewController:launchInviteVC animated:YES];
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"Id"] = _teamData.teamId;
+    params[@"gameDate"] = _matchData[@"time"];
+    params[@"gameWeek"] = [TQCommon weekStringFromDate:[NSDate dateFromString:_matchData[@"time"] format:kDateFormatter2]];
+    TQPlaceModel *placeData = _matchData[@"place"];
+    params[@"gamePlace"] = placeData.name;
+    params[@"gamePlaceId"] = placeData.gamePlaceId;
+    params[@"placeFee"] = placeData.price;
+    params[@"gameRules"] = _matchData[@"system"];
+    params[@"refereeServiceId"] = _refereeData.serviceId;
+    params[@"otherServiceIdAndCount"] = [self getServiceStr];
+    [ZDMIndicatorView showInView:self.detailTableView];
+    [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetEnroll) parameters:params filePath:nil finishBlock:^(id result) {
+        [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
+        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+            });
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [ZDMToast showWithText:result[@"msg"]];
+            });
+        }
+        
+    } failedBlock:^(NSError *error) {
+        [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+        });
+    }];
+    
+    
+//    TQLaunchInvitateViewController *launchInviteVC = [[TQLaunchInvitateViewController alloc] init];
+//    [self.navigationController pushViewController:launchInviteVC animated:YES];
+}
+
+- (NSArray *)getServiceStr
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (TQServiceModel *serviceData in _servicesArray) {
+        [array addObject:@{@"id":serviceData.serviceId, @"num":@(serviceData.amount)}];
+    }
+    return array;
 }
 
 
