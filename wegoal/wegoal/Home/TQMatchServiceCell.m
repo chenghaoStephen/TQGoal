@@ -60,7 +60,7 @@
     [_serviceAvatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, serviceData.imgUrl)]
                                placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
     _nameLabel.text = serviceData.serviceTypeName;
-    _costLabel.text = [NSString stringWithFormat:@"￥%@", serviceData.price];
+    _costLabel.text = [NSString stringWithFormat:@"￥%@", serviceData.price?:@""];
 //    _contentLabel.text = serviceData.bodyContent;
     _amountLabel.text = [NSString stringWithFormat:@"%ld", serviceData.amount];
 }

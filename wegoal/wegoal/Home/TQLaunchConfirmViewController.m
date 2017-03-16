@@ -108,8 +108,8 @@
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"Id"] = _teamData.teamId;
-    params[@"gameDate"] = _matchData[@"time"];
-    params[@"gameWeek"] = [TQCommon weekStringFromDate:[NSDate dateFromString:_matchData[@"time"] format:kDateFormatter2]];
+    params[@"gameDate"] = [NSDate datestrFromDate:_matchData[@"time"] withDateFormat:kDateFormatter1];
+    params[@"gameWeek"] = [TQCommon weekStringFromDate:_matchData[@"time"]];
     TQPlaceModel *placeData = _matchData[@"place"];
     params[@"gamePlace"] = placeData.name;
     params[@"gamePlaceId"] = placeData.gamePlaceId;
@@ -122,7 +122,9 @@
         [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                
+                //跳转到邀请好友界面
+                TQLaunchInvitateViewController *launchInviteVC = [[TQLaunchInvitateViewController alloc] init];
+                [weakSelf.navigationController pushViewController:launchInviteVC animated:YES];
             });
             
         } else {
@@ -138,9 +140,6 @@
         });
     }];
     
-    
-//    TQLaunchInvitateViewController *launchInviteVC = [[TQLaunchInvitateViewController alloc] init];
-//    [self.navigationController pushViewController:launchInviteVC animated:YES];
 }
 
 - (NSArray *)getServiceStr
@@ -193,7 +192,7 @@
                 case 0:
                     cell.infoImageView.image = [UIImage imageNamed:@"match_time"];
                     cell.infoTitleLabel.text = @"约战时间";
-                    cell.infoContentLabel.text = _matchData[@"time"];
+                    cell.infoContentLabel.text = [NSDate datestrFromDate:_matchData[@"time"] withDateFormat:kDateFormatter2];
                     break;
                 case 1:
                     cell.infoImageView.image = [UIImage imageNamed:@"match_ground"];
@@ -203,7 +202,7 @@
                 case 2:
                     cell.infoImageView.image = [UIImage imageNamed:@"ground_pay"];
                     cell.infoTitleLabel.text = @"场地费用";
-                    cell.infoContentLabel.text = [NSString stringWithFormat:@"￥%@", ((TQPlaceModel *)_matchData[@"place"]).price];
+                    cell.infoContentLabel.text = [NSString stringWithFormat:@"￥%@", ((TQPlaceModel *)_matchData[@"place"]).price?:@""];
                     cell.noticeView.hidden = NO;
                     break;
                 case 3:

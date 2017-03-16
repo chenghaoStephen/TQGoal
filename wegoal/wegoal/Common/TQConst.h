@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, MatchStatus){
     MatchStatusEnd,               //结束
 };
 
+#define kRaceSystemArray   @[@"5人制",@"7/8/9人制",@"11人制"]
+
 
 //颜色
 #define kMainBackColor       RGB16(0xf0f6f2)

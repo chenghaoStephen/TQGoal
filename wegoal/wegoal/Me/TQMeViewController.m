@@ -11,6 +11,7 @@
 #import "TQMeTopView.h"
 #import "TQTeamDetailViewController.h"
 #import "TQEditMeViewController.h"
+#import "TQMyMatchViewController.h"
 
 #define kTQMeViewCell     @"TQMeViewCell"
 @interface TQMeViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -151,7 +152,8 @@
         [self pushViewController:editMeVC];
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         //我的约战
-        
+        TQMyMatchViewController *myMatchVC = [[TQMyMatchViewController alloc] init];
+        [self pushViewController:myMatchVC];
     } else if (indexPath.section == 1 && indexPath.row == 1) {
         //我的订单
         

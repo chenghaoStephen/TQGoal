@@ -78,7 +78,7 @@
     [_refereeAvatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, refereeData.imgUrl)]
                                placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
     _nameLabel.text = refereeData.serviceTypeName;
-    _costLabel.text = [NSString stringWithFormat:@"￥%@", refereeData.price];
+    _costLabel.text = [NSString stringWithFormat:@"￥%@", refereeData.price?:@""];
 }
 
 - (void)clearInformation

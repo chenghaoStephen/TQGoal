@@ -1,31 +1,30 @@
 //
-//  TQLaunchRefereeViewController.m
+//  TQOrderRefereeViewController.m
 //  wegoal
 //
-//  Created by joker on 2017/3/13.
+//  Created by joker on 2017/3/16.
 //  Copyright © 2017年 xdkj. All rights reserved.
 //
 
-#import "TQLaunchRefereeViewController.h"
+#import "TQOrderRefereeViewController.h"
 #import "TQTeamInformationView.h"
 #import "TQMatchInformationCell.h"
 #import "TQMatchRefereeCell.h"
-#import "TQLaunchServiceViewController.h"
 #import "XHDatePickerView.h"
 #import "ZSYPopoverListView.h"
 #import "TQPlaceListViewController.h"
+#import "TQMatchDetailBottomView.h"
 
 #define kTQMatchInformationCellIdentifier   @"TQMatchInformationCell"
 #define kTQMatchRefereeCellIdentifier       @"TQMatchRefereeCell"
-@interface TQLaunchRefereeViewController ()<UITableViewDataSource, UITableViewDelegate, ZSYPopoverListDatasource, ZSYPopoverListDelegate>
+@interface TQOrderRefereeViewController ()<UITableViewDataSource, UITableViewDelegate, ZSYPopoverListDatasource, ZSYPopoverListDelegate>
 
 @property (nonatomic, strong) TQTeamModel *teamData;
 @property (nonatomic, strong) TQServiceModel *refereeData;
-@property (nonatomic, strong) NSMutableArray *servicesArray;
 
 @property (strong, nonatomic) TQTeamInformationView *topView;
 @property (strong, nonatomic) UITableView *detailTableView;
-@property (strong, nonatomic) UIButton *nextStep;
+@property (strong, nonatomic) TQMatchDetailBottomView *bottomView;
 
 @property (assign, nonatomic) BOOL isRefereePackup;        //裁判收起
 @property (strong, nonatomic) NSDate *matchTime;           //时间
@@ -34,20 +33,18 @@
 
 @end
 
-@implementation TQLaunchRefereeViewController
-
+@implementation TQOrderRefereeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"发起约战";
+    self.title = @"预约裁判";
     _isRefereePackup = NO;
-    _servicesArray = [NSMutableArray array];
     _matchTime = [NSDate date];
     _matchSystem = kRaceSystemArray[0];
     self.view.backgroundColor = kMainBackColor;
     [self.view addSubview:self.detailTableView];
-    [self.view addSubview:self.nextStep];
+    [self.view addSubview:self.bottomView];
     [self requestData];
 }
 
@@ -76,86 +73,21 @@
     return _detailTableView;
 }
 
-- (UIButton *)nextStep
+- (TQMatchDetailBottomView *)bottomView
 {
-    if (!_nextStep) {
-        _nextStep = [UIButton buttonWithType:UIButtonTypeCustom];
-        _nextStep.frame = CGRectMake(0, VIEW_HEIGHT - 44, SCREEN_WIDTH, 44);
-        _nextStep.backgroundColor = kSubjectBackColor;
-        [_nextStep setTitle:@"下一步" forState:UIControlStateNormal];
-        _nextStep.titleLabel.font = [UIFont systemFontOfSize:12.f];
-        [_nextStep setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_nextStep addTarget:self action:@selector(nextStepAction) forControlEvents:UIControlEventTouchUpInside];
+    if (!_bottomView) {
+        _bottomView = [[TQMatchDetailBottomView alloc] initWithFrame:CGRectMake(0, VIEW_HEIGHT - 44, SCREEN_WIDTH, 44)];
+        _bottomView.backgroundColor = [UIColor whiteColor];
     }
-    return _nextStep;
+    return _bottomView;
 }
 
 
-#pragma mark - 数据请求
+#pragma mark - events 
 
-//获取约战信息
 - (void)requestData
 {
-    __weak typeof(self) weakSelf = self;
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"userName"] = USER_NAME;
-    params[@"Token"] = USER_TOKEN;
-    [ZDMIndicatorView showInView:self.detailTableView];
-    [[AFServer sharedInstance]GET:URL(kTQDomainURL, kEnrollLaunched) parameters:params finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
-        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                //读取数据
-                _teamData = [TQTeamModel mj_objectWithKeyValues:result[@"data"][@"headerData"]];
-                _refereeData = [TQServiceModel mj_objectWithKeyValues:result[@"data"][@"mainData"]];
-                [_servicesArray removeAllObjects];
-                [_servicesArray addObjectsFromArray:[TQServiceModel mj_objectArrayWithKeyValuesArray:result[@"data"][@"footerData"]]];
-                
-                //更新主页信息
-                [weakSelf updateTopView];
-                [weakSelf.detailTableView reloadData];
-            });
-            
-        } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
-            });
-        }
-        
-    } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
-        });
-    }];
-}
-
-
-#pragma mark - events
-
-- (void)updateTopView
-{
-    if (_teamData) {
-        _topView.teamInfo = _teamData;
-    }
     
-}
-
-- (void)nextStepAction
-{
-    if (!_matchPlace) {
-        [ZDMToast showWithText:@"请选择场地"];
-        return;
-    }
-    TQLaunchServiceViewController *launchServiceVC = [[TQLaunchServiceViewController alloc] init];
-    launchServiceVC.teamData = _teamData;
-    launchServiceVC.refereeData = _refereeData;
-    launchServiceVC.servicesArray = _servicesArray;
-    launchServiceVC.matchData = @{@"time":_matchTime,
-                                  @"system":_matchSystem,
-                                  @"place":_matchPlace};
-    [self.navigationController pushViewController:launchServiceVC animated:YES];
 }
 
 
@@ -168,12 +100,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row >= 0 && indexPath.row < 4) {
+    if (indexPath.row >= 0 && indexPath.row < 3) {
         TQMatchInformationCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQMatchInformationCellIdentifier];
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"TQMatchInformationCell" owner:nil options:nil].firstObject;
@@ -191,11 +123,6 @@
                 cell.infoContentLabel.text = @"---";
                 break;
             case 2:
-                cell.infoImageView.image = [UIImage imageNamed:@"ground_pay"];
-                cell.infoTitleLabel.text = @"场地费用";
-                cell.infoContentLabel.text = @"---";
-                break;
-            case 3:
                 cell.infoImageView.image = [UIImage imageNamed:@"race_system"];
                 cell.infoTitleLabel.text = @"赛制";
                 cell.infoContentLabel.text = _matchSystem;
@@ -220,7 +147,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         __weak typeof(self) weakSelf = self;
         cell.isPackup = _isRefereePackup;
-        cell.canSelected = YES;
+        cell.canSelected = NO;
         if (_refereeData) {
             cell.refereeData = _refereeData;
         } else {
@@ -228,10 +155,7 @@
         }
         cell.block = ^(BOOL isPackup){
             weakSelf.isRefereePackup = isPackup;
-            [weakSelf.detailTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-        };
-        cell.selectBlk = ^(BOOL isSelected){
-            weakSelf.refereeData.isSelected = isSelected;
+            [weakSelf.detailTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:3 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
         };
         return cell;
     }
@@ -242,7 +166,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row >= 0 && indexPath.row < 4) {
+    if (indexPath.row >= 0 && indexPath.row < 3) {
         return 37.f;
     } else {
         if (_isRefereePackup) {
@@ -257,7 +181,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     __weak typeof(self) weakSelf = self;
-    if (indexPath.row >= 0 && indexPath.row < 4) {
+    if (indexPath.row >= 0 && indexPath.row < 3) {
         TQMatchInformationCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         switch (indexPath.row) {
             case 0://约战时间
@@ -277,17 +201,12 @@
                 TQPlaceListViewController *placeListVC = [[TQPlaceListViewController alloc] init];
                 placeListVC.selectPlaceBlk = ^(TQPlaceModel *placeData){
                     cell.infoContentLabel.text = placeData.name;
-                    TQMatchInformationCell *priceCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
-                    priceCell.infoContentLabel.text = [NSString stringWithFormat:@"￥%@", placeData.price?:@""];
                     weakSelf.matchPlace = placeData;
                 };
                 [self.navigationController pushViewController:placeListVC animated:YES];
                 break;
             }
-            case 2://场地费用
-                
-                break;
-            case 3://赛制
+            case 2://赛制
             {
                 ZSYPopoverListView *listView = [[ZSYPopoverListView alloc] initWithFrame:CGRectMake(0, 0, 120, 132)];
                 listView.titleName.text = @"";
@@ -305,7 +224,7 @@
                 break;
         }
     }
-
+    
 }
 
 
@@ -341,7 +260,7 @@
 - (void)popoverListView:(ZSYPopoverListView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     _matchSystem = [kRaceSystemArray objectAtIndex:indexPath.row];
-    TQMatchInformationCell *cell = [_detailTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    TQMatchInformationCell *cell = [_detailTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
     cell.infoContentLabel.text = _matchSystem;
     [tableView dismiss];
     
@@ -351,6 +270,5 @@
 {
     
 }
-
 
 @end

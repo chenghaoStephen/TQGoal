@@ -46,8 +46,8 @@
     [_team1AvatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, matchData.team1Logo)]
                              placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
     _team1NameLabel.text = matchData.team1Name;
-    _team1RankLabel.text = [NSString stringWithFormat:@"Rank %@", matchData.team1Rank];
-    _team1GameLabel.text = [NSString stringWithFormat:@"场次：%@", matchData.team1GameCount];
+    _team1RankLabel.text = [NSString stringWithFormat:@"Rank %@", matchData.team1Rank?:@""];
+    _team1GameLabel.text = [NSString stringWithFormat:@"场次：%@", matchData.team1GameCount?:@""];
     _team1WinLabel.text = matchData.team1Win;
     _team1LoseLabel.text = matchData.team1Lose;
     _team1DrawLabel.text = matchData.team1Draw;
@@ -55,8 +55,8 @@
     [_team2AvatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, matchData.team2Logo)]
                              placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
     _team2NameLabel.text = matchData.team2Name;
-    _team2RankLabel.text = [NSString stringWithFormat:@"Rank %@", matchData.team2Rank];
-    _team2GameLabel.text = [NSString stringWithFormat:@"场次：%@", matchData.team2GameCount];
+    _team2RankLabel.text = [NSString stringWithFormat:@"Rank %@", matchData.team2Rank?:@""];
+    _team2GameLabel.text = [NSString stringWithFormat:@"场次：%@", matchData.team2GameCount?:@""];
     _team2WinLabel.text = matchData.team2Win;
     _team2LoseLabel.text = matchData.team2Lose;
     _team2DrawLabel.text = matchData.team2Draw;

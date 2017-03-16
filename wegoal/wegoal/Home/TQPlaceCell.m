@@ -32,7 +32,7 @@
     [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, placeData.placePic)]
                         placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
     _nameLabel.text = placeData.name;
-    _phoneLabel.text = [NSString stringWithFormat:@"电话：%@", placeData.phone];
+    _phoneLabel.text = [NSString stringWithFormat:@"电话：%@", placeData.phone?:@""];
     _placeLabel.text = placeData.place;
     for (UIView *subView in _matchScrollView.subviews) {
         [subView removeFromSuperview];

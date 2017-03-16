@@ -7,7 +7,7 @@
 //
 
 
-#define URL(domian,url) [domian stringByAppendingString:url]
+#define URL(domian,url) [domian stringByAppendingString:url?:@""]
 
 //Domain
 #define kTQDomainURL     @"http://165n01a586.iask.in"

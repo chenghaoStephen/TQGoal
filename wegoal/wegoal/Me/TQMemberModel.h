@@ -34,5 +34,7 @@
 @property (nonatomic, copy) NSString *memberAge;          //年龄
 @property (nonatomic, copy) NSString *mvp;                //mvp数
 @property (nonatomic, copy) NSString *score;              //进球数
+@property (nonatomic, assign) BOOL isMvp;                 //是否值本场mvp
+@property (nonatomic, assign) NSUInteger point;           //得分
 
 @end

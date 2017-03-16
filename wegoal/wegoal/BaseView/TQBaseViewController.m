@@ -8,6 +8,8 @@
 
 #import "TQBaseViewController.h"
 #import "TQProtocolViewController.h"
+#import "TQOrderRefereeViewController.h"
+#import "TQOrderServicesViewController.h"
 
 @interface TQBaseViewController ()
 
@@ -78,6 +80,18 @@
 {
     TQProtocolViewController *protocolVC = [[TQProtocolViewController alloc] init];
     [self pushViewController:protocolVC];
+}
+
+- (void)pushRefereeVC
+{
+    TQOrderRefereeViewController *orderRefereeVC = [[TQOrderRefereeViewController alloc] init];
+    [self pushViewController:orderRefereeVC];
+}
+
+- (void)pushServicesVC
+{
+    TQOrderServicesViewController *orderServicesVC = [[TQOrderServicesViewController alloc] init];
+    [self pushViewController:orderServicesVC];
 }
 
 - (void)pushViewController:(UIViewController *)viewController

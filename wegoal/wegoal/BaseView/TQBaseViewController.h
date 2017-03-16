@@ -14,6 +14,8 @@
 - (void)setTabbarBtnHide;
 
 - (void)pushLaunchVC;
+- (void)pushRefereeVC;
+- (void)pushServicesVC;
 
 - (void)pushViewController:(UIViewController *)viewController;
 

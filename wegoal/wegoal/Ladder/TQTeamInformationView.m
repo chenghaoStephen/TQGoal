@@ -366,14 +366,14 @@
     _nameLabel.text = teamInfo.teamName;
     _yellowCountLabel.text = teamInfo.yellow;
     _redCountLabel.text = teamInfo.red;
-    _rankLabel.text = [NSString stringWithFormat:@"RANK %@", teamInfo.rank];
-    _matchNumlabel.text = [NSString stringWithFormat:@"场次：%@", teamInfo.gameCount];
-    _winLabel.text = [NSString stringWithFormat:@"胜：%@", teamInfo.win];
-    _loseLabel.text = [NSString stringWithFormat:@"负：%@", teamInfo.lose];
-    _tieLabel.text = [NSString stringWithFormat:@"平：%@", teamInfo.draw];
-    _heightLabel.text = [NSString stringWithFormat:@"平均身高：%@", teamInfo.averageHeight];
-    _weightLabel.text = [NSString stringWithFormat:@"平均体重：%@", teamInfo.averageWeight];
-    _ageLabel.text = [NSString stringWithFormat:@"平均年龄：%@", teamInfo.averageAge];
+    _rankLabel.text = [NSString stringWithFormat:@"RANK %@", teamInfo.rank?:@""];
+    _matchNumlabel.text = [NSString stringWithFormat:@"场次：%@", teamInfo.gameCount?:@""];
+    _winLabel.text = [NSString stringWithFormat:@"胜：%@", teamInfo.win?:@""];
+    _loseLabel.text = [NSString stringWithFormat:@"负：%@", teamInfo.lose?:@""];
+    _tieLabel.text = [NSString stringWithFormat:@"平：%@", teamInfo.draw?:@""];
+    _heightLabel.text = [NSString stringWithFormat:@"平均身高：%@", teamInfo.averageHeight?:@""];
+    _weightLabel.text = [NSString stringWithFormat:@"平均体重：%@", teamInfo.averageWeight?:@""];
+    _ageLabel.text = [NSString stringWithFormat:@"平均年龄：%@", teamInfo.averageAge?:@""];
 }
 
 

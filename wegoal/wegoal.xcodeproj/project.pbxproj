@@ -17,6 +17,20 @@
 		0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F19FAFF1E09273F00CC221E /* TQMatchFlowLayout.m */; };
 		0F1C8D3D1E4C62BC0015F015 /* TQMeTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */; };
 		0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */; };
+		0F20832E1E7A1CAB009388BD /* TQOrderRefereeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F20832D1E7A1CAB009388BD /* TQOrderRefereeViewController.m */; };
+		0F2083311E7A1CBE009388BD /* TQOrderServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2083301E7A1CBE009388BD /* TQOrderServicesViewController.m */; };
+		0F2083351E7A30BD009388BD /* XHStarRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2083341E7A30BD009388BD /* XHStarRateView.m */; };
+		0F2083391E7A31D9009388BD /* TQMyMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2083381E7A31D9009388BD /* TQMyMatchViewController.m */; };
+		0F2083401E7A326D009388BD /* TQMyMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F20833E1E7A326D009388BD /* TQMyMatchCell.m */; };
+		0F2083411E7A326D009388BD /* TQMyMatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F20833F1E7A326D009388BD /* TQMyMatchCell.xib */; };
+		0F2083451E7A577B009388BD /* TQEvaluateMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2083431E7A577B009388BD /* TQEvaluateMemberCell.m */; };
+		0F2083461E7A577B009388BD /* TQEvaluateMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2083441E7A577B009388BD /* TQEvaluateMemberCell.xib */; };
+		0F2083491E7A5C2C009388BD /* TQEvaluateMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2083481E7A5C2C009388BD /* TQEvaluateMemberViewController.m */; };
+		0F20834C1E7A5DB2009388BD /* TQEvaluateMemberHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F20834B1E7A5DB2009388BD /* TQEvaluateMemberHeaderView.m */; };
+		0F20834E1E7A5DBD009388BD /* TQEvaluateMemberHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F20834D1E7A5DBD009388BD /* TQEvaluateMemberHeaderView.xib */; };
+		0F2083511E7A601E009388BD /* TQEvaluateMemberBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2083501E7A601E009388BD /* TQEvaluateMemberBottomView.m */; };
+		0F2083541E7A660C009388BD /* TQEvaluateNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2083531E7A660C009388BD /* TQEvaluateNoticeView.m */; };
+		0F2083571E7A70F2009388BD /* TQEvaluateRefereeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2083561E7A70F2009388BD /* TQEvaluateRefereeViewController.m */; };
 		0F2384F81E778447008008EB /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2384F51E778447008008EB /* NSDate+Extension.m */; };
 		0F2385031E77888F008008EB /* XHDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2385011E77888F008008EB /* XHDatePickerView.m */; };
 		0F2385041E77888F008008EB /* XHDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2385021E77888F008008EB /* XHDatePickerView.xib */; };
@@ -142,6 +156,31 @@
 		0F1C8D3B1E4C62BC0015F015 /* TQMeTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMeTopView.h; sourceTree = "<group>"; };
 		0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMeTopView.m; sourceTree = "<group>"; };
 		0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMeTopView.xib; sourceTree = "<group>"; };
+		0F20832C1E7A1CAB009388BD /* TQOrderRefereeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQOrderRefereeViewController.h; sourceTree = "<group>"; };
+		0F20832D1E7A1CAB009388BD /* TQOrderRefereeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQOrderRefereeViewController.m; sourceTree = "<group>"; };
+		0F20832F1E7A1CBE009388BD /* TQOrderServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQOrderServicesViewController.h; sourceTree = "<group>"; };
+		0F2083301E7A1CBE009388BD /* TQOrderServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQOrderServicesViewController.m; sourceTree = "<group>"; };
+		0F2083331E7A30BD009388BD /* XHStarRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHStarRateView.h; sourceTree = "<group>"; };
+		0F2083341E7A30BD009388BD /* XHStarRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHStarRateView.m; sourceTree = "<group>"; };
+		0F2083371E7A31D9009388BD /* TQMyMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMyMatchViewController.h; sourceTree = "<group>"; };
+		0F2083381E7A31D9009388BD /* TQMyMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMyMatchViewController.m; sourceTree = "<group>"; };
+		0F20833D1E7A326D009388BD /* TQMyMatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMyMatchCell.h; sourceTree = "<group>"; };
+		0F20833E1E7A326D009388BD /* TQMyMatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMyMatchCell.m; sourceTree = "<group>"; };
+		0F20833F1E7A326D009388BD /* TQMyMatchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMyMatchCell.xib; sourceTree = "<group>"; };
+		0F2083421E7A577B009388BD /* TQEvaluateMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateMemberCell.h; sourceTree = "<group>"; };
+		0F2083431E7A577B009388BD /* TQEvaluateMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateMemberCell.m; sourceTree = "<group>"; };
+		0F2083441E7A577B009388BD /* TQEvaluateMemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQEvaluateMemberCell.xib; sourceTree = "<group>"; };
+		0F2083471E7A5C2C009388BD /* TQEvaluateMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateMemberViewController.h; sourceTree = "<group>"; };
+		0F2083481E7A5C2C009388BD /* TQEvaluateMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateMemberViewController.m; sourceTree = "<group>"; };
+		0F20834A1E7A5DB2009388BD /* TQEvaluateMemberHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateMemberHeaderView.h; sourceTree = "<group>"; };
+		0F20834B1E7A5DB2009388BD /* TQEvaluateMemberHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateMemberHeaderView.m; sourceTree = "<group>"; };
+		0F20834D1E7A5DBD009388BD /* TQEvaluateMemberHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQEvaluateMemberHeaderView.xib; sourceTree = "<group>"; };
+		0F20834F1E7A601E009388BD /* TQEvaluateMemberBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateMemberBottomView.h; sourceTree = "<group>"; };
+		0F2083501E7A601E009388BD /* TQEvaluateMemberBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateMemberBottomView.m; sourceTree = "<group>"; };
+		0F2083521E7A660C009388BD /* TQEvaluateNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateNoticeView.h; sourceTree = "<group>"; };
+		0F2083531E7A660C009388BD /* TQEvaluateNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateNoticeView.m; sourceTree = "<group>"; };
+		0F2083551E7A70F2009388BD /* TQEvaluateRefereeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateRefereeViewController.h; sourceTree = "<group>"; };
+		0F2083561E7A70F2009388BD /* TQEvaluateRefereeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateRefereeViewController.m; sourceTree = "<group>"; };
 		0F2384F41E778447008008EB /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		0F2384F51E778447008008EB /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		0F2385001E77888F008008EB /* XHDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDatePickerView.h; sourceTree = "<group>"; };
@@ -414,6 +453,13 @@
 				0F1C8D3B1E4C62BC0015F015 /* TQMeTopView.h */,
 				0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */,
 				0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */,
+				0F20834A1E7A5DB2009388BD /* TQEvaluateMemberHeaderView.h */,
+				0F20834B1E7A5DB2009388BD /* TQEvaluateMemberHeaderView.m */,
+				0F20834D1E7A5DBD009388BD /* TQEvaluateMemberHeaderView.xib */,
+				0F20834F1E7A601E009388BD /* TQEvaluateMemberBottomView.h */,
+				0F2083501E7A601E009388BD /* TQEvaluateMemberBottomView.m */,
+				0F2083521E7A660C009388BD /* TQEvaluateNoticeView.h */,
+				0F2083531E7A660C009388BD /* TQEvaluateNoticeView.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -425,6 +471,28 @@
 				0F2BFFF51E727A0200AD8B51 /* TQMemberModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		0F2083321E7A30BD009388BD /* XHStarRateView */ = {
+			isa = PBXGroup;
+			children = (
+				0F2083331E7A30BD009388BD /* XHStarRateView.h */,
+				0F2083341E7A30BD009388BD /* XHStarRateView.m */,
+			);
+			path = XHStarRateView;
+			sourceTree = "<group>";
+		};
+		0F2083361E7A31BB009388BD /* MyMatch */ = {
+			isa = PBXGroup;
+			children = (
+				0F2083371E7A31D9009388BD /* TQMyMatchViewController.h */,
+				0F2083381E7A31D9009388BD /* TQMyMatchViewController.m */,
+				0F2083471E7A5C2C009388BD /* TQEvaluateMemberViewController.h */,
+				0F2083481E7A5C2C009388BD /* TQEvaluateMemberViewController.m */,
+				0F2083551E7A70F2009388BD /* TQEvaluateRefereeViewController.h */,
+				0F2083561E7A70F2009388BD /* TQEvaluateRefereeViewController.m */,
+			);
+			name = MyMatch;
 			sourceTree = "<group>";
 		};
 		0F2384FA1E7786D0008008EB /* XHDatePicker */ = {
@@ -550,6 +618,12 @@
 				F32ABE3A1E5B2AA6000D7CF1 /* TQEditMeCell.h */,
 				F32ABE3B1E5B2AA6000D7CF1 /* TQEditMeCell.m */,
 				F32ABE3C1E5B2AA6000D7CF1 /* TQEditMeCell.xib */,
+				0F20833D1E7A326D009388BD /* TQMyMatchCell.h */,
+				0F20833E1E7A326D009388BD /* TQMyMatchCell.m */,
+				0F20833F1E7A326D009388BD /* TQMyMatchCell.xib */,
+				0F2083421E7A577B009388BD /* TQEvaluateMemberCell.h */,
+				0F2083431E7A577B009388BD /* TQEvaluateMemberCell.m */,
+				0F2083441E7A577B009388BD /* TQEvaluateMemberCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -686,6 +760,10 @@
 				0F5C0C351E76765600AF95BF /* TQMessageListViewController.m */,
 				0FDA935C1E79250100ABA65A /* TQMatchDetailViewController.h */,
 				0FDA935D1E79250100ABA65A /* TQMatchDetailViewController.m */,
+				0F20832C1E7A1CAB009388BD /* TQOrderRefereeViewController.h */,
+				0F20832D1E7A1CAB009388BD /* TQOrderRefereeViewController.m */,
+				0F20832F1E7A1CBE009388BD /* TQOrderServicesViewController.h */,
+				0F2083301E7A1CBE009388BD /* TQOrderServicesViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -724,6 +802,7 @@
 		F3438C741DEB320800D86D5B /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				0F2083361E7A31BB009388BD /* MyMatch */,
 				0F1C8D3A1E4C629B0015F015 /* CustomView */,
 				0F1C8D401E4C64D00015F015 /* Model */,
 				0F64357D1E4B055D0049BC45 /* cell */,
@@ -769,6 +848,7 @@
 		F3438C951DF2A4A700D86D5B /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				0F2083321E7A30BD009388BD /* XHStarRateView */,
 				0F2385051E778E47008008EB /* ZSYPopoverList */,
 				0F2384FA1E7786D0008008EB /* XHDatePicker */,
 				0F7F7F781E6FFFB800952DDD /* GXHUD */,
@@ -930,8 +1010,10 @@
 				0F5C0C2D1E76325E00AF95BF /* umsocial_tencentWB.png in Resources */,
 				0F5C0C251E76323E00AF95BF /* umsocial_wechat_timeline.png in Resources */,
 				0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */,
+				0F2083411E7A326D009388BD /* TQMyMatchCell.xib in Resources */,
 				0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */,
 				F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */,
+				0F20834E1E7A5DBD009388BD /* TQEvaluateMemberHeaderView.xib in Resources */,
 				0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */,
 				F32ABE3E1E5B2AA6000D7CF1 /* TQEditMeCell.xib in Resources */,
 				0F5C0C231E76322000AF95BF /* umsocial_wechat.png in Resources */,
@@ -943,6 +1025,7 @@
 				F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */,
 				0F5C0C451E76843100AF95BF /* TQMatchServiceCell.xib in Resources */,
 				F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */,
+				0F2083461E7A577B009388BD /* TQEvaluateMemberCell.xib in Resources */,
 				0F6435771E4AE2A50049BC45 /* TQTeamTopView.xib in Resources */,
 				0FDA93631E79265C00ABA65A /* TQMatchDetailTopView.xib in Resources */,
 				0F5C0C281E76324700AF95BF /* umsocial_qq.png in Resources */,
@@ -1025,11 +1108,15 @@
 				0F5C0C481E7695B300AF95BF /* TQLaunchConfirmViewController.m in Sources */,
 				0F24B8931E5290F30081A2DA /* TQMemberDetailCell.m in Sources */,
 				0F7F7F6D1E6FF86400952DDD /* NSString+URL.m in Sources */,
+				0F2083351E7A30BD009388BD /* XHStarRateView.m in Sources */,
 				0F2BACDE1E6E90F900C0EF10 /* TQMessageViewController.m in Sources */,
+				0F20834C1E7A5DB2009388BD /* TQEvaluateMemberHeaderView.m in Sources */,
+				0F2083541E7A660C009388BD /* TQEvaluateNoticeView.m in Sources */,
 				0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */,
 				0F2BFFF31E7279E100AD8B51 /* TQPlaceModel.m in Sources */,
 				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
 				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
+				0F2083391E7A31D9009388BD /* TQMyMatchViewController.m in Sources */,
 				0FDA93691E793D8E00ABA65A /* TQMatchDetailBottomView.m in Sources */,
 				0F2385111E7795C4008008EB /* TQPlaceListViewController.m in Sources */,
 				0F2BFFF61E727A0200AD8B51 /* TQMemberModel.m in Sources */,
@@ -1041,6 +1128,7 @@
 				0F3C6B7C1E10F50700F713A7 /* TQMatchCell.m in Sources */,
 				0F24B8A01E52E8D00081A2DA /* TQAddMemberViewController.m in Sources */,
 				0F2BFFF01E72770300AD8B51 /* TQServiceModel.m in Sources */,
+				0F2083401E7A326D009388BD /* TQMyMatchCell.m in Sources */,
 				0F7F7F661E6FF64800952DDD /* FMDatabase.m in Sources */,
 				0F1C8D3D1E4C62BC0015F015 /* TQMeTopView.m in Sources */,
 				0F23850D1E779481008008EB /* MJPopupBackgroundView.m in Sources */,
@@ -1049,6 +1137,7 @@
 				F37883D81DE5CC6100A40C3F /* main.m in Sources */,
 				F32ABE391E5B285C000D7CF1 /* TQEditMeViewController.m in Sources */,
 				0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */,
+				0F2083311E7A1CBE009388BD /* TQOrderServicesViewController.m in Sources */,
 				0F16F3C51E7124670014037B /* TQMatchRefereeCell.m in Sources */,
 				0F2BACE21E6E931A00C0EF10 /* TQMessageCell.m in Sources */,
 				F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */,
@@ -1057,6 +1146,7 @@
 				0F5C0C331E76728C00AF95BF /* TQMessageModel.m in Sources */,
 				0F19FB001E09273F00CC221E /* TQMatchFlowLayout.m in Sources */,
 				0F5378F71E76242A005E2B74 /* TQBannerModel.m in Sources */,
+				0F2083491E7A5C2C009388BD /* TQEvaluateMemberViewController.m in Sources */,
 				0F2384F81E778447008008EB /* NSDate+Extension.m in Sources */,
 				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
 				F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */,
@@ -1065,9 +1155,11 @@
 				0F6435751E4ADF220049BC45 /* TQTeamTopView.m in Sources */,
 				0F5C0C401E76831B00AF95BF /* TQLaunchServiceViewController.m in Sources */,
 				0F7F7F6A1E6FF64800952DDD /* FMResultSet.m in Sources */,
+				0F2083451E7A577B009388BD /* TQEvaluateMemberCell.m in Sources */,
 				0F7F7F691E6FF64800952DDD /* FMDatabaseQueue.m in Sources */,
 				0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */,
 				0FDA935B1E79189C00ABA65A /* TQLaunchInvitateViewController.m in Sources */,
+				0F2083571E7A70F2009388BD /* TQEvaluateRefereeViewController.m in Sources */,
 				F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */,
 				F3438C9F1DF2A58C00D86D5B /* ZYPathButton.m in Sources */,
 				0F24B89A1E52AA360081A2DA /* TQWeightBackView.m in Sources */,
@@ -1078,6 +1170,8 @@
 				0F5C0C3C1E76828800AF95BF /* TQLaunchRefereeViewController.m in Sources */,
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
 				0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */,
+				0F20832E1E7A1CAB009388BD /* TQOrderRefereeViewController.m in Sources */,
+				0F2083511E7A601E009388BD /* TQEvaluateMemberBottomView.m in Sources */,
 				0F7F7F761E6FFED200952DDD /* ZDMNavToast.m in Sources */,
 				F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */,
 				F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */,

@@ -57,10 +57,9 @@
                       @{@"key":@"sun",@"string":@"星期日"}
                       ];
         
-        systemMenus = @[@{@"key":@"three",@"string":@"三人制"},
-                        @{@"key":@"five",@"string":@"五人制"},
-                        @{@"key":@"seven",@"string":@"七人制"},
-                        @{@"key":@"eleven",@"string":@"十一人"}
+        systemMenus = @[@{@"key":@"five",@"string":@"5人制"},
+                        @{@"key":@"seven",@"string":@"7/8/9人制"},
+                        @{@"key":@"eleven",@"string":@"11人制"}
                         ];
         
         typeMenus = @[@{@"key":@"friendly",@"string":@"友谊赛"},

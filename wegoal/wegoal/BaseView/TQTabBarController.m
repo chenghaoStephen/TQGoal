@@ -129,10 +129,16 @@
 
 - (void)pathButton:(ZYPathButton *)ZYPathButton clickItemButtonAtIndex:(NSUInteger)itemButtonIndex {
     NSLog(@" 点中了第%ld个按钮" , itemButtonIndex);
+    TQBaseViewController *selectedVC = ((UINavigationController *)self.selectedViewController).viewControllers.firstObject;
     if (itemButtonIndex == 0) {
         //发起约战
-        TQBaseViewController *selectedVC = ((UINavigationController *)self.selectedViewController).viewControllers.firstObject;
         [selectedVC pushLaunchVC];
+    } else if (itemButtonIndex == 1) {
+        //约裁判
+        [selectedVC pushRefereeVC];
+    } else if (itemButtonIndex == 2) {
+        //约服务
+        [selectedVC pushServicesVC];
     }
 }
 
