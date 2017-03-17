@@ -61,6 +61,7 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 //date formatter
 #define kDateFormatter1      @"yyyy-MM-dd HH:mm:ss"
 #define kDateFormatter2      @"MM/dd - HH:mm"
+#define kDateFormatter3      @"yyyyMMddHHmm"
 
 
 #define HTTP_TIME_OUT 10

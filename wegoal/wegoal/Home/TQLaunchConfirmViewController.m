@@ -107,8 +107,9 @@
 {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"Id"] = _teamData.teamId;
-    params[@"gameDate"] = [NSDate datestrFromDate:_matchData[@"time"] withDateFormat:kDateFormatter1];
+//    params[@"Id"] = _teamData.teamId;
+    params[@"userName"] = USER_NAME;
+    params[@"gameDate"] = [NSDate datestrFromDate:_matchData[@"time"] withDateFormat:kDateFormatter3];
     params[@"gameWeek"] = [TQCommon weekStringFromDate:_matchData[@"time"]];
     TQPlaceModel *placeData = _matchData[@"place"];
     params[@"gamePlace"] = placeData.name;
@@ -116,9 +117,10 @@
     params[@"placeFee"] = placeData.price;
     params[@"gameRules"] = _matchData[@"system"];
     params[@"refereeServiceId"] = _refereeData.serviceId;
-    params[@"otherServiceIdAndCount"] = [self getServiceStr];
+//    params[@"otherServiceIdAndCount"] = [self getServiceStr];
+    params[@"otherServiceIdAndCount"] = @"[{1:1}]";
     [ZDMIndicatorView showInView:self.detailTableView];
-    [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetEnroll) parameters:params filePath:nil finishBlock:^(id result) {
+    [[AFServer sharedInstance]GET:URL(kTQDomainURL, kSetEnroll) parameters:params finishBlock:^(id result) {
         [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
