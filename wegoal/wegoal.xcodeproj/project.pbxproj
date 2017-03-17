@@ -21,6 +21,15 @@
 		0F1108DC1E7BA83400143400 /* TQPlayImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108DA1E7BA83400143400 /* TQPlayImageCell.m */; };
 		0F1108DD1E7BA83400143400 /* TQPlayImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1108DB1E7BA83400143400 /* TQPlayImageCell.xib */; };
 		0F1108E01E7BBC5400143400 /* TQPlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108DF1E7BBC5400143400 /* TQPlayModel.m */; };
+		0F1108E51E7BD09B00143400 /* TQMyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108E31E7BD09B00143400 /* TQMyOrderCell.m */; };
+		0F1108E61E7BD09B00143400 /* TQMyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1108E41E7BD09B00143400 /* TQMyOrderCell.xib */; };
+		0F1108E91E7BD59A00143400 /* TQMyOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108E81E7BD59A00143400 /* TQMyOrdersViewController.m */; };
+		0F1108EC1E7BD96C00143400 /* TQSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108EB1E7BD96C00143400 /* TQSettingViewController.m */; };
+		0F1108EF1E7BD98500143400 /* TQMyTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108EE1E7BD98500143400 /* TQMyTasksViewController.m */; };
+		0F1108F31E7BDA6400143400 /* TQMyTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108F11E7BDA6400143400 /* TQMyTaskCell.m */; };
+		0F1108F41E7BDA6400143400 /* TQMyTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1108F21E7BDA6400143400 /* TQMyTaskCell.xib */; };
+		0F1108F81E7BDDDF00143400 /* TQSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108F61E7BDDDF00143400 /* TQSettingCell.m */; };
+		0F1108F91E7BDDDF00143400 /* TQSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1108F71E7BDDDF00143400 /* TQSettingCell.xib */; };
 		0F16F3B41E70F6C40014037B /* TQProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */; };
 		0F16F3BD1E71241B0014037B /* TQMatchInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3BB1E71241B0014037B /* TQMatchInformationCell.m */; };
 		0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F16F3BC1E71241B0014037B /* TQMatchInformationCell.xib */; };
@@ -177,6 +186,21 @@
 		0F1108DB1E7BA83400143400 /* TQPlayImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQPlayImageCell.xib; sourceTree = "<group>"; };
 		0F1108DE1E7BBC5400143400 /* TQPlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPlayModel.h; sourceTree = "<group>"; };
 		0F1108DF1E7BBC5400143400 /* TQPlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPlayModel.m; sourceTree = "<group>"; };
+		0F1108E21E7BD09B00143400 /* TQMyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMyOrderCell.h; sourceTree = "<group>"; };
+		0F1108E31E7BD09B00143400 /* TQMyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMyOrderCell.m; sourceTree = "<group>"; };
+		0F1108E41E7BD09B00143400 /* TQMyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMyOrderCell.xib; sourceTree = "<group>"; };
+		0F1108E71E7BD59A00143400 /* TQMyOrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMyOrdersViewController.h; sourceTree = "<group>"; };
+		0F1108E81E7BD59A00143400 /* TQMyOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMyOrdersViewController.m; sourceTree = "<group>"; };
+		0F1108EA1E7BD96C00143400 /* TQSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQSettingViewController.h; sourceTree = "<group>"; };
+		0F1108EB1E7BD96C00143400 /* TQSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQSettingViewController.m; sourceTree = "<group>"; };
+		0F1108ED1E7BD98500143400 /* TQMyTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMyTasksViewController.h; sourceTree = "<group>"; };
+		0F1108EE1E7BD98500143400 /* TQMyTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMyTasksViewController.m; sourceTree = "<group>"; };
+		0F1108F01E7BDA6400143400 /* TQMyTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMyTaskCell.h; sourceTree = "<group>"; };
+		0F1108F11E7BDA6400143400 /* TQMyTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMyTaskCell.m; sourceTree = "<group>"; };
+		0F1108F21E7BDA6400143400 /* TQMyTaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMyTaskCell.xib; sourceTree = "<group>"; };
+		0F1108F51E7BDDDF00143400 /* TQSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQSettingCell.h; sourceTree = "<group>"; };
+		0F1108F61E7BDDDF00143400 /* TQSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQSettingCell.m; sourceTree = "<group>"; };
+		0F1108F71E7BDDDF00143400 /* TQSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQSettingCell.xib; sourceTree = "<group>"; };
 		0F16F3B11E70F6C40014037B /* TQProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQProtocolViewController.h; sourceTree = "<group>"; };
 		0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQProtocolViewController.m; sourceTree = "<group>"; };
 		0F16F3BA1E71241B0014037B /* TQMatchInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchInformationCell.h; sourceTree = "<group>"; };
@@ -426,6 +450,8 @@
 		0F1108E11E7BC3E500143400 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				0F1108EA1E7BD96C00143400 /* TQSettingViewController.h */,
+				0F1108EB1E7BD96C00143400 /* TQSettingViewController.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -693,6 +719,15 @@
 				0F1108D91E7BA83400143400 /* TQPlayImageCell.h */,
 				0F1108DA1E7BA83400143400 /* TQPlayImageCell.m */,
 				0F1108DB1E7BA83400143400 /* TQPlayImageCell.xib */,
+				0F1108E21E7BD09B00143400 /* TQMyOrderCell.h */,
+				0F1108E31E7BD09B00143400 /* TQMyOrderCell.m */,
+				0F1108E41E7BD09B00143400 /* TQMyOrderCell.xib */,
+				0F1108F01E7BDA6400143400 /* TQMyTaskCell.h */,
+				0F1108F11E7BDA6400143400 /* TQMyTaskCell.m */,
+				0F1108F21E7BDA6400143400 /* TQMyTaskCell.xib */,
+				0F1108F51E7BDDDF00143400 /* TQSettingCell.h */,
+				0F1108F61E7BDDDF00143400 /* TQSettingCell.m */,
+				0F1108F71E7BDDDF00143400 /* TQSettingCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -885,6 +920,10 @@
 				0F24B89F1E52E8D00081A2DA /* TQAddMemberViewController.m */,
 				F32ABE371E5B285C000D7CF1 /* TQEditMeViewController.h */,
 				F32ABE381E5B285C000D7CF1 /* TQEditMeViewController.m */,
+				0F1108E71E7BD59A00143400 /* TQMyOrdersViewController.h */,
+				0F1108E81E7BD59A00143400 /* TQMyOrdersViewController.m */,
+				0F1108ED1E7BD98500143400 /* TQMyTasksViewController.h */,
+				0F1108EE1E7BD98500143400 /* TQMyTasksViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1087,6 +1126,7 @@
 				F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */,
 				0F20834E1E7A5DBD009388BD /* TQEvaluateMemberHeaderView.xib in Resources */,
 				0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */,
+				0F1108F41E7BDA6400143400 /* TQMyTaskCell.xib in Resources */,
 				F32ABE3E1E5B2AA6000D7CF1 /* TQEditMeCell.xib in Resources */,
 				0F5C0C231E76322000AF95BF /* umsocial_wechat.png in Resources */,
 				F3438C8B1DEB329700D86D5B /* TQLadderViewController.xib in Resources */,
@@ -1101,7 +1141,9 @@
 				0F1108DD1E7BA83400143400 /* TQPlayImageCell.xib in Resources */,
 				0F2083461E7A577B009388BD /* TQEvaluateMemberCell.xib in Resources */,
 				0F6435771E4AE2A50049BC45 /* TQTeamTopView.xib in Resources */,
+				0F1108F91E7BDDDF00143400 /* TQSettingCell.xib in Resources */,
 				0FDA93631E79265C00ABA65A /* TQMatchDetailTopView.xib in Resources */,
+				0F1108E61E7BD09B00143400 /* TQMyOrderCell.xib in Resources */,
 				0F5C0C281E76324700AF95BF /* umsocial_qq.png in Resources */,
 				0F6435721E4AC0300049BC45 /* TQLadderTeamCell.xib in Resources */,
 				0F24B8941E5290F30081A2DA /* TQMemberDetailCell.xib in Resources */,
@@ -1188,9 +1230,11 @@
 				0F2083541E7A660C009388BD /* TQEvaluateNoticeView.m in Sources */,
 				0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */,
 				0F2BFFF31E7279E100AD8B51 /* TQPlaceModel.m in Sources */,
+				0F1108E91E7BD59A00143400 /* TQMyOrdersViewController.m in Sources */,
 				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
 				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
 				0F2083391E7A31D9009388BD /* TQMyMatchViewController.m in Sources */,
+				0F1108EC1E7BD96C00143400 /* TQSettingViewController.m in Sources */,
 				0FDA93691E793D8E00ABA65A /* TQMatchDetailBottomView.m in Sources */,
 				0F1108E01E7BBC5400143400 /* TQPlayModel.m in Sources */,
 				0F2385111E7795C4008008EB /* TQPlaceListViewController.m in Sources */,
@@ -1200,6 +1244,7 @@
 				0F3C6B721E10AE1A00F713A7 /* TQMatchStatusView.m in Sources */,
 				0F5C0C441E76843100AF95BF /* TQMatchServiceCell.m in Sources */,
 				0F7F7F681E6FF64800952DDD /* FMDatabasePool.m in Sources */,
+				0F1108EF1E7BD98500143400 /* TQMyTasksViewController.m in Sources */,
 				0F5C0C301E7667FC00AF95BF /* NSDate+TimeCategory.m in Sources */,
 				0F3C6B7C1E10F50700F713A7 /* TQMatchCell.m in Sources */,
 				0F24B8A01E52E8D00081A2DA /* TQAddMemberViewController.m in Sources */,
@@ -1212,6 +1257,7 @@
 				0F1108D31E7B807700143400 /* TQEvaluateCompetitorTableView.m in Sources */,
 				0F32E7331E08C75800152EDD /* TQCommon.m in Sources */,
 				0F6435811E4B058B0049BC45 /* TQMeViewCell.m in Sources */,
+				0F1108F81E7BDDDF00143400 /* TQSettingCell.m in Sources */,
 				F37883D81DE5CC6100A40C3F /* main.m in Sources */,
 				F32ABE391E5B285C000D7CF1 /* TQEditMeViewController.m in Sources */,
 				0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */,
@@ -1250,7 +1296,9 @@
 				F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */,
 				0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */,
 				0F5C0C3C1E76828800AF95BF /* TQLaunchRefereeViewController.m in Sources */,
+				0F1108F31E7BDA6400143400 /* TQMyTaskCell.m in Sources */,
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
+				0F1108E51E7BD09B00143400 /* TQMyOrderCell.m in Sources */,
 				0F1108DC1E7BA83400143400 /* TQPlayImageCell.m in Sources */,
 				0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */,
 				0F20832E1E7A1CAB009388BD /* TQOrderRefereeViewController.m in Sources */,

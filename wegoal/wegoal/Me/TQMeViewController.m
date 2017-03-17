@@ -12,6 +12,9 @@
 #import "TQTeamDetailViewController.h"
 #import "TQEditMeViewController.h"
 #import "TQMyMatchViewController.h"
+#import "TQMyOrdersViewController.h"
+#import "TQMyTasksViewController.h"
+#import "TQSettingViewController.h"
 
 #define kTQMeViewCell     @"TQMeViewCell"
 @interface TQMeViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -156,16 +159,19 @@
         [self pushViewController:myMatchVC];
     } else if (indexPath.section == 1 && indexPath.row == 1) {
         //我的订单
-        
+        TQMyOrdersViewController *myOrdersVC = [[TQMyOrdersViewController alloc] init];
+        [self pushViewController:myOrdersVC];
     } else if (indexPath.section == 1 && indexPath.row == 2) {
         //我的保证金
         
     } else if (indexPath.section == 2 && indexPath.row == 0) {
         //任务总览
-        
+        TQMyTasksViewController *myTasksVC = [[TQMyTasksViewController alloc] init];
+        [self pushViewController:myTasksVC];
     } else if (indexPath.section == 2 && indexPath.row == 1) {
         //设置
-        
+        TQSettingViewController *settingVC = [[TQSettingViewController alloc] init];
+        [self pushViewController:settingVC];
     }
 }
 
