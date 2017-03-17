@@ -117,10 +117,9 @@
     params[@"placeFee"] = placeData.price;
     params[@"gameRules"] = _matchData[@"system"];
     params[@"refereeServiceId"] = _refereeData.serviceId;
-//    params[@"otherServiceIdAndCount"] = [self getServiceStr];
-    params[@"otherServiceIdAndCount"] = @"[{1:1}]";
+    params[@"otherServiceIdAndCount"] = [self getServiceStr];
     [ZDMIndicatorView showInView:self.detailTableView];
-    [[AFServer sharedInstance]GET:URL(kTQDomainURL, kSetEnroll) parameters:params finishBlock:^(id result) {
+    [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetEnroll) parameters:params filePath:nil finishBlock:^(id result) {
         [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
