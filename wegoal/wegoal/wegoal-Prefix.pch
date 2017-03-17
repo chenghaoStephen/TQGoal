@@ -27,6 +27,7 @@
 #import "TQBannerModel.h"
 #import "TQServiceModel.h"
 #import "TQMessageModel.h"
+#import "TQPlayModel.h"
 
 //pods
 #import "AFNetworking.h"

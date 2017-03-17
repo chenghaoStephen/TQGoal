@@ -14,6 +14,9 @@
 typedef void(^completeBlock)(CGFloat currentScore);
 
 @interface XHStarRateView()
+{
+    UITapGestureRecognizer *tapGesture;
+}
 
 @property (nonatomic, strong) UIView *foregroundStarView;
 @property (nonatomic, strong) UIView *backgroundStarView;
@@ -74,6 +77,16 @@ typedef void(^completeBlock)(CGFloat currentScore);
     return self;
 }
 
+- (void)setCanEdit:(BOOL)canEdit
+{
+    _canEdit = canEdit;
+    if (canEdit && tapGesture) {
+        [self addGestureRecognizer:tapGesture];
+    } else {
+        [self removeGestureRecognizer:tapGesture];
+    }
+}
+
 #pragma mark - private Method
 -(void)createStarView{
     
@@ -84,8 +97,10 @@ typedef void(^completeBlock)(CGFloat currentScore);
     [self addSubview:self.backgroundStarView];
     [self addSubview:self.foregroundStarView];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTapRateView:)];
-    tapGesture.numberOfTapsRequired = 1;
+    if (!tapGesture) {
+        tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userTapRateView:)];
+        tapGesture.numberOfTapsRequired = 1;
+    }
     [self addGestureRecognizer:tapGesture];
 
 }

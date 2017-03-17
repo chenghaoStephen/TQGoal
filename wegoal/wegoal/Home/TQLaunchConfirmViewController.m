@@ -142,13 +142,14 @@
     
 }
 
-- (NSArray *)getServiceStr
+- (NSString *)getServiceStr
 {
     NSMutableArray *array = [NSMutableArray array];
     for (TQServiceModel *serviceData in _servicesArray) {
         [array addObject:@{@"id":serviceData.serviceId, @"num":@(serviceData.amount)}];
     }
-    return array;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:nil];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 

@@ -110,7 +110,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 15;
+    return _membersArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,7 +128,7 @@
         [cell clearInformation];
         [cell setSelected:NO andAmount:0];
     }
-    
+    cell.canEdit = YES;
     __weak typeof(self) weakSelf = self;
     cell.selectBlk = ^(BOOL isSelected){
         //清空mvp

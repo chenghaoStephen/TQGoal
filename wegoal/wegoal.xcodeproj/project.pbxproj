@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1108BE1E7B69C700143400 /* TQEvaluateRefereeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108BC1E7B69C700143400 /* TQEvaluateRefereeCell.m */; };
+		0F1108BF1E7B69C700143400 /* TQEvaluateRefereeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1108BD1E7B69C700143400 /* TQEvaluateRefereeCell.xib */; };
+		0F1108C31E7B69DE00143400 /* TQEvaluateTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108C11E7B69DE00143400 /* TQEvaluateTeamCell.m */; };
+		0F1108C41E7B69DE00143400 /* TQEvaluateTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1108C21E7B69DE00143400 /* TQEvaluateTeamCell.xib */; };
+		0F1108C71E7B7ED000143400 /* TQMyMatchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108C61E7B7ED000143400 /* TQMyMatchDetailViewController.m */; };
+		0F1108CA1E7B801D00143400 /* TQPlayBackTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108C91E7B801D00143400 /* TQPlayBackTableView.m */; };
+		0F1108CD1E7B803700143400 /* TQEvaluateMemberTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108CC1E7B803700143400 /* TQEvaluateMemberTableView.m */; };
+		0F1108D01E7B805700143400 /* TQEvaluateRefereeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108CF1E7B805700143400 /* TQEvaluateRefereeTableView.m */; };
+		0F1108D31E7B807700143400 /* TQEvaluateCompetitorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108D21E7B807700143400 /* TQEvaluateCompetitorTableView.m */; };
+		0F1108D71E7BA82200143400 /* TQPlayTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108D51E7BA82200143400 /* TQPlayTextCell.m */; };
+		0F1108D81E7BA82200143400 /* TQPlayTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1108D61E7BA82200143400 /* TQPlayTextCell.xib */; };
+		0F1108DC1E7BA83400143400 /* TQPlayImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108DA1E7BA83400143400 /* TQPlayImageCell.m */; };
+		0F1108DD1E7BA83400143400 /* TQPlayImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1108DB1E7BA83400143400 /* TQPlayImageCell.xib */; };
+		0F1108E01E7BBC5400143400 /* TQPlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1108DF1E7BBC5400143400 /* TQPlayModel.m */; };
 		0F16F3B41E70F6C40014037B /* TQProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */; };
 		0F16F3BD1E71241B0014037B /* TQMatchInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F16F3BB1E71241B0014037B /* TQMatchInformationCell.m */; };
 		0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F16F3BC1E71241B0014037B /* TQMatchInformationCell.xib */; };
@@ -139,6 +153,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1108BB1E7B69C700143400 /* TQEvaluateRefereeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateRefereeCell.h; sourceTree = "<group>"; };
+		0F1108BC1E7B69C700143400 /* TQEvaluateRefereeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateRefereeCell.m; sourceTree = "<group>"; };
+		0F1108BD1E7B69C700143400 /* TQEvaluateRefereeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQEvaluateRefereeCell.xib; sourceTree = "<group>"; };
+		0F1108C01E7B69DE00143400 /* TQEvaluateTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateTeamCell.h; sourceTree = "<group>"; };
+		0F1108C11E7B69DE00143400 /* TQEvaluateTeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateTeamCell.m; sourceTree = "<group>"; };
+		0F1108C21E7B69DE00143400 /* TQEvaluateTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQEvaluateTeamCell.xib; sourceTree = "<group>"; };
+		0F1108C51E7B7ED000143400 /* TQMyMatchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMyMatchDetailViewController.h; sourceTree = "<group>"; };
+		0F1108C61E7B7ED000143400 /* TQMyMatchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMyMatchDetailViewController.m; sourceTree = "<group>"; };
+		0F1108C81E7B801D00143400 /* TQPlayBackTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPlayBackTableView.h; sourceTree = "<group>"; };
+		0F1108C91E7B801D00143400 /* TQPlayBackTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPlayBackTableView.m; sourceTree = "<group>"; };
+		0F1108CB1E7B803700143400 /* TQEvaluateMemberTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateMemberTableView.h; sourceTree = "<group>"; };
+		0F1108CC1E7B803700143400 /* TQEvaluateMemberTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateMemberTableView.m; sourceTree = "<group>"; };
+		0F1108CE1E7B805700143400 /* TQEvaluateRefereeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateRefereeTableView.h; sourceTree = "<group>"; };
+		0F1108CF1E7B805700143400 /* TQEvaluateRefereeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateRefereeTableView.m; sourceTree = "<group>"; };
+		0F1108D11E7B807700143400 /* TQEvaluateCompetitorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQEvaluateCompetitorTableView.h; sourceTree = "<group>"; };
+		0F1108D21E7B807700143400 /* TQEvaluateCompetitorTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQEvaluateCompetitorTableView.m; sourceTree = "<group>"; };
+		0F1108D41E7BA82200143400 /* TQPlayTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPlayTextCell.h; sourceTree = "<group>"; };
+		0F1108D51E7BA82200143400 /* TQPlayTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPlayTextCell.m; sourceTree = "<group>"; };
+		0F1108D61E7BA82200143400 /* TQPlayTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQPlayTextCell.xib; sourceTree = "<group>"; };
+		0F1108D91E7BA83400143400 /* TQPlayImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPlayImageCell.h; sourceTree = "<group>"; };
+		0F1108DA1E7BA83400143400 /* TQPlayImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPlayImageCell.m; sourceTree = "<group>"; };
+		0F1108DB1E7BA83400143400 /* TQPlayImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQPlayImageCell.xib; sourceTree = "<group>"; };
+		0F1108DE1E7BBC5400143400 /* TQPlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPlayModel.h; sourceTree = "<group>"; };
+		0F1108DF1E7BBC5400143400 /* TQPlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPlayModel.m; sourceTree = "<group>"; };
 		0F16F3B11E70F6C40014037B /* TQProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQProtocolViewController.h; sourceTree = "<group>"; };
 		0F16F3B21E70F6C40014037B /* TQProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQProtocolViewController.m; sourceTree = "<group>"; };
 		0F16F3BA1E71241B0014037B /* TQMatchInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchInformationCell.h; sourceTree = "<group>"; };
@@ -385,6 +423,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1108E11E7BC3E500143400 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		0F16F3A81E70DCDC0014037B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +505,14 @@
 				0F2083501E7A601E009388BD /* TQEvaluateMemberBottomView.m */,
 				0F2083521E7A660C009388BD /* TQEvaluateNoticeView.h */,
 				0F2083531E7A660C009388BD /* TQEvaluateNoticeView.m */,
+				0F1108C81E7B801D00143400 /* TQPlayBackTableView.h */,
+				0F1108C91E7B801D00143400 /* TQPlayBackTableView.m */,
+				0F1108CB1E7B803700143400 /* TQEvaluateMemberTableView.h */,
+				0F1108CC1E7B803700143400 /* TQEvaluateMemberTableView.m */,
+				0F1108CE1E7B805700143400 /* TQEvaluateRefereeTableView.h */,
+				0F1108CF1E7B805700143400 /* TQEvaluateRefereeTableView.m */,
+				0F1108D11E7B807700143400 /* TQEvaluateCompetitorTableView.h */,
+				0F1108D21E7B807700143400 /* TQEvaluateCompetitorTableView.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -469,6 +522,8 @@
 			children = (
 				0F2BFFF41E727A0200AD8B51 /* TQMemberModel.h */,
 				0F2BFFF51E727A0200AD8B51 /* TQMemberModel.m */,
+				0F1108DE1E7BBC5400143400 /* TQPlayModel.h */,
+				0F1108DF1E7BBC5400143400 /* TQPlayModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -491,6 +546,8 @@
 				0F2083481E7A5C2C009388BD /* TQEvaluateMemberViewController.m */,
 				0F2083551E7A70F2009388BD /* TQEvaluateRefereeViewController.h */,
 				0F2083561E7A70F2009388BD /* TQEvaluateRefereeViewController.m */,
+				0F1108C51E7B7ED000143400 /* TQMyMatchDetailViewController.h */,
+				0F1108C61E7B7ED000143400 /* TQMyMatchDetailViewController.m */,
 			);
 			name = MyMatch;
 			sourceTree = "<group>";
@@ -624,6 +681,18 @@
 				0F2083421E7A577B009388BD /* TQEvaluateMemberCell.h */,
 				0F2083431E7A577B009388BD /* TQEvaluateMemberCell.m */,
 				0F2083441E7A577B009388BD /* TQEvaluateMemberCell.xib */,
+				0F1108BB1E7B69C700143400 /* TQEvaluateRefereeCell.h */,
+				0F1108BC1E7B69C700143400 /* TQEvaluateRefereeCell.m */,
+				0F1108BD1E7B69C700143400 /* TQEvaluateRefereeCell.xib */,
+				0F1108C01E7B69DE00143400 /* TQEvaluateTeamCell.h */,
+				0F1108C11E7B69DE00143400 /* TQEvaluateTeamCell.m */,
+				0F1108C21E7B69DE00143400 /* TQEvaluateTeamCell.xib */,
+				0F1108D41E7BA82200143400 /* TQPlayTextCell.h */,
+				0F1108D51E7BA82200143400 /* TQPlayTextCell.m */,
+				0F1108D61E7BA82200143400 /* TQPlayTextCell.xib */,
+				0F1108D91E7BA83400143400 /* TQPlayImageCell.h */,
+				0F1108DA1E7BA83400143400 /* TQPlayImageCell.m */,
+				0F1108DB1E7BA83400143400 /* TQPlayImageCell.xib */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -803,6 +872,7 @@
 			isa = PBXGroup;
 			children = (
 				0F2083361E7A31BB009388BD /* MyMatch */,
+				0F1108E11E7BC3E500143400 /* Setting */,
 				0F1C8D3A1E4C629B0015F015 /* CustomView */,
 				0F1C8D401E4C64D00015F015 /* Model */,
 				0F64357D1E4B055D0049BC45 /* cell */,
@@ -1008,7 +1078,9 @@
 			files = (
 				0F7F7F641E6FF64800952DDD /* LICENSE.txt in Resources */,
 				0F5C0C2D1E76325E00AF95BF /* umsocial_tencentWB.png in Resources */,
+				0F1108C41E7B69DE00143400 /* TQEvaluateTeamCell.xib in Resources */,
 				0F5C0C251E76323E00AF95BF /* umsocial_wechat_timeline.png in Resources */,
+				0F1108BF1E7B69C700143400 /* TQEvaluateRefereeCell.xib in Resources */,
 				0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */,
 				0F2083411E7A326D009388BD /* TQMyMatchCell.xib in Resources */,
 				0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */,
@@ -1021,10 +1093,12 @@
 				0F2385041E77888F008008EB /* XHDatePickerView.xib in Resources */,
 				0F5C0C291E76324700AF95BF /* umsocial_qzone.png in Resources */,
 				0F16F3C61E7124670014037B /* TQMatchRefereeCell.xib in Resources */,
+				0F1108D81E7BA82200143400 /* TQPlayTextCell.xib in Resources */,
 				0F16F3BE1E71241B0014037B /* TQMatchInformationCell.xib in Resources */,
 				F3438C861DEB328400D86D5B /* TQMeViewController.xib in Resources */,
 				0F5C0C451E76843100AF95BF /* TQMatchServiceCell.xib in Resources */,
 				F37883E31DE5CC6100A40C3F /* Assets.xcassets in Resources */,
+				0F1108DD1E7BA83400143400 /* TQPlayImageCell.xib in Resources */,
 				0F2083461E7A577B009388BD /* TQEvaluateMemberCell.xib in Resources */,
 				0F6435771E4AE2A50049BC45 /* TQTeamTopView.xib in Resources */,
 				0FDA93631E79265C00ABA65A /* TQMatchDetailTopView.xib in Resources */,
@@ -1118,8 +1192,10 @@
 				F3438C8A1DEB329700D86D5B /* TQLadderViewController.m in Sources */,
 				0F2083391E7A31D9009388BD /* TQMyMatchViewController.m in Sources */,
 				0FDA93691E793D8E00ABA65A /* TQMatchDetailBottomView.m in Sources */,
+				0F1108E01E7BBC5400143400 /* TQPlayModel.m in Sources */,
 				0F2385111E7795C4008008EB /* TQPlaceListViewController.m in Sources */,
 				0F2BFFF61E727A0200AD8B51 /* TQMemberModel.m in Sources */,
+				0F1108D01E7B805700143400 /* TQEvaluateRefereeTableView.m in Sources */,
 				0F64356D1E4ABEAA0049BC45 /* TQTeamModel.m in Sources */,
 				0F3C6B721E10AE1A00F713A7 /* TQMatchStatusView.m in Sources */,
 				0F5C0C441E76843100AF95BF /* TQMatchServiceCell.m in Sources */,
@@ -1130,13 +1206,16 @@
 				0F2BFFF01E72770300AD8B51 /* TQServiceModel.m in Sources */,
 				0F2083401E7A326D009388BD /* TQMyMatchCell.m in Sources */,
 				0F7F7F661E6FF64800952DDD /* FMDatabase.m in Sources */,
+				0F1108CD1E7B803700143400 /* TQEvaluateMemberTableView.m in Sources */,
 				0F1C8D3D1E4C62BC0015F015 /* TQMeTopView.m in Sources */,
 				0F23850D1E779481008008EB /* MJPopupBackgroundView.m in Sources */,
+				0F1108D31E7B807700143400 /* TQEvaluateCompetitorTableView.m in Sources */,
 				0F32E7331E08C75800152EDD /* TQCommon.m in Sources */,
 				0F6435811E4B058B0049BC45 /* TQMeViewCell.m in Sources */,
 				F37883D81DE5CC6100A40C3F /* main.m in Sources */,
 				F32ABE391E5B285C000D7CF1 /* TQEditMeViewController.m in Sources */,
 				0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */,
+				0F1108C31E7B69DE00143400 /* TQEvaluateTeamCell.m in Sources */,
 				0F2083311E7A1CBE009388BD /* TQOrderServicesViewController.m in Sources */,
 				0F16F3C51E7124670014037B /* TQMatchRefereeCell.m in Sources */,
 				0F2BACE21E6E931A00C0EF10 /* TQMessageCell.m in Sources */,
@@ -1148,7 +1227,10 @@
 				0F5378F71E76242A005E2B74 /* TQBannerModel.m in Sources */,
 				0F2083491E7A5C2C009388BD /* TQEvaluateMemberViewController.m in Sources */,
 				0F2384F81E778447008008EB /* NSDate+Extension.m in Sources */,
+				0F1108C71E7B7ED000143400 /* TQMyMatchDetailViewController.m in Sources */,
 				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
+				0F1108CA1E7B801D00143400 /* TQPlayBackTableView.m in Sources */,
+				0F1108D71E7BA82200143400 /* TQPlayTextCell.m in Sources */,
 				F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */,
 				0F16F3B41E70F6C40014037B /* TQProtocolViewController.m in Sources */,
 				F3438C991DF2A51700D86D5B /* UIView+LBExtension.m in Sources */,
@@ -1169,11 +1251,13 @@
 				0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */,
 				0F5C0C3C1E76828800AF95BF /* TQLaunchRefereeViewController.m in Sources */,
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
+				0F1108DC1E7BA83400143400 /* TQPlayImageCell.m in Sources */,
 				0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */,
 				0F20832E1E7A1CAB009388BD /* TQOrderRefereeViewController.m in Sources */,
 				0F2083511E7A601E009388BD /* TQEvaluateMemberBottomView.m in Sources */,
 				0F7F7F761E6FFED200952DDD /* ZDMNavToast.m in Sources */,
 				F3438C851DEB328400D86D5B /* TQMeViewController.m in Sources */,
+				0F1108BE1E7B69C700143400 /* TQEvaluateRefereeCell.m in Sources */,
 				F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */,
 				0F7F7F4F1E6FF61400952DDD /* DownLoadModel.m in Sources */,
 				0F2385081E778E47008008EB /* ZSYPopoverListView.m in Sources */,

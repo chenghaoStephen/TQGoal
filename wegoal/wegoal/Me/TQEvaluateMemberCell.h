@@ -15,6 +15,7 @@ typedef void(^amountBlock)(NSUInteger);
 @property (nonatomic, copy) selectBlock selectBlk;
 @property (nonatomic, copy) amountBlock amountBlk;
 @property (nonatomic, strong) TQMemberModel *memberData;
+@property (nonatomic, assign) BOOL canEdit;
 
 - (void)clearInformation;
 - (void)setSelected:(BOOL)selected andAmount:(NSUInteger)amount;

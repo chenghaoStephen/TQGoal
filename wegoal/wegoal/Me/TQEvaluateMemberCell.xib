@@ -101,6 +101,13 @@
                             <action selector="selectAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="O8l-Vj-nkT"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MVP" translatesAutoresizingMaskIntoConstraints="NO" id="GwG-jc-LAd">
+                        <rect key="frame" x="248" y="11" width="45" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="IQr-jj-NGI"/>
+                            <constraint firstAttribute="width" constant="45" id="Lwz-Eb-r2V"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="pip-Ba-qwf" firstAttribute="leading" secondItem="WG2-fO-PSo" secondAttribute="trailing" constant="10" id="3qO-ZP-DwY"/>
@@ -110,6 +117,7 @@
                     <constraint firstItem="WG2-fO-PSo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9fI-J0-pt3"/>
                     <constraint firstItem="Twz-Pd-VEZ" firstAttribute="leading" secondItem="Fqu-53-PxK" secondAttribute="trailing" constant="8" id="CXI-zC-stI"/>
                     <constraint firstItem="8QV-2p-OjP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ILg-gX-Zj5"/>
+                    <constraint firstItem="8Fz-vn-57h" firstAttribute="centerX" secondItem="GwG-jc-LAd" secondAttribute="centerX" id="J4z-Ho-E4k"/>
                     <constraint firstItem="NHl-ax-nm9" firstAttribute="leading" secondItem="8Fz-vn-57h" secondAttribute="trailing" constant="20" id="QmR-5K-j8V"/>
                     <constraint firstItem="pip-Ba-qwf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RUx-So-ViY"/>
                     <constraint firstItem="Fqu-53-PxK" firstAttribute="leading" secondItem="NHl-ax-nm9" secondAttribute="trailing" constant="8" id="W9f-Om-ET9"/>
@@ -118,6 +126,7 @@
                     <constraint firstItem="pBG-a3-uIE" firstAttribute="leading" secondItem="pip-Ba-qwf" secondAttribute="trailing" constant="8" id="gKD-l7-Vxa"/>
                     <constraint firstAttribute="trailing" secondItem="Twz-Pd-VEZ" secondAttribute="trailing" constant="12" id="qcR-j7-ulR"/>
                     <constraint firstItem="WG2-fO-PSo" firstAttribute="leading" secondItem="8QV-2p-OjP" secondAttribute="trailing" constant="12" id="uOe-Li-Ml8"/>
+                    <constraint firstItem="GwG-jc-LAd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vhv-jm-6r9"/>
                     <constraint firstItem="8Fz-vn-57h" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wCx-RF-MvG"/>
                     <constraint firstItem="Fqu-53-PxK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zCI-CL-mO0"/>
                 </constraints>
@@ -126,6 +135,7 @@
                 <outlet property="amountLabel" destination="Fqu-53-PxK" id="jqu-st-tTD"/>
                 <outlet property="avatarImageView" destination="pip-Ba-qwf" id="WQ6-lS-Wyg"/>
                 <outlet property="minusButton" destination="NHl-ax-nm9" id="LSr-Vl-Rgy"/>
+                <outlet property="mvpSignImageView" destination="GwG-jc-LAd" id="RXY-dB-lyt"/>
                 <outlet property="nameLabel" destination="pBG-a3-uIE" id="Uhv-ea-8vZ"/>
                 <outlet property="numberLabel" destination="8QV-2p-OjP" id="Aur-wR-LOp"/>
                 <outlet property="plusButton" destination="Twz-Pd-VEZ" id="snZ-of-D3e"/>
@@ -136,6 +146,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="MVP" width="45" height="15"/>
         <image name="plus_black" width="16" height="16"/>
         <image name="reduce_white" width="16" height="16"/>
         <image name="select_default" width="16" height="16"/>

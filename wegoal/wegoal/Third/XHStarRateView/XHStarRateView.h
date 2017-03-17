@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, RateStyle)
 
 @property (nonatomic,assign)BOOL isAnimation;       //是否动画显示，默认NO
 @property (nonatomic,assign)RateStyle rateStyle;    //评分样式    默认是WholeStar
+@property (nonatomic,assign)BOOL canEdit;           //是否可编辑
 @property (nonatomic, weak) id<XHStarRateViewDelegate>delegate;
 
 

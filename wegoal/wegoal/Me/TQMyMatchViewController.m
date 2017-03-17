@@ -8,6 +8,7 @@
 
 #import "TQMyMatchViewController.h"
 #import "TQMyMatchCell.h"
+#import "TQMyMatchDetailViewController.h"
 
 #define kTQMyMatchCellIdentifier     @"TQMyMatchCell"
 @interface TQMyMatchViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -98,7 +99,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    TQMyMatchDetailViewController *myMatchDetailVC = [[TQMyMatchDetailViewController alloc] init];
+    [self.navigationController pushViewController:myMatchDetailVC animated:YES];
 }
 
 

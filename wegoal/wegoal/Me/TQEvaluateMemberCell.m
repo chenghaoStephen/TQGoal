@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *minusButton;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *plusButton;
+@property (weak, nonatomic) IBOutlet UIImageView *mvpSignImageView;
 
 @end
 
@@ -64,6 +65,11 @@
     _numberLabel.text = memberData.memberNumber;
     _positionLabel.text = memberData.memberPosition;
     _nameLabel.text = memberData.memberName;
+    if (memberData.isMvp) {
+        _mvpSignImageView.image = [UIImage imageNamed:@"MVP"];
+    } else {
+        _mvpSignImageView.image = nil;
+    }
 }
 
 - (void)clearInformation
@@ -72,6 +78,24 @@
     _numberLabel.text = @"--";
     _positionLabel.text = @"--";
     _nameLabel.text = @"--";
+}
+
+- (void)setCanEdit:(BOOL)canEdit
+{
+    _canEdit = canEdit;
+    if (canEdit) {
+        _mvpSignImageView.hidden = YES;
+        _selectedButton.hidden = NO;
+        _plusButton.hidden = NO;
+        _minusButton.hidden = NO;
+        _amountLabel.backgroundColor = kUnenableColor;
+    } else {
+        _mvpSignImageView.hidden = NO;
+        _selectedButton.hidden = YES;
+        _plusButton.hidden = YES;
+        _minusButton.hidden = YES;
+        _amountLabel.backgroundColor = [UIColor clearColor];
+    }
 }
 
 
