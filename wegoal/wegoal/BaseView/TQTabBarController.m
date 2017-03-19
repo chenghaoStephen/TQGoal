@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNotifications];
+    
     //设置子视图
     [self setUpAllChildVc];
     [self configureZYPathButton];
@@ -73,6 +74,7 @@
     _myTabBar.allowCenterButtonRotation = NO;
     _myTabBar.allowSubItemRotation = NO;
     _myTabBar.bloomAngel = 100;
+    _myTabBar.tintColor = kSubjectBackColor;
     //kvc实质是修改了系统的_tabBar
     [self setValue:_myTabBar forKeyPath:@"tabBar"];
     
@@ -82,16 +84,16 @@
     //TabbarController添加四个子控制器
     //首页
     TQHomeViewController *HomeVC = [[TQHomeViewController alloc] init];
-    [self setUpOneChildVcWithVc:HomeVC Image:@"home" selectedImage:@"home" title:@"首页"];
+    [self setUpOneChildVcWithVc:HomeVC Image:@"home" selectedImage:@"home_select" title:@"首页"];
     //赛程
     TQScheduleViewController *scheduleVC = [[TQScheduleViewController alloc] init];
-    [self setUpOneChildVcWithVc:scheduleVC Image:@"schedule" selectedImage:@"schedule" title:@"赛程"];
+    [self setUpOneChildVcWithVc:scheduleVC Image:@"schedule" selectedImage:@"schedule_select" title:@"赛程"];
     //天梯
     TQLadderViewController *ladderVC = [[TQLadderViewController alloc] init];
-    [self setUpOneChildVcWithVc:ladderVC Image:@"ladder" selectedImage:@"ladder" title:@"天梯"];
+    [self setUpOneChildVcWithVc:ladderVC Image:@"ladder" selectedImage:@"ladder_select" title:@"天梯"];
     //我
     TQMeViewController *meVC = [[TQMeViewController alloc] init];
-    [self setUpOneChildVcWithVc:meVC Image:@"me" selectedImage:@"me" title:@"我"];
+    [self setUpOneChildVcWithVc:meVC Image:@"me" selectedImage:@"me_select" title:@"我"];
 }
 
 

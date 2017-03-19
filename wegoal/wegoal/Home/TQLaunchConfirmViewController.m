@@ -116,8 +116,13 @@
     params[@"gamePlaceId"] = placeData.gamePlaceId;
     params[@"placeFee"] = placeData.price;
     params[@"gameRules"] = _matchData[@"system"];
-    params[@"refereeServiceId"] = _refereeData.serviceId;
-    params[@"otherServiceIdAndCount"] = [self getServiceStr];
+    if (_refereeData.isSelected) {
+        params[@"refereeServiceId"] = _refereeData.serviceId;
+    }
+    if (_servicesArray.count > 0) {
+        params[@"otherServiceIdAndCount"] = [self getServiceStr];
+    }
+
     [ZDMIndicatorView showInView:self.detailTableView];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetEnroll) parameters:params filePath:nil finishBlock:^(id result) {
         [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
@@ -151,6 +156,16 @@
     }
     NSData *data = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:nil];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+//    NSString *str = @"[";
+//    for (TQServiceModel *serviceData in _servicesArray) {
+//        str = [str stringByAppendingString:[NSString stringWithFormat:@"{id:%@,num:%ld}", serviceData.serviceId, serviceData.amount]];
+//        if ([_servicesArray indexOfObject:serviceData] < _servicesArray.count - 1) {
+//            str = [str stringByAppendingString:@","];
+//        }
+//    }
+//    str = [str stringByAppendingString:@"]"];
+//    return str;
 }
 
 
