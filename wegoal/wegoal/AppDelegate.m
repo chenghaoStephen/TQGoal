@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import<ShareSDK/ShareSDK.h>
+#import<WXApi.h>
+#import<ShareSDKConnector/ShareSDKConnector.h>
+#import<TencentOpenAPI/QQApiInterface.h>
+#import<TencentOpenAPI/TencentOAuth.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -21,8 +26,60 @@
     self.tabBarController = [[TQTabBarController alloc] init];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+    [self registerShareSdk];
     return YES;
     
+}
+
+- (void)registerShareSdk
+{
+    [ShareSDK registerApp:kShareSdkAppId
+          activePlatforms:@[@(SSDKPlatformSubTypeWechatSession),
+                            @(SSDKPlatformSubTypeWechatTimeline),
+                            @(SSDKPlatformTypeQQ)
+                            ]
+                 onImport:^(SSDKPlatformType platformType) {
+                     switch (platformType) {
+                         case SSDKPlatformTypeWechat: {
+                             [ShareSDKConnector connectWeChat:[WXApi class]];
+                         }
+                             break;
+                             
+                         case SSDKPlatformTypeQQ: {
+                             [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+                         }
+                             break;
+                             
+                         default:
+                             break;
+                     }
+                 }
+          onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+              switch (platformType) {
+                      
+                  case SSDKPlatformTypeWechat: {
+                      [appInfo SSDKSetupWeChatByAppId:kWechatAppId appSecret:kWechatAppSecret];
+                  }
+                      break;
+                      
+                  case SSDKPlatformTypeQQ: {
+                      [appInfo SSDKSetupQQByAppId:kQQAppId appKey:kQQAppKey authType:SSDKAuthTypeSSO];
+                  }
+                      break;
+                      
+                  default:
+                      break;
+                      
+              }
+          }
+     ];
+    
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [WXApi handleOpenURL:url delegate:self];
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
