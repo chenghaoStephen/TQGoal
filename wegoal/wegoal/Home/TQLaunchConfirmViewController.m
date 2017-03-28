@@ -109,7 +109,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
 //    params[@"Id"] = _teamData.teamId;
     params[@"userName"] = USER_NAME;
-    params[@"gameDate"] = [NSDate datestrFromDate:_matchData[@"time"] withDateFormat:kDateFormatter3];
+    params[@"gameDate"] = [NSDate datestrFromDate:_matchData[@"time"] withDateFormat:kDateFormatter1];
     params[@"gameWeek"] = [TQCommon weekStringFromDate:_matchData[@"time"]];
     TQPlaceModel *placeData = _matchData[@"place"];
     params[@"gamePlace"] = placeData.name;

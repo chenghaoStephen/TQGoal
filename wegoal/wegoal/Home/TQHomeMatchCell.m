@@ -65,7 +65,17 @@
             [_actionButton setTitle:@"赛况直播" forState:UIControlStateNormal];
             _actionButton.enabled = YES;
             break;
-        case MatchStatusEnd:
+        case MatchStatusEvaluateMember:
+            [_actionButton setBackgroundColor:kSubjectBackColor];
+            [_actionButton setTitle:@"评价球员" forState:UIControlStateNormal];
+            _actionButton.enabled = YES;
+            break;
+        case MatchStatusEvaluateOpponent:
+            [_actionButton setBackgroundColor:kSubjectBackColor];
+            [_actionButton setTitle:@"评价对手" forState:UIControlStateNormal];
+            _actionButton.enabled = YES;
+            break;
+        case MatchStatusViewSchedule:
             [_actionButton setBackgroundColor:kSubjectBackColor];
             [_actionButton setTitle:@"查看全部赛程" forState:UIControlStateNormal];
             _actionButton.enabled = YES;

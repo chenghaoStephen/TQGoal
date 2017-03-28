@@ -25,12 +25,15 @@
 //};
 
 typedef NS_ENUM(NSInteger, MatchStatus){
-    MatchStatusSearching = 0,     //寻找对手
+    MatchStatusSearching = 0,     //等待应战
     MatchStatusConfirm,           //确认对手
-    MatchStatusPay,               //付费
-    MatchStatusWaiting,           //等待比赛
-    MatchStatusProcessing,        //比赛中
-    MatchStatusEnd,               //结束
+    MatchStatusPay,               //支付
+    MatchStatusWaiting,           //等待约战开始
+    MatchStatusProcessing,        //赛况直播
+    MatchStatusEvaluateMember,    //评价球员
+    MatchStatusEvaluateOpponent,  //评价对手
+    MatchStatusViewSchedule,      //查看全部赛程
+    MatchStatusNotTeam,           //非队长未报名(非队长球员只能操作7、8)
 };
 
 #define kRaceSystemArray   @[@"5人制",@"7/8/9人制",@"11人制"]
@@ -60,9 +63,8 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 
 
 //date formatter
-#define kDateFormatter1      @"yyyy-MM-dd HH:mm:ss"
+#define kDateFormatter1      @"yyyyMMddHHmm"
 #define kDateFormatter2      @"MM/dd - HH:mm"
-#define kDateFormatter3      @"yyyyMMddHHmm"
 
 
 #define HTTP_TIME_OUT 10

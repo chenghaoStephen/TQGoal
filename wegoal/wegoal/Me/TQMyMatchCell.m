@@ -122,12 +122,24 @@
             
             break;
             
-        case MatchStatusEnd:
+        case MatchStatusEvaluateMember:
             _button1.hidden = YES;
             _button2.hidden = YES;
             _buttonBottom.hidden = NO;
             _buttonBottom.backgroundColor = kNavTitleColor;
             [_buttonBottom setTitle:@"评价球员" forState:UIControlStateNormal];
+            break;
+            
+        case MatchStatusEvaluateOpponent:
+            
+            break;
+            
+        case MatchStatusViewSchedule:
+            
+            break;
+            
+        case MatchStatusNotTeam:
+            
             break;
             
         default:
@@ -199,13 +211,26 @@
             
             break;
             
-        case MatchStatusEnd:
+        case MatchStatusEvaluateMember:
         {
             //评价球员
             TQEvaluateMemberViewController *evaluateMemberVC = [[TQEvaluateMemberViewController alloc] init];
             [self.viewController.navigationController pushViewController:evaluateMemberVC animated:YES];
             break;
         }
+            
+            
+        case MatchStatusEvaluateOpponent:
+            
+            break;
+            
+        case MatchStatusViewSchedule:
+            
+            break;
+            
+        case MatchStatusNotTeam:
+            
+            break;
             
         default:
             break;

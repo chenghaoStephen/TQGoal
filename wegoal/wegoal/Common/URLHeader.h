@@ -10,7 +10,7 @@
 #define URL(domian,url) [domian stringByAppendingString:url?:@""]
 
 //Domain
-#define kTQDomainURL     @"http://165n01a586.iask.in"
+#define kTQDomainURL     @"http://175.170.128.237:9004/"
 
 
 //登录

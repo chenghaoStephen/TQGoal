@@ -37,7 +37,7 @@
     TQMatchModel *match2 = [TQMatchModel new];
     match2.status = [NSString stringWithFormat:@"%ld", MatchStatusPay];
     TQMatchModel *match3 = [TQMatchModel new];
-    match3.status = [NSString stringWithFormat:@"%ld", MatchStatusEnd];
+    match3.status = [NSString stringWithFormat:@"%ld", MatchStatusWaiting];
     [_myMatchesArray addObjectsFromArray:@[match1, match2, match3]];
     
 }
