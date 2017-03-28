@@ -48,3 +48,20 @@ alpha:a]
 //#define USER_TOKEN UserDataManager.userToken
 #define USER_TOKEN @"123456"
 #define USER_NAME  @"13000000007"
+
+//第三方AppId、AppSecret
+//share-sdk
+#define kShareSdkAppId     @"1c46efcdaa680"
+#define kShareSdkAppSecret @"3cadef6408a7583b989a4598e4fef2ec"
+//wechat
+#define kWechatAppId       @""
+#define kWechatAppSecret   @""
+//qq
+#define kQQAppId           @""
+#define kQQAppKey          @""
+
+
+
+
+
+

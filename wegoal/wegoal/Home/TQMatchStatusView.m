@@ -8,6 +8,7 @@
 
 #import "TQMatchStatusView.h"
 #import "TQMatchCell.h"
+#import "ShareSDK.h"
 
 #define kShareButtonTag     32001
 #define kShareButtonWidth   27.f
@@ -113,31 +114,22 @@
         _shareView.backgroundColor = [UIColor whiteColor];
         
         //添加分享按钮
-        CGFloat interValX = (viewWidth - kShareButtonWidth*6 - 20)/7;
+        CGFloat interValX = (viewWidth - kShareButtonWidth*3 - 20)/7;
         CGFloat offsetX = 10 + interValX;
-        for (NSInteger i = 0; i < 6; i++) {
+        for (NSInteger i = 0; i < 3; i++) {
             UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             shareBtn.tag = kShareButtonTag + i;
             shareBtn.frame = CGRectMake(offsetX, 40, kShareButtonWidth, kShareButtonWidth);
             [shareBtn addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
             switch (i) {
                 case 0:
-                    [shareBtn setImage:[UIImage imageNamed:@"umsocial_wechat"] forState:UIControlStateNormal];
+                    [shareBtn setImage:[UIImage imageNamed:@"sns_icon_22.png"] forState:UIControlStateNormal];
                     break;
                 case 1:
-                    [shareBtn setImage:[UIImage imageNamed:@"umsocial_wechat_timeline"] forState:UIControlStateNormal];
+                    [shareBtn setImage:[UIImage imageNamed:@"sns_icon_23.png"] forState:UIControlStateNormal];
                     break;
                 case 2:
-                    [shareBtn setImage:[UIImage imageNamed:@"umsocial_sina"] forState:UIControlStateNormal];
-                    break;
-                case 3:
-                    [shareBtn setImage:[UIImage imageNamed:@"umsocial_qq"] forState:UIControlStateNormal];
-                    break;
-                case 4:
-                    [shareBtn setImage:[UIImage imageNamed:@"umsocial_qzone"] forState:UIControlStateNormal];
-                    break;
-                case 5:
-                    [shareBtn setImage:[UIImage imageNamed:@"umsocial_tencentWB"] forState:UIControlStateNormal];
+                    [shareBtn setImage:[UIImage imageNamed:@"sns_icon_24.png"] forState:UIControlStateNormal];
                     break;
                     
                 default:
@@ -204,29 +196,85 @@
 
 - (void)shareAction:(UIButton *)shareBtn
 {
+    NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+    SSDKPlatformType shareType;
     switch (shareBtn.tag - kShareButtonTag) {
         case 0:
+        {
             NSLog(@"share to wechat");
+            [shareParams SSDKSetupWeChatParamsByText:@""
+                                               title:@""
+                                                 url:[NSURL URLWithString:@""]
+                                          thumbImage:nil
+                                               image:[UIImage imageNamed:@""]
+                                        musicFileURL:nil
+                                             extInfo:nil
+                                            fileData:nil
+                                        emoticonData:nil
+                                                type:SSDKContentTypeAuto
+                                  forPlatformSubType:SSDKPlatformSubTypeWechatSession];
+            shareType = SSDKPlatformSubTypeWechatSession;
             break;
+        }
+            
         case 1:
-            NSLog(@"share to wechat timeline");
+        {
+            [shareParams SSDKSetupWeChatParamsByText:@""
+                                               title:@""
+                                                 url:[NSURL URLWithString:@""]
+                                          thumbImage:nil
+                                               image:[UIImage imageNamed:@""]
+                                        musicFileURL:nil
+                                             extInfo:nil
+                                            fileData:nil
+                                        emoticonData:nil
+                                                type:SSDKContentTypeAuto
+                                  forPlatformSubType:SSDKPlatformSubTypeWechatTimeline];
+            shareType = SSDKPlatformSubTypeWechatTimeline;
             break;
+        }
+
         case 2:
-            NSLog(@"share to sina");
+        {
+            [shareParams SSDKSetupQQParamsByText:@""
+                                           title:@""
+                                             url:[NSURL URLWithString:@""]
+                                      thumbImage:nil
+                                           image:[UIImage imageNamed:@""]
+                                            type:SSDKContentTypeAuto
+                              forPlatformSubType:SSDKPlatformTypeQQ];
+            shareType = SSDKPlatformSubTypeQQFriend;
             break;
-        case 3:
-            NSLog(@"share to qq");
-            break;
-        case 4:
-            NSLog(@"share to qq zone");
-            break;
-        case 5:
-            NSLog(@"share to tecent");
-            break;
+        }
             
         default:
             break;
     }
+    
+    [ShareSDK share:shareType
+         parameters:shareParams
+     onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+         
+         switch (state) {
+             case SSDKResponseStateBegin:
+                 
+                 break;
+                 
+             case SSDKResponseStateSuccess:
+                 NSLog(@"分享成功");
+                 break;
+                 
+             case  SSDKResponseStateFail:
+                 NSLog(@"分享失败");
+                 NSLog(@"失败：%@", error);
+                 break;
+                 
+             default:
+                 
+                 break;
+         }
+
+     }];
 }
 
 @end
