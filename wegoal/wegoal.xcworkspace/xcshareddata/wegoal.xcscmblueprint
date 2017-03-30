@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "462602F4DA3AAB04AADC0F1211A7F4B7A3C0D16B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "462602F4DA3AAB04AADC0F1211A7F4B7A3C0D16B" : 9223372036854775807,
+    "01AF6D2BC372909014735F26C7FFA4E779BE1DC8" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C6173518-C817-4D96-8CF1-B5AAE7967898",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "462602F4DA3AAB04AADC0F1211A7F4B7A3C0D16B" : "wegoal\/",
+    "01AF6D2BC372909014735F26C7FFA4E779BE1DC8" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "wegoal",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "wegoal.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:depressingJoker\/TQGoal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01AF6D2BC372909014735F26C7FFA4E779BE1DC8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:depressingJoker\/TQGoal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "462602F4DA3AAB04AADC0F1211A7F4B7A3C0D16B"
+    }
+  ]
+}
