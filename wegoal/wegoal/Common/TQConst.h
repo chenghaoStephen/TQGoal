@@ -40,22 +40,25 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 
 
 //颜色
-#define kMainBackColor       RGB16(0xf0f6f2)
-#define kTitleTextColor      RGB16(0x96abb5)
-#define kSubTextColor        RGB16(0xdfe8ec)
-#define kSubjectBackColor    RGB16(0x57d67e)
-#define kScheduleBackColor   RGB16(0x0b1523)
+#define kMainBackColor       RGB16(0xF0F6F2)
+#define kTitleTextColor      RGB16(0x96ABB5)
+#define kSubTextColor        RGB16(0xDFE8EC)
+#define kSubjectBackColor    RGB16(0x57D67E)
+#define kScheduleBackColor   RGB16(0x0B1523)
 #define kNavTitleColor       RGB16(0x34454C)
 #define kBackLineColor       RGB16(0xDFDFDF)
 #define kRedBackColor        RGB16(0xF9585E)
 #define kUnenableColor       RGB16(0xDFE8EC)
 #define kSystemBlueColor     RGB16(0x30B3F7)
-
+#define kInputBackColor      RGB16(0xF1F6F8)
+#define kWechatColor         RGB16(0x8DC81B)
+#define kQQColor             RGB16(0x2196F3)
 
 //Notification Identifier
 #define kTabbarNeedShowNoti  @"TabbarNeedShow"
 #define kTabbarNeedHideNoti  @"TabbarNeedHide"
 #define kTabbarClickButton   @"TabbarClickButton"
+#define kWelcomeToHome       @"WelcomeToHome"
 
 
 //Native

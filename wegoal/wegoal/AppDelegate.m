@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import<ShareSDK/ShareSDK.h>
-#import<WXApi.h>
-#import<ShareSDKConnector/ShareSDKConnector.h>
-#import<TencentOpenAPI/QQApiInterface.h>
-#import<TencentOpenAPI/TencentOAuth.h>
+#import <ShareSDK/ShareSDK.h>
+#import <WXApi.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface AppDelegate ()<WXApiDelegate>
 
@@ -23,13 +23,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.tabBarController = [[TQTabBarController alloc] init];
-    self.window.rootViewController = self.tabBarController;
+    
+    //判断是否显示过欢迎界面
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kGuideViewShow]) {
+        //显示过，直接跳到主界面
+        self.tabBarController = [[TQTabBarController alloc] init];
+        self.window.rootViewController = self.tabBarController;
+    } else {
+        self.welcomeVC = [[TQWelcomeViewController alloc] init];
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:self.welcomeVC];
+        self.window.rootViewController = navi;
+    }
+    
     [self.window makeKeyAndVisible];
     
+    [self registerNotifications];
     [self registerShareSdk];
     return YES;
     
+}
+
+- (void)registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(jumpToHome)
+                                                 name:kWelcomeToHome
+                                               object:nil];
 }
 
 - (void)registerShareSdk
@@ -76,6 +95,22 @@
      ];
     
 }
+
+
+#pragma mark - 界面跳转
+
+- (void)jumpToHome
+{
+    if (!self.tabBarController) {
+        self.tabBarController = [[TQTabBarController alloc] init];
+    }
+    
+    self.window.rootViewController = self.tabBarController;
+    [self.window makeKeyAndVisible];
+}
+
+
+
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     [WXApi handleOpenURL:url delegate:self];

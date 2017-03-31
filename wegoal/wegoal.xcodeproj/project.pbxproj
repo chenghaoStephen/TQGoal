@@ -64,6 +64,14 @@
 		0F2385111E7795C4008008EB /* TQPlaceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2385101E7795C4008008EB /* TQPlaceListViewController.m */; };
 		0F2385151E779608008008EB /* TQPlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2385131E779608008008EB /* TQPlaceCell.m */; };
 		0F2385161E779608008008EB /* TQPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2385141E779608008008EB /* TQPlaceCell.xib */; };
+		0F23866B1E8DFD0600E6B887 /* TQWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2386691E8DFD0600E6B887 /* TQWelcomeViewController.m */; };
+		0F23866C1E8DFD0600E6B887 /* TQWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F23866A1E8DFD0600E6B887 /* TQWelcomeViewController.xib */; };
+		0F23866F1E8DFF4F00E6B887 /* TQLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F23866E1E8DFF4F00E6B887 /* TQLoginRegisterView.m */; };
+		0F2386721E8E348E00E6B887 /* TQRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2386711E8E348E00E6B887 /* TQRegisterViewController.m */; };
+		0F2386751E8E349C00E6B887 /* TQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2386741E8E349C00E6B887 /* TQLoginViewController.m */; };
+		0F2386781E8E34BC00E6B887 /* TQRegisterConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2386771E8E34BC00E6B887 /* TQRegisterConfirmViewController.m */; };
+		0F23867B1E8E34D800E6B887 /* TQForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F23867A1E8E34D800E6B887 /* TQForgetPasswordViewController.m */; };
+		0F23867E1E8E351600E6B887 /* TQConfirmPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F23867D1E8E351600E6B887 /* TQConfirmPasswordViewController.m */; };
 		0F24B8931E5290F30081A2DA /* TQMemberDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F24B8911E5290F30081A2DA /* TQMemberDetailCell.m */; };
 		0F24B8941E5290F30081A2DA /* TQMemberDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F24B8921E5290F30081A2DA /* TQMemberDetailCell.xib */; };
 		0F24B8971E52A76F0081A2DA /* TQHeightBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F24B8961E52A76F0081A2DA /* TQHeightBackView.m */; };
@@ -262,6 +270,21 @@
 		0F2385121E779608008008EB /* TQPlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPlaceCell.h; sourceTree = "<group>"; };
 		0F2385131E779608008008EB /* TQPlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPlaceCell.m; sourceTree = "<group>"; };
 		0F2385141E779608008008EB /* TQPlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQPlaceCell.xib; sourceTree = "<group>"; };
+		0F2386681E8DFD0600E6B887 /* TQWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQWelcomeViewController.h; sourceTree = "<group>"; };
+		0F2386691E8DFD0600E6B887 /* TQWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQWelcomeViewController.m; sourceTree = "<group>"; };
+		0F23866A1E8DFD0600E6B887 /* TQWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQWelcomeViewController.xib; sourceTree = "<group>"; };
+		0F23866D1E8DFF4F00E6B887 /* TQLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLoginRegisterView.h; sourceTree = "<group>"; };
+		0F23866E1E8DFF4F00E6B887 /* TQLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLoginRegisterView.m; sourceTree = "<group>"; };
+		0F2386701E8E348E00E6B887 /* TQRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQRegisterViewController.h; sourceTree = "<group>"; };
+		0F2386711E8E348E00E6B887 /* TQRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQRegisterViewController.m; sourceTree = "<group>"; };
+		0F2386731E8E349C00E6B887 /* TQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLoginViewController.h; sourceTree = "<group>"; };
+		0F2386741E8E349C00E6B887 /* TQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLoginViewController.m; sourceTree = "<group>"; };
+		0F2386761E8E34BC00E6B887 /* TQRegisterConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQRegisterConfirmViewController.h; sourceTree = "<group>"; };
+		0F2386771E8E34BC00E6B887 /* TQRegisterConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQRegisterConfirmViewController.m; sourceTree = "<group>"; };
+		0F2386791E8E34D800E6B887 /* TQForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQForgetPasswordViewController.h; sourceTree = "<group>"; };
+		0F23867A1E8E34D800E6B887 /* TQForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQForgetPasswordViewController.m; sourceTree = "<group>"; };
+		0F23867C1E8E351600E6B887 /* TQConfirmPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQConfirmPasswordViewController.h; sourceTree = "<group>"; };
+		0F23867D1E8E351600E6B887 /* TQConfirmPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQConfirmPasswordViewController.m; sourceTree = "<group>"; };
 		0F24B8901E5290F30081A2DA /* TQMemberDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMemberDetailCell.h; sourceTree = "<group>"; };
 		0F24B8911E5290F30081A2DA /* TQMemberDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMemberDetailCell.m; sourceTree = "<group>"; };
 		0F24B8921E5290F30081A2DA /* TQMemberDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMemberDetailCell.xib; sourceTree = "<group>"; };
@@ -474,6 +497,16 @@
 			isa = PBXGroup;
 			children = (
 				0F17724A1E8CF365005FDEDE /* CustomView */,
+				0F2386701E8E348E00E6B887 /* TQRegisterViewController.h */,
+				0F2386711E8E348E00E6B887 /* TQRegisterViewController.m */,
+				0F2386761E8E34BC00E6B887 /* TQRegisterConfirmViewController.h */,
+				0F2386771E8E34BC00E6B887 /* TQRegisterConfirmViewController.m */,
+				0F2386731E8E349C00E6B887 /* TQLoginViewController.h */,
+				0F2386741E8E349C00E6B887 /* TQLoginViewController.m */,
+				0F2386791E8E34D800E6B887 /* TQForgetPasswordViewController.h */,
+				0F23867A1E8E34D800E6B887 /* TQForgetPasswordViewController.m */,
+				0F23867C1E8E351600E6B887 /* TQConfirmPasswordViewController.h */,
+				0F23867D1E8E351600E6B887 /* TQConfirmPasswordViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -608,6 +641,18 @@
 				0F2385071E778E47008008EB /* ZSYPopoverListView.m */,
 			);
 			path = ZSYPopoverList;
+			sourceTree = "<group>";
+		};
+		0F2386621E8DFC2400E6B887 /* WelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				0F2386681E8DFD0600E6B887 /* TQWelcomeViewController.h */,
+				0F2386691E8DFD0600E6B887 /* TQWelcomeViewController.m */,
+				0F23866A1E8DFD0600E6B887 /* TQWelcomeViewController.xib */,
+				0F23866D1E8DFF4F00E6B887 /* TQLoginRegisterView.h */,
+				0F23866E1E8DFF4F00E6B887 /* TQLoginRegisterView.m */,
+			);
+			name = WelcomeVC;
 			sourceTree = "<group>";
 		};
 		0F2A62C61E0A294D00CD8F02 /* MenuView */ = {
@@ -862,6 +907,7 @@
 		F3438C711DEB31A700D86D5B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0F2386621E8DFC2400E6B887 /* WelcomeVC */,
 				0F5C0C3D1E7682F200AF95BF /* LaunchMatch */,
 				0F16F3B91E7123850014037B /* cell */,
 				0F16F3A81E70DCDC0014037B /* Model */,
@@ -1164,6 +1210,7 @@
 				0F5C0C2B1E76325500AF95BF /* umsocial_sina.png in Resources */,
 				0F2BACE31E6E931A00C0EF10 /* TQMessageCell.xib in Resources */,
 				0F64357C1E4AF9EA0049BC45 /* TQLadderHeaderView.xib in Resources */,
+				0F23866C1E8DFD0600E6B887 /* TQWelcomeViewController.xib in Resources */,
 				0F6435821E4B058B0049BC45 /* TQMeViewCell.xib in Resources */,
 				0F2385161E779608008008EB /* TQPlaceCell.xib in Resources */,
 				F3438C791DEB324D00D86D5B /* TQHomeViewController.xib in Resources */,
@@ -1232,6 +1279,7 @@
 				0F5C0C391E76796000AF95BF /* TQWebPageViewController.m in Sources */,
 				0F24B8971E52A76F0081A2DA /* TQHeightBackView.m in Sources */,
 				0F5C0C361E76765600AF95BF /* TQMessageListViewController.m in Sources */,
+				0F23866F1E8DFF4F00E6B887 /* TQLoginRegisterView.m in Sources */,
 				F3438C901DEB37A700D86D5B /* TQTabBar.m in Sources */,
 				F32ABE3D1E5B2AA6000D7CF1 /* TQEditMeCell.m in Sources */,
 				0F5C0C481E7695B300AF95BF /* TQLaunchConfirmViewController.m in Sources */,
@@ -1242,6 +1290,7 @@
 				0F20834C1E7A5DB2009388BD /* TQEvaluateMemberHeaderView.m in Sources */,
 				0F2083541E7A660C009388BD /* TQEvaluateNoticeView.m in Sources */,
 				0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */,
+				0F23867B1E8E34D800E6B887 /* TQForgetPasswordViewController.m in Sources */,
 				0F2BFFF31E7279E100AD8B51 /* TQPlaceModel.m in Sources */,
 				0F1108E91E7BD59A00143400 /* TQMyOrdersViewController.m in Sources */,
 				F37883DB1DE5CC6100A40C3F /* AppDelegate.m in Sources */,
@@ -1277,6 +1326,7 @@
 				0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */,
 				0F1108C31E7B69DE00143400 /* TQEvaluateTeamCell.m in Sources */,
 				0F2083311E7A1CBE009388BD /* TQOrderServicesViewController.m in Sources */,
+				0F23866B1E8DFD0600E6B887 /* TQWelcomeViewController.m in Sources */,
 				0F16F3C51E7124670014037B /* TQMatchRefereeCell.m in Sources */,
 				0F2BACE21E6E931A00C0EF10 /* TQMessageCell.m in Sources */,
 				F3438C7D1DEB326C00D86D5B /* TQScheduleViewController.m in Sources */,
@@ -1289,6 +1339,8 @@
 				0F2384F81E778447008008EB /* NSDate+Extension.m in Sources */,
 				0F1108C71E7B7ED000143400 /* TQMyMatchDetailViewController.m in Sources */,
 				0F2A62D21E0A297F00CD8F02 /* JOShowMenuView.m in Sources */,
+				0F23867E1E8E351600E6B887 /* TQConfirmPasswordViewController.m in Sources */,
+				0F2386721E8E348E00E6B887 /* TQRegisterViewController.m in Sources */,
 				0F1108CA1E7B801D00143400 /* TQPlayBackTableView.m in Sources */,
 				0F1108D71E7BA82200143400 /* TQPlayTextCell.m in Sources */,
 				F3438CA01DF2A58C00D86D5B /* ZYPathItemButton.m in Sources */,
@@ -1323,9 +1375,11 @@
 				F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */,
 				0F7F7F4F1E6FF61400952DDD /* DownLoadModel.m in Sources */,
 				0F2385081E778E47008008EB /* ZSYPopoverListView.m in Sources */,
+				0F2386781E8E34BC00E6B887 /* TQRegisterConfirmViewController.m in Sources */,
 				0F2385151E779608008008EB /* TQPlaceCell.m in Sources */,
 				0F23850E1E779481008008EB /* UIViewController+MJPopupViewController.m in Sources */,
 				0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */,
+				0F2386751E8E349C00E6B887 /* TQLoginViewController.m in Sources */,
 				0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */,
 				0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */,
 				0F7F7F451E6FF37000952DDD /* AFServer.m in Sources */,
