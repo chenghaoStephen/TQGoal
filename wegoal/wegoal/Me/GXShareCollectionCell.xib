@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GXShareCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="207" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="207" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IN3-nx-BmN">
+                        <rect key="frame" x="44" y="0.0" width="120" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="IN3-nx-BmN" secondAttribute="height" multiplier="1:1" id="csy-jH-lgv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC7-wc-xnc">
+                        <rect key="frame" x="85" y="130" width="36" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="wPA-OP-0Z1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.19526791572570801" green="0.19526207447052002" blue="0.19526539742946625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="IN3-nx-BmN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FD0-e8-n4d"/>
+                <constraint firstItem="xC7-wc-xnc" firstAttribute="top" secondItem="IN3-nx-BmN" secondAttribute="bottom" constant="10" id="Ph2-Ce-wgd"/>
+                <constraint firstAttribute="centerX" secondItem="xC7-wc-xnc" secondAttribute="centerX" id="cZf-2f-enk"/>
+                <constraint firstAttribute="bottom" secondItem="xC7-wc-xnc" secondAttribute="bottom" id="d7w-jV-cle"/>
+                <constraint firstAttribute="bottom" secondItem="IN3-nx-BmN" secondAttribute="bottom" id="rmI-SY-nkB"/>
+                <constraint firstAttribute="centerX" secondItem="IN3-nx-BmN" secondAttribute="centerX" id="vfA-lU-MLB"/>
+            </constraints>
+            <size key="customSize" width="207" height="150"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="rmI-SY-nkB"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="imageItem" destination="IN3-nx-BmN" id="FCf-EO-LVe"/>
+                <outlet property="name" destination="xC7-wc-xnc" id="otA-Dt-Tpb"/>
+            </connections>
+            <point key="canvasLocation" x="386.5" y="204"/>
+        </collectionViewCell>
+    </objects>
+</document>

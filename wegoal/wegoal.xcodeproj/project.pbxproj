@@ -97,6 +97,10 @@
 		0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C6B7B1E10F50700F713A7 /* TQMatchCell.xib */; };
 		0F41A51F1E8F432900439C26 /* TimerWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F41A51E1E8F432900439C26 /* TimerWeakTarget.m */; };
 		0F41A5221E8F91D900439C26 /* TQInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F41A5211E8F91D900439C26 /* TQInfoEditViewController.m */; };
+		0F41A5251E8FA38F00439C26 /* HeadImgChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F41A5241E8FA38F00439C26 /* HeadImgChangeView.m */; };
+		0F41A5291E8FA3BE00439C26 /* GXShareCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F41A5271E8FA3BE00439C26 /* GXShareCollectionCell.m */; };
+		0F41A52A1E8FA3BE00439C26 /* GXShareCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F41A5281E8FA3BE00439C26 /* GXShareCollectionCell.xib */; };
+		0F41A52D1E8FA7C200439C26 /* Victorinox.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F41A52C1E8FA7C200439C26 /* Victorinox.m */; };
 		0F50ABE51E518BD800643973 /* TQTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABE41E518BD800643973 /* TQTeamDetailViewController.m */; };
 		0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABE71E518E1200643973 /* TQTeamMemberCell.m */; };
 		0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F50ABE81E518E1200643973 /* TQTeamMemberCell.xib */; };
@@ -337,6 +341,13 @@
 		0F41A51E1E8F432900439C26 /* TimerWeakTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerWeakTarget.m; sourceTree = "<group>"; };
 		0F41A5201E8F91D900439C26 /* TQInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQInfoEditViewController.h; sourceTree = "<group>"; };
 		0F41A5211E8F91D900439C26 /* TQInfoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQInfoEditViewController.m; sourceTree = "<group>"; };
+		0F41A5231E8FA38F00439C26 /* HeadImgChangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadImgChangeView.h; sourceTree = "<group>"; };
+		0F41A5241E8FA38F00439C26 /* HeadImgChangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadImgChangeView.m; sourceTree = "<group>"; };
+		0F41A5261E8FA3BE00439C26 /* GXShareCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXShareCollectionCell.h; sourceTree = "<group>"; };
+		0F41A5271E8FA3BE00439C26 /* GXShareCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GXShareCollectionCell.m; sourceTree = "<group>"; };
+		0F41A5281E8FA3BE00439C26 /* GXShareCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GXShareCollectionCell.xib; sourceTree = "<group>"; };
+		0F41A52B1E8FA7C200439C26 /* Victorinox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Victorinox.h; sourceTree = "<group>"; };
+		0F41A52C1E8FA7C200439C26 /* Victorinox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Victorinox.m; sourceTree = "<group>"; };
 		0F50ABE31E518BD800643973 /* TQTeamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamDetailViewController.h; sourceTree = "<group>"; };
 		0F50ABE41E518BD800643973 /* TQTeamDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTeamDetailViewController.m; sourceTree = "<group>"; };
 		0F50ABE61E518E1200643973 /* TQTeamMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamMemberCell.h; sourceTree = "<group>"; };
@@ -573,6 +584,11 @@
 		0F1C8D3A1E4C629B0015F015 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				0F41A5261E8FA3BE00439C26 /* GXShareCollectionCell.h */,
+				0F41A5271E8FA3BE00439C26 /* GXShareCollectionCell.m */,
+				0F41A5281E8FA3BE00439C26 /* GXShareCollectionCell.xib */,
+				0F41A5231E8FA38F00439C26 /* HeadImgChangeView.h */,
+				0F41A5241E8FA38F00439C26 /* HeadImgChangeView.m */,
 				0F1C8D3B1E4C62BC0015F015 /* TQMeTopView.h */,
 				0F1C8D3C1E4C62BC0015F015 /* TQMeTopView.m */,
 				0F1C8D3E1E4C62CE0015F015 /* TQMeTopView.xib */,
@@ -799,6 +815,8 @@
 		0F7F7F401E6FF35E00952DDD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				0F41A52B1E8FA7C200439C26 /* Victorinox.h */,
+				0F41A52C1E8FA7C200439C26 /* Victorinox.m */,
 				0F7F7F4A1E6FF52600952DDD /* UserData.h */,
 				0F7F7F4B1E6FF52600952DDD /* UserData.m */,
 				0F7F7F411E6FF37000952DDD /* AFServer.h */,
@@ -1192,6 +1210,7 @@
 				0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */,
 				0F2083411E7A326D009388BD /* TQMyMatchCell.xib in Resources */,
 				0F1C8D3F1E4C62CE0015F015 /* TQMeTopView.xib in Resources */,
+				0F41A52A1E8FA3BE00439C26 /* GXShareCollectionCell.xib in Resources */,
 				F37883E61DE5CC6100A40C3F /* LaunchScreen.storyboard in Resources */,
 				0F20834E1E7A5DBD009388BD /* TQEvaluateMemberHeaderView.xib in Resources */,
 				0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */,
@@ -1362,6 +1381,7 @@
 				0F7F7F6A1E6FF64800952DDD /* FMResultSet.m in Sources */,
 				0F2083451E7A577B009388BD /* TQEvaluateMemberCell.m in Sources */,
 				0F7F7F691E6FF64800952DDD /* FMDatabaseQueue.m in Sources */,
+				0F41A5291E8FA3BE00439C26 /* GXShareCollectionCell.m in Sources */,
 				0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */,
 				0F41A5221E8F91D900439C26 /* TQInfoEditViewController.m in Sources */,
 				0FDA935B1E79189C00ABA65A /* TQLaunchInvitateViewController.m in Sources */,
@@ -1373,6 +1393,7 @@
 				0F50ABE51E518BD800643973 /* TQTeamDetailViewController.m in Sources */,
 				F3438C781DEB324D00D86D5B /* TQHomeViewController.m in Sources */,
 				0F6435711E4AC0300049BC45 /* TQLadderTeamCell.m in Sources */,
+				0F41A52D1E8FA7C200439C26 /* Victorinox.m in Sources */,
 				0F5C0C3C1E76828800AF95BF /* TQLaunchRefereeViewController.m in Sources */,
 				0F1108F31E7BDA6400143400 /* TQMyTaskCell.m in Sources */,
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
@@ -1403,6 +1424,7 @@
 				0F7F7F671E6FF64800952DDD /* FMDatabaseAdditions.m in Sources */,
 				0F7F7F4C1E6FF52600952DDD /* UserData.m in Sources */,
 				0F64357A1E4AF9DC0049BC45 /* TQLadderHeaderView.m in Sources */,
+				0F41A5251E8FA38F00439C26 /* HeadImgChangeView.m in Sources */,
 				0F7F7F651E6FF64800952DDD /* README.markdown in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

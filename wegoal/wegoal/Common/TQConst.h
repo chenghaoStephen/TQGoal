@@ -36,8 +36,29 @@ typedef NS_ENUM(NSInteger, MatchStatus){
     MatchStatusNotTeam,           //非队长未报名(非队长球员只能操作7、8)
 };
 
+typedef NS_ENUM(NSInteger, GameEvent){
+    GameEventStart = 0,           //比赛开始
+    GameEventPause,               //暂停
+    GameEventEnd,                 //结束
+    GameEventPlayerOn,            //球员上场
+    GameEventPlayerOut,           //球员下场
+    GameEventYellow,              //黄牌
+    GameEventRed,                 //红牌
+    GameEventGoal,                //进球
+};
+
 #define kRaceSystemArray   @[@"5人制",@"7/8/9人制",@"11人制"]
 
+#define kYellowKeyArray   @[@"GK"]
+#define kYellowValueArray @[@"守门员"]
+#define kGreenKeyArray    @[@"SW", @"CB", @"LCB", @"RCB", @"CWP", @"SB", @"LB", @"RB", @"WB", @"LWB", @"RWB"]
+#define kGreenValueArray  @[@"清道夫 拖后中卫", @"中后卫", @"左中卫", @"右中卫", @"自由人、常压上助攻的中后卫", @"边后卫", @"左边后卫", @"右边后卫", @"边后腰", @"边路进攻左后卫", @"边路进攻右后卫"]
+#define kBlueKeyArray     @[@"MF", @"SMF", @"LMF", @"RMF", @"DMF", @"CMF "]
+#define kBlueValueArray   @[@"边后腰 边路能力强，攻守兼具的中场", @"边前卫", @"左边前卫", @"右边前卫", @"防守型中场 即后腰", @"中场 中前卫 攻守均衡的中场"]
+#define kOrangeKeyArray   @[@"OMF", @"AMF", @"WF", @"LWF", @"RWF"]
+#define kOrangeValueArray @[@"进攻组织者 前腰", @"攻击型前卫 前腰", @"边锋", @"左边锋", @"右边锋"]
+#define kRedKeyArray      @[@"ST", @"SS", @"ST"]
+#define kRedValueArray    @[@"前锋", @"影子前锋", @"中锋"]
 
 //颜色
 #define kMainBackColor       RGB16(0xF0F6F2)

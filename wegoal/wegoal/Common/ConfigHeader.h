@@ -44,6 +44,13 @@ green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0x0000FF))/255.0 \
 alpha:a]
 
+//文件
+#define DOCUMENT_PATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+#define TMP_PATH NSTemporaryDirectory()
+#define VOICE_PATH [Victorinox dirnameWithUserVoice]
+#define USER_PATH [Victorinox dirnameWithUserHome]
+#define USER_CACHE_PATH [Victorinox dirnameWithUserCache]
+
 //用户数据
 //#define USER_TOKEN UserDataManager.userToken
 #define USER_TOKEN @"123456"

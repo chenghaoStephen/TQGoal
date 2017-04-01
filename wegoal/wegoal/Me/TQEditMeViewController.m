@@ -8,9 +8,11 @@
 
 #import "TQEditMeViewController.h"
 #import "TQEditMeCell.h"
+#import "TQInfoEditViewController.h"
+#import "HeadImgChangeView.h"
 
 #define kEditMeCellIdentifier   @"TQEditMeCell"
-@interface TQEditMeViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface TQEditMeViewController ()<UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
 
@@ -105,6 +107,158 @@
     } else {
         return 36.f;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            [self changeHeaderImage];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+#pragma mark - 头像
+
+// 更换头像
+- (void)changeHeaderImage{
+    
+    [HeadImgChangeView showShareViewWithImageArray:@[@"Me_picture",@"Me_camera"] withNameArray: @[@"相册",@"相机"] withCompletion:^(NSInteger selectIndex) {
+        
+        switch (selectIndex) {
+            case 0:
+                [self chooseFromAlbum];
+                break;
+                
+            case 1:
+                [self takePhoto];
+                break;
+                
+            default:
+                return;
+        }
+        
+    }];
+    
+}
+// 拍照
+-(void)takePhoto{
+    // 拍照
+    if ([self isCameraAvailable] && [self doesCameraSupportTakingPhotos]) {
+        UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+        controller.sourceType = UIImagePickerControllerSourceTypeCamera;
+        if ([self isFrontCameraAvailable]) {
+            controller.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        }
+        NSMutableArray *mediaTypes = [[NSMutableArray alloc] init];
+        [mediaTypes addObject:(__bridge NSString *)kUTTypeImage];
+        controller.mediaTypes = mediaTypes;
+        controller.delegate = self;
+        controller.allowsEditing = YES;
+        [self presentViewController:controller
+                           animated:YES
+                         completion:^(void){
+                         }];
+    }else{
+        NSLog(@"该设备不支持拍照功能");
+    }
+    
+}
+// 从相册中选取
+-(void)chooseFromAlbum{
+    // 从相册中选取
+    if ([self isPhotoLibraryAvailable]) {
+        UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+        controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        controller.allowsEditing = YES;
+        NSMutableArray *mediaTypes = [[NSMutableArray alloc] init];
+        [mediaTypes addObject:(__bridge NSString *)kUTTypeImage];
+        controller.mediaTypes = mediaTypes;
+        controller.delegate = self;
+        [self presentViewController:controller
+                           animated:YES
+                         completion:^(void){
+                             
+                         }];
+    }
+    
+}
+
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:^() {
+        UIImage *editImg = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+        if (editImg==nil) {
+            editImg = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+            
+        }
+        [self updateUserHeadImage:UIImageJPEGRepresentation(editImg,0.2)];
+        
+        
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:^(){
+    }];
+}
+
+- (void)updateUserHeadImage:(NSData*)data{
+    
+    NSString *path = [[Victorinox dirnameWithUserCache] stringByAppendingString:@"/img_up.jpeg"];
+    [data writeToFile:path atomically:YES];
+    
+}
+
+#pragma mark UIImagePickerController 相关属性
+- (BOOL) isCameraAvailable{
+    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+}
+
+- (BOOL) isRearCameraAvailable{
+    return [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+}
+
+- (BOOL) isFrontCameraAvailable {
+    return [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront];
+}
+
+- (BOOL) doesCameraSupportTakingPhotos {
+    return [self cameraSupportsMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypeCamera];
+}
+
+- (BOOL) isPhotoLibraryAvailable{
+    return [UIImagePickerController isSourceTypeAvailable:
+            UIImagePickerControllerSourceTypePhotoLibrary];
+}
+- (BOOL) canUserPickVideosFromPhotoLibrary{
+    return [self
+            cameraSupportsMedia:(__bridge NSString *)kUTTypeMovie sourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+- (BOOL) canUserPickPhotosFromPhotoLibrary{
+    return [self
+            cameraSupportsMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+- (BOOL) cameraSupportsMedia:(NSString *)paramMediaType sourceType:(UIImagePickerControllerSourceType)paramSourceType{
+    __block BOOL result = NO;
+    if ([paramMediaType length] == 0) {
+        return NO;
+    }
+    NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:paramSourceType];
+    [availableMediaTypes enumerateObjectsUsingBlock: ^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString *mediaType = (NSString *)obj;
+        if ([mediaType isEqualToString:paramMediaType]){
+            result = YES;
+            *stop= YES;
+        }
+    }];
+    return result;
 }
 
 
