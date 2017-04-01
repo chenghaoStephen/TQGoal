@@ -36,7 +36,7 @@
     
     [self addSubViews];
     
-//    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kGuideViewShow];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kGuideViewShow];
 }
 
 - (void)addSubViews

@@ -2,7 +2,7 @@
 //  NSString+URL.m
 //  NiKooGa
 //
-//  Created by zhengdongming on 15/7/9.
+//  Created by joker on 15/7/9.
 //  Copyright (c) 2015年 MING.Z. All rights reserved.
 //
 

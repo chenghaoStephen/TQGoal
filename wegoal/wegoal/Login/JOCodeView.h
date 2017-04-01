@@ -14,7 +14,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
                        number:(NSUInteger)number
-                        color:(UIColor *)color
+                    lineColor:(UIColor *)lineColor
+                    textColor:(UIColor *)textColor
                          font:(UIFont *)font;
 - (void)beginEdit;
 - (void)endEdit;

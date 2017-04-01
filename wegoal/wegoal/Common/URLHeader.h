@@ -17,6 +17,11 @@
 #define kAccountLogin    @"/api/Account/Login"
 //注册
 #define kAccountRegister @"/api/Account/Register"
+//发送手机验证码
+#define kAccountSendCode @"/api/Account/sendCode"
+//验证手机验证码
+#define kAccountVerifyCode @"/api/Account/verifyCode"
+
 
 //主页数据
 #define kHomeData        @"/api/AppGetView/GetEnrollList"

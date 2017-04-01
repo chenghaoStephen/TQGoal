@@ -7,9 +7,9 @@
 
 #import "JOCodeView.h"
 
-#define Space 5
+#define Space 8
 #define LineWidth (self.frame.size.width - self.lineNumber * 2 * Space)/self.lineNumber
-#define LineHeight 2
+#define LineHeight 1
 #define LineBottomHeight 5
 #define UnderLineCenterY (self.frame.size.height - LineBottomHeight - LineHeight/2)
 
@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *textArray;
 @property (nonatomic, assign) NSUInteger lineNumber;
 @property (nonatomic, strong) UIColor *lineColor;
+@property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIFont *textFont;
 
 @property (nonatomic, strong) UITextField *textField;
@@ -34,7 +35,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
                        number:(NSUInteger)number
-                        color:(UIColor *)color
+                    lineColor:(UIColor *)lineColor
+                    textColor:(UIColor *)textColor
                          font:(UIFont *)font
 {
     self = [super initWithFrame:frame];
@@ -45,7 +47,8 @@
         
         //参数设置
         _lineNumber = number;
-        _lineColor = color;
+        _lineColor = lineColor;
+        _textColor = textColor;
         _textFont = font;
         
         self.textField.delegate = self;
@@ -83,7 +86,7 @@
         CGFloat wordWidth = [TQCommon widthForString:num fontSize:_textFont andHeight:_textFont.lineHeight];
         CGFloat startX = self.frame.size.width/_lineNumber * i + (self.frame.size.width/_lineNumber - wordWidth)/2;
         [num drawInRect:CGRectMake(startX, (self.frame.size.height - _textFont.lineHeight - LineBottomHeight - LineHeight)/2, wordWidth, _textFont.lineHeight + 5)
-         withAttributes:@{NSFontAttributeName:_textFont,NSForegroundColorAttributeName:_lineColor}];
+         withAttributes:@{NSFontAttributeName:_textFont,NSForegroundColorAttributeName:_textColor}];
         
         CGContextDrawPath(context, kCGPathFill);
     }
@@ -129,26 +132,21 @@
                                                              usingBlock:^(NSNotification * _Nonnull note) {
                                                                  
                                                                  NSInteger length = weakSelf.textField.text.length;
+                                                                 //超出部分舍去
+                                                                 if (length > weakSelf.lineNumber) {
+                                                                     weakSelf.textField.text = [weakSelf.textField.text substringToIndex:weakSelf.lineNumber];
+                                                                     length = weakSelf.lineNumber;
+                                                                 }
                                                                  //更新textArray
-                                                                 if (length > weakSelf.textArray.count) {
+                                                                 if (length == weakSelf.textArray.count) {
+                                                                     return;
+                                                                 } else if (length > weakSelf.textArray.count) {
                                                                      [weakSelf.textArray addObject:[weakSelf.textField.text substringWithRange:NSMakeRange(weakSelf.textArray.count, 1)]];
                                                                  } else {
                                                                      [weakSelf.textArray removeLastObject];
                                                                  }
                                                                  //重绘
                                                                  [self setNeedsDisplay];
-                                                                 
-                                                                 //判断是否完成编辑
-                                                                 if (length == weakSelf.lineNumber) {
-                                                                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                                                         [weakSelf endEdit];
-                                                                     });
-                                                                 }
-                                                                 if (length > weakSelf.lineNumber) {
-                                                                     weakSelf.textField.text = [weakSelf.textField.text substringToIndex:weakSelf.lineNumber];
-                                                                     [weakSelf endEdit];
-                                                                 }
-                                                                 
                                                                  //回调
                                                                  if (weakSelf.EditBlock) {
                                                                      weakSelf.EditBlock(weakSelf.textField.text);

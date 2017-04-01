@@ -10,4 +10,7 @@
 
 @interface TQRegisterConfirmViewController : TQBaseViewController
 
+@property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, strong) NSString *password;
+
 @end

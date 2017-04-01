@@ -13,7 +13,7 @@
 /**
  *  字符串转NSDate
  *
- *  @param theTime 字符串时间
+ *  @param timeStr 字符串时间
  *  @param format  转化格式 如yyyy-MM-dd HH:mm:ss,即2015-07-15 15:00:00
  *
  *  @return <#return value description#>
@@ -33,7 +33,7 @@
 /**
  *  字符串转时间戳
  *
- *  @param theTime 字符串时间
+ *  @param timeStr 字符串时间
  *  @param format  转化格式 如yyyy-MM-dd HH:mm:ss,即2015-07-15 15:00:00
  *
  *  @return 返回时间戳的字符串

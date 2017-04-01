@@ -63,6 +63,9 @@
     self.navigationItem.title = @"WeGoal";
     [self setBadgeNumber:0];
     [self setNavigationBar];
+    
+    TQMemberModel *userData = UserDataManager.getUserData;
+    NSLog(@"%@", userData);
 }
 
 - (void)setNavigationBar

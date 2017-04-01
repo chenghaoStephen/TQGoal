@@ -90,7 +90,7 @@
     _systemLbl.text = matchData.gameRules;
     _addressLbl.text = matchData.gamePlace;
     //显示日期和星期
-    if (matchData.gameDate.length == 19) {
+    if (matchData.gameDate.length == 12) {
         NSDate *date = [NSDate dateFromString:matchData.gameDate format:kDateFormatter1];
         _scoreLbl.text = [NSDate datestrFromDate:date withDateFormat:kDateFormatter2];
         _time1Lbl.text = [TQCommon weekStringFromDate:date];

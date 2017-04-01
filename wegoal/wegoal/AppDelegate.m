@@ -49,6 +49,11 @@
                                              selector:@selector(jumpToHome)
                                                  name:kWelcomeToHome
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(jumpToHome)
+                                                 name:kWelcomeLoginSuccess
+                                               object:nil];
+    
 }
 
 - (void)registerShareSdk

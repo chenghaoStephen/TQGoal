@@ -8,8 +8,9 @@
 
 #import "TQLoginViewController.h"
 #import "TQRegisterViewController.h"
+#import "TQForgetPasswordViewController.h"
 
-@interface TQLoginViewController ()<UITextFieldDelegate, UITextViewDelegate>
+@interface TQLoginViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel *phoneLabel;              //手机号
 @property (nonatomic, strong) UILabel *passwordLabel;           //密码
@@ -17,8 +18,8 @@
 @property (nonatomic, strong) UIButton *passwordDeleteButton;   //密码清空
 @property (nonatomic, strong) UITextField *phoneTextField;      //手机号输入
 @property (nonatomic, strong) UITextField *passwordTextField;   //密码输入
-@property (nonatomic, strong) UIButton *registerButton;         //注册按钮
-@property (nonatomic, strong) UITextView *noticeView;           //提示信息
+@property (nonatomic, strong) UIButton *loginButton;            //登录按钮
+@property (nonatomic, strong) UIButton *forgetButton;           //忘记密码
 @property (nonatomic, strong) UIImageView *breakLine;           //分割线
 @property (nonatomic, strong) UILabel *thirdLoginLabel;         //第三方登录
 @property (nonatomic, strong) UIButton *wechatLoginButton;      //微信登录
@@ -31,18 +32,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.phoneLabel];
     [self.view addSubview:self.passwordLabel];
     [self.view addSubview:self.phoneDeleteButton];
     [self.view addSubview:self.passwordDeleteButton];
     [self.view addSubview:self.phoneTextField];
     [self.view addSubview:self.passwordTextField];
-    [self.view addSubview:self.registerButton];
-    [self.view addSubview:self.noticeView];
+    [self.view addSubview:self.loginButton];
+    [self.view addSubview:self.forgetButton];
     [self.view addSubview:self.breakLine];
     [self.view addSubview:self.thirdLoginLabel];
     [self.view addSubview:self.wechatLoginButton];
     [self.view addSubview:self.qqLoginButton];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldDidChanged)
+                                                 name:UITextFieldTextDidChangeNotification
+                                               object:nil];
 }
 
 - (UIBarButtonItem*)buildRightNavigationItem{
@@ -70,6 +77,7 @@
         _phoneLabel.text = @"手机";
         _phoneLabel.layer.masksToBounds = YES;
         _phoneLabel.layer.cornerRadius = 24;
+        _phoneLabel.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editPhone)];
         [_phoneLabel addGestureRecognizer:tapGesture];
     }
@@ -87,6 +95,7 @@
         _passwordLabel.text = @"密码";
         _passwordLabel.layer.masksToBounds = YES;
         _passwordLabel.layer.cornerRadius = 24;
+        _passwordLabel.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editPassword)];
         [_passwordLabel addGestureRecognizer:tapGesture];
     }
@@ -122,6 +131,7 @@
     if (!_phoneTextField) {
         _phoneTextField = [[UITextField alloc] init];
         _phoneTextField.delegate = self;
+        _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     }
     return _phoneTextField;
 }
@@ -135,46 +145,40 @@
     return _passwordTextField;
 }
 
-- (UIButton *)registerButton
+- (UIButton *)loginButton
 {
-    if (!_registerButton) {
-        _registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _registerButton.frame = CGRectMake((SCREEN_WIDTH - 244)/2, _passwordLabel.bottom + 16, 244, 48);
-        _registerButton.backgroundColor = kSubTextColor;
-        [_registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_registerButton setTitle:@"注册" forState:UIControlStateNormal];
-        _registerButton.titleLabel.font = [UIFont systemFontOfSize:16.f];
-        _registerButton.layer.masksToBounds = YES;
-        _registerButton.layer.cornerRadius = 24;
-        _registerButton.enabled = NO;
-        [_registerButton addTarget:self action:@selector(doRegister) forControlEvents:UIControlEventTouchUpInside];
+    if (!_loginButton) {
+        _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _loginButton.frame = CGRectMake((SCREEN_WIDTH - 244)/2, _passwordLabel.bottom + 16, 244, 48);
+        _loginButton.backgroundColor = kSubTextColor;
+        [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
+        _loginButton.titleLabel.font = [UIFont systemFontOfSize:16.f];
+        _loginButton.layer.masksToBounds = YES;
+        _loginButton.layer.cornerRadius = 24;
+        _loginButton.enabled = NO;
+        [_loginButton addTarget:self action:@selector(doLogin) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _registerButton;
+    return _loginButton;
 }
 
-- (UITextView *)noticeView
+- (UIButton *)forgetButton
 {
-    if (!_noticeView) {
-        _noticeView = [[UITextView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH- 250)/2, _registerButton.bottom + 15, 250, 15)];
-        _noticeView.backgroundColor = [UIColor clearColor];
-        _noticeView.delegate = self;
-        _noticeView.editable = NO;
-        _noticeView.font = [UIFont systemFontOfSize:10.f];
-        _noticeView.textColor = kTitleTextColor;
-        _noticeView.tintColor = kNavTitleColor;
-        _noticeView.contentInset = UIEdgeInsetsZero;
-        _noticeView.textContainer.lineFragmentPadding = 0;
-        _noticeView.textContainerInset = UIEdgeInsetsZero;
-        _noticeView.scrollEnabled = NO;
-        _noticeView.text = @"使用WeGoal,就表示您同意WeGoal的使用条款和隐私政策";
+    if (!_forgetButton) {
+        _forgetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _forgetButton.frame = CGRectMake((SCREEN_WIDTH - 60)/2, _loginButton.bottom + 8, 60, 30);
+        [_forgetButton setTitleColor:kNavTitleColor forState:UIControlStateNormal];
+        [_forgetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
+        _forgetButton.titleLabel.font = [UIFont systemFontOfSize:12.f];
+        [_forgetButton addTarget:self action:@selector(doForget) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _noticeView;
+    return _forgetButton;
 }
 
 - (UIImageView *)breakLine
 {
     if (!_breakLine) {
-        _breakLine = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 244)/2, _noticeView.bottom + 32, 244, 1)];
+        _breakLine = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 244)/2, _forgetButton.bottom + 25, 244, 1)];
         _breakLine.backgroundColor = kTitleTextColor;
     }
     return _breakLine;
@@ -183,7 +187,8 @@
 - (UILabel *)thirdLoginLabel
 {
     if (!_thirdLoginLabel) {
-        _thirdLoginLabel = [[UILabel alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 83)/2, _noticeView.bottom + 25, 83, 15)];
+        _thirdLoginLabel = [[UILabel alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 83)/2, _forgetButton.bottom + 18, 83, 15)];
+        _thirdLoginLabel.backgroundColor = [UIColor whiteColor];
         _thirdLoginLabel.textColor = kTitleTextColor;
         _thirdLoginLabel.font = [UIFont systemFontOfSize:10.f];
         _thirdLoginLabel.text = @"第三方账号登录";
@@ -227,6 +232,7 @@
 }
 
 
+
 #pragma mark - events
 
 - (void)gotoRegister
@@ -244,49 +250,159 @@
 
 - (void)editPhone
 {
-    
+    [_phoneTextField becomeFirstResponder];
 }
 
 - (void)editPassword
 {
-    
+    [_passwordTextField becomeFirstResponder];
 }
 
 - (void)clearPhone
 {
-    
+    _phoneTextField.text = @"";
+    _phoneLabel.textColor = kTitleTextColor;
+    _phoneLabel.text = @"手机";
+    _phoneDeleteButton.hidden = YES;
+    [self updateLoginButtonStatus];
 }
 
 - (void)clearPassword
 {
+    _passwordTextField.text = @"";
+    _passwordLabel.textColor = kTitleTextColor;
+    _passwordLabel.text = @"密码";
+    _passwordDeleteButton.hidden = YES;
+    [self updateLoginButtonStatus];
+}
+
+- (void)doLogin
+{
+    [self endEdit];
+    
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"userName"] = _phoneTextField.text;
+    params[@"password"] = _passwordTextField.text;
+    [ZDMIndicatorView showInView:self.view];
+    [[AFServer sharedInstance]GET:URL(kTQDomainURL, kAccountLogin) parameters:params finishBlock:^(id result) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        
+        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //登录成功
+                [ZDMToast showWithText:@"登录成功"];
+                //存储个人信息
+                [UserDataManager setUserData:result[@"data"]];
+                //发出通知，登录成功
+                [[NSNotificationCenter defaultCenter] postNotificationName:kWelcomeLoginSuccess object:nil userInfo:nil];
+            });
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [ZDMToast showWithText:result[@"msg"]];
+            });
+        }
+        
+        
+    } failedBlock:^(NSError *error) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+        });
+    }];
     
 }
 
-- (void)doRegister
+- (void)doForget
 {
+    [self endEdit];
+    if (_phoneTextField.text.length != 11) {
+        [ZDMToast showWithText:@"请输入正确的手机号"];
+        return;
+    }
     
+    TQForgetPasswordViewController *forgetPasswordVC = [[TQForgetPasswordViewController alloc] init];
+    forgetPasswordVC.phoneNumber = _phoneTextField.text;
+    [self.navigationController pushViewController:forgetPasswordVC animated:YES];
 }
 
 - (void)wechatLogin
 {
-    
+    [self endEdit];
 }
 
 - (void)qqLogin
 {
-    
+    [self endEdit];
 }
 
+- (void)endEdit
+{
+    [_phoneTextField resignFirstResponder];
+    [_passwordTextField resignFirstResponder];
+}
 
 #pragma mark - UITextField Delegate
 
+- (void)textFieldDidChanged
+{
+    if ([_phoneTextField isFirstResponder]) {
+        if (_phoneTextField.text.length > 0) {
+            if (_phoneTextField.text.length > 11) {
+                _phoneTextField.text = [_phoneTextField.text substringToIndex:11];
+            }
+            _phoneLabel.text = _phoneTextField.text;
+            _phoneLabel.textColor = kNavTitleColor;
+            _phoneDeleteButton.hidden = NO;
+        } else {
+            _phoneLabel.textColor = kTitleTextColor;
+            _phoneLabel.text = @"手机";
+            _phoneDeleteButton.hidden = YES;
+        }
+        
+    }
+    
+    if ([_passwordTextField isFirstResponder]) {
+        if (_passwordTextField.text.length > 0) {
+            if (_passwordTextField.text.length > 16) {
+                _passwordTextField.text = [_passwordTextField.text substringToIndex:16];
+            }
+            _passwordLabel.text = [self makeSecurityStringBy:_passwordTextField.text];
+            _passwordLabel.textColor = kNavTitleColor;
+            _passwordDeleteButton.hidden = NO;
+        } else {
+            _passwordLabel.textColor = kTitleTextColor;
+            _passwordLabel.text = @"密码";
+            _passwordDeleteButton.hidden = YES;
+        }
+        
+    }
+    
+    //更新注册按钮状态
+    [self updateLoginButtonStatus];
+}
 
+- (void)updateLoginButtonStatus
+{
+    if (_phoneTextField.text.length == 11 && _passwordTextField.text.length >= 6) {
+        _loginButton.backgroundColor = kSubjectBackColor;
+        _loginButton.enabled = YES;
+    } else {
+        _loginButton.backgroundColor = kSubTextColor;
+        _loginButton.enabled = NO;
+    }
+}
 
-
-
-#pragma mark - UITextView Delegate
-
-
+- (NSString *)makeSecurityStringBy:(NSString *)str
+{
+    NSString *result = @"";
+    for (NSInteger i = 0; i < str.length; i++) {
+        result = [result stringByAppendingString:@"•"];
+    }
+    
+    return result;
+}
 
 
 @end

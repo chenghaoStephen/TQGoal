@@ -10,4 +10,6 @@
 
 @interface TQForgetPasswordViewController : TQBaseViewController
 
+@property (nonatomic, strong) NSString *phoneNumber;
+
 @end

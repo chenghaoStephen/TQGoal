@@ -95,6 +95,8 @@
 		0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B761E10E9BC00F713A7 /* TQCreateTeamView.m */; };
 		0F3C6B7C1E10F50700F713A7 /* TQMatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C6B7A1E10F50700F713A7 /* TQMatchCell.m */; };
 		0F3C6B7D1E10F50700F713A7 /* TQMatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3C6B7B1E10F50700F713A7 /* TQMatchCell.xib */; };
+		0F41A51F1E8F432900439C26 /* TimerWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F41A51E1E8F432900439C26 /* TimerWeakTarget.m */; };
+		0F41A5221E8F91D900439C26 /* TQInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F41A5211E8F91D900439C26 /* TQInfoEditViewController.m */; };
 		0F50ABE51E518BD800643973 /* TQTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABE41E518BD800643973 /* TQTeamDetailViewController.m */; };
 		0F50ABE91E518E1200643973 /* TQTeamMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50ABE71E518E1200643973 /* TQTeamMemberCell.m */; };
 		0F50ABEA1E518E1200643973 /* TQTeamMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F50ABE81E518E1200643973 /* TQTeamMemberCell.xib */; };
@@ -331,6 +333,10 @@
 		0F3C6B791E10F50700F713A7 /* TQMatchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchCell.h; sourceTree = "<group>"; };
 		0F3C6B7A1E10F50700F713A7 /* TQMatchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMatchCell.m; sourceTree = "<group>"; };
 		0F3C6B7B1E10F50700F713A7 /* TQMatchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQMatchCell.xib; sourceTree = "<group>"; };
+		0F41A51D1E8F432900439C26 /* TimerWeakTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerWeakTarget.h; sourceTree = "<group>"; };
+		0F41A51E1E8F432900439C26 /* TimerWeakTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerWeakTarget.m; sourceTree = "<group>"; };
+		0F41A5201E8F91D900439C26 /* TQInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQInfoEditViewController.h; sourceTree = "<group>"; };
+		0F41A5211E8F91D900439C26 /* TQInfoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQInfoEditViewController.m; sourceTree = "<group>"; };
 		0F50ABE31E518BD800643973 /* TQTeamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamDetailViewController.h; sourceTree = "<group>"; };
 		0F50ABE41E518BD800643973 /* TQTeamDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQTeamDetailViewController.m; sourceTree = "<group>"; };
 		0F50ABE61E518E1200643973 /* TQTeamMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQTeamMemberCell.h; sourceTree = "<group>"; };
@@ -979,6 +985,8 @@
 				0F24B89F1E52E8D00081A2DA /* TQAddMemberViewController.m */,
 				F32ABE371E5B285C000D7CF1 /* TQEditMeViewController.h */,
 				F32ABE381E5B285C000D7CF1 /* TQEditMeViewController.m */,
+				0F41A5201E8F91D900439C26 /* TQInfoEditViewController.h */,
+				0F41A5211E8F91D900439C26 /* TQInfoEditViewController.m */,
 				0F1108E71E7BD59A00143400 /* TQMyOrdersViewController.h */,
 				0F1108E81E7BD59A00143400 /* TQMyOrdersViewController.m */,
 				0F1108ED1E7BD98500143400 /* TQMyTasksViewController.h */,
@@ -1030,6 +1038,8 @@
 		F3438C961DF2A4FA00D86D5B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0F41A51D1E8F432900439C26 /* TimerWeakTarget.h */,
+				0F41A51E1E8F432900439C26 /* TimerWeakTarget.m */,
 				0F2385091E779481008008EB /* MJPopupBackgroundView.h */,
 				0F23850A1E779481008008EB /* MJPopupBackgroundView.m */,
 				0F23850B1E779481008008EB /* UIViewController+MJPopupViewController.h */,
@@ -1325,6 +1335,7 @@
 				F32ABE391E5B285C000D7CF1 /* TQEditMeViewController.m in Sources */,
 				0F3C6B771E10E9BC00F713A7 /* TQCreateTeamView.m in Sources */,
 				0F1108C31E7B69DE00143400 /* TQEvaluateTeamCell.m in Sources */,
+				0F41A51F1E8F432900439C26 /* TimerWeakTarget.m in Sources */,
 				0F2083311E7A1CBE009388BD /* TQOrderServicesViewController.m in Sources */,
 				0F23866B1E8DFD0600E6B887 /* TQWelcomeViewController.m in Sources */,
 				0F16F3C51E7124670014037B /* TQMatchRefereeCell.m in Sources */,
@@ -1352,6 +1363,7 @@
 				0F2083451E7A577B009388BD /* TQEvaluateMemberCell.m in Sources */,
 				0F7F7F691E6FF64800952DDD /* FMDatabaseQueue.m in Sources */,
 				0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */,
+				0F41A5221E8F91D900439C26 /* TQInfoEditViewController.m in Sources */,
 				0FDA935B1E79189C00ABA65A /* TQLaunchInvitateViewController.m in Sources */,
 				0F2083571E7A70F2009388BD /* TQEvaluateRefereeViewController.m in Sources */,
 				F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */,

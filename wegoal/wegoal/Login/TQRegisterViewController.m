@@ -8,6 +8,7 @@
 
 #import "TQRegisterViewController.h"
 #import "TQLoginViewController.h"
+#import "TQRegisterConfirmViewController.h"
 
 @interface TQRegisterViewController ()<UITextFieldDelegate, UITextViewDelegate>
 
@@ -135,6 +136,7 @@
     if (!_phoneTextField) {
         _phoneTextField = [[UITextField alloc] init];
         _phoneTextField.delegate = self;
+        _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     }
     return _phoneTextField;
 }
@@ -294,6 +296,11 @@
 - (void)doRegister
 {
     [self endEdit];
+    
+    TQRegisterConfirmViewController *registerConfirmVC = [[TQRegisterConfirmViewController alloc] init];
+    registerConfirmVC.phoneNumber = _phoneTextField.text;
+    registerConfirmVC.password = _passwordTextField.text;
+    [self.navigationController pushViewController:registerConfirmVC animated:YES];
 }
 
 - (void)wechatLogin

@@ -59,6 +59,7 @@ typedef NS_ENUM(NSInteger, MatchStatus){
 #define kTabbarNeedHideNoti  @"TabbarNeedHide"
 #define kTabbarClickButton   @"TabbarClickButton"
 #define kWelcomeToHome       @"WelcomeToHome"
+#define kWelcomeLoginSuccess @"WelcomeLoginSuccess"
 
 
 //Native

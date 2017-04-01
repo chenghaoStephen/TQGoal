@@ -52,7 +52,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,15 +76,18 @@
             cell.titleLabel.text = @"球队";
             cell.valueLabel.text = @"--";
         } else if (indexPath.row == 3) {
-            cell.titleLabel.text = @"位置";
+            cell.titleLabel.text = @"球号";
             cell.valueLabel.text = @"--";
         } else if (indexPath.row == 4) {
-            cell.titleLabel.text = @"年龄";
+            cell.titleLabel.text = @"位置";
             cell.valueLabel.text = @"--";
         } else if (indexPath.row == 5) {
-            cell.titleLabel.text = @"身高";
+            cell.titleLabel.text = @"年龄";
             cell.valueLabel.text = @"--";
         } else if (indexPath.row == 6) {
+            cell.titleLabel.text = @"身高";
+            cell.valueLabel.text = @"--";
+        } else if (indexPath.row == 7) {
             cell.titleLabel.text = @"体重";
             cell.valueLabel.text = @"--";
         }
