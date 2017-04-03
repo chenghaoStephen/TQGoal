@@ -86,6 +86,7 @@
     if (!_matchCell) {
         _matchCell = [[[NSBundle mainBundle] loadNibNamed:@"TQMatchCell" owner:nil options:nil] firstObject];
         [_matchCell setFrame:CGRectMake((viewWidth - SCREEN_WIDTH)/2, CGRectGetMaxY(_signView.frame) + 8, SCREEN_WIDTH, 121)];
+        _matchCell.userInteractionEnabled = YES;
     }
     return _matchCell;
 }

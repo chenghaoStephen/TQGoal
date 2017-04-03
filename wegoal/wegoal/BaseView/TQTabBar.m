@@ -64,6 +64,7 @@
 //    label.centerY = CGRectGetMaxY(_plusBtn.frame) + ZYMagin;
 //    [self.superview addSubview:label];
 }
+
 //重新绘制按钮
 - (void)layoutSubviews {
     [super layoutSubviews];

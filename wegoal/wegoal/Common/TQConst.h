@@ -65,6 +65,7 @@ typedef NS_ENUM(NSInteger, GameEvent){
 #define kTitleTextColor      RGB16(0x96ABB5)
 #define kSubTextColor        RGB16(0xDFE8EC)
 #define kSubjectBackColor    RGB16(0x57D67E)
+#define kLiveBackColor       RGB16(0x72E796)
 #define kScheduleBackColor   RGB16(0x0B1523)
 #define kNavTitleColor       RGB16(0x34454C)
 #define kBackLineColor       RGB16(0xDFDFDF)
@@ -81,6 +82,7 @@ typedef NS_ENUM(NSInteger, GameEvent){
 #define kTabbarClickButton   @"TabbarClickButton"
 #define kWelcomeToHome       @"WelcomeToHome"
 #define kWelcomeLoginSuccess @"WelcomeLoginSuccess"
+#define kShowScheuleTab      @"ShowScheuleTab"
 
 
 //Native

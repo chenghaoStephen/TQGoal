@@ -8,6 +8,12 @@
 
 #import "TQMyMatchCell.h"
 #import "TQEvaluateMemberViewController.h"
+#import "TQMatchDetailViewController.h"
+#import "TQMyMatchViewController.h"
+#import "TQLiveViewController.h"
+#import "TQEvaluateMemberViewController.h"
+#import "TQEvaluateRefereeViewController.h"
+#import "TQSignUpViewController.h"
 
 @interface TQMyMatchCell()
 
@@ -84,7 +90,7 @@
     _systemLbl.text = matchData.gameRules;
     _addressLbl.text = matchData.gamePlace;
     //显示日期和星期
-    if (matchData.gameDate.length == 19) {
+    if (matchData.gameDate.length == 12) {
         NSDate *date = [NSDate dateFromString:matchData.gameDate format:kDateFormatter1];
         _scoreLbl.text = [NSDate datestrFromDate:date withDateFormat:kDateFormatter2];
         _time1Lbl.text = [TQCommon weekStringFromDate:date];
@@ -97,49 +103,65 @@
     //根据状态显示按钮
     switch ([matchData.status integerValue]) {
         case MatchStatusSearching:
-            
+            _button1.hidden = YES;
+            _button2.hidden = YES;
+            _buttonBottom.hidden = NO;
+            _buttonBottom.backgroundColor = kTitleTextColor;
+            [_buttonBottom setTitle:@"等待应战" forState:UIControlStateNormal];
             break;
-            
         case MatchStatusConfirm:
             _button1.hidden = NO;
             _button2.hidden = NO;
             _buttonBottom.hidden = YES;
             break;
-            
         case MatchStatusPay:
             _button1.hidden = YES;
             _button2.hidden = YES;
             _buttonBottom.hidden = NO;
             _buttonBottom.backgroundColor = kSubjectBackColor;
-            [_buttonBottom setTitle:@"立即支付" forState:UIControlStateNormal];
+            [_buttonBottom setTitle:@"即刻支付" forState:UIControlStateNormal];
             break;
-            
         case MatchStatusWaiting:
-            
+            _button1.hidden = YES;
+            _button2.hidden = YES;
+            _buttonBottom.hidden = NO;
+            _buttonBottom.backgroundColor = kTitleTextColor;
+            [_buttonBottom setTitle:@"等待约战开始" forState:UIControlStateNormal];
             break;
-            
         case MatchStatusProcessing:
-            
+            _button1.hidden = YES;
+            _button2.hidden = YES;
+            _buttonBottom.hidden = NO;
+            _buttonBottom.backgroundColor = kRedBackColor;
+            [_buttonBottom setTitle:@"赛况直播" forState:UIControlStateNormal];
             break;
-            
         case MatchStatusEvaluateMember:
             _button1.hidden = YES;
             _button2.hidden = YES;
             _buttonBottom.hidden = NO;
-            _buttonBottom.backgroundColor = kNavTitleColor;
+            _buttonBottom.backgroundColor = kSubjectBackColor;
             [_buttonBottom setTitle:@"评价球员" forState:UIControlStateNormal];
             break;
-            
         case MatchStatusEvaluateOpponent:
-            
+            _button1.hidden = YES;
+            _button2.hidden = YES;
+            _buttonBottom.hidden = NO;
+            _buttonBottom.backgroundColor = kSubjectBackColor;
+            [_buttonBottom setTitle:@"评价对手" forState:UIControlStateNormal];
             break;
-            
         case MatchStatusViewSchedule:
-            
+            _button1.hidden = YES;
+            _button2.hidden = YES;
+            _buttonBottom.hidden = NO;
+            _buttonBottom.backgroundColor = kSubjectBackColor;
+            [_buttonBottom setTitle:@"查看全部赛程" forState:UIControlStateNormal];
             break;
-            
         case MatchStatusNotTeam:
-            
+            _button1.hidden = YES;
+            _button2.hidden = YES;
+            _buttonBottom.hidden = NO;
+            _buttonBottom.backgroundColor = kSubjectBackColor;
+            [_buttonBottom setTitle:@"报名" forState:UIControlStateNormal];
             break;
             
         default:
@@ -183,54 +205,71 @@
 
 - (IBAction)button1Click:(id)sender {
     
-}
-
-- (IBAction)button2Click:(id)sender {
+    NSLog(@"change rival.");
     
 }
 
-- (IBAction)bottomButtonClick:(id)sender {
-    switch ([_matchData.status integerValue]) {
-        case MatchStatusSearching:
-            
-            break;
-            
-        case MatchStatusConfirm:
+- (IBAction)button2Click:(id)sender {
+    NSLog(@"confirm rival.");
+}
 
-            break;
+- (IBAction)bottomButtonClick:(id)sender {
+    //根据状态进行跳转
+    switch ([_matchData.status integerValue]) {
+            
             
         case MatchStatusPay:
-
-            break;
-            
-        case MatchStatusWaiting:
-            
-            break;
-            
-        case MatchStatusProcessing:
-            
-            break;
-            
-        case MatchStatusEvaluateMember:
         {
-            //评价球员
-            TQEvaluateMemberViewController *evaluateMemberVC = [[TQEvaluateMemberViewController alloc] init];
-            [self.viewController.navigationController pushViewController:evaluateMemberVC animated:YES];
+            //跳转到我的约战详情(支付)
+            TQMatchDetailViewController *matchDetailVC = [[TQMatchDetailViewController alloc] init];
+            matchDetailVC.matchModel = _matchData;
+            [((TQBaseViewController *)self.viewController) pushViewController:matchDetailVC];
             break;
         }
             
+        case MatchStatusProcessing:
+        {
+            //跳转到直播界面
+            TQLiveViewController *liveVC = [[TQLiveViewController alloc] init];
+            liveVC.matchData = _matchData;
+            [((TQBaseViewController *)self.viewController) pushViewController:liveVC];
+            break;
+        }
+            
+        case MatchStatusEvaluateMember:
+        {
+            //跳转到评价球员界面
+            TQEvaluateMemberViewController *evaluateMemVC = [[TQEvaluateMemberViewController alloc] init];
+            [((TQBaseViewController *)self.viewController) pushViewController:evaluateMemVC];
+            break;
+        }
             
         case MatchStatusEvaluateOpponent:
-            
+        {
+            //跳转到评价裁判界面
+            TQEvaluateRefereeViewController *evaluateRefVC = [[TQEvaluateRefereeViewController alloc] init];
+            [((TQBaseViewController *)self.viewController) pushViewController:evaluateRefVC];
             break;
+        }
             
         case MatchStatusViewSchedule:
-            
+        {
+            //跳转到我的约战列表
+            TQMyMatchViewController *myMatchVC = [[TQMyMatchViewController alloc] init];
+            [((TQBaseViewController *)self.viewController) pushViewController:myMatchVC];
             break;
+        }
             
         case MatchStatusNotTeam:
-            
+        {
+            //弹出报名菜单
+            TQSignUpViewController *signUpVC = [[TQSignUpViewController alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
+            signUpVC.view.backgroundColor = [UIColor whiteColor];
+            signUpVC.view.layer.masksToBounds = YES;
+            signUpVC.view.layer.cornerRadius = 5;
+            [self.viewController presentPopupViewController:signUpVC animationType:MJPopupViewAnimationFade];
             break;
+        }
             
         default:
             break;

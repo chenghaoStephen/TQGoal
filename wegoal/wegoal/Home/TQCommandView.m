@@ -68,6 +68,8 @@
 
 - (void)showMoreMatch
 {
+    //切到约战Tab
+    [[NSNotificationCenter defaultCenter] postNotificationName:kShowScheuleTab object:nil userInfo:nil];
     
 }
 

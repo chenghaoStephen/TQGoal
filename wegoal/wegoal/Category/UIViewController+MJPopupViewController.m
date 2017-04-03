@@ -62,9 +62,16 @@ static void * const keypath = (void*)&keypath;
     [self presentPopupViewController:popupViewController animationType:animationType dismissed:nil];
 }
 
+- (void)presentPopupViewController:(UIViewController*)popupViewController animationType:(MJPopupViewAnimation)animationType topY:(CGFloat)topY
+{
+    objc_setAssociatedObject(self, @"topY", @(topY), OBJC_ASSOCIATION_COPY);
+    [self presentPopupViewController:popupViewController animationType:animationType dismissed:nil];
+}
+
 - (void)dismissPopupViewControllerWithanimationType:(MJPopupViewAnimation)animationType
 {
-    UIView *sourceView = [self topView];
+    //UIView *sourceView = [self topView];
+    UIView *sourceView = [UIApplication sharedApplication].keyWindow;
     UIView *popupView = [sourceView viewWithTag:kMJPopupViewTag];
     UIView *overlayView = [sourceView viewWithTag:kMJOverlayViewTag];
     
@@ -99,7 +106,8 @@ static void * const keypath = (void*)&keypath;
 
 - (void)presentPopupView:(UIView*)popupView animationType:(MJPopupViewAnimation)animationType dismissed:(void(^)(void))dismissed
 {
-    UIView *sourceView = [self topView];
+    //UIView *sourceView = [self topView];
+    UIView *sourceView = [UIApplication sharedApplication].keyWindow;
     sourceView.tag = kMJSourceViewTag;
     popupView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin |UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
     popupView.tag = kMJPopupViewTag;
@@ -322,6 +330,16 @@ static void * const keypath = (void*)&keypath;
                                      (sourceSize.height - popupSize.height) / 2,
                                      popupSize.width,
                                      popupSize.height);
+    CGFloat viewTop;
+    if (objc_getAssociatedObject(self, @"topY")) {
+        viewTop = [objc_getAssociatedObject(self, @"topY") floatValue];
+    }
+    if (viewTop > 0) {
+        popupEndRect = CGRectMake((sourceSize.width - popupSize.width) / 2,
+                                  viewTop,
+                                  popupSize.width,
+                                  popupSize.height);
+    }
     
     // Set starting properties
     popupView.frame = popupEndRect;

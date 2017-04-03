@@ -15,12 +15,14 @@
 #import "TQMessageViewController.h"
 #import "TQProtocolViewController.h"
 #import "TQWebPageViewController.h"
+#import "TQLiveViewController.h"
+#import "TQMyMatchDetailViewController.h"
 
 #define kBadgeLabelTag               1001
 #define kHomeMatchCellIdentifier     @"TQHomeMatchCell"
 #define kMatchCellIdentifier         @"TQMatchCell"
 
-@interface TQHomeViewController ()<SDCycleScrollViewDelegate, TQMatchFlowLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface TQHomeViewController ()<SDCycleScrollViewDelegate, TQMatchFlowLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 {
     NSInteger scrollIndex;
     
@@ -47,6 +49,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.delegate = self;
     headerData = [NSMutableArray array];
     mainData = [NSMutableArray array];
     scrollIndex = 0;
@@ -171,6 +174,17 @@
         _commandView.backgroundColor = [UIColor whiteColor];
     }
     return _commandView;
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if ([viewController isKindOfClass:[TQLiveViewController class]]) {
+        [navigationController setNavigationBarHidden:YES];
+    } else {
+        [navigationController setNavigationBarHidden:NO];
+    }
 }
 
 #pragma mark - navigation bar 设置
@@ -337,7 +351,8 @@
 
 - (void)showMoreMatch
 {
-    
+    //切到约战Tab
+    [[NSNotificationCenter defaultCenter] postNotificationName:kShowScheuleTab object:nil userInfo:nil];
 }
 
 - (void)changeLocation
@@ -403,9 +418,30 @@
     cell.layer.shadowOffset = CGSizeMake(1.5, 1.5);
     if (indexPath.row < mainData.count) {
         cell.matchData = mainData[indexPath.row];
+        __weak typeof(self) weakSelf = self;
+        cell.ClickBlock = ^{
+            [weakSelf jumpWithIndex:indexPath.row];
+        };
     }
     
     return cell;
+}
+
+- (void)jumpWithIndex:(NSInteger)index
+{
+    if (index < mainData.count) {
+        TQMatchModel *matchData = mainData[index];
+        if ([matchData.status integerValue] == MatchStatusViewSchedule) {
+            //跳转到约战详情界面
+            TQMyMatchDetailViewController *myMatchDetailVC = [[TQMyMatchDetailViewController alloc] init];
+            [self pushViewController:myMatchDetailVC];
+        } else {
+            //跳转到直播界面
+            TQLiveViewController *liveVC = [[TQLiveViewController alloc] init];
+            liveVC.matchData = matchData;
+            [self pushViewController:liveVC];
+        }
+    }
 }
 
 

@@ -41,6 +41,10 @@
                                              selector:@selector(hidePlusButton)
                                                  name:kTabbarNeedHideNoti
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeIndexToSchedule)
+                                                 name:kShowScheuleTab
+                                               object:nil];
 }
 
 - (void)dealloc
@@ -87,13 +91,18 @@
     [self setUpOneChildVcWithVc:HomeVC Image:@"home" selectedImage:@"home_select" title:@"首页"];
     //赛程
     TQScheduleViewController *scheduleVC = [[TQScheduleViewController alloc] init];
-    [self setUpOneChildVcWithVc:scheduleVC Image:@"schedule" selectedImage:@"schedule_select" title:@"赛程"];
+    [self setUpOneChildVcWithVc:scheduleVC Image:@"schedule" selectedImage:@"schedule_select" title:@"约战"];
     //天梯
     TQLadderViewController *ladderVC = [[TQLadderViewController alloc] init];
     [self setUpOneChildVcWithVc:ladderVC Image:@"ladder" selectedImage:@"ladder_select" title:@"天梯"];
     //我
     TQMeViewController *meVC = [[TQMeViewController alloc] init];
-    [self setUpOneChildVcWithVc:meVC Image:@"me" selectedImage:@"me_select" title:@"我"];
+    [self setUpOneChildVcWithVc:meVC Image:@"me" selectedImage:@"me_select" title:@"生涯"];
+}
+
+- (void)changeIndexToSchedule
+{
+    self.selectedIndex = 1;
 }
 
 

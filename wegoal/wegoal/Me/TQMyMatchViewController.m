@@ -9,12 +9,15 @@
 #import "TQMyMatchViewController.h"
 #import "TQMyMatchCell.h"
 #import "TQMyMatchDetailViewController.h"
+#import "TQLiveViewController.h"
 
 #define kTQMyMatchCellIdentifier     @"TQMyMatchCell"
 @interface TQMyMatchViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    NSMutableArray *mainData;     //我的约战数据
+}
 
-@property (nonatomic, strong) UITableView *tableview;
-@property (nonatomic, strong) NSMutableArray *myMatchesArray;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -25,39 +28,64 @@
     
     self.title = @"我的约战";
     self.view.backgroundColor = kMainBackColor;
-    _myMatchesArray = [NSMutableArray array];
-    [self addTestData];
-    [self.view addSubview:self.tableview];
+    mainData = [NSMutableArray array];
+    [self.view addSubview:self.tableView];
+    [self requestData];
 }
 
-- (void)addTestData
+- (UITableView *)tableView
 {
-    TQMatchModel *match1 = [TQMatchModel new];
-    match1.status = [NSString stringWithFormat:@"%ld", MatchStatusConfirm];
-    TQMatchModel *match2 = [TQMatchModel new];
-    match2.status = [NSString stringWithFormat:@"%ld", MatchStatusPay];
-    TQMatchModel *match3 = [TQMatchModel new];
-    match3.status = [NSString stringWithFormat:@"%ld", MatchStatusWaiting];
-    [_myMatchesArray addObjectsFromArray:@[match1, match2, match3]];
-    
-}
-
-- (UITableView *)tableview
-{
-    if (!_tableview) {
-        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT)
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 1, SCREEN_WIDTH, VIEW_HEIGHT - 1)
                                                   style:UITableViewStylePlain];
-        _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableview.dataSource = self;
-        _tableview.delegate = self;
-        _tableview.backgroundColor = kMainBackColor;
-        [_tableview registerNib:[UINib nibWithNibName:@"TQMyMatchCell" bundle:nil] forCellReuseIdentifier:kTQMyMatchCellIdentifier];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.backgroundColor = kMainBackColor;
+        [_tableView registerNib:[UINib nibWithNibName:@"TQMyMatchCell" bundle:nil] forCellReuseIdentifier:kTQMyMatchCellIdentifier];
         
-        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 3)];
+        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 2)];
         tableHeaderView.backgroundColor = kMainBackColor;
-        _tableview.tableHeaderView = tableHeaderView;
+        _tableView.tableHeaderView = tableHeaderView;
     }
-    return _tableview;
+    return _tableView;
+}
+
+#pragma mark - 数据请求
+
+//获取主页信息
+- (void)requestData
+{
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"userName"] = USER_NAME;
+    params[@"Token"] = USER_TOKEN;
+    [ZDMIndicatorView showInView:self.tableView];
+    [[AFServer sharedInstance]GET:URL(kTQDomainURL, kHomeData) parameters:params finishBlock:^(id result) {
+        [ZDMIndicatorView hiddenInView:weakSelf.tableView];
+        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                //读取数据
+                [mainData removeAllObjects];
+                [mainData addObjectsFromArray:[TQMatchModel mj_objectArrayWithKeyValuesArray:result[@"data"][@"mainData"]]];
+                
+                //更新主页信息
+                [weakSelf.tableView reloadData];
+            });
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [ZDMToast showWithText:result[@"msg"]];
+            });
+        }
+        
+    } failedBlock:^(NSError *error) {
+        [ZDMIndicatorView hiddenInView:weakSelf.tableView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+        });
+    }];
 }
 
 
@@ -70,7 +98,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _myMatchesArray.count;
+    return mainData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,8 +108,8 @@
         cell = [[NSBundle mainBundle] loadNibNamed:@"TQMyMatchCell" owner:nil options:nil].firstObject;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    if (indexPath.row < _myMatchesArray.count) {
-        cell.matchData = _myMatchesArray[indexPath.row];
+    if (indexPath.row < mainData.count) {
+        cell.matchData = mainData[indexPath.row];
         cell.isMine = YES;
     } else {
         [cell clearInformation];
@@ -99,8 +127,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TQMyMatchDetailViewController *myMatchDetailVC = [[TQMyMatchDetailViewController alloc] init];
-    [self.navigationController pushViewController:myMatchDetailVC animated:YES];
+    if (indexPath.row < mainData.count) {
+        TQMatchModel *matchData = mainData[indexPath.row];
+        if ([matchData.status integerValue] == MatchStatusViewSchedule) {
+            //跳转到约战详情界面
+            TQMyMatchDetailViewController *myMatchDetailVC = [[TQMyMatchDetailViewController alloc] init];
+            [self.navigationController pushViewController:myMatchDetailVC animated:YES];
+        } else {
+            //跳转到直播界面
+            TQLiveViewController *liveVC = [[TQLiveViewController alloc] init];
+            liveVC.matchData = matchData;
+            [self.navigationController pushViewController:liveVC animated:YES];
+        }
+    }
 }
 
 

@@ -52,6 +52,11 @@
                                                object:nil];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (UIBarButtonItem*)buildRightNavigationItem{
     UIButton *toRegisterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     toRegisterBtn.frame = CGRectMake(0, 0, 100, 44);

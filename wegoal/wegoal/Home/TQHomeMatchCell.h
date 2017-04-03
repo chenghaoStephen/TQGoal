@@ -12,5 +12,6 @@
 
 //约战状态
 @property (nonatomic, assign) TQMatchModel *matchData;
+@property (nonatomic, copy) void(^ClickBlock)(void);
 
 @end
