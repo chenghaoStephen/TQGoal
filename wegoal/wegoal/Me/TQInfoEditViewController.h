@@ -22,7 +22,7 @@ typedef void(^SubmitBlock)(NSString *text);
 @interface TQInfoEditViewController : TQBaseViewController
 
 @property (nonatomic, strong) NSString *titleName;
-@property (nonatomic, strong) NSString *filledName;
+@property (nonatomic, assign) EditType type;
 @property (nonatomic, copy) SubmitBlock submitBlock;
 
 @end

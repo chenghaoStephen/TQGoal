@@ -39,6 +39,11 @@
     return nil;
 }
 
+- (NSDictionary *)getUserDataDict
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kUserDataIdentifier];
+}
+
 - (void)clearUserData
 {
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kUserDataIdentifier];

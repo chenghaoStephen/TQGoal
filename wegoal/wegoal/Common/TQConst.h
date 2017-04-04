@@ -49,11 +49,12 @@ typedef NS_ENUM(NSInteger, GameEvent){
 
 #define kRaceSystemArray   @[@"5人制",@"7/8/9人制",@"11人制"]
 
+#define kPositionsArray   @[@"GK", @"SW", @"CB", @"LCB", @"RCB", @"CWP", @"SB", @"LB", @"RB", @"WB", @"LWB", @"RWB", @"MF", @"SMF", @"LMF", @"RMF", @"DMF", @"CMF", @"OMF", @"AMF", @"WF", @"LWF", @"RWF", @"ST", @"SS", @"ST"]
 #define kYellowKeyArray   @[@"GK"]
 #define kYellowValueArray @[@"守门员"]
 #define kGreenKeyArray    @[@"SW", @"CB", @"LCB", @"RCB", @"CWP", @"SB", @"LB", @"RB", @"WB", @"LWB", @"RWB"]
 #define kGreenValueArray  @[@"清道夫 拖后中卫", @"中后卫", @"左中卫", @"右中卫", @"自由人、常压上助攻的中后卫", @"边后卫", @"左边后卫", @"右边后卫", @"边后腰", @"边路进攻左后卫", @"边路进攻右后卫"]
-#define kBlueKeyArray     @[@"MF", @"SMF", @"LMF", @"RMF", @"DMF", @"CMF "]
+#define kBlueKeyArray     @[@"MF", @"SMF", @"LMF", @"RMF", @"DMF", @"CMF"]
 #define kBlueValueArray   @[@"边后腰 边路能力强，攻守兼具的中场", @"边前卫", @"左边前卫", @"右边前卫", @"防守型中场 即后腰", @"中场 中前卫 攻守均衡的中场"]
 #define kOrangeKeyArray   @[@"OMF", @"AMF", @"WF", @"LWF", @"RWF"]
 #define kOrangeValueArray @[@"进攻组织者 前腰", @"攻击型前卫 前腰", @"边锋", @"左边锋", @"右边锋"]

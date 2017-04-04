@@ -124,6 +124,7 @@
                                                       placeholderImage:[UIImage imageNamed:@"placeholder"]];
         _cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"page_control_currentdot"];
         _cycleScrollView.pageDotImage = [UIImage imageNamed:@"page_control_dot"];
+        _cycleScrollView.autoScrollTimeInterval = 5;
         _cycleScrollView.delegate = self;
         _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentLeft;
         _cycleScrollView.imageURLStringsGroup = @[@"",@"",@""];
@@ -136,7 +137,7 @@
     if (!_matchView) {
         TQMatchFlowLayout *flow = [[TQMatchFlowLayout alloc] init];
         flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        flow.itemSize = CGSizeMake(SCREEN_WIDTH - 50, 190);
+        flow.itemSize = CGSizeMake(SCREEN_WIDTH - 50, 222);
         flow.minimumLineSpacing = -80;
         flow.minimumInteritemSpacing = 0;
         flow.delegate = self;
@@ -409,7 +410,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TQHomeMatchCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kHomeMatchCellIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
     cell.layer.cornerRadius = 5.0f;
     cell.layer.masksToBounds = NO;
     cell.layer.shadowColor = [UIColor lightGrayColor].CGColor;
@@ -520,7 +521,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    TQLiveViewController *liveVC = [[TQLiveViewController alloc] init];
+    liveVC.matchData = footerData;
+    [self pushViewController:liveVC];
 }
 
 

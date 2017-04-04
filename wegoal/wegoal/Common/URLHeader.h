@@ -35,8 +35,13 @@
 #define kInviteTeammates @"/api/AppGetView/GetInviteTeammates"
 //约战场地
 #define kGamePlace       @"/api/AppGetView/GetGamePlace"
-
 //确认约战
 #define kSetEnroll       @"/api/AppPostData/SetEnrollDetails"
+
+//约战检索
+#define kEnrollWaitList  @"/api/AppGetView/GetEnrollWaitList"
+
 //用户信息完善
 #define kSetMember       @"/api/AppPostData/SetMember"
+//上传头像
+#define kSetMemberPic    @"/api/ImageUpload/PostFile"

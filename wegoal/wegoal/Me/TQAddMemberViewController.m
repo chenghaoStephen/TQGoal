@@ -31,6 +31,7 @@
     if (!_textField) {
         _textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 3, SCREEN_WIDTH, 36)];
         _textField.backgroundColor = [UIColor whiteColor];
+        _textField.leftViewMode = UITextFieldViewModeAlways;
         UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 36)];
         leftView.backgroundColor = [UIColor clearColor];
         _textField.leftView = leftView;

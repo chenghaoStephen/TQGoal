@@ -267,7 +267,8 @@
             signUpVC.view.backgroundColor = [UIColor whiteColor];
             signUpVC.view.layer.masksToBounds = YES;
             signUpVC.view.layer.cornerRadius = 5;
-            [self.viewController presentPopupViewController:signUpVC animationType:MJPopupViewAnimationFade];
+            CGFloat topY = MAX(SCREEN_HEIGHT - 538, 80);
+            [self.viewController presentPopupViewController:signUpVC animationType:MJPopupViewAnimationFade topY:topY];
             break;
         }
             

@@ -209,7 +209,7 @@
 {
     _matchType =  matchType;
     [self updateView];
-    [self refreshMatchData];
+    //[self refreshMatchData];
 }
 
 - (void)updateView
@@ -260,6 +260,7 @@
     //更新标头显示
     if ([_matchType isEqualToString:@"first"]) {
         //星期
+        NSString *weekTmp = @"*";
         NSString *weekStr = @"";
         for (NSString *weekKey in weekSelects) {
             weekStr = [weekStr stringByAppendingString:keyValues[weekKey]];
@@ -267,8 +268,10 @@
                 weekStr = [weekStr stringByAppendingString:@" "];
             }
         }
+        weekTmp = (weekStr.length > 0)?[weekStr stringByReplacingOccurrencesOfString:@" " withString:@","]:@"*";
         weekStr = (weekStr.length > 0)?weekStr:@"所有星期";
         //赛制
+        NSString *systemTmp = @"*";
         NSString *systemStr = @"";
         for (NSString *systemKey in systemSelects) {
             systemStr = [systemStr stringByAppendingString:keyValues[systemKey]];
@@ -276,8 +279,10 @@
                 systemStr = [systemStr stringByAppendingString:@" "];
             }
         }
+        systemTmp = (systemStr.length > 0)?[systemStr stringByReplacingOccurrencesOfString:@" " withString:@","]:@"*";
         systemStr = (systemStr.length > 0)?systemStr:@"所有赛制";
         //类型
+        NSString *typeTmp = @"*";
         NSString *typeStr = @"";
         for (NSString *typeKey in typeSelects) {
             typeStr = [typeStr stringByAppendingString:keyValues[typeKey]];
@@ -285,16 +290,22 @@
                 typeStr = [typeStr stringByAppendingString:@" "];
             }
         }
+        typeTmp = (typeStr.length > 0)?[typeStr stringByReplacingOccurrencesOfString:@" " withString:@","]:@"*";
         typeStr = (typeStr.length > 0)?typeStr:@"所有类型";
         NSString *title = [NSString stringWithFormat:@"%@ • %@ • %@", weekStr, systemStr, typeStr];
         [_topView setTitle:title];
         
         //数据刷新
         if (_delegate && [_delegate respondsToSelector:@selector(JOMatchMenuView:getDataWithWeeks:systems:types:)]) {
-            [_delegate JOMatchMenuView:self getDataWithWeeks:weekSelects systems:systemSelects types:typeSelects];
+            [_delegate JOMatchMenuView:self
+                      getDataWithWeeks:weekTmp
+                               systems:systemTmp
+                                 types:typeTmp
+             ];
         }
     } else {
         //状态
+        NSString *statusTmp = @"*";
         NSString *statusStr = @"";
         for (NSString *statusKey in statusSelects) {
             statusStr = [statusStr stringByAppendingString:keyValues[statusKey]];
@@ -302,12 +313,13 @@
                 statusStr = [statusStr stringByAppendingString:@" "];
             }
         }
+        statusTmp = (statusStr.length > 0)?[statusStr stringByReplacingOccurrencesOfString:@" " withString:@","]:@"*";
         statusStr = (statusStr.length > 0)?statusStr:@"所有状态";
         [_topView setTitle:statusStr];
         
         //数据刷新
         if (_delegate && [_delegate respondsToSelector:@selector(JOMatchMenuView:getDataWithStatus:)]) {
-            [_delegate JOMatchMenuView:self getDataWithStatus:statusSelects];
+            [_delegate JOMatchMenuView:self getDataWithStatus:statusTmp];
         }
     }
 

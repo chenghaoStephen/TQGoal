@@ -34,6 +34,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
         [self addSubview:self.createView];
         [self addSubview:self.matchView];
         [self addSubview:self.actionButton];
@@ -132,7 +133,9 @@
 {
     if (!_createView) {
         _createView = [[TQCreateTeamView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 50, 190)];
-        _createView.backgroundColor = [UIColor clearColor];
+        _createView.backgroundColor = [UIColor whiteColor];
+        _createView.layer.masksToBounds = YES;
+        _createView.layer.cornerRadius = 5.0;
     }
     return _createView;
 }
@@ -141,7 +144,9 @@
 {
     if (!_matchView) {
         _matchView = [[TQMatchStatusView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 50, 190)];
-        _matchView.backgroundColor = [UIColor clearColor];
+        _matchView.backgroundColor = [UIColor whiteColor];
+        _matchView.layer.masksToBounds = YES;
+        _matchView.layer.cornerRadius = 5.0;
         _matchView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCell)];
         [_matchView addGestureRecognizer:tapGesture];
@@ -308,7 +313,8 @@
             signUpVC.view.backgroundColor = [UIColor whiteColor];
             signUpVC.view.layer.masksToBounds = YES;
             signUpVC.view.layer.cornerRadius = 5;
-            [self.viewController presentPopupViewController:signUpVC animationType:MJPopupViewAnimationFade];
+            CGFloat topY = MAX(SCREEN_HEIGHT - 538, 80);
+            [self.viewController presentPopupViewController:signUpVC animationType:MJPopupViewAnimationFade topY:topY];
             break;
         }
             

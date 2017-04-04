@@ -10,9 +10,11 @@
 #import "TQEditMeCell.h"
 #import "TQInfoEditViewController.h"
 #import "HeadImgChangeView.h"
+#import "TQInfoEditViewController.h"
+#import "ZSYPopoverListView.h"
 
 #define kEditMeCellIdentifier   @"TQEditMeCell"
-@interface TQEditMeViewController ()<UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface TQEditMeViewController ()<UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZSYPopoverListDatasource, ZSYPopoverListDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
 
@@ -64,34 +66,37 @@
         cell = [[NSBundle mainBundle] loadNibNamed:@"TQEditMeCell" owner:nil options:nil].firstObject;
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    TQMemberModel *memberData = [UserDataManager getUserData];
     if (indexPath.row == 0) {
         cell.titleLabel.text = @"头像";
-        cell.imageView.hidden = NO;
+        cell.avatarImageView.hidden = NO;
         cell.valueLabel.hidden = YES;
+        [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, memberData.headPic)]
+                                placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
     } else {
-        cell.imageView.hidden = YES;
+        cell.avatarImageView.hidden = YES;
         cell.valueLabel.hidden = NO;
         if (indexPath.row == 1) {
             cell.titleLabel.text = @"昵称";
-            cell.valueLabel.text = @"--";
+            cell.valueLabel.text = memberData.memberName;
         } else if (indexPath.row == 2) {
             cell.titleLabel.text = @"球队";
-            cell.valueLabel.text = @"--";
+            cell.valueLabel.text = memberData.temName;
         } else if (indexPath.row == 3) {
             cell.titleLabel.text = @"球号";
-            cell.valueLabel.text = @"--";
+            cell.valueLabel.text = memberData.memberNumber;
         } else if (indexPath.row == 4) {
             cell.titleLabel.text = @"位置";
-            cell.valueLabel.text = @"--";
+            cell.valueLabel.text = memberData.memberPosition;
         } else if (indexPath.row == 5) {
             cell.titleLabel.text = @"年龄";
-            cell.valueLabel.text = @"--";
+            cell.valueLabel.text = memberData.memberAge;
         } else if (indexPath.row == 6) {
             cell.titleLabel.text = @"身高";
-            cell.valueLabel.text = @"--";
+            cell.valueLabel.text = memberData.memberHeight;
         } else if (indexPath.row == 7) {
             cell.titleLabel.text = @"体重";
-            cell.valueLabel.text = @"--";
+            cell.valueLabel.text = memberData.memberWeight;
         }
     }
     return cell;
@@ -111,15 +116,187 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    TQEditMeCell *cell  =[tableView cellForRowAtIndexPath:indexPath];
+    
     switch (indexPath.row) {
         case 0:
             [self changeHeaderImage];
             break;
             
+        case 1:
+        {
+            TQInfoEditViewController *editVC = [[TQInfoEditViewController alloc] init];
+            editVC.titleName = @"昵称";
+            editVC.type = EditTypeName;
+            editVC.submitBlock = ^(NSString *result){
+                cell.valueLabel.text = result;
+            };
+            [self.navigationController pushViewController:editVC animated:YES];
+            break;
+        }
+            
+        case 2:
+        {
+            TQInfoEditViewController *editVC = [[TQInfoEditViewController alloc] init];
+            editVC.titleName = @"球队";
+            editVC.type = EditTypeTeam;
+            editVC.submitBlock = ^(NSString *result){
+                cell.valueLabel.text = result;
+            };
+            [self.navigationController pushViewController:editVC animated:YES];
+            break;
+        }
+            
+        case 3:
+        {
+            TQInfoEditViewController *editVC = [[TQInfoEditViewController alloc] init];
+            editVC.titleName = @"球号";
+            editVC.type = EditTypeNumber;
+            editVC.submitBlock = ^(NSString *result){
+                cell.valueLabel.text = result;
+            };
+            [self.navigationController pushViewController:editVC animated:YES];
+            break;
+        }
+            
+        case 4:
+        {
+            ZSYPopoverListView *listView = [[ZSYPopoverListView alloc] initWithFrame:CGRectMake(0, 0, 120, 264)];
+            listView.titleName.text = @"";
+            listView.datasource = self;
+            listView.delegate = self;
+            listView.locationType = LocationTypeCenter;
+            listView.hideTitle = YES;
+            NSString *position = [UserDataManager getUserData].memberPosition;
+            NSInteger index = 0;
+            if (position.length > 0 && [kPositionsArray containsObject:position]) {
+                index = [kPositionsArray indexOfObject:position];
+            }
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+            [listView show];
+            [listView setTableViewSelectIndexPath:indexPath];
+            break;
+        }
+            
+        case 5:
+        {
+            TQInfoEditViewController *editVC = [[TQInfoEditViewController alloc] init];
+            editVC.titleName = @"年龄";
+            editVC.type = EditTypeAge;
+            editVC.submitBlock = ^(NSString *result){
+                cell.valueLabel.text = result;
+            };
+            [self.navigationController pushViewController:editVC animated:YES];
+            break;
+        }
+            
+        case 6:
+        {
+            TQInfoEditViewController *editVC = [[TQInfoEditViewController alloc] init];
+            editVC.titleName = @"身高";
+            editVC.type = EditTypeHeight;
+            editVC.submitBlock = ^(NSString *result){
+                cell.valueLabel.text = result;
+            };
+            [self.navigationController pushViewController:editVC animated:YES];
+            break;
+        }
+            
+        case 7:
+        {
+            TQInfoEditViewController *editVC = [[TQInfoEditViewController alloc] init];
+            editVC.titleName = @"体重";
+            editVC.type = EditTypeWeight;
+            editVC.submitBlock = ^(NSString *result){
+                cell.valueLabel.text = result;
+            };
+            [self.navigationController pushViewController:editVC animated:YES];
+            break;
+        }
+            
         default:
             break;
     }
 }
+
+
+#pragma mark - popListView datasource delegate
+
+- (NSInteger)popoverListView:(ZSYPopoverListView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return kPositionsArray.count;
+}
+
+- (UITableViewCell *)popoverListView:(ZSYPopoverListView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"identifier";
+    UITableViewCell *cell = [tableView dequeueReusablePopoverCellWithIdentifier:identifier];
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.textLabel.textColor = kNavTitleColor;
+    cell.textLabel.font = [UIFont systemFontOfSize:12.f];
+    if (indexPath.row < kPositionsArray.count) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", [kPositionsArray objectAtIndex:indexPath.row]];
+    }
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    return cell;
+}
+
+- (CGFloat)popoverListView:(ZSYPopoverListView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
+- (void)popoverListView:(ZSYPopoverListView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TQEditMeCell *cell  =[_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
+    NSString *position = [kPositionsArray objectAtIndex:indexPath.row];
+    [tableView dismiss];
+    
+    __block TQMemberModel *userData = [UserDataManager getUserData];
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"userName"] = userData.userName;
+    params[@"memberPosition"] = position;
+    [ZDMIndicatorView showInView:self.view];
+    [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetMember) parameters:params filePath:nil finishBlock:^(id result) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        
+        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //保存成功
+                [ZDMToast showWithText:@"保存成功"];
+                //存储个人信息
+                NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithDictionary:[UserDataManager getUserDataDict]];
+                userDict[@"memberPosition"] = position;
+                [UserDataManager setUserData:userDict];
+                //更新显示
+                cell.valueLabel.text = position;
+            });
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [ZDMToast showWithText:result[@"msg"]];
+            });
+        }
+        
+        
+    } failedBlock:^(NSError *error) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+        });
+    }];
+}
+
+- (void)popoverListView:(ZSYPopoverListView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 
 
 #pragma mark - 头像
@@ -212,6 +389,42 @@
     
     NSString *path = [[Victorinox dirnameWithUserCache] stringByAppendingString:@"/img_up.jpeg"];
     [data writeToFile:path atomically:YES];
+    //调用接口，更新头像
+    TQEditMeCell *cell  =[_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    __block TQMemberModel *userData = [UserDataManager getUserData];
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"userName"] = userData.userName;
+    [ZDMIndicatorView showInView:self.view];
+    [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetMemberPic) parameters:params filePath:path finishBlock:^(id result) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        
+        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //保存成功
+                [ZDMToast showWithText:@"保存成功"];
+                //存储个人信息
+                NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithDictionary:[UserDataManager getUserDataDict]];
+                userDict[@"headPic"] = result[@"data"];
+                [UserDataManager setUserData:userDict];
+                //更新显示
+                [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, result[@"data"])]
+                                        placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
+            });
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [ZDMToast showWithText:result[@"msg"]];
+            });
+        }
+        
+        
+    } failedBlock:^(NSError *error) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+        });
+    }];
     
 }
 

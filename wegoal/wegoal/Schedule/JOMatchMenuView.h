@@ -11,8 +11,8 @@
 @class JOMatchMenuView;
 @protocol JOMatchMenuViewDelegate <NSObject>
 //刷新数据
-- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithWeeks:(NSArray *)weeks systems:(NSArray *)systems types:(NSArray *)types;
-- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithStatus:(NSArray *)status;
+- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithWeeks:(NSString *)weeks systems:(NSString *)systems types:(NSString *)types;
+- (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView getDataWithStatus:(NSString *)status;
 //调整高度
 - (void)JOMatchMenuView:(JOMatchMenuView *)matchMenuView updateViewHeight:(CGFloat)height;
 

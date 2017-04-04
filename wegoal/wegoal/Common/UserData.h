@@ -18,6 +18,7 @@
 // 数据读取与保存
 - (void)setUserData:(NSDictionary *)userData;
 - (TQMemberModel *)getUserData;
+- (NSDictionary *)getUserDataDict;
 
 // 清空用户数据
 - (void)clearUserData;
