@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSString *phoneNumber;
 @property (nonatomic, strong) NSString *password;
+@property (nonatomic, weak) UIViewController *originVC;
 
 @end

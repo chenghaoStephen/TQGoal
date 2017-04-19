@@ -10,4 +10,6 @@
 
 @interface TQLoginViewController : TQBaseViewController
 
+@property (nonatomic, weak) UIViewController *originVC;
+
 @end

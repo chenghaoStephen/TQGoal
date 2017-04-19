@@ -341,8 +341,14 @@
                 });
                 //存储个人信息
                 [UserDataManager setUserData:result[@"data"]];
-                //发出通知，登录成功
-                [[NSNotificationCenter defaultCenter] postNotificationName:kWelcomeLoginSuccess object:nil userInfo:nil];
+                if (weakSelf.originVC) {
+                    //发出通知，登录成功
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccess object:nil userInfo:nil];
+                    [weakSelf.navigationController popToViewController:weakSelf.originVC animated:YES];
+                } else {
+                    //发出通知，登录成功
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kWelcomeLoginSuccess object:nil userInfo:nil];
+                }
             });
             
         } else {

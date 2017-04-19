@@ -321,6 +321,7 @@
     TQRegisterConfirmViewController *registerConfirmVC = [[TQRegisterConfirmViewController alloc] init];
     registerConfirmVC.phoneNumber = _phoneTextField.text;
     registerConfirmVC.password = _passwordTextField.text;
+    registerConfirmVC.originVC = _originVC;
     [self.navigationController pushViewController:registerConfirmVC animated:YES];
 }
 

@@ -10,4 +10,6 @@
 
 @interface TQRegisterViewController : TQBaseViewController
 
+@property (nonatomic, weak) UIViewController *originVC;
+
 @end

@@ -115,7 +115,7 @@
         _shareView.backgroundColor = [UIColor whiteColor];
         
         //添加分享按钮
-        CGFloat interValX = (viewWidth - kShareButtonWidth*3 - 20)/7;
+        CGFloat interValX = (viewWidth - kShareButtonWidth*3 - 20)/4;
         CGFloat offsetX = 10 + interValX;
         for (NSInteger i = 0; i < 3; i++) {
             UIButton *shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -124,13 +124,13 @@
             [shareBtn addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
             switch (i) {
                 case 0:
-                    [shareBtn setImage:[UIImage imageNamed:@"sns_icon_22.png"] forState:UIControlStateNormal];
+                    [shareBtn setImage:[UIImage imageNamed:@"wechat_share"] forState:UIControlStateNormal];
                     break;
                 case 1:
-                    [shareBtn setImage:[UIImage imageNamed:@"sns_icon_23.png"] forState:UIControlStateNormal];
+                    [shareBtn setImage:[UIImage imageNamed:@"wechat_timeline"] forState:UIControlStateNormal];
                     break;
                 case 2:
-                    [shareBtn setImage:[UIImage imageNamed:@"sns_icon_24.png"] forState:UIControlStateNormal];
+                    [shareBtn setImage:[UIImage imageNamed:@"qq_share"] forState:UIControlStateNormal];
                     break;
                     
                 default:

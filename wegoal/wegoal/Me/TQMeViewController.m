@@ -49,6 +49,10 @@
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userDataUpdate)
+                                                 name:kLoginSuccess
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userDataUpdate)
                                                  name:kLogoutSuccess
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -93,6 +97,7 @@
 - (void)jumpToLoginVC
 {
     TQLoginViewController *loginVC = [[TQLoginViewController alloc] init];
+    loginVC.originVC = self;
     [self pushViewController:loginVC];
 }
 
@@ -175,14 +180,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selected = NO;
+    
     //未登录，跳转到登录界面
     if ([UserDataManager getUserData] == nil) {
         [self jumpToLoginVC];
         return;
     }
     
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.selected = NO;
     if (indexPath.section == 0 && indexPath.row == 0) {
         //我的球队
         TQTeamDetailViewController *teamDetailVC = [[TQTeamDetailViewController alloc] init];
