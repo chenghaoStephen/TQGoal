@@ -54,7 +54,7 @@
         [_logoutButton setTitle:@"退出登录" forState:UIControlStateNormal];
         _logoutButton.titleLabel.font = [UIFont systemFontOfSize:12.f];
         [_logoutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_logoutButton addTarget:self action:@selector(confirmAction) forControlEvents:UIControlEventTouchUpInside];
+        [_logoutButton addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _logoutButton;
 }
@@ -62,9 +62,16 @@
 
 #pragma mark - events
 
-- (void)confirmAction
+- (void)logoutAction
 {
-    NSLog(@"confirm.");
+    NSLog(@"logout.");
+    //清空个人信息
+    [UserDataManager clearUserData];
+    //发出通知，退出成功
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccess
+                                                        object:nil
+                                                      userInfo:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

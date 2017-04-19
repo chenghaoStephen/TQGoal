@@ -15,6 +15,7 @@
 #import "TQMyOrdersViewController.h"
 #import "TQMyTasksViewController.h"
 #import "TQSettingViewController.h"
+#import "TQLoginViewController.h"
 
 #define kTQMeViewCell     @"TQMeViewCell"
 @interface TQMeViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -35,6 +36,7 @@
     self.navigationController.delegate = self;
     [self setSubViews];
 
+    [self registerNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,10 +45,28 @@
     [self setTabBarBtnShow];
 }
 
+- (void)registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userDataUpdate)
+                                                 name:kLogoutSuccess
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userDataUpdate)
+                                                 name:kUserDataUpdate
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)setSubViews
 {
     _meTopView = [[NSBundle mainBundle] loadNibNamed:@"TQMeTopView" owner:nil options:nil].firstObject;
     [_meTopView setFrame:_topView.bounds];
+    [_meTopView updateUserInformation];
     [_topView addSubview:_meTopView];
     
     [_tableview registerNib:[UINib nibWithNibName:@"TQMeViewCell" bundle:nil] forCellReuseIdentifier:kTQMeViewCell];
@@ -67,6 +87,19 @@
     }
 }
 
+
+#pragma mark - events
+
+- (void)jumpToLoginVC
+{
+    TQLoginViewController *loginVC = [[TQLoginViewController alloc] init];
+    [self pushViewController:loginVC];
+}
+
+- (void)userDataUpdate
+{
+    [_meTopView updateUserInformation];
+}
 
 #pragma mark - UITableView Datasource
 
@@ -142,6 +175,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //未登录，跳转到登录界面
+    if ([UserDataManager getUserData] == nil) {
+        [self jumpToLoginVC];
+        return;
+    }
+    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
     if (indexPath.section == 0 && indexPath.row == 0) {
@@ -174,6 +213,7 @@
         [self pushViewController:settingVC];
     }
 }
+
 
 
 @end

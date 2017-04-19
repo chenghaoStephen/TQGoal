@@ -256,7 +256,7 @@
     NSString *position = [kPositionsArray objectAtIndex:indexPath.row];
     [tableView dismiss];
     
-    __block TQMemberModel *userData = [UserDataManager getUserData];
+    TQMemberModel *userData = [UserDataManager getUserData];
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"userName"] = userData.userName;
@@ -389,27 +389,17 @@
     
     NSString *path = [[Victorinox dirnameWithUserCache] stringByAppendingString:@"/img_up.jpeg"];
     [data writeToFile:path atomically:YES];
-    //调用接口，更新头像
-    TQEditMeCell *cell  =[_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    __block TQMemberModel *userData = [UserDataManager getUserData];
+    //上传头像
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"userName"] = userData.userName;
     [ZDMIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetMemberPic) parameters:params filePath:path finishBlock:^(id result) {
         [ZDMIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                //保存成功
-                [ZDMToast showWithText:@"保存成功"];
-                //存储个人信息
-                NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithDictionary:[UserDataManager getUserDataDict]];
-                userDict[@"headPic"] = result[@"data"];
-                [UserDataManager setUserData:userDict];
-                //更新显示
-                [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, result[@"data"])]
-                                        placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
+                //图像上传成功，保存用户信息
+                [weakSelf saveUserAvatar:result[@"data"]];
             });
             
         } else {
@@ -426,6 +416,46 @@
         });
     }];
     
+}
+
+- (void)saveUserAvatar:(NSString *)headPic
+{
+    TQEditMeCell *cell  =[_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    TQMemberModel *userData = [UserDataManager getUserData];
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"userName"] = userData.userName;
+    params[@"headPic"] = headPic;
+    [ZDMIndicatorView showInView:self.view];
+    [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetMember) parameters:params filePath:nil finishBlock:^(id result) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        
+        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //保存成功
+                [ZDMToast showWithText:@"保存成功"];
+                //存储个人信息
+                NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithDictionary:[UserDataManager getUserDataDict]];
+                userDict[@"headPic"] = headPic;
+                [UserDataManager setUserData:userDict];
+                //更新显示
+                [cell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, headPic)]
+                                        placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
+            });
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [ZDMToast showWithText:result[@"msg"]];
+            });
+        }
+        
+        
+    } failedBlock:^(NSError *error) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+        });
+    }];
 }
 
 #pragma mark UIImagePickerController 相关属性

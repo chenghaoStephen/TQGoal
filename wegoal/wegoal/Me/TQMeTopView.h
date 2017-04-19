@@ -11,6 +11,6 @@
 
 @interface TQMeTopView : UIView
 
-@property (nonatomic, strong) TQMemberModel *userInfo;
+- (void)updateUserInformation;
 
 @end

@@ -97,7 +97,7 @@
     if (!_yellowCountLabel) {
         _yellowCountLabel = [[UILabel alloc] init];
         _yellowCountLabel.textColor = [UIColor whiteColor];
-        _yellowCountLabel.font = [UIFont systemFontOfSize:12.f];
+        _yellowCountLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _yellowCountLabel.text = @"--";
     }
     return _yellowCountLabel;
@@ -119,7 +119,7 @@
     if (!_redCountLabel) {
         _redCountLabel = [[UILabel alloc] init];
         _redCountLabel.textColor = [UIColor whiteColor];
-        _redCountLabel.font = [UIFont systemFontOfSize:12.f];
+        _redCountLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _redCountLabel.text = @"--";
     }
     return _redCountLabel;
@@ -130,7 +130,7 @@
     if (!_rankLabel) {
         _rankLabel = [[UILabel alloc] init];
         _rankLabel.textColor = [UIColor whiteColor];
-        _rankLabel.font = [UIFont fontWithName:@"System-Semibold" size:19.f];
+        _rankLabel.font = [UIFont fontWithName:@"Arial-Semibold" size:19.0];
         _rankLabel.text = @"---";
     }
     return _rankLabel;
@@ -141,7 +141,7 @@
     if (!_matchNumlabel) {
         _matchNumlabel = [[UILabel alloc] init];
         _matchNumlabel.textColor = [UIColor whiteColor];
-        _matchNumlabel.font = [UIFont systemFontOfSize:12.f];
+        _matchNumlabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _matchNumlabel.text = @"--";
     }
     return _matchNumlabel;
@@ -152,7 +152,7 @@
     if (!_winLabel) {
         _winLabel = [[UILabel alloc] init];
         _winLabel.textColor = [UIColor whiteColor];
-        _winLabel.font = [UIFont systemFontOfSize:12.f];
+        _winLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _winLabel.text = @"--";
     }
     return _winLabel;
@@ -163,7 +163,7 @@
     if (!_loseLabel) {
         _loseLabel = [[UILabel alloc] init];
         _loseLabel.textColor = [UIColor whiteColor];
-        _loseLabel.font = [UIFont systemFontOfSize:12.f];
+        _loseLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _loseLabel.text = @"--";
     }
     return _loseLabel;
@@ -174,7 +174,7 @@
     if (!_tieLabel) {
         _tieLabel = [[UILabel alloc] init];
         _tieLabel.textColor = [UIColor whiteColor];
-        _tieLabel.font = [UIFont systemFontOfSize:12.f];
+        _tieLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _tieLabel.text = @"--";
     }
     return _tieLabel;
@@ -185,7 +185,7 @@
     if (!_heightLabel) {
         _heightLabel = [[UILabel alloc] init];
         _heightLabel.textColor = [UIColor whiteColor];
-        _heightLabel.font = [UIFont systemFontOfSize:12.f];
+        _heightLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _heightLabel.text = @"--";
     }
     return _heightLabel;
@@ -196,7 +196,7 @@
     if (!_weightLabel) {
         _weightLabel = [[UILabel alloc] init];
         _weightLabel.textColor = [UIColor whiteColor];
-        _weightLabel.font = [UIFont systemFontOfSize:12.f];
+        _weightLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _weightLabel.text = @"--";
     }
     return _weightLabel;
@@ -207,7 +207,7 @@
     if (!_ageLabel) {
         _ageLabel = [[UILabel alloc] init];
         _ageLabel.textColor = [UIColor whiteColor];
-        _ageLabel.font = [UIFont systemFontOfSize:12.f];
+        _ageLabel.font = [UIFont fontWithName:@"Arial" size:12.0];
         _ageLabel.text = @"--";
     }
     return _ageLabel;

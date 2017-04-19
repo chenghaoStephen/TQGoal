@@ -104,7 +104,7 @@
         _phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, _noticeLabel.bottom + 16, SCREEN_WIDTH - 16, 20)];
         _phoneLabel.textColor = kNavTitleColor;
         _phoneLabel.textAlignment = NSTextAlignmentCenter;
-        _phoneLabel.font = [UIFont systemFontOfSize:25];
+        _phoneLabel.font = [UIFont fontWithName:@"Arial" size:25.0];
 //        _phoneLabel.text = _phoneNumber;
     }
     return _phoneLabel;
@@ -117,7 +117,7 @@
                                                number:6
                                             lineColor:kTitleTextColor
                                             textColor:kNavTitleColor
-                                                 font:[UIFont systemFontOfSize:37.f]];
+                                                 font:[UIFont fontWithName:@"Arial" size:37.0]];
         __weak typeof(self) weakSelf = self;
         _codeView.EditBlock = ^(NSString *text){
             weakSelf.codeStr = text;

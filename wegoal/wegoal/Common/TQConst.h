@@ -84,6 +84,8 @@ typedef NS_ENUM(NSInteger, GameEvent){
 #define kWelcomeToHome       @"WelcomeToHome"
 #define kWelcomeLoginSuccess @"WelcomeLoginSuccess"
 #define kShowScheuleTab      @"ShowScheuleTab"
+#define kLogoutSuccess       @"LogoutSuccess"
+#define kUserDataUpdate      @"UserDataUpdate"
 
 
 //Native

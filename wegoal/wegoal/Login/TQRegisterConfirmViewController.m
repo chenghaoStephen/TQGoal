@@ -114,7 +114,7 @@
         _phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, _noticeLabel.bottom + 16, SCREEN_WIDTH - 16, 20)];
         _phoneLabel.textColor = kNavTitleColor;
         _phoneLabel.textAlignment = NSTextAlignmentCenter;
-        _phoneLabel.font = [UIFont systemFontOfSize:25];
+        _phoneLabel.font = [UIFont fontWithName:@"Arial" size:25.0];
         _phoneLabel.text = _phoneNumber;
     }
     return _phoneLabel;
@@ -127,7 +127,7 @@
                                                number:6
                                             lineColor:kTitleTextColor
                                             textColor:kNavTitleColor
-                                                 font:[UIFont systemFontOfSize:37.f]];
+                                                 font:[UIFont fontWithName:@"Arial" size:37.0]];
         __weak typeof(self) weakSelf = self;
         _codeView.EditBlock = ^(NSString *text){
             weakSelf.codeStr = text;
@@ -336,7 +336,9 @@
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //登录成功
-                [ZDMToast showWithText:@"登录成功"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [ZDMToast showWithText:@"登录成功"];
+                });
                 //存储个人信息
                 [UserDataManager setUserData:result[@"data"]];
                 //发出通知，登录成功

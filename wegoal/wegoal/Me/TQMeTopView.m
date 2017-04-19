@@ -9,6 +9,9 @@
 #import "TQMeTopView.h"
 
 @interface TQMeTopView()
+{
+    TQMemberModel *userInfo;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *gradeSignLbl;
@@ -36,6 +39,38 @@
     _yellowCardImageView.layer.cornerRadius = 1.5;
     _redCardImageView.layer.masksToBounds = YES;
     _redCardImageView.layer.cornerRadius = 1.5;
+}
+
+
+- (void)updateUserInformation
+{
+    userInfo = [UserDataManager getUserData];
+    if (userInfo) {
+        [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:URL(kTQDomainURL, userInfo.headPic)]
+                            placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
+    } else {
+        [_avatarImageView setImage:[UIImage imageNamed:@"defaultHeadImage"]];
+    }
+    
+    if (userInfo) {
+        _gradeSignLbl.text = userInfo.memberPosition;
+        _gradeLbl.text = userInfo.memberNumber;
+        _nameLbl.text = userInfo.memberName;
+        _goalNumLbl.text = userInfo.goal;
+        _matchNumLbl.text = userInfo.gameCount;
+        _winRateLbl.text = userInfo.winRate;
+        _yellowCardNumLbl.text = userInfo.yellow;
+        _redCardNumLbl.text = userInfo.red;
+    } else {
+        _gradeSignLbl.text = @"";
+        _gradeLbl.text = @"";
+        _nameLbl.text = @"";
+        _goalNumLbl.text = @"";
+        _matchNumLbl.text = @"";
+        _winRateLbl.text = @"";
+        _yellowCardNumLbl.text = @"";
+        _redCardNumLbl.text = @"";
+    }
 }
 
 

@@ -26,6 +26,9 @@
 {
     if (userData) {
         [[NSUserDefaults standardUserDefaults] setObject:userData forKey:kUserDataIdentifier];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUserDataUpdate
+                                                            object:nil
+                                                          userInfo:nil];
     }
 }
 
