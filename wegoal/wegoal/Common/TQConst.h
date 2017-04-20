@@ -96,6 +96,7 @@ typedef NS_ENUM(NSInteger, GameEvent){
 //date formatter
 #define kDateFormatter1      @"yyyyMMddHHmm"
 #define kDateFormatter2      @"MM/dd - HH:mm"
+#define kDateFormatter3      @"yyyy年MM月dd日"
 
 
 #define HTTP_TIME_OUT 10

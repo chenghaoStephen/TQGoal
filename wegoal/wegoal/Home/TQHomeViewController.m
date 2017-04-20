@@ -17,6 +17,7 @@
 #import "TQWebPageViewController.h"
 #import "TQLiveViewController.h"
 #import "TQMyMatchDetailViewController.h"
+#import "TQCreateTeamViewController.h"
 
 #define kBadgeLabelTag               1001
 #define kHomeMatchCellIdentifier     @"TQHomeMatchCell"
@@ -230,6 +231,12 @@
     
     UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithCustomView:whistleButton];
     return rightBar;
+}
+
+- (void)gotoCreateTeam
+{
+    TQCreateTeamViewController *createTeamVC = [[TQCreateTeamViewController alloc] init];
+    [self pushViewController:createTeamVC];
 }
 
 

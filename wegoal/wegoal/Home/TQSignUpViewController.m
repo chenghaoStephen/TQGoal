@@ -15,10 +15,10 @@
 
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UIView *signView;
-@property (nonatomic, strong) UILabel *nameLabel;                 //姓名
-@property (nonatomic, strong) UILabel *phoneLabel;                //手机号
-@property (nonatomic, strong) UIButton *nameDeleteButton;         //姓名清空
-@property (nonatomic, strong) UIButton *phoneDeleteButton;        //手机号清空
+//@property (nonatomic, strong) UILabel *nameLabel;                 //姓名
+//@property (nonatomic, strong) UILabel *phoneLabel;                //手机号
+//@property (nonatomic, strong) UIButton *nameDeleteButton;         //姓名清空
+//@property (nonatomic, strong) UIButton *phoneDeleteButton;        //手机号清空
 @property (nonatomic, strong) UITextField *nameTextField;         //姓名输入
 @property (nonatomic, strong) UITextField *phoneTextField;        //手机号输入
 @property (nonatomic, strong) UIButton *confirmButton;            //确认报名按钮
@@ -46,10 +46,10 @@
         
         [self.view addSubview:self.titleLabel];
         [self.view addSubview:self.signView];
-        [self.view addSubview:self.nameLabel];
-        [self.view addSubview:self.phoneLabel];
-        [self.view addSubview:self.nameDeleteButton];
-        [self.view addSubview:self.phoneDeleteButton];
+//        [self.view addSubview:self.nameLabel];
+//        [self.view addSubview:self.phoneLabel];
+//        [self.view addSubview:self.nameDeleteButton];
+//        [self.view addSubview:self.phoneDeleteButton];
         [self.view addSubview:self.nameTextField];
         [self.view addSubview:self.phoneTextField];
         [self.view addSubview:self.confirmButton];
@@ -79,71 +79,81 @@
     return _signView;
 }
 
-- (UILabel *)nameLabel
-{
-    if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake((viewFrame.size.width - 185)/2, _signView.bottom + 64, 185, 32)];
-        _nameLabel.textAlignment = NSTextAlignmentCenter;
-        _nameLabel.backgroundColor = kInputBackColor;
-        _nameLabel.font = [UIFont systemFontOfSize:16.f];
-        _nameLabel.textColor = kTitleTextColor;
-        _nameLabel.text = @"姓名";
-        _nameLabel.layer.masksToBounds = YES;
-        _nameLabel.layer.cornerRadius = 16;
-        _nameLabel.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editName)];
-        [_nameLabel addGestureRecognizer:tapGesture];
-    }
-    return _nameLabel;
-}
-
-- (UILabel *)phoneLabel
-{
-    if (!_phoneLabel) {
-        _phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake((viewFrame.size.width - 185)/2, _nameLabel.bottom + 12, 185, 32)];
-        _phoneLabel.textAlignment = NSTextAlignmentCenter;
-        _phoneLabel.backgroundColor = kInputBackColor;
-        _phoneLabel.font = [UIFont systemFontOfSize:16.f];
-        _phoneLabel.textColor = kTitleTextColor;
-        _phoneLabel.text = @"电话号码";
-        _phoneLabel.layer.masksToBounds = YES;
-        _phoneLabel.layer.cornerRadius = 16;
-        _phoneLabel.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editPhone)];
-        [_phoneLabel addGestureRecognizer:tapGesture];
-    }
-    return _phoneLabel;
-}
-
-- (UIButton *)nameDeleteButton
-{
-    if (!_nameDeleteButton) {
-        _nameDeleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _nameDeleteButton.frame = CGRectMake(_nameLabel.right - 32, _nameLabel.top + (_nameLabel.height - 16)/2, 16, 16);
-        [_nameDeleteButton setImage:[UIImage imageNamed:@"login_delete"] forState:UIControlStateNormal];
-        [_nameDeleteButton addTarget:self action:@selector(clearName) forControlEvents:UIControlEventTouchUpInside];
-        _nameDeleteButton.hidden = YES;
-    }
-    return _nameDeleteButton;
-}
-
-- (UIButton *)phoneDeleteButton
-{
-    if (!_phoneDeleteButton) {
-        _phoneDeleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _phoneDeleteButton.frame = CGRectMake(_phoneLabel.right - 32, _phoneLabel.top + (_phoneLabel.height - 16)/2, 16, 16);
-        [_phoneDeleteButton setImage:[UIImage imageNamed:@"login_delete"] forState:UIControlStateNormal];
-        [_phoneDeleteButton addTarget:self action:@selector(clearPhone) forControlEvents:UIControlEventTouchUpInside];
-        _phoneDeleteButton.hidden = YES;
-    }
-    return _phoneDeleteButton;
-}
+//- (UILabel *)nameLabel
+//{
+//    if (!_nameLabel) {
+//        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake((viewFrame.size.width - 185)/2, _signView.bottom + 64, 185, 32)];
+//        _nameLabel.textAlignment = NSTextAlignmentCenter;
+//        _nameLabel.backgroundColor = kInputBackColor;
+//        _nameLabel.font = [UIFont systemFontOfSize:16.f];
+//        _nameLabel.textColor = kTitleTextColor;
+//        _nameLabel.text = @"姓名";
+//        _nameLabel.layer.masksToBounds = YES;
+//        _nameLabel.layer.cornerRadius = 16;
+//        _nameLabel.userInteractionEnabled = YES;
+//        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editName)];
+//        [_nameLabel addGestureRecognizer:tapGesture];
+//    }
+//    return _nameLabel;
+//}
+//
+//- (UILabel *)phoneLabel
+//{
+//    if (!_phoneLabel) {
+//        _phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake((viewFrame.size.width - 185)/2, _nameLabel.bottom + 12, 185, 32)];
+//        _phoneLabel.textAlignment = NSTextAlignmentCenter;
+//        _phoneLabel.backgroundColor = kInputBackColor;
+//        _phoneLabel.font = [UIFont systemFontOfSize:16.f];
+//        _phoneLabel.textColor = kTitleTextColor;
+//        _phoneLabel.text = @"电话号码";
+//        _phoneLabel.layer.masksToBounds = YES;
+//        _phoneLabel.layer.cornerRadius = 16;
+//        _phoneLabel.userInteractionEnabled = YES;
+//        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(editPhone)];
+//        [_phoneLabel addGestureRecognizer:tapGesture];
+//    }
+//    return _phoneLabel;
+//}
+//
+//- (UIButton *)nameDeleteButton
+//{
+//    if (!_nameDeleteButton) {
+//        _nameDeleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        _nameDeleteButton.frame = CGRectMake(_nameLabel.right - 32, _nameLabel.top + (_nameLabel.height - 16)/2, 16, 16);
+//        [_nameDeleteButton setImage:[UIImage imageNamed:@"login_delete"] forState:UIControlStateNormal];
+//        [_nameDeleteButton addTarget:self action:@selector(clearName) forControlEvents:UIControlEventTouchUpInside];
+//        _nameDeleteButton.hidden = YES;
+//    }
+//    return _nameDeleteButton;
+//}
+//
+//- (UIButton *)phoneDeleteButton
+//{
+//    if (!_phoneDeleteButton) {
+//        _phoneDeleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        _phoneDeleteButton.frame = CGRectMake(_phoneLabel.right - 32, _phoneLabel.top + (_phoneLabel.height - 16)/2, 16, 16);
+//        [_phoneDeleteButton setImage:[UIImage imageNamed:@"login_delete"] forState:UIControlStateNormal];
+//        [_phoneDeleteButton addTarget:self action:@selector(clearPhone) forControlEvents:UIControlEventTouchUpInside];
+//        _phoneDeleteButton.hidden = YES;
+//    }
+//    return _phoneDeleteButton;
+//}
 
 - (UITextField *)nameTextField
 {
     if (!_nameTextField) {
-        _nameTextField = [[UITextField alloc] init];
+        _nameTextField = [[UITextField alloc] initWithFrame:CGRectMake((viewFrame.size.width - 185)/2, _signView.bottom + 64, 185, 32)];
         _nameTextField.delegate = self;
+//        _nameTextField.keyboardType = UIKeyboardTypeNumberPad;
+        _nameTextField.borderStyle = UITextBorderStyleNone;
+        _nameTextField.textAlignment = NSTextAlignmentCenter;
+        _nameTextField.backgroundColor = kInputBackColor;
+        _nameTextField.font = [UIFont fontWithName:@"Arial" size:16.0];
+        _nameTextField.textColor = kTitleTextColor;
+        _nameTextField.placeholder = @"姓名";
+        _nameTextField.layer.masksToBounds = YES;
+        _nameTextField.layer.cornerRadius = 16;
+        _nameTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     return _nameTextField;
 }
@@ -154,6 +164,15 @@
         _phoneTextField = [[UITextField alloc] init];
         _phoneTextField.delegate = self;
         _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+        _phoneTextField.borderStyle = UITextBorderStyleNone;
+        _phoneTextField.textAlignment = NSTextAlignmentCenter;
+        _phoneTextField.backgroundColor = kInputBackColor;
+        _phoneTextField.font = [UIFont fontWithName:@"Arial" size:16.0];
+        _phoneTextField.textColor = kTitleTextColor;
+        _phoneTextField.placeholder = @"电话号码";
+        _phoneTextField.layer.masksToBounds = YES;
+        _phoneTextField.layer.cornerRadius = 16;
+        _phoneTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     return _phoneTextField;
 }
@@ -190,33 +209,33 @@
 
 #pragma mark - events
 
-- (void)editName
-{
-    [_nameTextField becomeFirstResponder];
-}
+//- (void)editName
+//{
+//    [_nameTextField becomeFirstResponder];
+//}
+//
+//- (void)editPhone
+//{
+//    [_phoneTextField becomeFirstResponder];
+//}
 
-- (void)editPhone
-{
-    [_phoneTextField becomeFirstResponder];
-}
-
-- (void)clearName
-{
-    _nameTextField.text = @"";
-    _nameLabel.textColor = kTitleTextColor;
-    _nameLabel.text = @"姓名";
-    _nameDeleteButton.hidden = YES;
-    [self updateConfirmButtonStatus];
-}
-
-- (void)clearPhone
-{
-    _phoneTextField.text = @"";
-    _phoneLabel.textColor = kTitleTextColor;
-    _phoneLabel.text = @"电话号码";
-    _phoneDeleteButton.hidden = YES;
-    [self updateConfirmButtonStatus];
-}
+//- (void)clearName
+//{
+//    _nameTextField.text = @"";
+//    _nameLabel.textColor = kTitleTextColor;
+//    _nameLabel.text = @"姓名";
+//    _nameDeleteButton.hidden = YES;
+//    [self updateConfirmButtonStatus];
+//}
+//
+//- (void)clearPhone
+//{
+//    _phoneTextField.text = @"";
+//    _phoneLabel.textColor = kTitleTextColor;
+//    _phoneLabel.text = @"电话号码";
+//    _phoneDeleteButton.hidden = YES;
+//    [self updateConfirmButtonStatus];
+//}
 
 
 - (void)doConfirm
@@ -224,6 +243,11 @@
     [self endEdit];
     
     NSLog(@"confirm");
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self endEdit];
 }
 
 - (void)endEdit
@@ -237,31 +261,31 @@
 - (void)textFieldDidChanged
 {
     if ([_nameTextField isFirstResponder]) {
-        if (_nameTextField.text.length > 0) {
-            _nameLabel.text = _nameTextField.text;
-            _nameLabel.textColor = kNavTitleColor;
-            _nameDeleteButton.hidden = NO;
-        } else {
-            _nameLabel.textColor = kTitleTextColor;
-            _nameLabel.text = @"姓名";
-            _nameDeleteButton.hidden = YES;
-        }
+//        if (_nameTextField.text.length > 0) {
+//            _nameLabel.text = _nameTextField.text;
+//            _nameLabel.textColor = kNavTitleColor;
+//            _nameDeleteButton.hidden = NO;
+//        } else {
+//            _nameLabel.textColor = kTitleTextColor;
+//            _nameLabel.text = @"姓名";
+//            _nameDeleteButton.hidden = YES;
+//        }
         
     }
     
     if ([_phoneTextField isFirstResponder]) {
-        if (_phoneTextField.text.length > 0) {
+//        if (_phoneTextField.text.length > 0) {
             if (_phoneTextField.text.length > 11) {
                 _phoneTextField.text = [_phoneTextField.text substringToIndex:11];
             }
-            _phoneLabel.text = _phoneTextField.text;
-            _phoneLabel.textColor = kNavTitleColor;
-            _phoneDeleteButton.hidden = NO;
-        } else {
-            _phoneLabel.textColor = kTitleTextColor;
-            _phoneLabel.text = @"电话号码";
-            _phoneDeleteButton.hidden = YES;
-        }
+//            _phoneLabel.text = _phoneTextField.text;
+//            _phoneLabel.textColor = kNavTitleColor;
+//            _phoneDeleteButton.hidden = NO;
+//        } else {
+//            _phoneLabel.textColor = kTitleTextColor;
+//            _phoneLabel.text = @"电话号码";
+//            _phoneDeleteButton.hidden = YES;
+//        }
         
     }
     
@@ -271,7 +295,7 @@
 
 - (void)updateConfirmButtonStatus
 {
-    if (_nameTextField.text.length >= 1 && _phoneTextField.text.length == 11) {
+    if (_nameTextField.text.length > 0 && _phoneTextField.text.length == 11) {
         _confirmButton.backgroundColor = kSubjectBackColor;
         _confirmButton.enabled = YES;
     } else {

@@ -64,7 +64,7 @@
     } else {
         _gradeSignLbl.text = @"";
         _gradeLbl.text = @"";
-        _nameLbl.text = @"";
+        _nameLbl.text = @"未登录";
         _goalNumLbl.text = @"";
         _matchNumLbl.text = @"";
         _winRateLbl.text = @"";

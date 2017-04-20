@@ -16,6 +16,7 @@
 #import "TQMyTasksViewController.h"
 #import "TQSettingViewController.h"
 #import "TQLoginViewController.h"
+#import "TQMyDepositViewController.h"
 
 #define kTQMeViewCell     @"TQMeViewCell"
 @interface TQMeViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -84,7 +85,8 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if ([viewController isKindOfClass:[TQMeViewController class]] ||
-        [viewController isKindOfClass:[TQTeamDetailViewController class]]) {
+        [viewController isKindOfClass:[TQTeamDetailViewController class]] ||
+        [viewController isKindOfClass:[TQMyDepositViewController class]]) {
         [navigationController setNavigationBarHidden:YES];
     } else {
         [navigationController setNavigationBarHidden:NO];
@@ -208,7 +210,8 @@
         [self pushViewController:myOrdersVC];
     } else if (indexPath.section == 1 && indexPath.row == 2) {
         //我的保证金
-        
+        TQMyDepositViewController *myDepositVC = [[TQMyDepositViewController alloc] init];
+        [self pushViewController:myDepositVC];
     } else if (indexPath.section == 2 && indexPath.row == 0) {
         //任务总览
         TQMyTasksViewController *myTasksVC = [[TQMyTasksViewController alloc] init];

@@ -45,3 +45,14 @@
 #define kSetMember       @"/api/AppPostData/SetMember"
 //上传头像
 #define kSetMemberPic    @"/api/ImageUpload/PostFile"
+//创建球队
+#define kUserCreatTeam   @"/api/AppPostData/CreatTeam"
+//取得球队列表
+#define kGetTeamList     @"/api/AppGetView/GetTeamList"
+//加入球队
+#define kUserJoinTeam    @"/api/AppPostData/JoinTeam"
+
+
+
+
+
