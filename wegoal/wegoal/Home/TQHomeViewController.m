@@ -299,7 +299,9 @@
     if (mainData.count > 1) {
         _matchView.height = 222;
         _matchPageControl.hidden = NO;
-        _matchPageControl.numberOfPages = mainData.count;
+//        _matchPageControl.numberOfPages = mainData.count;
+        /* 临时加一个创建、加入球队 */
+        _matchPageControl.numberOfPages = mainData.count + 1;
         _headerView.height = 175 * SCALE375 + 222;
         _tableView.tableHeaderView = _headerView;
     } else if (mainData.count > 0) {

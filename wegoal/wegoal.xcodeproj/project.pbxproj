@@ -171,6 +171,8 @@
 		0FDA93691E793D8E00ABA65A /* TQMatchDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA93681E793D8E00ABA65A /* TQMatchDetailBottomView.m */; };
 		0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE187B81E49C4420021369A /* TQScheduleHeaderView.m */; };
 		F302E06C1E90FCCD00F9EFE7 /* TQLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F302E06B1E90FCCD00F9EFE7 /* TQLiveViewController.m */; };
+		F316C81C1EAA25080094040E /* TQPayTypeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F316C81B1EAA25080094040E /* TQPayTypeSelectView.m */; };
+		F316C81F1EAA2D0A0094040E /* TQAmountSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F316C81E1EAA2D0A0094040E /* TQAmountSelectView.m */; };
 		F31C9A6E1E928116003943DF /* TQSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F31C9A6D1E928116003943DF /* TQSignUpViewController.m */; };
 		F32ABE361E47E9C1000D7CF1 /* TQMatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F32ABE351E47E9C1000D7CF1 /* TQMatchModel.m */; };
 		F32ABE391E5B285C000D7CF1 /* TQEditMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F32ABE381E5B285C000D7CF1 /* TQEditMeViewController.m */; };
@@ -490,6 +492,10 @@
 		E47184B8EF0C86F2A82BC629 /* Pods-wegoal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wegoal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wegoal/Pods-wegoal.debug.xcconfig"; sourceTree = "<group>"; };
 		F302E06A1E90FCCD00F9EFE7 /* TQLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLiveViewController.h; sourceTree = "<group>"; };
 		F302E06B1E90FCCD00F9EFE7 /* TQLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLiveViewController.m; sourceTree = "<group>"; };
+		F316C81A1EAA25080094040E /* TQPayTypeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQPayTypeSelectView.h; sourceTree = "<group>"; };
+		F316C81B1EAA25080094040E /* TQPayTypeSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQPayTypeSelectView.m; sourceTree = "<group>"; };
+		F316C81D1EAA2D0A0094040E /* TQAmountSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQAmountSelectView.h; sourceTree = "<group>"; };
+		F316C81E1EAA2D0A0094040E /* TQAmountSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQAmountSelectView.m; sourceTree = "<group>"; };
 		F31C9A6C1E928116003943DF /* TQSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQSignUpViewController.h; sourceTree = "<group>"; };
 		F31C9A6D1E928116003943DF /* TQSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQSignUpViewController.m; sourceTree = "<group>"; };
 		F32ABE341E47E9C1000D7CF1 /* TQMatchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TQMatchModel.h; path = ../Schedule/TQMatchModel.h; sourceTree = "<group>"; };
@@ -663,6 +669,10 @@
 				0F1108CF1E7B805700143400 /* TQEvaluateRefereeTableView.m */,
 				0F1108D11E7B807700143400 /* TQEvaluateCompetitorTableView.h */,
 				0F1108D21E7B807700143400 /* TQEvaluateCompetitorTableView.m */,
+				F316C81A1EAA25080094040E /* TQPayTypeSelectView.h */,
+				F316C81B1EAA25080094040E /* TQPayTypeSelectView.m */,
+				F316C81D1EAA2D0A0094040E /* TQAmountSelectView.h */,
+				F316C81E1EAA2D0A0094040E /* TQAmountSelectView.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -1493,6 +1503,7 @@
 				0F19FAFD1E091E4C00CC221E /* TQHomeMatchCell.m in Sources */,
 				0F1108E51E7BD09B00143400 /* TQMyOrderCell.m in Sources */,
 				0F1108DC1E7BA83400143400 /* TQPlayImageCell.m in Sources */,
+				F316C81F1EAA2D0A0094040E /* TQAmountSelectView.m in Sources */,
 				0F50ABED1E51A43B00643973 /* TQMemberDetailViewController.m in Sources */,
 				0F20832E1E7A1CAB009388BD /* TQOrderRefereeViewController.m in Sources */,
 				0F2083511E7A601E009388BD /* TQEvaluateMemberBottomView.m in Sources */,
@@ -1524,6 +1535,7 @@
 				0F41A5251E8FA38F00439C26 /* HeadImgChangeView.m in Sources */,
 				0F241BB81EA88A7000B02E15 /* TQTeamApplyCell.m in Sources */,
 				0F7F7F651E6FF64800952DDD /* README.markdown in Sources */,
+				F316C81C1EAA25080094040E /* TQPayTypeSelectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
