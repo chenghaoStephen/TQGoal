@@ -8,6 +8,8 @@
 
 #import "TQSettingViewController.h"
 #import "TQSettingCell.h"
+#import "TQModifyPasswordViewController.h"
+#import "TQFeedBackViewController.h"
 
 #define kTQSettingCellIdentifier     @"TQSettingCell"
 @interface TQSettingViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -142,6 +144,34 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    switch (indexPath.row) {
+        case 0:
+        {
+            TQModifyPasswordViewController *modifyPasswordVC = [[TQModifyPasswordViewController alloc] init];
+            [self.navigationController pushViewController:modifyPasswordVC animated:YES];
+            break;
+        }
+            
+        case 1:
+            break;
+            
+        case 2:
+        {
+            TQFeedBackViewController *feedBackVC = [[TQFeedBackViewController alloc] init];
+            [self.navigationController pushViewController:feedBackVC animated:YES];
+            break;
+        }
+            break;
+            
+        case 3:
+            break;
+            
+        case 4:
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

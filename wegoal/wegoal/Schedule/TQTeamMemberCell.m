@@ -71,7 +71,9 @@
 }
 
 - (IBAction)invitateAction:(id)sender {
-    
+    if (_invitateBlock) {
+        _invitateBlock();
+    }
 }
 
 

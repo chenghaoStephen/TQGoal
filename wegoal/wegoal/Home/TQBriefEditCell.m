@@ -31,6 +31,9 @@
     }else{
         _placeLabel.text = @"";
     }
+    if (_textChangeBlock) {
+        _textChangeBlock(textView.text);
+    }
     
 }
 

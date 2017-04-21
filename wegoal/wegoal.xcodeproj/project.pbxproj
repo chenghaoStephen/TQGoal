@@ -156,6 +156,13 @@
 		0F7F7F761E6FFED200952DDD /* ZDMNavToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F731E6FFED200952DDD /* ZDMNavToast.m */; };
 		0F7F7F771E6FFED200952DDD /* ZDMToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F751E6FFED200952DDD /* ZDMToast.m */; };
 		0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F7F7F1E7000C200952DDD /* ZDMIndicatorView.m */; };
+		0FA271051EA9F56A00768600 /* TQModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA271031EA9F56A00768600 /* TQModifyPasswordViewController.m */; };
+		0FA271061EA9F56A00768600 /* TQModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA271041EA9F56A00768600 /* TQModifyPasswordViewController.xib */; };
+		0FA2710A1EA9F85A00768600 /* TQFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA271081EA9F85A00768600 /* TQFeedBackViewController.m */; };
+		0FA2710B1EA9F85A00768600 /* TQFeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA271091EA9F85A00768600 /* TQFeedBackViewController.xib */; };
+		0FA2710E1EA9FED600768600 /* TQRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA2710D1EA9FED600768600 /* TQRechargeViewController.m */; };
+		0FA271151EA9FEFE00768600 /* TQDrawbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA271131EA9FEFE00768600 /* TQDrawbackViewController.m */; };
+		0FA271161EA9FEFE00768600 /* TQDrawbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA271141EA9FEFE00768600 /* TQDrawbackViewController.xib */; };
 		0FDA935B1E79189C00ABA65A /* TQLaunchInvitateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA935A1E79189C00ABA65A /* TQLaunchInvitateViewController.m */; };
 		0FDA935E1E79250100ABA65A /* TQMatchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA935D1E79250100ABA65A /* TQMatchDetailViewController.m */; };
 		0FDA93611E79265000ABA65A /* TQMatchDetailTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA93601E79265000ABA65A /* TQMatchDetailTopView.m */; };
@@ -454,6 +461,17 @@
 		0F7F7F751E6FFED200952DDD /* ZDMToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMToast.m; sourceTree = "<group>"; };
 		0F7F7F7E1E7000C200952DDD /* ZDMIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDMIndicatorView.h; sourceTree = "<group>"; };
 		0F7F7F7F1E7000C200952DDD /* ZDMIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMIndicatorView.m; sourceTree = "<group>"; };
+		0FA271021EA9F56A00768600 /* TQModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQModifyPasswordViewController.h; sourceTree = "<group>"; };
+		0FA271031EA9F56A00768600 /* TQModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQModifyPasswordViewController.m; sourceTree = "<group>"; };
+		0FA271041EA9F56A00768600 /* TQModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQModifyPasswordViewController.xib; sourceTree = "<group>"; };
+		0FA271071EA9F85A00768600 /* TQFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQFeedBackViewController.h; sourceTree = "<group>"; };
+		0FA271081EA9F85A00768600 /* TQFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQFeedBackViewController.m; sourceTree = "<group>"; };
+		0FA271091EA9F85A00768600 /* TQFeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQFeedBackViewController.xib; sourceTree = "<group>"; };
+		0FA2710C1EA9FED600768600 /* TQRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQRechargeViewController.h; sourceTree = "<group>"; };
+		0FA2710D1EA9FED600768600 /* TQRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQRechargeViewController.m; sourceTree = "<group>"; };
+		0FA271121EA9FEFE00768600 /* TQDrawbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQDrawbackViewController.h; sourceTree = "<group>"; };
+		0FA271131EA9FEFE00768600 /* TQDrawbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQDrawbackViewController.m; sourceTree = "<group>"; };
+		0FA271141EA9FEFE00768600 /* TQDrawbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TQDrawbackViewController.xib; sourceTree = "<group>"; };
 		0FDA93591E79189C00ABA65A /* TQLaunchInvitateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQLaunchInvitateViewController.h; sourceTree = "<group>"; };
 		0FDA935A1E79189C00ABA65A /* TQLaunchInvitateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQLaunchInvitateViewController.m; sourceTree = "<group>"; };
 		0FDA935C1E79250100ABA65A /* TQMatchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMatchDetailViewController.h; sourceTree = "<group>"; };
@@ -530,6 +548,12 @@
 			children = (
 				0F1108EA1E7BD96C00143400 /* TQSettingViewController.h */,
 				0F1108EB1E7BD96C00143400 /* TQSettingViewController.m */,
+				0FA271021EA9F56A00768600 /* TQModifyPasswordViewController.h */,
+				0FA271031EA9F56A00768600 /* TQModifyPasswordViewController.m */,
+				0FA271041EA9F56A00768600 /* TQModifyPasswordViewController.xib */,
+				0FA271071EA9F85A00768600 /* TQFeedBackViewController.h */,
+				0FA271081EA9F85A00768600 /* TQFeedBackViewController.m */,
+				0FA271091EA9F85A00768600 /* TQFeedBackViewController.xib */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -740,6 +764,11 @@
 				0F241BBB1EA89F3800B02E15 /* TQMyDepositViewController.h */,
 				0F241BBC1EA89F3800B02E15 /* TQMyDepositViewController.m */,
 				0F241BBD1EA89F3800B02E15 /* TQMyDepositViewController.xib */,
+				0FA2710C1EA9FED600768600 /* TQRechargeViewController.h */,
+				0FA2710D1EA9FED600768600 /* TQRechargeViewController.m */,
+				0FA271121EA9FEFE00768600 /* TQDrawbackViewController.h */,
+				0FA271131EA9FEFE00768600 /* TQDrawbackViewController.m */,
+				0FA271141EA9FEFE00768600 /* TQDrawbackViewController.xib */,
 			);
 			name = Deposit;
 			sourceTree = "<group>";
@@ -1251,6 +1280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA271161EA9FEFE00768600 /* TQDrawbackViewController.xib in Resources */,
 				0F7F7F641E6FF64800952DDD /* LICENSE.txt in Resources */,
 				0F5C0C2D1E76325E00AF95BF /* umsocial_tencentWB.png in Resources */,
 				0F1108C41E7B69DE00143400 /* TQEvaluateTeamCell.xib in Resources */,
@@ -1287,6 +1317,7 @@
 				0F241BC41EA8A97A00B02E15 /* TQDepositTransCell.xib in Resources */,
 				0F5C0C281E76324700AF95BF /* umsocial_qq.png in Resources */,
 				0F6435721E4AC0300049BC45 /* TQLadderTeamCell.xib in Resources */,
+				0FA271061EA9F56A00768600 /* TQModifyPasswordViewController.xib in Resources */,
 				0F24B8941E5290F30081A2DA /* TQMemberDetailCell.xib in Resources */,
 				F3438C7E1DEB326C00D86D5B /* TQScheduleViewController.xib in Resources */,
 				0F5C0C2B1E76325500AF95BF /* umsocial_sina.png in Resources */,
@@ -1296,6 +1327,7 @@
 				0F6435821E4B058B0049BC45 /* TQMeViewCell.xib in Resources */,
 				0F2385161E779608008008EB /* TQPlaceCell.xib in Resources */,
 				F3438C791DEB324D00D86D5B /* TQHomeViewController.xib in Resources */,
+				0FA2710B1EA9F85A00768600 /* TQFeedBackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1438,12 +1470,14 @@
 				0F6435751E4ADF220049BC45 /* TQTeamTopView.m in Sources */,
 				0F5C0C401E76831B00AF95BF /* TQLaunchServiceViewController.m in Sources */,
 				0F7F7F6A1E6FF64800952DDD /* FMResultSet.m in Sources */,
+				0FA2710E1EA9FED600768600 /* TQRechargeViewController.m in Sources */,
 				0F2083451E7A577B009388BD /* TQEvaluateMemberCell.m in Sources */,
 				0F7F7F691E6FF64800952DDD /* FMDatabaseQueue.m in Sources */,
 				0F41A5291E8FA3BE00439C26 /* GXShareCollectionCell.m in Sources */,
 				0F7F7F801E7000C200952DDD /* ZDMIndicatorView.m in Sources */,
 				0F241BB31EA8575200B02E15 /* TQBriefEditCell.m in Sources */,
 				0F41A5221E8F91D900439C26 /* TQInfoEditViewController.m in Sources */,
+				0FA271051EA9F56A00768600 /* TQModifyPasswordViewController.m in Sources */,
 				0FDA935B1E79189C00ABA65A /* TQLaunchInvitateViewController.m in Sources */,
 				0F2083571E7A70F2009388BD /* TQEvaluateRefereeViewController.m in Sources */,
 				F3438CA31DF2A5DA00D86D5B /* TQTabBarController.m in Sources */,
@@ -1471,8 +1505,10 @@
 				0F2386781E8E34BC00E6B887 /* TQRegisterConfirmViewController.m in Sources */,
 				0F2385151E779608008008EB /* TQPlaceCell.m in Sources */,
 				0F23850E1E779481008008EB /* UIViewController+MJPopupViewController.m in Sources */,
+				0FA2710A1EA9F85A00768600 /* TQFeedBackViewController.m in Sources */,
 				0FE187B91E49C4420021369A /* TQScheduleHeaderView.m in Sources */,
 				0F2386751E8E349C00E6B887 /* TQLoginViewController.m in Sources */,
+				0FA271151EA9FEFE00768600 /* TQDrawbackViewController.m in Sources */,
 				0F32E7371E08C81000152EDD /* TQBaseViewController.m in Sources */,
 				0F19FAFA1E09166600CC221E /* TQCommandView.m in Sources */,
 				0F7F7F451E6FF37000952DDD /* AFServer.m in Sources */,

@@ -87,7 +87,7 @@
 
 #pragma mark - 数据请求
 
-//获取主页信息
+//获取约战详情
 - (void)requestData
 {
     __weak typeof(self) weakSelf = self;

@@ -121,6 +121,10 @@
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"TQBriefEditCell" owner:nil options:nil].firstObject;
         }
+        __weak typeof(self) weakSelf = self;
+        cell.textChangeBlock = ^(NSString *textStr){
+            weakSelf.teamData.teamBrief = textStr;
+        };
         cell.accessoryType = UITableViewCellAccessoryNone;
         return cell;
     }
@@ -149,7 +153,7 @@
             cell.valueLabel.text = _teamData.contactPhone;
         } else if (indexPath.row == 4) {
             cell.titleLabel.text = @"成立时间";
-            cell.valueLabel.text = _teamData.creatTeamTime;
+            cell.valueLabel.text = [NSDate datestrFromDate:[NSDate dateFromString:_teamData.creatTeamTime format:kDateFormatter1] withDateFormat:kDateFormatter3];
         }
     }
     return cell;
@@ -225,9 +229,8 @@
         case 4:
         {
             XHDatePickerView *datepicker = [[XHDatePickerView alloc] initWithCompleteBlock:^(NSDate *startDate) {
-                NSString *dateStr = [NSDate datestrFromDate:startDate withDateFormat:kDateFormatter3];
-                cell.valueLabel.text = dateStr;
-                weakSelf.teamData.creatTeamTime = dateStr;
+                cell.valueLabel.text = [NSDate datestrFromDate:startDate withDateFormat:kDateFormatter3];
+                weakSelf.teamData.creatTeamTime = [NSDate datestrFromDate:startDate withDateFormat:kDateFormatter1];
             }];
             datepicker.datePickerStyle = DateStyleShowYearMonthDay;
             datepicker.themeColor = kSubjectBackColor;

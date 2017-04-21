@@ -61,6 +61,7 @@
 {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"Token"] = USER_TOKEN;
     [ZDMIndicatorView showInView:self.view];
     [[AFServer sharedInstance]GET:URL(kTQDomainURL, kGetTeamList) parameters:params finishBlock:^(id result) {
         [ZDMIndicatorView hiddenInView:weakSelf.view];

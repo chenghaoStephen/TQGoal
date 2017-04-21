@@ -31,15 +31,20 @@
 #define kEnrollAgreement @"/api/AppGetView/GetEnrollAgreement"
 //发起约战
 #define kEnrollLaunched  @"/api/AppGetView/GetEnrollLaunched"
-//邀请队友
+//可邀请队友列表
 #define kInviteTeammates @"/api/AppGetView/GetInviteTeammates"
+//邀请队友
+#define kInviteAction    @"/api/AppPostData/PostInviteTeammates"
 //约战场地
 #define kGamePlace       @"/api/AppGetView/GetGamePlace"
 //确认约战
 #define kSetEnroll       @"/api/AppPostData/SetEnrollDetails"
+//单独约裁判、服务 支付
+#define kPayServiceOnly  @"/api/AppPostData/PayServiceOnly"
 
 //约战检索
 #define kEnrollWaitList  @"/api/AppGetView/GetEnrollWaitList"
+
 
 //用户信息完善
 #define kSetMember       @"/api/AppPostData/SetMember"
@@ -51,8 +56,11 @@
 #define kGetTeamList     @"/api/AppGetView/GetTeamList"
 //加入球队
 #define kUserJoinTeam    @"/api/AppPostData/JoinTeam"
+//报名
+#define kUserSignUp      @"/api/AppPostData/JoinGame"
 
 
-
+//取得比赛直播数据
+#define kGetLiveDetail   @"/api/AppGetView/GetGameBroadCast"
 
 

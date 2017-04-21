@@ -8,6 +8,8 @@
 
 #import "TQMyDepositViewController.h"
 #import "TQDepositTransCell.h"
+#import "TQRechargeViewController.h"
+#import "TQDrawbackViewController.h"
 
 #define kDepositTransCellIdentifier     @"TQDepositTransCell"
 @interface TQMyDepositViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -29,14 +31,19 @@
 
 #pragma mark - events
 
+- (IBAction)goback:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)rechargeAction:(id)sender {
-    
+    TQRechargeViewController *rechargeVC = [[TQRechargeViewController alloc] init];
+    [self.navigationController pushViewController:rechargeVC animated:YES];
 }
 
 - (IBAction)drawbackAction:(id)sender {
-    
+    TQDrawbackViewController *drawbackVC = [[TQDrawbackViewController alloc] init];
+    [self.navigationController pushViewController:drawbackVC animated:YES];
 }
-
 
 
 #pragma mark - UITableView Datasource

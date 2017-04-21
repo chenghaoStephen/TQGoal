@@ -27,8 +27,11 @@
 {
     [super awakeFromNib];
     
+    _teamLogoImageView.layer.masksToBounds = YES;
+    _teamLogoImageView.layer.cornerRadius = 4.f;
     _joinButton.layer.masksToBounds = YES;
     _joinButton.layer.cornerRadius = 8.f;
+    
 }
 
 -(void)drawRect:(CGRect)rect
@@ -41,8 +44,6 @@
     CGContextSetStrokeColorWithColor(context, kMainBackColor.CGColor);
     CGContextStrokeRect(context, CGRectMake(0, rect.size.height - .5, rect.size.width, .5));
 }
-
-
 
 - (void)setTeamData:(TQTeamModel *)teamData
 {
@@ -71,7 +72,9 @@
 #pragma mark - events
 
 - (IBAction)joinAction:(id)sender {
-    
+    if (_applyBlock) {
+        _applyBlock();
+    }
 }
 
 

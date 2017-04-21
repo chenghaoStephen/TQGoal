@@ -161,7 +161,7 @@
 - (UITextField *)phoneTextField
 {
     if (!_phoneTextField) {
-        _phoneTextField = [[UITextField alloc] init];
+        _phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake((viewFrame.size.width - 185)/2, _nameTextField.bottom + 12, 185, 32)];
         _phoneTextField.delegate = self;
         _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
         _phoneTextField.borderStyle = UITextBorderStyleNone;
@@ -243,6 +243,43 @@
     [self endEdit];
     
     NSLog(@"confirm");
+    TQMemberModel *userData = [UserDataManager getUserData];
+    __weak typeof(self) weakSelf = self;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"memberId"] = userData.memberId;
+    params[@"gameName"] = _gameName;
+    params[@"name"] = _nameTextField.text;
+    params[@"phone"] = _phoneTextField.text;
+    [ZDMIndicatorView showInView:self.view];
+    [[AFServer sharedInstance]POST:URL(kTQDomainURL, kUserSignUp) parameters:params filePath:nil finishBlock:^(id result) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        
+        if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //申请成功
+                [ZDMToast showWithText:@"报名成功"];
+                //隐藏视图
+                if (weakSelf.signUpSuccessBlock) {
+                    weakSelf.signUpSuccessBlock();
+                }
+            });
+            
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [ZDMToast showWithText:result[@"msg"]];
+            });
+        }
+        
+        
+    } failedBlock:^(NSError *error) {
+        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+        });
+    }];
+    
+    
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

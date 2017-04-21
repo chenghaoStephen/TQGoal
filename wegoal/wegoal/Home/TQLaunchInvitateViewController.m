@@ -12,10 +12,8 @@
 
 #define kTeamMemberCellIdentifier     @"TQTeamMemberCell"
 @interface TQLaunchInvitateViewController ()<UITableViewDataSource, UITableViewDelegate>
-{
-    NSMutableArray *membersArray;
-}
 
+@property (nonatomic, strong) NSMutableArray *membersArray;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -26,7 +24,7 @@
     [super viewDidLoad];
     self.title = @"邀请队友";
     
-    membersArray = [NSMutableArray array];
+    _membersArray = [NSMutableArray array];
     [self.view addSubview:self.tableView];
     [self requestData];
 }
@@ -67,8 +65,8 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 //读取数据
-                [membersArray removeAllObjects];
-                [membersArray addObjectsFromArray:[TQMemberModel mj_objectArrayWithKeyValuesArray:result[@"data"]]];
+                [weakSelf.membersArray removeAllObjects];
+                [weakSelf.membersArray addObjectsFromArray:[TQMemberModel mj_objectArrayWithKeyValuesArray:result[@"data"]]];
                 
                 //更新主页信息
                 [weakSelf.tableView reloadData];
@@ -99,7 +97,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return membersArray.count;
+    return _membersArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -110,12 +108,21 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.isInvitate = YES;
-    if (indexPath.row < membersArray.count) {
-        cell.memberData = membersArray[indexPath.row];
+    if (indexPath.row < _membersArray.count) {
+        cell.memberData = _membersArray[indexPath.row];
     } else {
         [cell clearInformation];
     }
+    __weak typeof(self) weakSelf = self;
+    cell.invitateBlock = ^{
+        [weakSelf invitateMember:weakSelf.membersArray[indexPath.row]];
+    };
     return cell;
+}
+
+- (void)invitateMember:(TQMemberModel *)data
+{
+    NSLog(@"invite member:%@", data.memberName);
 }
 
 

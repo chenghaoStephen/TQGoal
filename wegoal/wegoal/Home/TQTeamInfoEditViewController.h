@@ -12,6 +12,7 @@ typedef NS_ENUM(NSInteger, TeamEditType){
     TeamEditTypeContactName,   //负责人姓名
     TeamEditTypeContactPhone,  //联系人电话
     TeamEditTypeTime,          //成立时间
+    TeamEditTypeOther,         //其他编辑
 };
 
 typedef void(^SubmitBlock)(NSString *text);

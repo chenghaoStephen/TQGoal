@@ -7,6 +7,8 @@
 //
 
 #import "TQCreateTeamView.h"
+#import "TQJoinTeamViewController.h"
+#import "TQCreateTeamViewController.h"
 
 @interface TQCreateTeamView()
 {
@@ -114,12 +116,14 @@
 
 - (void)joinTeam
 {
-    
+    TQJoinTeamViewController *joinTeamVC = [[TQJoinTeamViewController alloc] init];
+    [(TQBaseViewController *)self.viewController pushViewController:joinTeamVC];
 }
 
 - (void)createTeam
 {
-    
+    TQCreateTeamViewController *createTeamVC = [[TQCreateTeamViewController alloc] init];
+    [(TQBaseViewController *)self.viewController pushViewController:createTeamVC];
 }
 
 @end

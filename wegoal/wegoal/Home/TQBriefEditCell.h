@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (nonatomic, copy) void(^textChangeBlock)(NSString *);
 
 @end

@@ -411,7 +411,9 @@
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return mainData.count;
+//    return mainData.count;
+    // 临时添加一个，显示创建、加入球队
+    return mainData.count + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -424,13 +426,26 @@
     cell.layer.shadowOpacity = 0.3;
     cell.layer.shadowRadius = 3.0f;
     cell.layer.shadowOffset = CGSizeMake(1.5, 1.5);
-    if (indexPath.row < mainData.count) {
-        cell.matchData = mainData[indexPath.row];
+    
+    if (indexPath.row == 0) {
+        //创建、加入球队
+        cell.matchData = nil;
+        
+    } else if (indexPath.row < mainData.count + 1) {
+        cell.matchData = mainData[indexPath.row - 1];
         __weak typeof(self) weakSelf = self;
         cell.ClickBlock = ^{
             [weakSelf jumpWithIndex:indexPath.row];
         };
     }
+    
+//    if (indexPath.row < mainData.count) {
+//        cell.matchData = mainData[indexPath.row];
+//        __weak typeof(self) weakSelf = self;
+//        cell.ClickBlock = ^{
+//            [weakSelf jumpWithIndex:indexPath.row];
+//        };
+//    }
     
     return cell;
 }

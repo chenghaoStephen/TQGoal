@@ -16,6 +16,7 @@
 
 @property (nonatomic, assign) BOOL isInvitate;          //是否是邀请队友
 @property (nonatomic, strong) TQMemberModel *memberData;
+@property (nonatomic, copy) void(^invitateBlock)();
 
 - (void)clearInformation;
 

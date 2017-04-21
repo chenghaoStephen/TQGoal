@@ -11,5 +11,7 @@
 @interface TQSignUpViewController : UIViewController
 
 - (instancetype)initWithFrame:(CGRect)frame;
+@property (nonatomic, strong) NSString *gameName;
+@property (nonatomic, copy) void(^signUpSuccessBlock)();
 
 @end

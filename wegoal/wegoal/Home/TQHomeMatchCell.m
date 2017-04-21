@@ -49,6 +49,18 @@
 - (void)setMatchData:(TQMatchModel *)matchData
 {
     _matchData = matchData;
+    
+    if (!matchData) {
+        //没有约战数据，显示创建、加入球队
+        _createView.hidden = NO;
+        _matchView.hidden = YES;
+        _actionButton.hidden = YES;
+        _cancelButton.hidden = YES;
+        _action1Button.hidden = YES;
+        _action2Button.hidden = YES;
+        return;
+    }
+    
     switch ([matchData.status integerValue]) {
         case MatchStatusSearching:
             [_actionButton setBackgroundColor:kTitleTextColor];
@@ -311,9 +323,14 @@
             //弹出报名菜单
             TQSignUpViewController *signUpVC = [[TQSignUpViewController alloc] initWithFrame:CGRectMake(0, 0, 250, 300)];
             signUpVC.view.backgroundColor = [UIColor whiteColor];
+            signUpVC.gameName = _matchData.gameName;
             signUpVC.view.layer.masksToBounds = YES;
             signUpVC.view.layer.cornerRadius = 5;
-            CGFloat topY = MAX(SCREEN_HEIGHT - 538, 80);
+            CGFloat topY = MAX(SCREEN_HEIGHT - 508, 80);
+            __weak typeof(self) weakSelf = self;
+            signUpVC.signUpSuccessBlock = ^{
+                [weakSelf.viewController dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+            };
             [self.viewController presentPopupViewController:signUpVC animationType:MJPopupViewAnimationFade topY:topY];
             break;
         }
