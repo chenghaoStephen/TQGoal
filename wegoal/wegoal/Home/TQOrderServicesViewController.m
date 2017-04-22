@@ -13,10 +13,12 @@
 #import "XHDatePickerView.h"
 #import "TQPlaceListViewController.h"
 #import "TQMatchDetailBottomView.h"
+#import "TQPayTypeSelectView.h"
 
 #define kTQMatchInformationCellIdentifier   @"TQMatchInformationCell"
 #define kTQMatchServiceCellIdentifier       @"TQMatchServiceCell"
-
+#define kTQPayTypeSelectCellIdentifier      @"TQPayTypeSelectCell"
+#define kPayTypeSelectViewTag               91001
 @interface TQOrderServicesViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     UIImageView *packupImageView;
@@ -32,6 +34,7 @@
 @property (assign, nonatomic) BOOL isServicePackup;
 @property (strong, nonatomic) NSDate *matchTime;           //时间
 @property (strong, nonatomic) TQPlaceModel *matchPlace;    //场地
+@property (assign, nonatomic) PayType type;                //支付方式
 
 @end
 
@@ -101,19 +104,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
         return 2;
-    } else {
+    } else if (section == 1){
         if (_isServicePackup) {
             return 0;
         } else {
             return _servicesArray.count;
         }
+    } else {
+        return 1;
     }
 }
 
@@ -147,7 +152,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
         return cell;
-    } else {
+    } else if (indexPath.section == 1) {
         TQMatchServiceCell *cell = [tableView dequeueReusableCellWithIdentifier:kTQMatchServiceCellIdentifier];
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"TQMatchServiceCell" owner:nil options:nil].firstObject;
@@ -173,6 +178,23 @@
             serviceData.amount = newAmount;
         };
         return cell;
+    } else {
+        UITableViewCell *typeCell = [tableView dequeueReusableCellWithIdentifier:kTQPayTypeSelectCellIdentifier];
+        if (!typeCell) {
+            typeCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTQPayTypeSelectCellIdentifier];
+        }
+        if (![typeCell viewWithTag:kPayTypeSelectViewTag] || ![[typeCell viewWithTag:kPayTypeSelectViewTag] isKindOfClass:[TQPayTypeSelectView class]]) {
+            TQPayTypeSelectView *payTypeSelectView = [[TQPayTypeSelectView alloc] initWithFrame:CGRectMake(0, 3, SCREEN_WIDTH, 110)];
+            __weak typeof(self) weakSelf = self;
+            payTypeSelectView.payTypeBlock = ^(PayType type) {
+                weakSelf.type = type;
+            };
+            payTypeSelectView.tag = kPayTypeSelectViewTag;
+            typeCell.contentView.backgroundColor = kMainBackColor;
+            [typeCell.contentView addSubview:payTypeSelectView];
+            typeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        return typeCell;
     }
 }
 
@@ -183,17 +205,19 @@
 {
     if (indexPath.section == 0) {
         return 37.f;
-    } else {
+    } else if (indexPath.section == 1) {
         return 80.f;
+    } else {
+        return 115.f;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 0;
-    } else {
+    if (section == 1) {
         return 44.f;
+    } else {
+        return 0;
     }
 }
 

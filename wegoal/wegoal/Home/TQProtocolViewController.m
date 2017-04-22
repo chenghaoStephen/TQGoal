@@ -8,6 +8,7 @@
 
 #import "TQProtocolViewController.h"
 #import "TQLaunchRefereeViewController.h"
+#import "TQAcceptRefereeViewController.h"
 
 @interface TQProtocolViewController ()
 
@@ -75,8 +76,17 @@
 
 - (void)agreeAction
 {
-    TQLaunchRefereeViewController *launchRefereeVC = [[TQLaunchRefereeViewController alloc] init];
-    [self.navigationController pushViewController:launchRefereeVC animated:YES];
+    if (_isAccept) {
+        //应战
+        TQAcceptRefereeViewController *acceptRefereeVC = [[TQAcceptRefereeViewController alloc] init];
+        acceptRefereeVC.matchData = _matchData;
+        [self.navigationController pushViewController:acceptRefereeVC animated:YES];
+    } else {
+        //发起约战
+        TQLaunchRefereeViewController *launchRefereeVC = [[TQLaunchRefereeViewController alloc] init];
+        [self.navigationController pushViewController:launchRefereeVC animated:YES];
+    }
+    
 }
 
 - (void)setProtocolDetail:(NSString *)detailStr

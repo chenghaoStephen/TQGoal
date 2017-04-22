@@ -7,6 +7,7 @@
 //
 
 #import "TQMatchCell.h"
+#import "TQProtocolViewController.h"
 
 @interface TQMatchCell()
 @property (weak, nonatomic) IBOutlet UILabel *certifiySign;     //认证标识
@@ -110,12 +111,29 @@
         _team2Name.text = @"待定中";
         [_team2Image setImage:[UIImage imageNamed:@"defaultHeadImage"]];
         [_team2Status setImage:[UIImage imageNamed:@"teaming"]];
+        
     } else if (!isMine && [TQCommon isBlankString:_matchData.team2Name]) {
         _team2Name.text = @"点击应战";
         [_team2Image setImage:[UIImage imageNamed:@"competitor"]];
         [_team2Status setImage:[UIImage imageNamed:@"teaming"]];
-        
+        _team2Image.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(acceptMatch)];
+        [_team2Image addGestureRecognizer:tapGesture];
     }
+}
+
+//点击应战
+- (void)acceptMatch
+{
+    if (_isMine || ![TQCommon isBlankString:_matchData.team2Name]) {
+        return;
+    }
+    
+    TQProtocolViewController *protocolVC = [[TQProtocolViewController alloc] init];
+    protocolVC.isAccept = YES;
+    protocolVC.matchData = _matchData;
+    [(TQBaseViewController *)self.viewController pushViewController:protocolVC];
+    
 }
 
 - (void)clearInformation

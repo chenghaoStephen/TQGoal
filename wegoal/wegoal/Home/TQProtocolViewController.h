@@ -10,4 +10,9 @@
 
 @interface TQProtocolViewController : TQBaseViewController
 
+//是否是应战
+@property (nonatomic, assign) BOOL isAccept;
+//应战时，接收数据
+@property (nonatomic, strong) TQMatchModel *matchData;
+
 @end

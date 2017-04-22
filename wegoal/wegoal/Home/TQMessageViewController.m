@@ -8,6 +8,9 @@
 
 #import "TQMessageViewController.h"
 #import "TQMessageCell.h"
+#import "TQSystemMsgViewController.h"
+#import "TQTransMsgViewController.h"
+#import "TQMatchMsgViewController.h"
 
 #define kTQMessageCellIdentifier @"TQMessageCell"
 
@@ -105,6 +108,34 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+            TQTransMsgViewController *transMsgVC = [[TQTransMsgViewController alloc] init];
+            [self.navigationController pushViewController:transMsgVC animated:YES];
+            break;
+        }
+            
+        case 1:
+        {
+            TQMatchMsgViewController *matchMsgVC = [[TQMatchMsgViewController alloc] init];
+            [self.navigationController pushViewController:matchMsgVC animated:YES];
+            break;
+        }
+            
+        case 2:
+        {
+            TQSystemMsgViewController *systemMsgVC = [[TQSystemMsgViewController alloc] init];
+            [self.navigationController pushViewController:systemMsgVC animated:YES];
+            break;
+        }
+            
+        default:
+            break;
+    }
+    
+    
 }
 
 

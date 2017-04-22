@@ -219,7 +219,12 @@
     
     //logo
     [_logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).with.offset(35 * SCALE375);
+        if (SCREEN_WIDTH < 375) {
+            make.left.equalTo(self.mas_left).with.offset(16 * SCALE375);
+        } else {
+            make.left.equalTo(self.mas_left).with.offset(35 * SCALE375);
+        }
+        
         make.size.mas_equalTo(CGSizeMake(47, 47));
         make.centerY.equalTo(self.mas_centerY);
     }];
@@ -236,7 +241,11 @@
     //队名
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_logoImageView.mas_top).with.offset(-13);
-        make.left.equalTo(_logoImageView.mas_right).with.offset(26 * SCALE375);
+        if (SCREEN_WIDTH < 375) {
+            make.left.equalTo(_logoImageView.mas_right).with.offset(12 * SCALE375);
+        } else {
+            make.left.equalTo(_logoImageView.mas_right).with.offset(26 * SCALE375);
+        }
         make.height.mas_equalTo(16);
     }];
     
