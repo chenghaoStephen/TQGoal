@@ -69,7 +69,7 @@
     NSArray *servicesFinal = [self getFinalServicesFrom:_servicesArray];
     launchConfirmVC.servicesArray = servicesFinal;
     launchConfirmVC.matchData = _matchData;
-    [launchConfirmVC reloadData];
+//    [launchConfirmVC reloadData];
     [self.navigationController pushViewController:launchConfirmVC animated:YES];
 }
 

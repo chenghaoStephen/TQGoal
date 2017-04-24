@@ -78,7 +78,7 @@
                             <constraint firstAttribute="height" constant="3.5" id="jBd-Wa-C03"/>
                         </constraints>
                     </view>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmg-1D-jjD">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmg-1D-jjD">
                         <rect key="frame" x="12" y="137" width="351" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="eFL-9s-T0h"/>

@@ -14,6 +14,6 @@
 @property (nonatomic, strong) TQServiceModel *refereeData;  //裁判服务
 @property (nonatomic, strong) NSArray *servicesArray;       //其他服务
 
-- (void)reloadData;
+//- (void)reloadData;
 
 @end

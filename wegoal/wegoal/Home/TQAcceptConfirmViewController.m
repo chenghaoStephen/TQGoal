@@ -31,23 +31,27 @@
     
     self.title = @"确认应战";
     self.view.backgroundColor = kMainBackColor;
-}
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self.view addSubview:self.detailTableView];
-        [self.view addSubview:self.nextStep];
-    }
-    return self;
-}
-
-- (void)reloadData
-{
-    [_detailTableView reloadData];
+    
+    [self.view addSubview:self.detailTableView];
+    [self.view addSubview:self.nextStep];
     _topView.matchData = _matchData;
 }
+
+//- (instancetype)init
+//{
+//    self = [super init];
+//    if (self) {
+//        [self.view addSubview:self.detailTableView];
+//        [self.view addSubview:self.nextStep];
+//    }
+//    return self;
+//}
+//
+//- (void)reloadData
+//{
+//    [_detailTableView reloadData];
+//    _topView.matchData = _matchData;
+//}
 
 - (TQMatchDetailTopView *)topView
 {

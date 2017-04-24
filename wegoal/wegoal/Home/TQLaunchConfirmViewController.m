@@ -39,26 +39,33 @@
     
     self.title = @"确认约战";
     self.view.backgroundColor = kMainBackColor;
-}
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _isRefereePackup = NO;
-        _isServicePackup = NO;
-        
-        [self.view addSubview:self.detailTableView];
-        [self.view addSubview:self.nextStep];
-    }
-    return self;
-}
-
-- (void)reloadData
-{
-    [_detailTableView reloadData];
+    
+    _isRefereePackup = NO;
+    _isServicePackup = NO;
+    
+    [self.view addSubview:self.detailTableView];
+    [self.view addSubview:self.nextStep];
     _topView.teamInfo = _teamData;
 }
+
+//- (instancetype)init
+//{
+//    self = [super init];
+//    if (self) {
+//        _isRefereePackup = NO;
+//        _isServicePackup = NO;
+//        
+//        [self.view addSubview:self.detailTableView];
+//        [self.view addSubview:self.nextStep];
+//    }
+//    return self;
+//}
+//
+//- (void)reloadData
+//{
+//    [_detailTableView reloadData];
+//    _topView.teamInfo = _teamData;
+//}
 
 - (TQTeamInformationView *)topView
 {
