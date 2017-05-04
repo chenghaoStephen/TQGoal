@@ -15,6 +15,10 @@
 
 + (UserData*)shareManager;
 
+//用户Token和name
+@property (nonatomic, strong) NSString *userToken;
+@property (nonatomic, strong) NSString *userName;
+
 // 数据读取与保存
 - (void)setUserData:(NSDictionary *)userData;
 - (TQMemberModel *)getUserData;

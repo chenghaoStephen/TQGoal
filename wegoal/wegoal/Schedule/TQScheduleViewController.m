@@ -104,7 +104,7 @@
 {
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"userName"] = @"13000000000";
+    params[@"userName"] = USER_NAME;
     params[@"Token"] = USER_TOKEN;
     params[@"gameWeek"] = weekStr;
     params[@"gameRules"] = systemStr;

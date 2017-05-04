@@ -22,6 +22,16 @@
 
 #pragma mark pubilc func
 
+- (NSString *)userToken
+{
+    return [self getUserData].Token;
+}
+
+- (NSString *)userName
+{
+    return [self getUserData].userName;
+}
+
 - (void)setUserData:(NSDictionary *)userData
 {
     if (userData) {

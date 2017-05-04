@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy) NSString *memberId;           //id
 @property (nonatomic, copy) NSString *userName;           //用户名
+@property (nonatomic, copy) NSString *Token;              //用户Token
 @property (nonatomic, copy) NSString *headPic;            //头像
 @property (nonatomic, copy) NSString *memberName;         //姓名
 @property (nonatomic, copy) NSString *memberNumber;       //号码

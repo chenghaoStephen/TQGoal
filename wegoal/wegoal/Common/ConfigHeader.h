@@ -52,9 +52,8 @@ alpha:a]
 #define USER_CACHE_PATH [Victorinox dirnameWithUserCache]
 
 //用户数据
-//#define USER_TOKEN UserDataManager.userToken
-#define USER_TOKEN @"123456"
-#define USER_NAME  @"13000000007"
+#define USER_TOKEN UserDataManager.userToken
+#define USER_NAME  UserDataManager.userName
 
 //第三方AppId、AppSecret
 //share-sdk
