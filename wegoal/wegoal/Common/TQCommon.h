@@ -21,4 +21,6 @@
 
 + (NSString *)weekStringFromDate:(NSDate *)date;
 
++ (UIColor *) stringToColor:(NSString *)str;
+
 @end

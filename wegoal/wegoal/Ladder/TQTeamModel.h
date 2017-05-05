@@ -43,7 +43,7 @@
 @property (nonatomic, copy) NSString *averageHeight;   //平均身高
 @property (nonatomic, copy) NSString *averageWeight;   //平均体重
 @property (nonatomic, copy) NSString *averageAge;      //平均年龄
-@property (nonatomic, copy) NSString *creatTeamTime;   //成立时间
+@property (nonatomic, copy) NSString *teamCreateDate;  //成立时间
 @property (nonatomic, copy) NSString *contactName;     //负责人姓名
 @property (nonatomic, copy) NSString *contactPhone;    //联系人电话
 @property (nonatomic, copy) NSString *teamBrief;       //球队介绍

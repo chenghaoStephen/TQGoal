@@ -10,6 +10,7 @@
 #import "TQProtocolViewController.h"
 #import "TQOrderRefereeViewController.h"
 #import "TQOrderServicesViewController.h"
+#import "TQLoginViewController.h"
 
 @interface TQBaseViewController ()
 
@@ -78,20 +79,43 @@
 
 - (void)pushLaunchVC
 {
-    TQProtocolViewController *protocolVC = [[TQProtocolViewController alloc] init];
-    [self pushViewController:protocolVC];
+    if ([self doCheck]) {
+        TQProtocolViewController *protocolVC = [[TQProtocolViewController alloc] init];
+        [self pushViewController:protocolVC];
+    }
+    
 }
 
 - (void)pushRefereeVC
 {
-    TQOrderRefereeViewController *orderRefereeVC = [[TQOrderRefereeViewController alloc] init];
-    [self pushViewController:orderRefereeVC];
+    if ([self doCheck]) {
+        TQOrderRefereeViewController *orderRefereeVC = [[TQOrderRefereeViewController alloc] init];
+        [self pushViewController:orderRefereeVC];
+    }
+    
 }
 
 - (void)pushServicesVC
 {
-    TQOrderServicesViewController *orderServicesVC = [[TQOrderServicesViewController alloc] init];
-    [self pushViewController:orderServicesVC];
+    if ([self doCheck]) {
+        TQOrderServicesViewController *orderServicesVC = [[TQOrderServicesViewController alloc] init];
+        [self pushViewController:orderServicesVC];
+    }
+    
+}
+
+- (BOOL)doCheck
+{
+    if (!USER_TOKEN) {
+        TQLoginViewController *loginVC = [[TQLoginViewController alloc] init];
+        loginVC.originVC = self;
+        [self pushViewController:loginVC];
+        return NO;
+    } else if ([UserDataManager getUserData].temName.length == 0) {
+        [ZDMToast showWithText:@"请先创建或加入一支球队"];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)pushViewController:(UIViewController *)viewController

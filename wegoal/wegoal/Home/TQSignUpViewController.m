@@ -200,7 +200,7 @@
 {
     if (!_closeButton) {
         _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_closeButton setImage:[UIImage imageNamed:@"close_popview"] forState:UIControlStateNormal];
+        [_closeButton setImage:[UIImage imageNamed:@"dialog_close"] forState:UIControlStateNormal];
         [_closeButton setFrame:CGRectMake(viewFrame.size.width, -20, 20, 20)];
     }
     return _closeButton;

@@ -64,6 +64,7 @@
                         placeholderImage:[UIImage imageNamed:@"defaultHeadImage"]];
     _numberLabel.text = memberData.memberNumber;
     _positionLabel.text = memberData.memberPosition;
+    _positionLabel.backgroundColor = [TQCommon stringToColor:memberData.memberPositionColor];
     _nameLabel.text = memberData.memberName;
     if (memberData.isMvp) {
         _mvpSignImageView.image = [UIImage imageNamed:@"MVP"];
@@ -77,6 +78,7 @@
     _avatarImageView.image = [UIImage imageNamed:@"defaultHeadImage"];
     _numberLabel.text = @"--";
     _positionLabel.text = @"--";
+    _positionLabel.backgroundColor = kRedBackColor;
     _nameLabel.text = @"--";
 }
 

@@ -29,7 +29,7 @@
     
     NSMutableArray *headerData;   //轮播图数据
     NSMutableArray *mainData;     //我的约战数据
-    TQMatchModel *footerData;   //推荐数据
+    TQMatchModel *footerData;     //推荐数据
     
 }
 
@@ -54,6 +54,7 @@
     headerData = [NSMutableArray array];
     mainData = [NSMutableArray array];
     scrollIndex = 0;
+    [self registerNotifications];
     [self.view addSubview:self.tableView];
     [self updateHomeSubViews];
     [self requestData];
@@ -70,6 +71,31 @@
     
     TQMemberModel *userData = UserDataManager.getUserData;
     NSLog(@"%@", userData);
+}
+
+- (void)registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadInformation)
+                                                 name:kLoginSuccess
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadInformation)
+                                                 name:kLogoutSuccess
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadInformation)
+                                                 name:kTeamCreateSuccess
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadInformation)
+                                                 name:kLaunchMatchSuccess
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setNavigationBar
@@ -282,6 +308,18 @@
     }];
 }
 
+- (void)reloadInformation
+{
+    //清空数据
+    [headerData removeAllObjects];
+    [mainData removeAllObjects];
+    footerData = nil;
+    [self updateHomeSubViews];
+    //重新获取
+    [self requestData];
+    
+}
+
 
 #pragma mark - 界面刷新
 
@@ -296,12 +334,16 @@
         _cycleScrollView.imageURLStringsGroup = urlArray;
     }
     //更新我的约战
-    if (mainData.count > 1) {
+    if (!USER_TOKEN || [UserDataManager getUserData].temName.length == 0) {
+        //未登录，或者没有球队，显示创建加入球队
+        _matchView.height = 222;
+        _matchPageControl.hidden = YES;
+        _headerView.height = 175 * SCALE375 + 222;
+        _tableView.tableHeaderView = _headerView;
+    } else if (mainData.count > 1) {
         _matchView.height = 222;
         _matchPageControl.hidden = NO;
-//        _matchPageControl.numberOfPages = mainData.count;
-        /* 临时加一个创建、加入球队 */
-        _matchPageControl.numberOfPages = mainData.count + 1;
+        _matchPageControl.numberOfPages = mainData.count;
         _headerView.height = 175 * SCALE375 + 222;
         _tableView.tableHeaderView = _headerView;
     } else if (mainData.count > 0) {
@@ -413,9 +455,10 @@
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-//    return mainData.count;
-    // 临时添加一个，显示创建、加入球队
-    return mainData.count + 1;
+    if (!USER_TOKEN || [UserDataManager getUserData].temName.length == 0) {
+        return 1;
+    }
+    return mainData.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -429,25 +472,17 @@
     cell.layer.shadowRadius = 3.0f;
     cell.layer.shadowOffset = CGSizeMake(1.5, 1.5);
     
-    if (indexPath.row == 0) {
+    if (!USER_TOKEN || [UserDataManager getUserData].temName.length == 0) {
         //创建、加入球队
         cell.matchData = nil;
         
-    } else if (indexPath.row < mainData.count + 1) {
-        cell.matchData = mainData[indexPath.row - 1];
+    } else if (indexPath.row < mainData.count) {
+        cell.matchData = mainData[indexPath.row];
         __weak typeof(self) weakSelf = self;
         cell.ClickBlock = ^{
             [weakSelf jumpWithIndex:indexPath.row];
         };
     }
-    
-//    if (indexPath.row < mainData.count) {
-//        cell.matchData = mainData[indexPath.row];
-//        __weak typeof(self) weakSelf = self;
-//        cell.ClickBlock = ^{
-//            [weakSelf jumpWithIndex:indexPath.row];
-//        };
-//    }
     
     return cell;
 }

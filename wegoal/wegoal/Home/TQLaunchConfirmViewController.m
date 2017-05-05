@@ -13,6 +13,7 @@
 #import "TQMatchServiceCell.h"
 #import "TQLaunchServiceViewController.h"
 #import "TQLaunchInvitateViewController.h"
+#import "TQInvitatePopViewController.h"
 
 #define kTQMatchInformationCellIdentifier   @"TQMatchInformationCell"
 #define kTQMatchRefereeCellIdentifier       @"TQMatchRefereeCell"
@@ -134,10 +135,12 @@
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetEnroll) parameters:params filePath:nil finishBlock:^(id result) {
         [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
+            
             dispatch_async(dispatch_get_main_queue(), ^{
-                //跳转到邀请好友界面
-                TQLaunchInvitateViewController *launchInviteVC = [[TQLaunchInvitateViewController alloc] init];
-                [weakSelf.navigationController pushViewController:launchInviteVC animated:YES];
+                //约战发起成功，通知
+                [[NSNotificationCenter defaultCenter] postNotificationName:kLaunchMatchSuccess object:nil userInfo:nil];
+                //弹出邀请
+                [weakSelf popInviteVC];
             });
             
         } else {
@@ -153,6 +156,45 @@
         });
     }];
     
+}
+
+//跳转到邀请界面
+- (void)popInviteVC
+{
+    TQInvitatePopViewController *inviteVC = [[TQInvitatePopViewController alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT + 20)];
+    inviteVC.view.backgroundColor = [UIColor clearColor];
+    
+    __weak typeof(self) weakSelf = self;
+    inviteVC.inviteBlock = ^(InviteType type){
+        switch (type) {
+            case InviteTypeCancel:
+                [weakSelf dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+                [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+                break;
+                
+            case InviteTypeWechat:
+                break;
+                
+            case InviteTypeTimeLine:
+                break;
+                
+            case InviteTypeQQ:
+                break;
+                
+            case InviteTypeTeam:
+            {
+                [weakSelf dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+                //跳转到邀请好友界面
+                TQLaunchInvitateViewController *launchInviteVC = [[TQLaunchInvitateViewController alloc] init];
+                [weakSelf.navigationController pushViewController:launchInviteVC animated:YES];
+                break;
+            }
+                
+            default:
+                break;
+        }
+    };
+    [self presentPopupViewController:inviteVC animationType:MJPopupViewAnimationFade];
 }
 
 - (NSString *)getServiceStr

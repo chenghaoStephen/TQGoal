@@ -153,7 +153,7 @@
             cell.valueLabel.text = _teamData.contactPhone;
         } else if (indexPath.row == 4) {
             cell.titleLabel.text = @"成立时间";
-            cell.valueLabel.text = [NSDate datestrFromDate:[NSDate dateFromString:_teamData.creatTeamTime format:kDateFormatter1] withDateFormat:kDateFormatter3];
+            cell.valueLabel.text = [NSDate datestrFromDate:[NSDate dateFromString:_teamData.teamCreateDate format:kDateFormatter1] withDateFormat:kDateFormatter3];
         }
     }
     return cell;
@@ -230,7 +230,7 @@
         {
             XHDatePickerView *datepicker = [[XHDatePickerView alloc] initWithCompleteBlock:^(NSDate *startDate) {
                 cell.valueLabel.text = [NSDate datestrFromDate:startDate withDateFormat:kDateFormatter3];
-                weakSelf.teamData.creatTeamTime = [NSDate datestrFromDate:startDate withDateFormat:kDateFormatter1];
+                weakSelf.teamData.teamCreateDate = [NSDate datestrFromDate:startDate withDateFormat:kDateFormatter1];
             }];
             datepicker.datePickerStyle = DateStyleShowYearMonthDay;
             datepicker.themeColor = kSubjectBackColor;
@@ -265,7 +265,7 @@
     params[@"teamName"] = _teamData.teamName;
     params[@"contactName"] = _teamData.contactName;
     params[@"contactPhone"] = _teamData.contactPhone;
-    params[@"creatTeamTime"] = _teamData.creatTeamTime;
+    params[@"teamCreateDate"] = _teamData.teamCreateDate;
     params[@"teamBrief"] = _teamData.teamBrief;
     [ZDMIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kUserCreatTeam) parameters:params filePath:nil finishBlock:^(id result) {
@@ -279,6 +279,10 @@
                 NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithDictionary:[UserDataManager getUserDataDict]];
                 userDict[@"temName"] = weakSelf.teamData.teamName;
                 [UserDataManager setUserData:userDict];
+//                //更新个人信息
+//                [UserDataManager setUserData:result[@"data"]];
+                //通知
+                [[NSNotificationCenter defaultCenter] postNotificationName:kTeamCreateSuccess object:nil userInfo:nil];
                 //返回上一页
                 [weakSelf.navigationController popViewControllerAnimated:YES];
             });
@@ -314,7 +318,7 @@
     } else if (_teamData.contactPhone.length == 0) {
         msg = @"请输入联系人电话";
         result = NO;
-    } else if (_teamData.creatTeamTime.length == 0) {
+    } else if (_teamData.teamCreateDate.length == 0) {
         msg = @"请输入球队成立时间";
         result = NO;
     } else if (_teamData.teamBrief.length == 0) {

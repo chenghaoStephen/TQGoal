@@ -137,13 +137,14 @@
             
         case 2:
         {
-            TQInfoEditViewController *editVC = [[TQInfoEditViewController alloc] init];
-            editVC.titleName = @"球队";
-            editVC.type = EditTypeTeam;
-            editVC.submitBlock = ^(NSString *result){
-                cell.valueLabel.text = result;
-            };
-            [self.navigationController pushViewController:editVC animated:YES];
+            //球队不可编辑
+//            TQInfoEditViewController *editVC = [[TQInfoEditViewController alloc] init];
+//            editVC.titleName = @"球队";
+//            editVC.type = EditTypeTeam;
+//            editVC.submitBlock = ^(NSString *result){
+//                cell.valueLabel.text = result;
+//            };
+//            [self.navigationController pushViewController:editVC animated:YES];
             break;
         }
             
@@ -253,6 +254,7 @@
 {
     TQEditMeCell *cell  =[_tableview cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
     NSString *position = [kPositionsArray objectAtIndex:indexPath.row];
+    NSString *positionColor = [kPositionColorArray objectAtIndex:indexPath.row];
     [tableView dismiss];
     
     TQMemberModel *userData = [UserDataManager getUserData];
@@ -260,6 +262,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"userName"] = userData.userName;
     params[@"memberPosition"] = position;
+    params[@"memberPositionColor"] = positionColor;
     [ZDMIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetMember) parameters:params filePath:nil finishBlock:^(id result) {
         [ZDMIndicatorView hiddenInView:weakSelf.view];

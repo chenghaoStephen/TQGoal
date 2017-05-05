@@ -9,6 +9,7 @@
 #import "TQCreateTeamView.h"
 #import "TQJoinTeamViewController.h"
 #import "TQCreateTeamViewController.h"
+#import "TQLoginViewController.h"
 
 @interface TQCreateTeamView()
 {
@@ -116,14 +117,35 @@
 
 - (void)joinTeam
 {
-    TQJoinTeamViewController *joinTeamVC = [[TQJoinTeamViewController alloc] init];
-    [(TQBaseViewController *)self.viewController pushViewController:joinTeamVC];
+    if (!USER_TOKEN) {
+        //跳转到登录界面
+        [self jumpToLoginVC];
+    } else {
+        //跳转到加入球队界面
+        TQJoinTeamViewController *joinTeamVC = [[TQJoinTeamViewController alloc] init];
+        [(TQBaseViewController *)self.viewController pushViewController:joinTeamVC];
+    }
+    
 }
 
 - (void)createTeam
 {
-    TQCreateTeamViewController *createTeamVC = [[TQCreateTeamViewController alloc] init];
-    [(TQBaseViewController *)self.viewController pushViewController:createTeamVC];
+    if (!USER_TOKEN) {
+        //跳转到登录界面
+        [self jumpToLoginVC];
+    } else {
+        //跳转到创建球队界面
+        TQCreateTeamViewController *createTeamVC = [[TQCreateTeamViewController alloc] init];
+        [(TQBaseViewController *)self.viewController pushViewController:createTeamVC];
+    }
+    
+}
+
+- (void)jumpToLoginVC
+{
+    TQLoginViewController *loginVC = [[TQLoginViewController alloc] init];
+    loginVC.originVC = self.viewController;
+    [(TQBaseViewController *)self.viewController pushViewController:loginVC];
 }
 
 @end
