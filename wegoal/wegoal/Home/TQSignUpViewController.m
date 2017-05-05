@@ -250,14 +250,14 @@
     params[@"gameName"] = _gameName;
     params[@"name"] = _nameTextField.text;
     params[@"phone"] = _phoneTextField.text;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kUserSignUp) parameters:params filePath:nil finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //申请成功
-                [ZDMToast showWithText:@"报名成功"];
+                [JOToast showWithText:@"报名成功"];
                 //隐藏视图
                 if (weakSelf.signUpSuccessBlock) {
                     weakSelf.signUpSuccessBlock();
@@ -266,15 +266,15 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
     

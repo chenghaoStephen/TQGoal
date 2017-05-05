@@ -112,7 +112,7 @@
         [self pushViewController:loginVC];
         return NO;
     } else if ([UserDataManager getUserData].temName.length == 0) {
-        [ZDMToast showWithText:@"请先创建或加入一支球队"];
+        [JOToast showWithText:@"请先创建或加入一支球队"];
         return NO;
     }
     return YES;

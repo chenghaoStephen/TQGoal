@@ -1,16 +1,17 @@
 //
-//  ZDMToast.m
-//  
+//  JOToast.m
+//  wegoal
 //
-//  Created by joker on 15/3/25.
-//  Copyright (c) 2014年 MING.Z. All rights reserved.
+//  Created by joker on 2017/5/5.
+//  Copyright © 2017年 xdkj. All rights reserved.
 //
 
-#import "ZDMToast.h"
+#import "JOToast.h"
+
 #import <QuartzCore/QuartzCore.h>
-@implementation ZDMToastButton
+@implementation JOToastButton
 @end
-@interface ZDMToast (private)
+@interface JOToast (private)
 
 - (id)initWithText:(NSString *)text_;
 - (void)setDuration:(CGFloat) duration_;
@@ -28,7 +29,7 @@
 @end
 
 
-@implementation ZDMToast
+@implementation JOToast
 
 
 - (id)initWithText:(NSString *)text_{
@@ -49,7 +50,7 @@
         textLabel.text = text;
         textLabel.numberOfLines = 0;
         
-        contentView = [[ZDMToastButton alloc] initWithFrame:CGRectMake(0, 0, textLabel.frame.size.width, textLabel.frame.size.height)];
+        contentView = [[JOToastButton alloc] initWithFrame:CGRectMake(0, 0, textLabel.frame.size.width, textLabel.frame.size.height)];
         contentView.layer.cornerRadius = 5.0f;
         contentView.layer.borderWidth = 1.0f;
         contentView.layer.borderColor = [[UIColor grayColor] colorWithAlphaComponent:0.5].CGColor;
@@ -121,8 +122,8 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     contentView.center = CGPointMake(window.center.x, top_ + contentView.frame.size.height/2);
     for (UIView *view in [window subviews]) {
-        if ([view isKindOfClass:[ZDMToastButton class]]) {
-            ((ZDMToastButton*)view).hidden = YES;
+        if ([view isKindOfClass:[JOToastButton class]]) {
+            ((JOToastButton*)view).hidden = YES;
         }
     }
     [window  addSubview:contentView];
@@ -140,50 +141,50 @@
 
 
 + (void)showWithText:(NSString *)text_{
-    [ZDMToast showWithText:text_ bottomOffset:80 duration:DEFAULT_DISPLAY_DURATION ];
+    [JOToast showWithText:text_ bottomOffset:80 duration:DEFAULT_DISPLAY_DURATION ];
 }
 
 + (void)showWithText:(NSString *)text_
             duration:(CGFloat)duration_{
-    ZDMToast *toast = [[ZDMToast alloc] initWithText:text_];
+    JOToast *toast = [[JOToast alloc] initWithText:text_];
     [toast setDuration:duration_];
     [toast show];
 }
 
 + (void)showWithText:(NSString *)text_
            topOffset:(CGFloat)topOffset_{
-    [ZDMToast showWithText:text_  topOffset:topOffset_ duration:DEFAULT_DISPLAY_DURATION];
+    [JOToast showWithText:text_  topOffset:topOffset_ duration:DEFAULT_DISPLAY_DURATION];
 }
 
 + (void)showWithText:(NSString *)text_
            topOffset:(CGFloat)topOffset_
             duration:(CGFloat)duration_{
-    ZDMToast *toast = [[ZDMToast alloc] initWithText:text_];
+    JOToast *toast = [[JOToast alloc] initWithText:text_];
     [toast setDuration:duration_];
     [toast showFromTopOffset:topOffset_];
 }
 
 + (void)showWithText:(NSString *)text_
         bottomOffset:(CGFloat)bottomOffset_{
-    [ZDMToast showWithText:text_  bottomOffset:bottomOffset_ duration:DEFAULT_DISPLAY_DURATION];
+    [JOToast showWithText:text_  bottomOffset:bottomOffset_ duration:DEFAULT_DISPLAY_DURATION];
 }
 
 + (void)showWithText:(NSString *)text_
         bottomOffset:(CGFloat)bottomOffset_
             duration:(CGFloat)duration_{
-    ZDMToast *toast = [[ZDMToast alloc] initWithText:text_];
+    JOToast *toast = [[JOToast alloc] initWithText:text_];
     [toast setDuration:duration_];
     [toast showFromBottomOffset:bottomOffset_];
 }
 + (void)showWithText:(NSString *)text_
             duration:(CGFloat)duration_ inView:(UIView*)view{
-    ZDMToast *toast = [[ZDMToast alloc] initWithText:text_];
+    JOToast *toast = [[JOToast alloc] initWithText:text_];
     [toast setDuration:duration_];
     [toast showInView:view];
 }
 + (void)showHorizontalWithText:(NSString *)text_
                       duration:(CGFloat)duration_ inView:(UIView*)view{
-    ZDMToast *toast = [[ZDMToast alloc] initWithText:text_];
+    JOToast *toast = [[JOToast alloc] initWithText:text_];
     [toast setDuration:duration_];
     [toast showHorizontalInView:view];
 }
@@ -202,3 +203,4 @@
     
 }
 @end
+

@@ -100,9 +100,9 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"userName"] = USER_NAME;
     params[@"Token"] = USER_TOKEN;
-    [ZDMIndicatorView showInView:self.detailTableView];
+    [JOIndicatorView showInView:self.detailTableView];
     [[AFServer sharedInstance]GET:URL(kTQDomainURL, kEnrollLaunched) parameters:params finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
+        [JOIndicatorView hiddenInView:weakSelf.detailTableView];
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -119,14 +119,14 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.detailTableView];
+        [JOIndicatorView hiddenInView:weakSelf.detailTableView];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
 }
@@ -145,7 +145,7 @@
 - (void)nextStepAction
 {
     if (!_matchPlace) {
-        [ZDMToast showWithText:@"请选择场地"];
+        [JOToast showWithText:@"请选择场地"];
         return;
     }
     TQLaunchServiceViewController *launchServiceVC = [[TQLaunchServiceViewController alloc] init];

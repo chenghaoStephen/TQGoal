@@ -100,7 +100,7 @@
 - (void)saveModify{
     [_textField endEditing:YES];
     if (_textField.text == nil || _textField.text.length == 0) {
-        [ZDMToast showWithText:[NSString stringWithFormat:@"请输入%@", _titleName]];
+        [JOToast showWithText:[NSString stringWithFormat:@"请输入%@", _titleName]];
         return;
     }
     
@@ -137,14 +137,14 @@
         default:
             break;
     }
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetMember) parameters:params filePath:nil finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //保存成功
-                [ZDMToast showWithText:@"保存成功"];
+                [JOToast showWithText:@"保存成功"];
                 //存储个人信息
                 NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithDictionary:[UserDataManager getUserDataDict]];
                 switch (weakSelf.type) {
@@ -185,15 +185,15 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
     

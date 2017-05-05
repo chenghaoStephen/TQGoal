@@ -16,8 +16,8 @@
 #import "TQBaseViewController.h"
 #import "UserData.h"
 #import "AFServer.h"
-#import "ZDMToast.h"
-#import "ZDMIndicatorView.h"
+#import "JOToast.h"
+#import "JOIndicatorView.h"
 #import "Victorinox.h"
 
 //model

@@ -61,7 +61,7 @@
 - (void)saveModify{
     [_textField endEditing:YES];
     if (_textField.text == nil || _textField.text.length == 0) {
-        [ZDMToast showWithText:[NSString stringWithFormat:@"请输入%@", _titleName]];
+        [JOToast showWithText:[NSString stringWithFormat:@"请输入%@", _titleName]];
         return;
     }
     

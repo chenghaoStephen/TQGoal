@@ -1,18 +1,18 @@
 //
-//  ZDMToast.h
+//  JOToast.h
+//  wegoal
 //
-//
-//  Created by joker on 14/3/25.
-//  Copyright (c) 2014年 MING.Z. All rights reserved.
+//  Created by joker on 2017/5/5.
+//  Copyright © 2017年 xdkj. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #define DEFAULT_DISPLAY_DURATION 2.0f
-@interface ZDMToastButton:UIButton{
+@interface JOToastButton:UIButton{
     
 }
 @end
-@interface ZDMToast : NSObject {
+@interface JOToast : NSObject {
     NSString *text;
     UIButton *contentView;
     CGFloat  duration;

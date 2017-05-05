@@ -1,31 +1,32 @@
 //
-//  ZDMIndicator.m
-//  ZDzhihuIndicator
+//  JOIndicatorView.m
+//  wegoal
 //
-//  Created by MING.Z on 15-4-2.
-//  Copyright (c) 2015年 blurryssky. All rights reserved.
+//  Created by joker on 2017/5/5.
+//  Copyright © 2017年 xdkj. All rights reserved.
 //
 
-#import "ZDMIndicatorView.h"
-@interface ZDMIndicatorView()
+#import "JOIndicatorView.h"
+
+@interface JOIndicatorView()
 {
     CAShapeLayer*indicatorLayer;
-    ZDMIndicatorViewStyle style;
-
+    JOIndicatorViewStyle style;
+    
 }
 @property (nonatomic,strong)CAShapeLayer*indicatorLayer;
-@property (nonatomic,assign)ZDMIndicatorViewStyle style;
+@property (nonatomic,assign)JOIndicatorViewStyle style;
 
 @end
-@implementation ZDMIndicatorView
+@implementation JOIndicatorView
 @synthesize indicatorLayer,style;
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
@@ -45,42 +46,42 @@
     return self;
 }
 - (instancetype)init{
-   
+    
     return self;
 }
 
 
 + (void)showInView:(UIView*)superView{
-    [ZDMIndicatorView showInView:superView animationStyle:ZDMIndicatorStyleGradual];
+    [JOIndicatorView showInView:superView animationStyle:JOIndicatorStyleGradual];
     
 }
 
-+ (void)showInView:(UIView*)superView animationStyle:(ZDMIndicatorViewStyle)style{
-//    [ZDMIndicatorView hiddenInView:superView];
-    if (![ZDMIndicatorView isShowInView:superView]) {
-        ZDMIndicatorView *indicatorView = [[self alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(superView.bounds), CGRectGetHeight(superView.bounds))];
++ (void)showInView:(UIView*)superView animationStyle:(JOIndicatorViewStyle)style{
+    //    [JOIndicatorView hiddenInView:superView];
+    if (![JOIndicatorView isShowInView:superView]) {
+        JOIndicatorView *indicatorView = [[self alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(superView.bounds), CGRectGetHeight(superView.bounds))];
         [indicatorView.layer addSublayer:indicatorView.indicatorLayer];
         indicatorView.style = style;
-
+        
         [superView addSubview:indicatorView];
         [indicatorView beginAnimation];
     }
     
 }
 + (void)showInView:(UIView*)superView canUserEnable:(BOOL)enable{
-    if (![ZDMIndicatorView isShowInView:superView]) {
-        ZDMIndicatorView *indicatorView = [[self alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(superView.bounds), CGRectGetHeight(superView.bounds))];
+    if (![JOIndicatorView isShowInView:superView]) {
+        JOIndicatorView *indicatorView = [[self alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(superView.bounds), CGRectGetHeight(superView.bounds))];
         [indicatorView.layer addSublayer:indicatorView.indicatorLayer];
-        indicatorView.style = ZDMIndicatorStyleGradual;
+        indicatorView.style = JOIndicatorStyleGradual;
         indicatorView.userInteractionEnabled = !enable;
         [superView addSubview:indicatorView];
         [indicatorView beginAnimation];
     }
-
+    
 }
 + (BOOL)isShowInView:(UIView *)superView{
     for (UIView *view in  superView.subviews) {
-        if ([view isKindOfClass:[ZDMIndicatorView class]]) {
+        if ([view isKindOfClass:[JOIndicatorView class]]) {
             return YES;
         }
     }
@@ -88,11 +89,11 @@
 }
 + (void)hiddenInView:(UIView *)superView{
     for (UIView *view in  superView.subviews) {
-        if ([view isKindOfClass:[ZDMIndicatorView class]]) {
-            ZDMIndicatorView *indicatorView  = (ZDMIndicatorView*)view;
-//            [indicatorView endAnimationWithCompletion:^(BOOL finished) {
-                [indicatorView removeFromSuperview];
-//            }];
+        if ([view isKindOfClass:[JOIndicatorView class]]) {
+            JOIndicatorView *indicatorView  = (JOIndicatorView*)view;
+            //            [indicatorView endAnimationWithCompletion:^(BOOL finished) {
+            [indicatorView removeFromSuperview];
+            //            }];
         }
     }
 }
@@ -105,7 +106,7 @@
     end.removedOnCompletion = false;
     end.fillMode = kCAFillModeForwards;
     end.removedOnCompletion = NO;
-
+    
     return end;
 }
 
@@ -119,7 +120,7 @@
     start.removedOnCompletion = false;
     start.fillMode = kCAFillModeForwards;
     start.removedOnCompletion = NO;
-
+    
     return start;
 }
 - (CAAnimationGroup*)animationGroup{
@@ -144,14 +145,14 @@
 
 
 - (void)beginAnimation {
-
-
+    
+    
     [UIView animateWithDuration:0.2 animations:^{
-//        self.alpha = 1;
-
+        //        self.alpha = 1;
+        
     } completion:^(BOOL finished) {
         switch (style) {
-            case ZDMIndicatorStyleGradual:
+            case JOIndicatorStyleGradual:
                 [self beginGradulaAnimation];
                 break;
                 
@@ -192,11 +193,11 @@
         [self.indicatorLayer addAnimation:rotateZ forKey:@"rotationZ"];
         
     });
-
+    
 }
 -(void)endAnimationWithCompletion:(void (^)(BOOL finished))completion{
     [UIView animateWithDuration:0.2 animations:^{
-//        self.alpha = 0;
+        //        self.alpha = 0;
     } completion:^(BOOL finished) {
         completion(finished);
     }];

@@ -62,9 +62,9 @@
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"Token"] = USER_TOKEN;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]GET:URL(kTQDomainURL, kGetTeamList) parameters:params finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -78,14 +78,14 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
 }
@@ -140,29 +140,29 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"userName"] = userData.userName;
     params[@"teamId"] = teamData.teamId;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kUserJoinTeam) parameters:params filePath:nil finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //申请成功
-                [ZDMToast showWithText:@"申请成功"];
+                [JOToast showWithText:@"申请成功"];
                 //返回上一页
                 [weakSelf.navigationController popViewControllerAnimated:YES];
             });
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
 }

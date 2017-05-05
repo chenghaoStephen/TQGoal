@@ -9,7 +9,7 @@
 #import "TQRegisterConfirmViewController.h"
 #import "TQLoginViewController.h"
 #import "JOCodeView.h"
-#import "ZDMIndicatorView.h"
+#import "JOIndicatorView.h"
 
 @interface TQRegisterConfirmViewController ()
 {
@@ -189,9 +189,9 @@
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"mobile"] = _phoneNumber;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]GET:URL(kTQDomainURL, kAccountSendCode) parameters:params finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -202,14 +202,14 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
     
@@ -264,9 +264,9 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"mobile"] = _phoneNumber;
     params[@"code"] = _codeStr;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]GET:URL(kTQDomainURL, kAccountVerifyCode) parameters:params finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -278,14 +278,14 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
 }
@@ -296,9 +296,9 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"userName"] = _phoneNumber;
     params[@"password"] = _password;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kAccountRegister) parameters:params filePath:nil finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -311,14 +311,14 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
 }
@@ -329,15 +329,15 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"userName"] = _phoneNumber;
     params[@"password"] = _password;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]GET:URL(kTQDomainURL, kAccountLogin) parameters:params finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //登录成功
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [ZDMToast showWithText:@"登录成功"];
+                    [JOToast showWithText:@"登录成功"];
                 });
                 //存储个人信息
                 [UserDataManager setUserData:result[@"data"]];
@@ -353,15 +353,15 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
 }

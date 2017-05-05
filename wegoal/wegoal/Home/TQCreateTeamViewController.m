@@ -267,14 +267,14 @@
     params[@"contactPhone"] = _teamData.contactPhone;
     params[@"teamCreateDate"] = _teamData.teamCreateDate;
     params[@"teamBrief"] = _teamData.teamBrief;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kUserCreatTeam) parameters:params filePath:nil finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //创建成功
-                [ZDMToast showWithText:@"创建成功"];
+                [JOToast showWithText:@"创建成功"];
                 //更新个人的球队名称
                 NSMutableDictionary *userDict = [NSMutableDictionary dictionaryWithDictionary:[UserDataManager getUserDataDict]];
                 userDict[@"temName"] = weakSelf.teamData.teamName;
@@ -289,15 +289,15 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
 }
@@ -327,7 +327,7 @@
     }
     
     if (!result) {
-        [ZDMToast showWithText:msg];
+        [JOToast showWithText:msg];
     }
     
     return result;
@@ -430,9 +430,9 @@
     //上传头像
     __weak typeof(self) weakSelf = self;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]POST:URL(kTQDomainURL, kSetMemberPic) parameters:params filePath:path finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -444,15 +444,15 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
     

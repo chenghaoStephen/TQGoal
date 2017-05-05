@@ -311,15 +311,15 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"userName"] = _phoneTextField.text;
     params[@"password"] = _passwordTextField.text;
-    [ZDMIndicatorView showInView:self.view];
+    [JOIndicatorView showInView:self.view];
     [[AFServer sharedInstance]GET:URL(kTQDomainURL, kAccountLogin) parameters:params finishBlock:^(id result) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         
         if (result[@"status"] != nil && [result[@"status"] integerValue] == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //登录成功
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [ZDMToast showWithText:@"登录成功"];
+                    [JOToast showWithText:@"登录成功"];
                 });
                 
                 //存储个人信息
@@ -338,15 +338,15 @@
             
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [ZDMToast showWithText:result[@"msg"]];
+                [JOToast showWithText:result[@"msg"]];
             });
         }
         
         
     } failedBlock:^(NSError *error) {
-        [ZDMIndicatorView hiddenInView:weakSelf.view];
+        [JOIndicatorView hiddenInView:weakSelf.view];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [ZDMToast showWithText:@"网络连接失败，请稍后再试！"];
+            [JOToast showWithText:@"网络连接失败，请稍后再试！"];
         });
     }];
     
@@ -356,7 +356,7 @@
 {
     [self endEdit];
     if (_phoneTextField.text.length != 11) {
-        [ZDMToast showWithText:@"请输入正确的手机号"];
+        [JOToast showWithText:@"请输入正确的手机号"];
         return;
     }
     

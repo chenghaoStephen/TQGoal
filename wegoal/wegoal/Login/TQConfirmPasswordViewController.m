@@ -196,7 +196,7 @@
     [self endEdit];
     
     if (![_passwordTextField.text isEqualToString:_confirmTextField.text]) {
-        [ZDMToast showWithText:@"两次输入的密码不一致"];
+        [JOToast showWithText:@"两次输入的密码不一致"];
         return;
     }
     
