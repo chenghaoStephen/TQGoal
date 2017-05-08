@@ -33,11 +33,12 @@
 }
 
 - (UIBarButtonItem*)buildRightNavigationItem{
-    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_gray"]
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(searchAction)];
-    return rightBar;
+//    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_gray"]
+//                                                                 style:UIBarButtonItemStylePlain
+//                                                                target:self
+//                                                                action:@selector(searchAction)];
+//    return rightBar;
+    return nil;
 }
 
 - (UITableView *)tableView

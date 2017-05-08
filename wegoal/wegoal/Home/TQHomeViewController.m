@@ -69,8 +69,13 @@
     [self setBadgeNumber:0];
     [self setNavigationBar];
     
-    TQMemberModel *userData = UserDataManager.getUserData;
-    NSLog(@"%@", userData);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    // 修改数据更新后，collectionView未能及时反映问题
+    [self updateHomeSubViews];
 }
 
 - (void)registerNotifications
@@ -358,7 +363,7 @@
         _tableView.tableHeaderView = _headerView;
         _matchPageControl.hidden = YES;
     }
-    [self.matchView reloadData];
+    [_matchView reloadData];
     //更新推荐
     [_tableView reloadData];
 }
